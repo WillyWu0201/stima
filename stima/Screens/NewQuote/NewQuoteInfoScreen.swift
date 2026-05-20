@@ -35,6 +35,7 @@ struct NewQuoteInfoScreen: View {
                                    displayedComponents: .date)
                             .datePickerStyle(.compact)
                             .labelsHidden()
+                            .environment(\.locale, Locale(identifier: "zh_Hant_TW"))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal, 14)
                             .padding(.vertical, 9)

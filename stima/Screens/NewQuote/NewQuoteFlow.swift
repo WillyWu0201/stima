@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 /// 新增報價單流程容器：04 基本資料 → 05 加項目 → 06 確認 → 07 出單完成。
 /// 從 HomeScreen 以 fullScreenCover 形式呈現，linear push 流程。
