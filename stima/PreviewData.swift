@@ -51,6 +51,11 @@ enum PreviewData {
         template.phone = "02-2345-6789"
         ctx.insert(template)
 
+        // 範例自訂項目
+        ctx.insert(CustomItem(name: "拆冷氣",       unit: "式",   price: 4500, category: "拆除"))
+        ctx.insert(CustomItem(name: "磨地板",       unit: "坪",   price: 1200, category: "泥作"))
+        ctx.insert(CustomItem(name: "外牆貼磚",     unit: "坪",   price: 3200, category: "泥作"))
+
         return container
     }()
 

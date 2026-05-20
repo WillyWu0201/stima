@@ -6,6 +6,11 @@ import SwiftData
 /// 項目分類管理 / 自訂項目管理留在下個 commit。
 struct SettingsScreen: View {
     @Environment(AppSettings.self) private var settings
+    @Environment(\.modelContext) private var modelContext
+    @Query(sort: \CustomItem.name) private var customItems: [CustomItem]
+
+    /// 不可刪除的內建分類（仍可編輯名稱，但不會出現垃圾桶按鈕）。
+    private static let fixedCategories: Set<String> = ["拆除", "水電", "泥作", "木作", "油漆"]
 
     var body: some View {
         @Bindable var settings = settings
@@ -26,36 +31,10 @@ struct SettingsScreen: View {
                     businessCard
 
                     SectionTitle("項目分類")
-                    Text("分類管理 — TODO")     // 下個 commit
-                        .font(AppFont.sans(13))
-                        .foregroundStyle(Color.inkFaint)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 12)
-                        .background(Color.appSurface,
-                                    in: RoundedRectangle(cornerRadius: Radius.card,
-                                                         style: .continuous))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: Radius.card,
-                                             style: .continuous)
-                                .strokeBorder(Color.appBorder, lineWidth: 1)
-                        )
+                    categoriesCard
 
-                    SectionTitle("我的自訂項目")
-                    Text("自訂項目 — TODO")     // 下個 commit
-                        .font(AppFont.sans(13))
-                        .foregroundStyle(Color.inkFaint)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 12)
-                        .background(Color.appSurface,
-                                    in: RoundedRectangle(cornerRadius: Radius.card,
-                                                         style: .continuous))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: Radius.card,
-                                             style: .continuous)
-                                .strokeBorder(Color.appBorder, lineWidth: 1)
-                        )
+                    SectionTitle("我的自訂項目（\(customItems.count)）")
+                    customItemsCard
 
                     SectionTitle("國際化")
                     internationalCard
@@ -211,6 +190,83 @@ struct SettingsScreen: View {
         }
     }
 
+    // MARK: - 項目分類
+
+    private var categoriesCard: some View {
+        @Bindable var settings = settings
+        // 顯示分類時排除「常用」（系統 tag、永遠在最上）
+        let editable = settings.categories.filter { $0 != "常用" }
+        return AppCard(padded: false) {
+            VStack(spacing: 0) {
+                ForEach(Array(editable.enumerated()), id: \.element) { index, cat in
+                    CategoryRow(
+                        name: cat,
+                        isFixed: Self.fixedCategories.contains(cat),
+                        onRename: { newName in renameCategory(cat, to: newName) },
+                        onDelete: { deleteCategory(cat) }
+                    )
+                    if index < editable.count - 1 {
+                        Rectangle()
+                            .fill(Color.appBorder)
+                            .frame(height: 1)
+                    }
+                }
+                Rectangle()
+                    .fill(Color.appBorder)
+                    .frame(height: 1)
+                NewCategoryInput { addCategory($0) }
+            }
+        }
+    }
+
+    private func renameCategory(_ old: String, to new: String) {
+        let trimmed = new.trimmingCharacters(in: .whitespaces)
+        guard !trimmed.isEmpty, trimmed != old, !settings.categories.contains(trimmed) else { return }
+        settings.categories = settings.categories.map { $0 == old ? trimmed : $0 }
+    }
+
+    private func deleteCategory(_ cat: String) {
+        settings.categories.removeAll { $0 == cat }
+    }
+
+    private func addCategory(_ name: String) {
+        let trimmed = name.trimmingCharacters(in: .whitespaces)
+        guard !trimmed.isEmpty, !settings.categories.contains(trimmed) else { return }
+        settings.categories.append(trimmed)
+    }
+
+    // MARK: - 自訂項目
+
+    @ViewBuilder
+    private var customItemsCard: some View {
+        if customItems.isEmpty {
+            AppCard {
+                Text("還沒加過自訂項目。\n在「新增報價單 → 加項目 → + 自訂」就能加。")
+                    .font(AppFont.sans(13))
+                    .foregroundStyle(Color.inkSoft)
+                    .lineSpacing(3)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .multilineTextAlignment(.center)
+                    .padding(.vertical, 4)
+            }
+        } else {
+            AppCard(padded: false) {
+                VStack(spacing: 0) {
+                    ForEach(Array(customItems.enumerated()), id: \.element.id) { index, item in
+                        CustomItemRow(item: item) {
+                            modelContext.delete(item)
+                        }
+                        if index < customItems.count - 1 {
+                            Rectangle()
+                                .fill(Color.appBorder)
+                                .frame(height: 1)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     // MARK: - 國際化
 
     private var internationalCard: some View {
@@ -313,6 +369,178 @@ struct SettingsScreen: View {
         case "PHP": "菲律賓 VAT"
         default:    "—"
         }
+    }
+}
+
+// MARK: - 分類列
+
+private struct CategoryRow: View {
+    let name: String
+    let isFixed: Bool
+    let onRename: (String) -> Void
+    let onDelete: () -> Void
+
+    @State private var isEditing = false
+    @State private var draftName = ""
+    @FocusState private var focused: Bool
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Circle()
+                .fill(Color.accent)
+                .frame(width: 6, height: 6)
+
+            if isEditing {
+                TextField("", text: $draftName)
+                    .font(AppFont.sans(15))
+                    .foregroundStyle(Color.ink)
+                    .focused($focused)
+                    .submitLabel(.done)
+                    .onSubmit { commitRename() }
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(Color.surfaceAlt,
+                                in: RoundedRectangle(cornerRadius: 6))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 6)
+                            .strokeBorder(Color.accent, lineWidth: 1.5)
+                    )
+            } else {
+                Text(name)
+                    .font(AppFont.sans(15, weight: .medium))
+                    .foregroundStyle(Color.ink)
+            }
+
+            Spacer()
+
+            Button {
+                if isEditing {
+                    commitRename()
+                } else {
+                    draftName = name
+                    isEditing = true
+                    focused = true
+                }
+            } label: {
+                Text(isEditing ? "完成" : "編輯")
+                    .font(AppFont.sans(12, weight: .semibold))
+                    .foregroundStyle(Color.inkSoft)
+                    .padding(4)
+            }
+            .buttonStyle(.plain)
+
+            if !isFixed && !isEditing {
+                Button(action: onDelete) {
+                    Image(systemName: "trash")
+                        .font(.system(size: 14))
+                        .foregroundStyle(Color.accent)
+                        .padding(4)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("刪除分類")
+            }
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
+    }
+
+    private func commitRename() {
+        let v = draftName.trimmingCharacters(in: .whitespaces)
+        if !v.isEmpty && v != name {
+            onRename(v)
+        }
+        isEditing = false
+        focused = false
+    }
+}
+
+// MARK: - 新增分類輸入列
+
+private struct NewCategoryInput: View {
+    let onAdd: (String) -> Void
+    @State private var input = ""
+
+    var body: some View {
+        HStack(spacing: 8) {
+            TextField("加新分類，例：清潔、家具", text: $input)
+                .font(AppFont.sans(14))
+                .foregroundStyle(Color.ink)
+                .submitLabel(.done)
+                .onSubmit { commit() }
+                .padding(.horizontal, 8)
+                .padding(.vertical, 6)
+                .background(Color.appSurface,
+                            in: RoundedRectangle(cornerRadius: 6))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 6)
+                        .strokeBorder(Color.appBorder, lineWidth: 1)
+                )
+
+            Button(action: commit) {
+                HStack(spacing: 4) {
+                    Image(systemName: "plus")
+                        .font(.system(size: 12, weight: .bold))
+                    Text("加")
+                        .font(AppFont.sans(13, weight: .semibold))
+                }
+                .foregroundStyle(input.isEmpty ? Color.inkFaint : .white)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(input.isEmpty ? Color.bgSoft : Color.accent,
+                            in: RoundedRectangle(cornerRadius: 6))
+            }
+            .buttonStyle(.plain)
+            .disabled(input.isEmpty)
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 10)
+        .background(Color.surfaceAlt)
+    }
+
+    private func commit() {
+        let v = input.trimmingCharacters(in: .whitespaces)
+        guard !v.isEmpty else { return }
+        onAdd(v)
+        input = ""
+    }
+}
+
+// MARK: - 自訂項目列
+
+private struct CustomItemRow: View {
+    let item: CustomItem
+    let onDelete: () -> Void
+
+    var body: some View {
+        HStack(spacing: 10) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(item.name)
+                    .font(AppFont.sans(15, weight: .semibold))
+                    .foregroundStyle(Color.ink)
+                HStack(spacing: 6) {
+                    Text("$\(item.price.formatted()) / \(item.unit)")
+                        .font(AppFont.mono(12))
+                        .foregroundStyle(Color.inkSoft)
+                    Text(item.category)
+                        .font(AppFont.sans(11, weight: .semibold))
+                        .foregroundStyle(Color.accent)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 1)
+                        .background(Color.accent.opacity(0.12), in: Capsule())
+                }
+            }
+            Spacer()
+            Button(action: onDelete) {
+                Image(systemName: "trash")
+                    .font(.system(size: 14))
+                    .foregroundStyle(Color.accent)
+                    .padding(4)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("刪除")
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
     }
 }
 
