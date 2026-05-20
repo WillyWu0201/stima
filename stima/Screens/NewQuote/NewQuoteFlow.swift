@@ -9,6 +9,7 @@ struct NewQuoteFlow: View {
 
     @State private var draft = NewQuoteDraft()
     @State private var path: [Step] = []
+    @Environment(\.modelContext) private var modelContext
 
     enum Step: Hashable {
         case items
@@ -31,12 +32,34 @@ struct NewQuoteFlow: View {
                         onNext: { path.append(.review) }
                     )
                 case .review:
-                    Text("畫面 06 — TODO")  // 待 Task #4
+                    NewQuoteReviewScreen(
+                        draft: draft,
+                        onFinish: { finalize() }
+                    )
                 case .exported:
                     Text("畫面 07 — TODO")  // 待 Task #5
                 }
             }
         }
+    }
+
+    /// 把 draft 寫成 Quote 進 SwiftData，然後推進 .exported。
+    private func finalize() {
+        let quote = Quote(
+            clientName: draft.clientName.isEmpty ? "未命名客戶" : draft.clientName,
+            location:   draft.location,
+            date:       draft.date,
+            folder:     draft.folder,
+            status:     .ongoing
+        )
+        for item in draft.items {
+            quote.items.append(
+                QuoteItem(name: item.name, unit: item.unit, qty: item.qty, price: item.price)
+            )
+        }
+        quote.recalcTotal()
+        modelContext.insert(quote)
+        path.append(.exported)
     }
 }
 
