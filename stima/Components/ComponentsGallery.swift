@@ -42,11 +42,11 @@ struct ComponentsGallery: View {
                 }
 
                 section("Money") {
-                    HStack(alignment: .lastTextBaseline, spacing: 20) {
-                        Money(285_000)
-                        Money(285_000, size: 28, color: .accent2)
-                        Money(156_000, size: 20, color: .positive)
-                        Money(98_000,  size: 16, color: .ink, bold: false)
+                    VStack(alignment: .leading, spacing: 10) {
+                        moneyRow("預設（18pt）",  Money(285_000))
+                        moneyRow("大金額（28pt）", Money(285_000, size: 28, color: .accent2))
+                        moneyRow("待收款（20pt）", Money(156_000, size: 20, color: .positive))
+                        moneyRow("小計（16pt）",   Money(98_000,  size: 16, color: .ink, bold: false))
                     }
                 }
 
@@ -111,6 +111,17 @@ struct ComponentsGallery: View {
                     Money(52_000, size: 18, color: .accent2)
                 }
             }
+        }
+    }
+
+    @ViewBuilder
+    private func moneyRow<M: View>(_ label: String, _ money: M) -> some View {
+        HStack {
+            Text(label)
+                .font(AppFont.sans(AppFont.sublabel))
+                .foregroundStyle(Color.inkSoft)
+            Spacer()
+            money
         }
     }
 
