@@ -55,29 +55,30 @@ struct DetailScreen: View {
     // MARK: - Cards
 
     private var clientCard: some View {
-        AppCard(onTap: {
-            // TODO: 推進客戶詳情頁
-        }) {
-            HStack(spacing: 12) {
-                ClientAvatar(name: quote.clientName)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(quote.clientName)
-                        .font(AppFont.sans(15, weight: .bold))
-                        .foregroundStyle(Color.ink)
-                    Text(matchingClient?.phone ?? "尚未加入客戶簿")
-                        .font(AppFont.mono(12))
-                        .foregroundStyle(Color.inkSoft)
+        NavigationLink(value: ClientRoute(name: quote.clientName)) {
+            AppCard {
+                HStack(spacing: 12) {
+                    ClientAvatar(name: quote.clientName)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(quote.clientName)
+                            .font(AppFont.sans(15, weight: .bold))
+                            .foregroundStyle(Color.ink)
+                        Text(matchingClient?.phone ?? "尚未加入客戶簿")
+                            .font(AppFont.mono(12))
+                            .foregroundStyle(Color.inkSoft)
+                    }
+                    Spacer()
+                    HStack(spacing: 2) {
+                        Text("查看客戶")
+                            .font(AppFont.sans(12, weight: .semibold))
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 11, weight: .bold))
+                    }
+                    .foregroundStyle(Color.accent)
                 }
-                Spacer()
-                HStack(spacing: 2) {
-                    Text("查看客戶")
-                        .font(AppFont.sans(12, weight: .semibold))
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 11, weight: .bold))
-                }
-                .foregroundStyle(Color.accent)
             }
         }
+        .buttonStyle(.plain)
     }
 
     private var factsCard: some View {

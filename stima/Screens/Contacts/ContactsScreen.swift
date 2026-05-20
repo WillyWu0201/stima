@@ -107,7 +107,7 @@ private struct ClientCard: View {
     let summary: (count: Int, paid: Int)
 
     var body: some View {
-        NavigationLink(value: client) {
+        NavigationLink(value: ClientRoute(name: client.name)) {
             VStack(alignment: .leading, spacing: 0) {
                 topPart
                     .padding(.horizontal, 14)

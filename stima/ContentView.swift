@@ -5,22 +5,13 @@ struct ContentView: View {
     var body: some View {
         TabView {
             Tab("報價單", systemImage: "doc.text") {
-                NavigationStack {
-                    HomeScreen()
-                        .navigationDestination(for: Quote.self) { quote in
-                            DetailScreen(quote: quote)
-                        }
-                }
+                NavigationStack { HomeScreen().appRoutes() }
             }
             Tab("統計", systemImage: "chart.bar") {
-                NavigationStack {
-                    StatsScreen()
-                }
+                NavigationStack { StatsScreen().appRoutes() }
             }
             Tab("設定", systemImage: "gearshape") {
-                NavigationStack {
-                    SettingsScreen()
-                }
+                NavigationStack { SettingsScreen().appRoutes() }
             }
         }
         .tint(.accent)
