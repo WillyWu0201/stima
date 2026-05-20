@@ -36,13 +36,6 @@ struct StatsScreen: View {
     }
 }
 
-struct SettingsScreen: View {
-    var body: some View {
-        Text("設定")
-            .navigationTitle("設定")
-    }
-}
-
 #Preview {
     ContentView()
 }
