@@ -10,6 +10,8 @@ struct PrimaryButton: View {
     var systemImage: String? = nil
     let action: () -> Void
 
+    @Environment(\.isEnabled) private var isEnabled
+
     init(_ title: String, systemImage: String? = nil, action: @escaping () -> Void) {
         self.title = title
         self.systemImage = systemImage
@@ -29,7 +31,10 @@ struct PrimaryButton: View {
             .foregroundStyle(.white)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 15)
-            .background(Color.accent, in: RoundedRectangle(cornerRadius: Radius.card, style: .continuous))
+            .background(
+                isEnabled ? Color.accent : Color.inkFaint,
+                in: RoundedRectangle(cornerRadius: Radius.card, style: .continuous)
+            )
         }
         .buttonStyle(.plain)
     }

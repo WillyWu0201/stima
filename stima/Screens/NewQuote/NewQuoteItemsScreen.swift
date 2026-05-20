@@ -127,7 +127,6 @@ struct NewQuoteItemsScreen: View {
                 PrimaryButton("下一步", systemImage: "arrow.right") {
                     onNext()
                 }
-                .opacity(draft.items.isEmpty ? 0.5 : 1)
                 .disabled(draft.items.isEmpty)
             }
         } above: {
