@@ -12,6 +12,14 @@ struct Money: View {
     var prefix: String = "$"
     var bold: Bool = true
 
+    init(_ amount: Int, size: CGFloat = 18, color: Color = .accent, prefix: String = "$", bold: Bool = true) {
+        self.amount = amount
+        self.size = size
+        self.color = color
+        self.prefix = prefix
+        self.bold = bold
+    }
+
     var body: some View {
         Text("\(prefix)\(amount.formatted(.number.grouping(.automatic)))")
             .font(AppFont.sans(size, weight: bold ? .bold : .medium))
