@@ -42,5 +42,6 @@ struct NewQuoteFlow: View {
 
 #Preview {
     NewQuoteFlow(onClose: {}, onFinished: {})
+        .environment(AppSettings())
         .modelContainer(PreviewData.container)
 }

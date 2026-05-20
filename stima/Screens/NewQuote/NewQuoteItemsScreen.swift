@@ -7,37 +7,77 @@ struct NewQuoteItemsScreen: View {
     let onNext: () -> Void
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(AppSettings.self) private var settings
     @State private var pickerOpen = false
+    @State private var toastText: String? = nil
 
     var body: some View {
-        VStack(spacing: 0) {
-            header
+        ZStack(alignment: .top) {
+            VStack(spacing: 0) {
+                header
 
-            ScrollView {
-                VStack(spacing: 8) {
-                    if draft.items.isEmpty {
-                        emptyState
-                    } else {
-                        ForEach($draft.items) { $item in
-                            EditableItemRow(item: $item) {
-                                remove(item)
+                ScrollView {
+                    VStack(spacing: 8) {
+                        if draft.items.isEmpty {
+                            emptyState
+                        } else {
+                            ForEach($draft.items) { $item in
+                                EditableItemRow(item: $item) {
+                                    remove(item)
+                                }
                             }
                         }
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 16)
+                    .padding(.bottom, 40)
                 }
-                .padding(.horizontal, 20)
-                .padding(.vertical, 16)
-                .padding(.bottom, 40)
+            }
+            .background(Color.bgPaper)
+
+            if let toastText {
+                toast(text: toastText)
+                    .padding(.top, 110)
+                    .transition(.move(edge: .top).combined(with: .opacity))
             }
         }
-        .background(Color.bgPaper)
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .bottom) { bottomBar }
         .sheet(isPresented: $pickerOpen) {
-            // TODO: ItemPickerSheet 下一個 commit 接上
-            Text("ItemPickerSheet — TODO")
-                .presentationDetents([.large])
-                .presentationDragIndicator(.visible)
+            ItemPickerSheet(categories: settings.categories) { item in
+                draft.items.append(item)
+                showToast(item.name)
+            }
+            .presentationDetents([.large])
+            .presentationDragIndicator(.visible)
+        }
+    }
+
+    // MARK: - Toast
+
+    private func toast(text: String) -> some View {
+        HStack(spacing: 6) {
+            Image(systemName: "checkmark")
+                .font(.system(size: 13, weight: .bold))
+            Text("已加 「\(text)」")
+                .font(AppFont.sans(13, weight: .semibold))
+        }
+        .foregroundStyle(Color.bgPaper)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 8)
+        .background(Color.ink, in: Capsule())
+        .shadow(color: .black.opacity(0.25), radius: 12, x: 0, y: 6)
+    }
+
+    private func showToast(_ name: String) {
+        withAnimation(.easeOut(duration: 0.2)) {
+            toastText = name
+        }
+        Task {
+            try? await Task.sleep(for: .seconds(1.4))
+            withAnimation(.easeIn(duration: 0.2)) {
+                toastText = nil
+            }
         }
     }
 
@@ -207,6 +247,7 @@ private struct EditableItemRow: View {
     NavigationStack {
         NewQuoteItemsScreen(draft: NewQuoteDraft(), onNext: {})
     }
+    .environment(AppSettings())
 }
 
 #Preview("已加幾項") {
@@ -218,4 +259,5 @@ private struct EditableItemRow: View {
     return NavigationStack {
         NewQuoteItemsScreen(draft: draft, onNext: {})
     }
+    .environment(AppSettings())
 }
