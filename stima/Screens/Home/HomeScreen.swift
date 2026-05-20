@@ -159,6 +159,9 @@ struct HomeScreen: View {
 #Preview {
     NavigationStack {
         HomeScreen()
+            .navigationDestination(for: Quote.self) { quote in
+                DetailScreen(quote: quote)
+            }
     }
     .environment(PreviewData.settings)
     .modelContainer(PreviewData.container)
