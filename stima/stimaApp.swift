@@ -39,8 +39,7 @@ struct RootView: View {
         if settings.hasSeenOnboarding {
             ContentView()
         } else {
-            // OnboardingFlow 完成後設 settings.hasSeenOnboarding = true
-            Text("Onboarding — TODO")
+            OnboardingFlow()
         }
     }
 }
