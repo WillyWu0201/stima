@@ -9,6 +9,7 @@ struct HomeScreen: View {
 
     @State private var search: String = ""
     @State private var selectedTab: FilterTab = .all
+    @State private var showingNewQuote = false
 
     enum FilterTab: Hashable {
         case all
@@ -24,6 +25,12 @@ struct HomeScreen: View {
         }
         .background(Color.bgPaper)
         .toolbar(.hidden, for: .navigationBar)
+        .fullScreenCover(isPresented: $showingNewQuote) {
+            NewQuoteFlow(
+                onClose:    { showingNewQuote = false },
+                onFinished: { showingNewQuote = false }
+            )
+        }
     }
 
     // MARK: - Sections
@@ -35,7 +42,7 @@ struct HomeScreen: View {
             accent: true
         ) {
             Button {
-                // TODO: 推進新增報價單流程
+                showingNewQuote = true
             } label: {
                 Image(systemName: "plus")
                     .font(.system(size: 24, weight: .regular))
