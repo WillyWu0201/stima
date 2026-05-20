@@ -32,26 +32,25 @@ struct PDFTemplateScreen: View {
     private static let fontOptions: [String] = ["黑體", "明體", "楷體"]
 
     var body: some View {
-        @Bindable var t = template
         VStack(spacing: 0) {
             header
 
             ScrollView {
                 VStack(alignment: .leading, spacing: Spacing.cardGap) {
                     SectionTitle("商號識別")
-                    businessCard(t: $t)
+                    businessCard
 
                     SectionTitle("Logo 與印章")
                     uploadCard
 
                     SectionTitle("聯絡資訊")
-                    contactCard(t: $t)
+                    contactCard
 
                     SectionTitle("付款條件 & 簽名")
-                    paymentCard(t: $t)
+                    paymentCard
 
                     SectionTitle("外觀")
-                    appearanceCard(t: $t)
+                    appearanceCard
 
                     if !settings.isPro {
                         proLimitCard
@@ -93,14 +92,15 @@ struct PDFTemplateScreen: View {
 
     // MARK: - Cards
 
-    private func businessCard(t: Binding<PDFTemplate>) -> some View {
-        AppCard {
+    private var businessCard: some View {
+        @Bindable var t = template
+        return AppCard {
             VStack(alignment: .leading, spacing: 12) {
                 labeledField("公司／工作室名稱（抬頭）") {
-                    AppTextField(text: t.businessName, placeholder: "例：大發工程行")
+                    AppTextField(text: $t.businessName, placeholder: "例：大發工程行")
                 }
                 labeledField("標語／slogan（可空白）") {
-                    AppTextField(text: t.slogan, placeholder: "例：交期不拖、價錢實在")
+                    AppTextField(text: $t.slogan, placeholder: "例：交期不拖、價錢實在")
                 }
             }
         }
@@ -122,57 +122,59 @@ struct PDFTemplateScreen: View {
         }
     }
 
-    private func contactCard(t: Binding<PDFTemplate>) -> some View {
-        AppCard {
+    private var contactCard: some View {
+        @Bindable var t = template
+        return AppCard {
             VStack(alignment: .leading, spacing: 12) {
                 labeledField("電話", systemImage: "phone") {
-                    AppTextField(text: t.phone, placeholder: "0912-345-678")
+                    AppTextField(text: $t.phone, placeholder: "0912-345-678")
                         .keyboardType(.phonePad)
                 }
                 labeledField("Email") {
-                    AppTextField(text: t.email, placeholder: "chen@example.com")
+                    AppTextField(text: $t.email, placeholder: "chen@example.com")
                         .keyboardType(.emailAddress)
                         .textInputAutocapitalization(.never)
                 }
                 labeledField("統編／營業地址") {
-                    AppTextField(text: t.address,
+                    AppTextField(text: $t.address,
                                  placeholder: "例：統編 12345678 / 台北市信義區⋯")
                 }
             }
         }
     }
 
-    private func paymentCard(t: Binding<PDFTemplate>) -> some View {
-        AppCard {
+    private var paymentCard: some View {
+        @Bindable var t = template
+        return AppCard {
             VStack(alignment: .leading, spacing: 12) {
                 labeledField("付款條件") {
-                    paymentTermsEditor(text: t.paymentTerms)
+                    paymentTermsEditor(text: $t.paymentTerms)
                 }
                 labeledField("有效期限（天）") {
                     HStack(spacing: 4) {
                         ForEach(Self.validDayOptions, id: \.self) { d in
-                            inkChip("\(d) 天", isActive: t.validDays.wrappedValue == d) {
-                                t.validDays.wrappedValue = d
+                            inkChip("\(d) 天", isActive: t.validDays == d) {
+                                t.validDays = d
                             }
                         }
                     }
                 }
 
                 Button {
-                    t.showSignatureLine.wrappedValue.toggle()
+                    t.showSignatureLine.toggle()
                 } label: {
                     HStack(spacing: 10) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 4)
-                                .fill(t.showSignatureLine.wrappedValue ? Color.accent : Color.appSurface)
+                                .fill(t.showSignatureLine ? Color.accent : Color.appSurface)
                                 .frame(width: 18, height: 18)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 4)
-                                        .strokeBorder(t.showSignatureLine.wrappedValue
+                                        .strokeBorder(t.showSignatureLine
                                                       ? Color.accent : Color.borderStrong,
                                                       lineWidth: 1.5)
                                 )
-                            if t.showSignatureLine.wrappedValue {
+                            if t.showSignatureLine {
                                 Image(systemName: "checkmark")
                                     .font(.system(size: 11, weight: .bold))
                                     .foregroundStyle(.white)
@@ -198,15 +200,16 @@ struct PDFTemplateScreen: View {
         }
     }
 
-    private func appearanceCard(t: Binding<PDFTemplate>) -> some View {
-        AppCard {
+    private var appearanceCard: some View {
+        @Bindable var t = template
+        return AppCard {
             VStack(alignment: .leading, spacing: 14) {
                 labeledField("主色（PDF 上的強調色）") {
                     HStack(spacing: 10) {
                         ForEach(Self.brandColors, id: \.self) { hex in
                             ColorSwatch(hex: hex,
-                                        isActive: t.brandColor.wrappedValue == hex) {
-                                t.brandColor.wrappedValue = hex
+                                        isActive: t.brandColor == hex) {
+                                t.brandColor = hex
                             }
                         }
                     }
@@ -215,22 +218,22 @@ struct PDFTemplateScreen: View {
                     HStack(spacing: 6) {
                         ForEach(Self.fontOptions, id: \.self) { f in
                             Button {
-                                t.fontStyle.wrappedValue = f
+                                t.fontStyle = f
                             } label: {
                                 Text(f)
                                     .font(AppFont.sans(13, weight: .semibold))
-                                    .foregroundStyle(t.fontStyle.wrappedValue == f ? .white : Color.ink)
+                                    .foregroundStyle(t.fontStyle == f ? .white : Color.ink)
                                     .frame(maxWidth: .infinity)
                                     .padding(.vertical, 8)
                                     .background(
-                                        t.fontStyle.wrappedValue == f ? Color.ink : Color.appSurface,
+                                        t.fontStyle == f ? Color.ink : Color.appSurface,
                                         in: RoundedRectangle(cornerRadius: Radius.card,
                                                              style: .continuous)
                                     )
                                     .overlay(
                                         RoundedRectangle(cornerRadius: Radius.card,
                                                          style: .continuous)
-                                            .strokeBorder(t.fontStyle.wrappedValue == f
+                                            .strokeBorder(t.fontStyle == f
                                                           ? Color.ink : Color.appBorder, lineWidth: 1)
                                     )
                             }
