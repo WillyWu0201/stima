@@ -7,6 +7,9 @@ struct ContentView: View {
             Tab("報價單", systemImage: "doc.text") {
                 NavigationStack {
                     HomeScreen()
+                        .navigationDestination(for: Quote.self) { quote in
+                            DetailScreen(quote: quote)
+                        }
                 }
             }
             Tab("統計", systemImage: "chart.bar") {

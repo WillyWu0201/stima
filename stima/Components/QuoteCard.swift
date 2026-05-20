@@ -1,12 +1,12 @@
 import SwiftUI
 
 /// 報價單列表卡片。主要在 HomeScreen 顯示，未來客戶詳情頁的歷史報價也會用。
+/// 本身不負責點擊行為，由外層 NavigationLink 或 Button 處理。
 struct QuoteCard: View {
     let quote: Quote
-    let onTap: () -> Void
 
     var body: some View {
-        AppCard(onTap: onTap) {
+        AppCard {
             VStack(alignment: .leading, spacing: 0) {
                 topRow
                     .padding(.bottom, 6)
@@ -84,7 +84,7 @@ struct QuoteCard: View {
     ScrollView {
         VStack(spacing: 10) {
             ForEach(PreviewData.makeSampleQuotes(), id: \.id) { q in
-                QuoteCard(quote: q) { }
+                QuoteCard(quote: q)
             }
         }
         .padding()

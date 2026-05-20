@@ -89,9 +89,10 @@ struct HomeScreen: View {
                     emptyState
                 } else {
                     ForEach(filteredQuotes) { quote in
-                        QuoteCard(quote: quote) {
-                            // TODO: 推進詳情頁
+                        NavigationLink(value: quote) {
+                            QuoteCard(quote: quote)
                         }
+                        .buttonStyle(.plain)
                     }
                 }
             }
