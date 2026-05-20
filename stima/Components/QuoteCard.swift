@@ -46,11 +46,11 @@ struct QuoteCard: View {
     }
 
     private var locationText: Text {
-        var t = Text(Image(systemName: "mappin")) + Text("  \(quote.location)")
         if let folder = quote.folder {
-            t = t + Text("   ·   ") + Text(Image(systemName: "folder")) + Text("  \(folder)")
+            Text("\(Image(systemName: "mappin"))  \(quote.location)   ·   \(Image(systemName: "folder"))  \(folder)")
+        } else {
+            Text("\(Image(systemName: "mappin"))  \(quote.location)")
         }
-        return t
     }
 
     // 項目數 + 總金額
