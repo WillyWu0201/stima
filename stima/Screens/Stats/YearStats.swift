@@ -85,7 +85,11 @@ enum YearStatsCalculator {
             .map { .init(name: $0.key, count: $0.value.count, totalQty: $0.value.qty,
                          totalRev: $0.value.rev, unit: $0.value.unit) }
 
-        let prevPaid = prevYearQuotes
+        // 先把 reduce 抽出來，避免大 init 內多次 type inference 拖慢編譯
+        let paidTotal    = paid.reduce(0)    { $0 + $1.total }
+        let doneTotal    = done.reduce(0)    { $0 + $1.total }
+        let ongoingTotal = ongoing.reduce(0) { $0 + $1.total }
+        let prevPaid     = prevYearQuotes
             .filter { $0.quoteStatus == .paid }
             .reduce(0) { $0 + $1.total }
 
@@ -94,9 +98,9 @@ enum YearStatsCalculator {
             paidCount:    paid.count,
             doneCount:    done.count,
             ongoingCount: ongoing.count,
-            paidTotal:    paid.reduce(0) { $0 + $1.total },
-            doneTotal:    done.reduce(0) { $0 + $1.total },
-            ongoingTotal: ongoing.reduce(0) { $0 + $1.total },
+            paidTotal:    paidTotal,
+            doneTotal:    doneTotal,
+            ongoingTotal: ongoingTotal,
             monthly:      monthly,
             maxMonthly:   maxMonthly,
             topClient:    topClient,
