@@ -186,7 +186,7 @@ private struct EditableItemRow: View {
                         .font(AppFont.sans(15, weight: .semibold))
                         .foregroundStyle(Color.ink)
 
-                    HStack(spacing: 4) {
+                    HStack(spacing: 6) {
                         miniNumberField(
                             value: Binding(
                                 get: { String(Int(item.qty)) },
@@ -195,8 +195,9 @@ private struct EditableItemRow: View {
                             width: 44
                         )
                         Text("\(item.unit) × $")
-                            .font(AppFont.mono(12))
+                            .font(AppFont.sans(13))
                             .foregroundStyle(Color.inkSoft)
+                            .fixedSize()
                         miniNumberField(
                             value: Binding(
                                 get: { String(item.price) },
