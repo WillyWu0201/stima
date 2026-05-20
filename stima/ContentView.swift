@@ -24,14 +24,7 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Placeholder screens (replace with real implementations)
-
-struct HomeScreen: View {
-    var body: some View {
-        Text("報價單列表")
-            .navigationTitle("我的報價單")
-    }
-}
+// MARK: - Placeholder screens (待實作)
 
 struct StatsScreen: View {
     var body: some View {
