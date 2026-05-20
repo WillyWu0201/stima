@@ -83,13 +83,14 @@ struct DetailScreen: View {
     private var factsCard: some View {
         AppCard {
             VStack(alignment: .leading, spacing: 12) {
-                HStack(alignment: .top, spacing: 18) {
+                HStack(alignment: .top, spacing: 16) {
                     fact(symbol: "mappin", label: "地點", value: quote.location)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     fact(symbol: "calendar", label: "日期", value: dateString)
-                    Spacer(minLength: 0)
                 }
                 if let folder = quote.folder {
                     fact(symbol: "folder", label: "分類", value: folder)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         }
@@ -108,8 +109,8 @@ struct DetailScreen: View {
             Text(value)
                 .font(AppFont.sans(14, weight: .medium))
                 .foregroundStyle(Color.ink)
+                .fixedSize(horizontal: false, vertical: true)
         }
-        .frame(minWidth: 80, alignment: .leading)
     }
 
     private var itemsCard: some View {
@@ -222,9 +223,18 @@ struct DetailScreen: View {
     }()
 }
 
-#Preview {
+#Preview("一般") {
     NavigationStack {
         DetailScreen(quote: PreviewData.makeSampleQuotes()[0])
+    }
+    .modelContainer(PreviewData.container)
+}
+
+#Preview("長地址") {
+    let q = PreviewData.makeSampleQuotes()[0]
+    q.location = "新北市板橋區文化路二段 150 號 12 樓之 3"
+    return NavigationStack {
+        DetailScreen(quote: q)
     }
     .modelContainer(PreviewData.container)
 }
