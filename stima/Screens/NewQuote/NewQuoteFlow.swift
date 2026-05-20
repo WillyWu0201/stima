@@ -9,7 +9,9 @@ struct NewQuoteFlow: View {
 
     @State private var draft = NewQuoteDraft()
     @State private var path: [Step] = []
+    @State private var wasFirstQuote = false
     @Environment(\.modelContext) private var modelContext
+    @Query private var allQuotes: [Quote]
 
     enum Step: Hashable {
         case items
@@ -37,7 +39,11 @@ struct NewQuoteFlow: View {
                         onFinish: { finalize() }
                     )
                 case .exported:
-                    Text("畫面 07 — TODO")  // 待 Task #5
+                    ExportedScreen(
+                        isFirstTime: wasFirstQuote,
+                        onHome:  { onFinished() },
+                        onShare: { /* TODO: ShareLink / UIActivityViewController */ }
+                    )
                 }
             }
         }
@@ -45,6 +51,9 @@ struct NewQuoteFlow: View {
 
     /// 把 draft 寫成 Quote 進 SwiftData，然後推進 .exported。
     private func finalize() {
+        // 在 insert 之前記錄是否為第一筆，以便 ExportedScreen 顯示不同文案。
+        wasFirstQuote = allQuotes.isEmpty
+
         let quote = Quote(
             clientName: draft.clientName.isEmpty ? "未命名客戶" : draft.clientName,
             location:   draft.location,
