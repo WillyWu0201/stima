@@ -1,0 +1,22 @@
+disabled_rules:
+  - trailing_whitespace       # Xcode handles this
+  - line_length               # long SwiftUI chains are acceptable
+  - file_length               # screen files can be long
+
+opt_in_rules:
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - private_outlet
+  - unused_import
+
+excluded:
+  - stima.xcodeproj
+  - stimaTests
+  - stimaUITests
+  - design_handoff_quote_app
+
+identifier_name:
+  min_length: 2
+
+type_name:
+  min_length: 3

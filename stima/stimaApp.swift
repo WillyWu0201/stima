@@ -1,10 +1,3 @@
-//
-//  stimaApp.swift
-//  stima
-//
-//  Created by Willy on 2026/5/20.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -12,21 +5,42 @@ import SwiftData
 struct stimaApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Quote.self,
+            QuoteItem.self,
+            Client.self,
+            CustomItem.self,
+            PDFTemplate.self,
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
+        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            return try ModelContainer(for: schema, configurations: [config])
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
 
+    @State private var settings = AppSettings()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environment(settings)
         }
         .modelContainer(sharedModelContainer)
+    }
+}
+
+// MARK: - Root — onboarding gate
+
+struct RootView: View {
+    @Environment(AppSettings.self) private var settings
+
+    var body: some View {
+        if settings.hasSeenOnboarding {
+            ContentView()
+        } else {
+            // OnboardingFlow 完成後設 settings.hasSeenOnboarding = true
+            Text("Onboarding — TODO")
+        }
     }
 }

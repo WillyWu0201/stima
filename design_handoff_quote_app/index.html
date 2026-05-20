@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>師傅報價單 — UI 三方向設計</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&family=Noto+Serif+TC:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #f0eee9;
+    font-family: 'Noto Sans TC', -apple-system, sans-serif;
+    color: #2a251f;
+    overflow: hidden;
+  }
+  /* hide horizontal scrollbars inside iPhones */
+  *::-webkit-scrollbar { width: 0; height: 0; }
+  * { scrollbar-width: none; }
+  input { font-family: inherit; }
+  input:focus { outline: none; }
+  button:focus { outline: none; }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- Shared dependencies -->
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+
+<!-- App pieces -->
+<script type="text/babel" src="data.jsx"></script>
+<script type="text/babel" src="icons.jsx"></script>
+<script type="text/babel" src="helpers.jsx"></script>
+<script type="text/babel" src="themes.jsx"></script>
+<script type="text/babel" src="components.jsx"></script>
+<script type="text/babel" src="onboarding.jsx"></script>
+<script type="text/babel" src="screens.jsx"></script>
+<script type="text/babel" src="screens-pro.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+
+<script type="text/babel">
+function Root() {
+  const [t, setTweak] = useTweaks(/*EDITMODE-BEGIN*/{
+    "dark": false,
+    "fontScale": 100
+  }/*EDITMODE-END*/);
+  const scale = t.fontScale / 100;
+
+  return (
+    <>
+      <DesignCanvas>
+        <DCSection
+          id="onboarding"
+          title="引導流程"
+          subtitle="首次開啟 → 自我介紹 → 「來建第一張」CTA。任何一台都可以直接點下去走完整段，coach mark 會幫忙指路。"
+        >
+          <DCArtboard id="splash"    label="01 · 歡迎"            width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="splash" />
+          </DCArtboard>
+          <DCArtboard id="intro"     label="02 · 功能介紹"        width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="intro" />
+          </DCArtboard>
+          <DCArtboard id="tutorial0" label="03 · 教學 CTA"        width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="tutorial0" />
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection
+          id="new-quote"
+          title="新增報價單（3 步）"
+          subtitle="基本資料 → 加項目 → 確認出單。首次走的話會帶 coach mark；之後新增就乾淨無提示。"
+        >
+          <DCArtboard id="new-info"   label="04 · 基本資料"    width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="new-info" />
+          </DCArtboard>
+          <DCArtboard id="new-info-map" label="04b · 從地圖選地點" width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="new-info"
+              initialMapOpen
+              seedDraft={{
+                client: '王先生', location: '台北市信義區',
+                date: '2026-05-20', items: [], folder: null, status: 'draft',
+              }} />
+          </DCArtboard>
+          <DCArtboard id="new-items"  label="05 · 加項目（項目庫）"      width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="new-items"
+              seedDraft={{
+                client: '王先生', location: '台北市信義區', date: '2026-05-20',
+                items: [
+                  { id: 1, name: '拆除磁磚', unit: '坪', qty: 10, price: 1800 },
+                  { id: 2, name: '油漆批土', unit: '坪', qty: 25, price: 850 },
+                ], folder: null, status: 'draft',
+              }} />
+          </DCArtboard>
+          <DCArtboard id="new-items-custom" label="05b · 自訂項目（舊版）"      width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="new-items"
+              initialPickerTab="自訂"
+              seedDraft={{
+                client: '王先生', location: '台北市信義區', date: '2026-05-20',
+                items: [
+                  { id: 1, name: '拆除磁磚', unit: '坪', qty: 10, price: 1800 },
+                ], folder: null, status: 'draft',
+              }} />
+          </DCArtboard>
+          <DCArtboard id="new-items-sheet" label="05c · 加項目 v2（partial sheet）"     width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="new-items"
+              useSheet
+              seedDraft={{
+                client: '王先生', location: '台北市信義區', date: '2026-05-20',
+                items: [
+                  { id: 1, name: '拆除磁磚', unit: '坪', qty: 10, price: 1800 },
+                  { id: 2, name: '油漆批土', unit: '坪', qty: 25, price: 850 },
+                ], folder: null, status: 'draft',
+              }} />
+          </DCArtboard>
+          <DCArtboard id="new-items-sheet-open" label="05d · v2 + sheet 打開狀態"  width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="new-items"
+              useSheet
+              initialSheetOpen
+              seedDraft={{
+                client: '王先生', location: '台北市信義區', date: '2026-05-20',
+                items: [
+                  { id: 1, name: '拆除磁磚', unit: '坪', qty: 10, price: 1800 },
+                  { id: 2, name: '油漆批土', unit: '坪', qty: 25, price: 850 },
+                ], folder: null, status: 'draft',
+              }} />
+          </DCArtboard>
+          <DCArtboard id="new-review" label="06 · 確認出單"    width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="new-review"
+              seedDraft={{
+                client: '王先生', location: '台北市信義區', date: '2026-05-20',
+                items: [
+                  { id: 1, name: '拆除磁磚', unit: '坪', qty: 10, price: 1800 },
+                  { id: 2, name: '冷氣排水管', unit: '式', qty: 1, price: 3500 },
+                  { id: 3, name: '油漆批土', unit: '坪', qty: 25, price: 850 },
+                ], folder: null, status: 'draft',
+              }} />
+          </DCArtboard>
+          <DCArtboard id="exported"   label="07 · 出單完成"    width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="exported" />
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection
+          id="main"
+          title="主畫面"
+          subtitle="列表（含分頁、搜尋）→ 詳情 → 統計 → 設定。每張卡片都可以點開。"
+        >
+          <DCArtboard id="home"   label="08 · 報價單列表" width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="home" />
+          </DCArtboard>
+          <DCArtboard id="detail" label="09 · 報價單詳情" width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="detail" />
+          </DCArtboard>
+          <DCArtboard id="stats"  label="10 · 營運統計"   width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="stats" />
+          </DCArtboard>
+          <DCArtboard id="settings" label="11 · 設定" width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="settings"
+              seedCustomLibrary={[
+                { name: '冷氣移機', unit: '式', price: 4500, category: '水電' },
+                { name: '外牆清洗', unit: '坪', price: 380, category: '清潔' },
+                { name: '門口踏墊更換', unit: '組', price: 1200, category: '常用' },
+              ]} />
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection
+          id="pro"
+          title="進階功能 / 商業化"
+          subtitle="客戶簿、PDF 模板自訂、分享、請款單、訂閱付費頁。"
+        >
+          <DCArtboard id="contacts" label="12 · 客戶簿" width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="contacts" />
+          </DCArtboard>
+          <DCArtboard id="contacts-add" label="12b · 新增客戶" width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="contacts" initialAddClientOpen />
+          </DCArtboard>
+          <DCArtboard id="pdf-template" label="13 · PDF 模板自訂" width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="pdf-template" />
+          </DCArtboard>
+          <DCArtboard id="pdf-preview" label="14 · PDF 預覽 sheet" width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="detail" initialPDFOpen />
+          </DCArtboard>
+          <DCArtboard id="invoice" label="15 · 請款單" width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="invoice" />
+          </DCArtboard>
+          <DCArtboard id="paywall" label="16 · 訂閱 PRO" width={402} height={874}>
+            <QuoteApp theme={THEME_A} dark={t.dark} scale={scale} initialScreen="paywall" />
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="字級 Font scale">
+          <TweakSlider
+            label="字體大小"
+            value={t.fontScale}
+            onChange={(v) => setTweak('fontScale', v)}
+            min={85} max={125} step={5} unit="%"
+          />
+        </TweakSection>
+        <TweakSection label="主題 Mode">
+          <TweakToggle
+            label="深色模式"
+            value={t.dark}
+            onChange={(v) => setTweak('dark', v)}
+          />
+        </TweakSection>
+      </TweaksPanel>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Root />);
+</script>
+
+</body>
+</html>
