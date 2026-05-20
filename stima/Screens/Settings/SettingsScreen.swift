@@ -168,24 +168,32 @@ struct SettingsScreen: View {
     private var businessCard: some View {
         AppCard(padded: false) {
             VStack(spacing: 0) {
-                SettingsRow(
-                    systemImage: "person",
-                    iconColor: .accent,
-                    label: "客戶簿",
-                    hint: "所有客戶與聯絡資料"
-                ) {
-                    // TODO: 推進 ContactsScreen
+                NavigationLink {
+                    ContactsScreen()
+                } label: {
+                    SettingsRow(
+                        systemImage: "person",
+                        iconColor: .accent,
+                        label: "客戶簿",
+                        hint: "所有客戶與聯絡資料"
+                    )
                 }
+                .buttonStyle(.plain)
+
                 rowDivider
-                SettingsRow(
-                    systemImage: "doc.text",
-                    iconColor: .accent,
-                    label: "報價單模板（PDF）",
-                    hint: "Logo、抬頭、付款條件、印章",
-                    proLabel: !settings.isPro
-                ) {
+
+                Button {
                     // TODO: 推進 PDFTemplateScreen
+                } label: {
+                    SettingsRow(
+                        systemImage: "doc.text",
+                        iconColor: .accent,
+                        label: "報價單模板（PDF）",
+                        hint: "Logo、抬頭、付款條件、印章",
+                        proLabel: !settings.isPro
+                    )
                 }
+                .buttonStyle(.plain)
             }
         }
     }
@@ -272,26 +280,39 @@ struct SettingsScreen: View {
     private var internationalCard: some View {
         AppCard(padded: false) {
             VStack(spacing: 0) {
-                SettingsRow(
-                    systemImage: "dollarsign.circle",
-                    iconColor: .cool,
-                    label: "貨幣",
-                    rightValue: Self.currencyLabel(settings.currency)
-                ) { /* TODO: 切換 */ }
+                Button { /* TODO: 切換貨幣 */ } label: {
+                    SettingsRow(
+                        systemImage: "dollarsign.circle",
+                        iconColor: .cool,
+                        label: "貨幣",
+                        rightValue: Self.currencyLabel(settings.currency)
+                    )
+                }
+                .buttonStyle(.plain)
+
                 rowDivider
-                SettingsRow(
-                    systemImage: "globe",
-                    iconColor: .cool,
-                    label: "語言",
-                    rightValue: Self.languageLabel(settings.language)
-                ) { /* TODO: 切換 */ }
+
+                Button { /* TODO: 切換語言 */ } label: {
+                    SettingsRow(
+                        systemImage: "globe",
+                        iconColor: .cool,
+                        label: "語言",
+                        rightValue: Self.languageLabel(settings.language)
+                    )
+                }
+                .buttonStyle(.plain)
+
                 rowDivider
-                SettingsRow(
-                    systemImage: "percent",
-                    iconColor: .cool,
-                    label: "稅制",
-                    rightValue: "\(Int(settings.taxRate))% · \(Self.taxRegion(settings.currency))"
-                ) { /* TODO: 切換 */ }
+
+                Button { /* TODO: 切換稅制 */ } label: {
+                    SettingsRow(
+                        systemImage: "percent",
+                        iconColor: .cool,
+                        label: "稅制",
+                        rightValue: "\(Int(settings.taxRate))% · \(Self.taxRegion(settings.currency))"
+                    )
+                }
+                .buttonStyle(.plain)
             }
         }
     }
@@ -301,19 +322,27 @@ struct SettingsScreen: View {
     private var miscCard: some View {
         AppCard(padded: false) {
             VStack(spacing: 0) {
-                SettingsRow(
-                    systemImage: "square.and.arrow.up",
-                    iconColor: .inkSoft,
-                    label: "匯出全部資料",
-                    hint: "備份成 Excel / CSV"
-                ) { /* TODO */ }
+                Button { /* TODO: 匯出 */ } label: {
+                    SettingsRow(
+                        systemImage: "square.and.arrow.up",
+                        iconColor: .inkSoft,
+                        label: "匯出全部資料",
+                        hint: "備份成 Excel / CSV"
+                    )
+                }
+                .buttonStyle(.plain)
+
                 rowDivider
-                SettingsRow(
-                    systemImage: "gearshape",
-                    iconColor: .inkSoft,
-                    label: "App 設定",
-                    hint: "通知、深色模式、字體大小"
-                ) { /* TODO */ }
+
+                Button { /* TODO: App 設定 */ } label: {
+                    SettingsRow(
+                        systemImage: "gearshape",
+                        iconColor: .inkSoft,
+                        label: "App 設定",
+                        hint: "通知、深色模式、字體大小"
+                    )
+                }
+                .buttonStyle(.plain)
             }
         }
     }
