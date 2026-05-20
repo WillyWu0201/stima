@@ -68,10 +68,18 @@ enum YearStatsCalculator {
             .map { .init(name: $0.key, count: clientCount[$0.key] ?? 0, total: $0.value) }
 
         // 最常做的項目（用 count 排序，取前 5）
-        var itemAgg: [String: (count: Int, qty: Double, rev: Int, unit: String)] = [:]
+        // 不用 tuple 是因為 Swift 對 dictionary 內 labeled tuple + Double/Int 混
+        // 推斷會很慢，曾把編譯卡住。
+        struct Aggregate {
+            var count: Int = 0
+            var qty: Double = 0
+            var rev: Int = 0
+            var unit: String = ""
+        }
+        var itemAgg: [String: Aggregate] = [:]
         for q in yearQuotes {
             for it in q.items {
-                var e = itemAgg[it.name] ?? (0, 0, 0, it.unit)
+                var e = itemAgg[it.name, default: Aggregate()]
                 e.count += 1
                 e.qty   += it.qty
                 e.rev   += it.subtotal
