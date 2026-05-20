@@ -26,7 +26,10 @@ struct NewQuoteFlow: View {
             .navigationDestination(for: Step.self) { step in
                 switch step {
                 case .items:
-                    Text("畫面 05 — TODO")  // 待 Task #3
+                    NewQuoteItemsScreen(
+                        draft: draft,
+                        onNext: { path.append(.review) }
+                    )
                 case .review:
                     Text("畫面 06 — TODO")  // 待 Task #4
                 case .exported:
