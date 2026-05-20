@@ -1,0 +1,101 @@
+import SwiftUI
+
+/// 畫面 04 · 新增報價單 — 基本資料
+/// 三個欄位：客戶稱呼 / 工程地點（含「地圖」按鈕）/ 報價日期。
+struct NewQuoteInfoScreen: View {
+    @Bindable var draft: NewQuoteDraft
+    let onCancel: () -> Void
+    let onNext: () -> Void
+
+    var body: some View {
+        VStack(spacing: 0) {
+            AppHeader(
+                title: "基本資料",
+                subtitle: "新增報價單 · 1 / 3",
+                onBack: { onCancel() }
+            )
+
+            ScrollView {
+                VStack(spacing: 16) {
+                    FieldRow(label: "客戶稱呼", systemImage: "person") {
+                        AppTextField(text: $draft.clientName,
+                                     placeholder: "例：王先生、林太太")
+                    }
+
+                    FieldRow(label: "工程地點", systemImage: "mappin") {
+                        HStack(spacing: 8) {
+                            AppTextField(text: $draft.location,
+                                         placeholder: "例：台北市信義區")
+                            mapButton
+                        }
+                    }
+
+                    FieldRow(label: "報價日期", systemImage: "calendar") {
+                        DatePicker("", selection: $draft.date,
+                                   displayedComponents: .date)
+                            .datePickerStyle(.compact)
+                            .labelsHidden()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 9)
+                            .background(Color.appSurface,
+                                        in: RoundedRectangle(cornerRadius: Radius.card,
+                                                             style: .continuous))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: Radius.card,
+                                                 style: .continuous)
+                                    .strokeBorder(Color.appBorder, lineWidth: 1.5)
+                            )
+                    }
+                }
+                .padding(.horizontal, 20)
+                .padding(.top, 16)
+                .padding(.bottom, 30)
+            }
+        }
+        .background(Color.bgPaper)
+        .toolbar(.hidden, for: .navigationBar)
+        .safeAreaInset(edge: .bottom) {
+            BottomCTA {
+                PrimaryButton("下一步:加項目", systemImage: "arrow.right") {
+                    onNext()
+                }
+            }
+        }
+    }
+
+    private var mapButton: some View {
+        Button {
+            // TODO: 開啟 LocationPickerSheet
+        } label: {
+            HStack(spacing: 5) {
+                Image(systemName: "mappin")
+                    .font(.system(size: 14, weight: .semibold))
+                Text("地圖")
+                    .font(AppFont.sans(13, weight: .semibold))
+            }
+            .foregroundStyle(Color.accent)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 13)
+            .background(Color.appSurface,
+                        in: RoundedRectangle(cornerRadius: Radius.card,
+                                             style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: Radius.card,
+                                 style: .continuous)
+                    .strokeBorder(Color.appBorder, lineWidth: 1.5)
+            )
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+#Preview {
+    NavigationStack {
+        NewQuoteInfoScreen(
+            draft: NewQuoteDraft(),
+            onCancel: {},
+            onNext: {}
+        )
+    }
+}
