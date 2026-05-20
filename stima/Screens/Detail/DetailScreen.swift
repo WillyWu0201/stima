@@ -7,6 +7,7 @@ struct DetailScreen: View {
     let quote: Quote
     @Environment(\.dismiss) private var dismiss
     @Query private var allClients: [Client]
+    @State private var pdfPreviewOpen = false
 
     private var matchingClient: Client? {
         allClients.first { $0.name == quote.clientName }
@@ -50,6 +51,11 @@ struct DetailScreen: View {
         }
         .background(Color.bgPaper)
         .toolbar(.hidden, for: .navigationBar)
+        .sheet(isPresented: $pdfPreviewOpen) {
+            PDFPreviewSheet(quote: quote)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
+        }
     }
 
     // MARK: - Cards
@@ -190,7 +196,7 @@ struct DetailScreen: View {
                     // TODO: 觸發 ShareLink / UIActivityViewController
                 }
                 SecondaryButton("預覽 PDF", systemImage: "doc.text") {
-                    // TODO: 顯示 PDFPreviewSheet
+                    pdfPreviewOpen = true
                 }
             }
 
