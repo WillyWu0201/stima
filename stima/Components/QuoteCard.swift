@@ -36,30 +36,21 @@ struct QuoteCard: View {
         }
     }
 
-    // 地點 + 分類
+    // 地點 + 分類（inline，超寬自動換行完整顯示）
     private var locationRow: some View {
-        HStack(spacing: 4) {
-            Image(systemName: "mappin")
-                .font(.system(size: 11, weight: .semibold))
-                .foregroundStyle(Color.inkSoft)
-            Text(quote.location)
-                .font(AppFont.sans(13))
-                .foregroundStyle(Color.inkSoft)
-                .lineLimit(1)
-            if let folder = quote.folder {
-                Text("·")
-                    .foregroundStyle(Color.inkFaint)
-                    .padding(.horizontal, 2)
-                Image(systemName: "folder")
-                    .font(.system(size: 11, weight: .semibold))
-                    .foregroundStyle(Color.inkSoft)
-                Text(folder)
-                    .font(AppFont.sans(13))
-                    .foregroundStyle(Color.inkSoft)
-                    .lineLimit(1)
-            }
-            Spacer(minLength: 0)
+        locationText
+            .font(AppFont.sans(13))
+            .foregroundStyle(Color.inkSoft)
+            .fixedSize(horizontal: false, vertical: true)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var locationText: Text {
+        var t = Text(Image(systemName: "mappin")) + Text("  \(quote.location)")
+        if let folder = quote.folder {
+            t = t + Text("   ·   ") + Text(Image(systemName: "folder")) + Text("  \(folder)")
         }
+        return t
     }
 
     // 項目數 + 總金額
@@ -80,10 +71,25 @@ struct QuoteCard: View {
     }()
 }
 
-#Preview {
+#Preview("一般") {
     ScrollView {
         VStack(spacing: 10) {
             ForEach(PreviewData.makeSampleQuotes(), id: \.id) { q in
+                QuoteCard(quote: q)
+            }
+        }
+        .padding()
+    }
+    .background(Color.bgPaper)
+}
+
+#Preview("長地址") {
+    let quotes = PreviewData.makeSampleQuotes()
+    quotes[0].location = "新北市板橋區文化路二段 150 號 12 樓之 3"
+    quotes[1].location = "高雄市鼓山區美術東二路 88 巷 5 弄 12 號"
+    return ScrollView {
+        VStack(spacing: 10) {
+            ForEach(quotes, id: \.id) { q in
                 QuoteCard(quote: q)
             }
         }
