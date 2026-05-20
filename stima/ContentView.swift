@@ -27,14 +27,6 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Placeholder screens (待實作)
-
-struct StatsScreen: View {
-    var body: some View {
-        Text("營運統計")
-            .navigationTitle("營運統計")
-    }
-}
 
 #Preview {
     ContentView()
