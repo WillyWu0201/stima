@@ -21,13 +21,18 @@ struct ContactsScreen: View {
         }
     }
 
-    /// 每位客戶的案件數 + 已收款總額
+    /// 每位客戶的案件數 + 已收款總額。
+    /// 用 for-loop 避免 reduce closure 在跨檔型別推斷時 type-check timeout。
     private func summary(for client: Client) -> (count: Int, paid: Int) {
-        let related = quotes.filter { $0.clientName == client.name }
-        let paid = related
-            .filter { $0.quoteStatus == .paid }
-            .reduce(0) { $0 + $1.total }
-        return (related.count, paid)
+        var count = 0
+        var paid = 0
+        for q in quotes where q.clientName == client.name {
+            count += 1
+            if q.quoteStatus == .paid {
+                paid += q.total
+            }
+        }
+        return (count, paid)
     }
 
     var body: some View {
