@@ -182,8 +182,8 @@ struct SettingsScreen: View {
 
                 rowDivider
 
-                Button {
-                    // TODO: 推進 PDFTemplateScreen
+                NavigationLink {
+                    PDFTemplateScreen()
                 } label: {
                     SettingsRow(
                         systemImage: "doc.text",
