@@ -102,14 +102,17 @@ struct YearStatsTests {
     @Test("topClient 由 paid total 排序")
     func topClientByPaidTotal() throws {
         let quotes = [
+            // A 一張 paid（5250）
             makeQuote(year: 2026, month: 1, client: "A", status: .paid,
-                      items: [("x", "式", 1, 10000)]),
+                      items: [("x", "式", 1, 5000)]),
+            // B 兩張 paid（合計 10500）
             makeQuote(year: 2026, month: 2, client: "B", status: .paid,
                       items: [("x", "式", 1, 5000)]),
             makeQuote(year: 2026, month: 3, client: "B", status: .paid,
-                      items: [("x", "式", 1, 5000)]),  // B paid total = 10500
+                      items: [("x", "式", 1, 5000)]),
+            // A 一張 ongoing — 不算進 paid total，但會算進 count
             makeQuote(year: 2026, month: 4, client: "A", status: .ongoing,
-                      items: [("x", "式", 1, 99999)]),   // 不算進 paid
+                      items: [("x", "式", 1, 99999)]),
         ]
         let s = YearStatsCalculator.compute(quotes: quotes, year: 2026)
         let top = try #require(s.topClient)

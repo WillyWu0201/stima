@@ -57,8 +57,8 @@ struct TierGateTests {
     @Test
     func remainingFreeQuotesCountsDown() {
         let quotes = (0..<2).map { _ in makeQuote() }
-        let remaining = try? #require(TierGate.remainingFreeQuotes(isPro: false, quotes: quotes))
-        #expect(remaining == TierConfig.freeMonthlyQuoteLimit - 2)
+        #expect(TierGate.remainingFreeQuotes(isPro: false, quotes: quotes)
+                == TierConfig.freeMonthlyQuoteLimit - 2)
     }
 
     @Test
