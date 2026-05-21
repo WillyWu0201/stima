@@ -19,11 +19,21 @@ struct stimaApp: App {
             PDFTemplate.self,
         ])
         let inMemory = ProcessInfo.processInfo.arguments.contains("--uitest-inmemory")
-        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: inMemory)
+        let primary = ModelConfiguration(schema: schema, isStoredInMemoryOnly: inMemory)
+
+        // 先試 disk-based（或 UI 測試指定的 in-memory）
+        if let container = try? ModelContainer(for: schema, configurations: [primary]) {
+            return container
+        }
+
+        // 失敗 → fallback in-memory，至少不要 crash
+        // 常見原因：schema migration 失敗、磁碟空間不足、context corrupt
+        print("⚠️ Disk-based ModelContainer 建立失敗，fallback in-memory（資料不會儲存）")
+        let fallback = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
         do {
-            return try ModelContainer(for: schema, configurations: [config])
+            return try ModelContainer(for: schema, configurations: [fallback])
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            fatalError("連 in-memory ModelContainer 都建不起來：\(error)")
         }
     }()
 

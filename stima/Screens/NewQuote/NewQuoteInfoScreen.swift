@@ -20,13 +20,15 @@ struct NewQuoteInfoScreen: View {
                 VStack(spacing: 16) {
                     FieldRow(label: "客戶稱呼", systemImage: "person") {
                         AppTextField(text: $draft.clientName,
-                                     placeholder: "例：王先生、林太太")
+                                     placeholder: "例：王先生、林太太",
+                                     maxLength: 30)
                     }
 
                     FieldRow(label: "工程地點", systemImage: "mappin") {
                         HStack(spacing: 8) {
                             AppTextField(text: $draft.location,
-                                         placeholder: "例：台北市信義區")
+                                         placeholder: "例：台北市信義區",
+                                         maxLength: 100)
                             mapButton
                         }
                     }

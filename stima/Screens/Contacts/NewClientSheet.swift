@@ -30,21 +30,29 @@ struct NewClientSheet: View {
                         .padding(.bottom, 4)
 
                     FieldRow(label: "客戶稱呼 ＊", systemImage: "person") {
-                        AppTextField(text: $name, placeholder: "例：王先生、林太太、陳老闆")
+                        AppTextField(text: $name,
+                                     placeholder: "例：王先生、林太太、陳老闆",
+                                     maxLength: 30)
                     }
                     FieldRow(label: "電話", systemImage: "phone") {
-                        AppTextField(text: $phone, placeholder: "0912-345-678")
+                        AppTextField(text: $phone,
+                                     placeholder: "0912-345-678",
+                                     maxLength: 20)
                             .keyboardType(.phonePad)
                     }
                     FieldRow(label: "Email（可省略）", systemImage: "envelope") {
-                        AppTextField(text: $email, placeholder: "example@email.com")
+                        AppTextField(text: $email,
+                                     placeholder: "example@email.com",
+                                     maxLength: 80)
                             .keyboardType(.emailAddress)
                             .textInputAutocapitalization(.never)
                             .autocorrectionDisabled()
                     }
                     FieldRow(label: "工程地址", systemImage: "mappin") {
                         HStack(spacing: 8) {
-                            AppTextField(text: $address, placeholder: "例：台北市信義區松仁路")
+                            AppTextField(text: $address,
+                                         placeholder: "例：台北市信義區松仁路",
+                                         maxLength: 100)
                             mapButton
                         }
                     }

@@ -113,10 +113,14 @@ struct PDFTemplateScreen: View {
         return AppCard {
             VStack(alignment: .leading, spacing: 12) {
                 labeledField("公司／工作室名稱（抬頭）") {
-                    AppTextField(text: $t.businessName, placeholder: "例：大發工程行")
+                    AppTextField(text: $t.businessName,
+                                 placeholder: "例：大發工程行",
+                                 maxLength: 50)
                 }
                 labeledField("標語／slogan（可空白）") {
-                    AppTextField(text: $t.slogan, placeholder: "例：交期不拖、價錢實在")
+                    AppTextField(text: $t.slogan,
+                                 placeholder: "例：交期不拖、價錢實在",
+                                 maxLength: 40)
                 }
             }
         }
@@ -143,17 +147,20 @@ struct PDFTemplateScreen: View {
         return AppCard {
             VStack(alignment: .leading, spacing: 12) {
                 labeledField("電話", systemImage: "phone") {
-                    AppTextField(text: $t.phone, placeholder: "0912-345-678")
+                    AppTextField(text: $t.phone, placeholder: "0912-345-678",
+                                 maxLength: 20)
                         .keyboardType(.phonePad)
                 }
                 labeledField("Email") {
-                    AppTextField(text: $t.email, placeholder: "chen@example.com")
+                    AppTextField(text: $t.email, placeholder: "chen@example.com",
+                                 maxLength: 80)
                         .keyboardType(.emailAddress)
                         .textInputAutocapitalization(.never)
                 }
                 labeledField("統編／營業地址") {
                     AppTextField(text: $t.address,
-                                 placeholder: "例：統編 12345678 / 台北市信義區⋯")
+                                 placeholder: "例：統編 12345678 / 台北市信義區⋯",
+                                 maxLength: 120)
                 }
             }
         }

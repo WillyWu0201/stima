@@ -11,6 +11,7 @@ struct PDFPreviewSheet: View {
     @Query private var templates: [PDFTemplate]
 
     @State private var pdfURL: URL?
+    @State private var renderFailed = false
 
     private var template: PDFTemplate? { templates.first }
 
@@ -29,13 +30,31 @@ struct PDFPreviewSheet: View {
             footerActions
         }
         .task {
-            // 進來時就先渲染一份 PDF，兩個 ShareLink 共用
-            pdfURL = PDFExporter.renderQuote(
-                quote,
-                template:    template,
-                masterName:  settings.masterName,
-                watermarked: !settings.isPro
-            )
+            await render()
+        }
+        .alert("PDF 產生失敗", isPresented: $renderFailed) {
+            Button("重試") {
+                Task { await render() }
+            }
+            Button("關閉", role: .cancel) { dismiss() }
+        } message: {
+            Text("無法產生這份報價單的 PDF。請再試一次，若持續失敗請重新啟動 app。")
+        }
+    }
+
+    private func render() async {
+        let url = PDFExporter.renderQuote(
+            quote,
+            template:    template,
+            masterName:  settings.masterName,
+            watermarked: !settings.isPro
+        )
+        if let url {
+            pdfURL = url
+            renderFailed = false
+        } else {
+            pdfURL = nil
+            renderFailed = true
         }
     }
 

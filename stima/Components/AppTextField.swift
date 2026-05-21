@@ -1,14 +1,16 @@
 import SwiftUI
 
 /// 標準 styling 的文字輸入框（白底 + 邊框 + 圓角）。
+/// `maxLength` 可選 — 超過會即時截斷。
 ///
 /// 用法：
 ///   AppTextField(text: $name, placeholder: "例：王先生")
-///   AppTextField(text: $price, placeholder: "0")
+///   AppTextField(text: $price, placeholder: "0", maxLength: 10)
 ///       .keyboardType(.decimalPad)
 struct AppTextField: View {
     @Binding var text: String
     var placeholder: String
+    var maxLength: Int? = nil
 
     var body: some View {
         TextField(placeholder, text: $text)
@@ -21,6 +23,11 @@ struct AppTextField: View {
                 RoundedRectangle(cornerRadius: Radius.card, style: .continuous)
                     .strokeBorder(Color.appBorder, lineWidth: 1.5)
             )
+            .onChange(of: text) { _, new in
+                if let max = maxLength, new.count > max {
+                    text = String(new.prefix(max))
+                }
+            }
     }
 }
 
