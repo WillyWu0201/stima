@@ -72,7 +72,7 @@ struct ContactsScreen: View {
         .background(Color.bgPaper)
         .toolbar(.hidden, for: .navigationBar)
         .sheet(isPresented: $addOpen) {
-            NewClientSheet { newClient in
+            NewClientSheet(existingNames: Set(clients.map { $0.name })) { newClient in
                 modelContext.insert(newClient)
                 addOpen = false
             }

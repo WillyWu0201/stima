@@ -3,6 +3,7 @@ import SwiftUI
 /// 畫面 12b · 新增客戶（page-sheet）
 /// 從 ContactsScreen 右上 + 按鈕召喚。儲存後呼叫 onSave，由父層 insert 進 SwiftData。
 struct NewClientSheet: View {
+    var existingNames: Set<String> = []
     let onSave: (Client) -> Void
     @Environment(\.dismiss) private var dismiss
 
@@ -12,6 +13,7 @@ struct NewClientSheet: View {
     @State private var address = ""
     @State private var notes = ""
     @State private var mapOpen = false
+    @State private var showingDuplicateAlert = false
 
     private var canSave: Bool {
         !name.trimmingCharacters(in: .whitespaces).isEmpty
@@ -61,6 +63,11 @@ struct NewClientSheet: View {
             LocationPickerSheet(address: $address)
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
+        }
+        .alert("客戶名稱重複", isPresented: $showingDuplicateAlert) {
+            Button("好") {}
+        } message: {
+            Text("「\(name.trimmingCharacters(in: .whitespaces))」已經在客戶簿內。請改名或直接到列表編輯既有資料。")
         }
     }
 
@@ -202,8 +209,13 @@ struct NewClientSheet: View {
 
     private func save() {
         guard canSave else { return }
+        let trimmed = name.trimmingCharacters(in: .whitespaces)
+        if existingNames.contains(trimmed) {
+            showingDuplicateAlert = true
+            return
+        }
         let client = Client(
-            name:    name.trimmingCharacters(in: .whitespaces),
+            name:    trimmed,
             phone:   phone.trimmingCharacters(in: .whitespaces),
             email:   email.trimmingCharacters(in: .whitespaces),
             address: address.trimmingCharacters(in: .whitespaces),

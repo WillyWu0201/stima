@@ -423,6 +423,7 @@ private struct CategoryRow: View {
 
     @State private var isEditing = false
     @State private var draftName = ""
+    @State private var showingDeleteConfirm = false
     @FocusState private var focused: Bool
 
     var body: some View {
@@ -471,7 +472,7 @@ private struct CategoryRow: View {
             .buttonStyle(.plain)
 
             if !isFixed && !isEditing {
-                Button(action: onDelete) {
+                Button { showingDeleteConfirm = true } label: {
                     Image(systemName: "trash")
                         .font(.system(size: 14))
                         .foregroundStyle(Color.accent)
@@ -483,6 +484,16 @@ private struct CategoryRow: View {
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 12)
+        .confirmationDialog(
+            "確定刪除「\(name)」分類？",
+            isPresented: $showingDeleteConfirm,
+            titleVisibility: .visible
+        ) {
+            Button("刪除", role: .destructive) { onDelete() }
+            Button("取消", role: .cancel) {}
+        } message: {
+            Text("這個分類下的自訂項目仍會保留。")
+        }
     }
 
     private func commitRename() {
@@ -551,6 +562,7 @@ private struct NewCategoryInput: View {
 private struct CustomItemRow: View {
     let item: CustomItem
     let onDelete: () -> Void
+    @State private var showingDeleteConfirm = false
 
     var body: some View {
         HStack(spacing: 10) {
@@ -571,7 +583,7 @@ private struct CustomItemRow: View {
                 }
             }
             Spacer()
-            Button(action: onDelete) {
+            Button { showingDeleteConfirm = true } label: {
                 Image(systemName: "trash")
                     .font(.system(size: 14))
                     .foregroundStyle(Color.accent)
@@ -582,6 +594,14 @@ private struct CustomItemRow: View {
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 12)
+        .confirmationDialog(
+            "確定刪除「\(item.name)」？",
+            isPresented: $showingDeleteConfirm,
+            titleVisibility: .visible
+        ) {
+            Button("刪除", role: .destructive) { onDelete() }
+            Button("取消", role: .cancel) {}
+        }
     }
 }
 

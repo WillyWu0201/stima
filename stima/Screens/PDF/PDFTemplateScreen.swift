@@ -12,12 +12,16 @@ struct PDFTemplateScreen: View {
 
     @State private var previewOpen = false
 
-    /// 預設沒有 template 就建一個，並 insert 進 model context。
-    private var template: PDFTemplate {
-        if let t = templates.first { return t }
-        let new = PDFTemplate()
-        modelContext.insert(new)
-        return new
+    /// 取目前 template，沒有就建一個（只用在 .onAppear 內）。
+    /// 注意：不要在 computed property 內 insert，否則 SwiftUI re-render 時會
+    /// 每次都產生新 row，PDFTemplate 列表會爆。改用 onAppear ensure 一次。
+    private var template: PDFTemplate? {
+        templates.first
+    }
+
+    private func ensureTemplate() {
+        guard templates.isEmpty else { return }
+        modelContext.insert(PDFTemplate())
     }
 
     private static let brandColors: [String] = [
@@ -34,23 +38,44 @@ struct PDFTemplateScreen: View {
     var body: some View {
         VStack(spacing: 0) {
             header
+            if template != nil {
+                content
+            } else {
+                ProgressView()
+                    .frame(maxHeight: .infinity)
+            }
+        }
+        .background(Color.bgPaper)
+        .toolbar(.hidden, for: .navigationBar)
+        .onAppear { ensureTemplate() }
+        .sheet(isPresented: $previewOpen) {
+            if let quote = quotes.first {
+                PDFPreviewSheet(quote: quote)
+                    .presentationDetents([.large])
+                    .presentationDragIndicator(.visible)
+            }
+        }
+    }
 
+    @ViewBuilder
+    private var content: some View {
+        if let t = template {
             ScrollView {
                 VStack(alignment: .leading, spacing: Spacing.cardGap) {
                     SectionTitle("商號識別")
-                    businessCard
+                    businessCard(t)
 
                     SectionTitle("Logo 與印章")
                     uploadCard
 
                     SectionTitle("聯絡資訊")
-                    contactCard
+                    contactCard(t)
 
                     SectionTitle("付款條件 & 簽名")
-                    paymentCard
+                    paymentCard(t)
 
                     SectionTitle("外觀")
-                    appearanceCard
+                    appearanceCard(t)
 
                     if !settings.isPro {
                         proLimitCard
@@ -59,15 +84,6 @@ struct PDFTemplateScreen: View {
                 .padding(.horizontal, Spacing.screenH)
                 .padding(.top, 14)
                 .padding(.bottom, 40)
-            }
-        }
-        .background(Color.bgPaper)
-        .toolbar(.hidden, for: .navigationBar)
-        .sheet(isPresented: $previewOpen) {
-            if let quote = quotes.first {
-                PDFPreviewSheet(quote: quote)
-                    .presentationDetents([.large])
-                    .presentationDragIndicator(.visible)
             }
         }
     }
@@ -92,7 +108,7 @@ struct PDFTemplateScreen: View {
 
     // MARK: - Cards
 
-    private var businessCard: some View {
+    private func businessCard(_ template: PDFTemplate) -> some View {
         @Bindable var t = template
         return AppCard {
             VStack(alignment: .leading, spacing: 12) {
@@ -122,7 +138,7 @@ struct PDFTemplateScreen: View {
         }
     }
 
-    private var contactCard: some View {
+    private func contactCard(_ template: PDFTemplate) -> some View {
         @Bindable var t = template
         return AppCard {
             VStack(alignment: .leading, spacing: 12) {
@@ -143,7 +159,7 @@ struct PDFTemplateScreen: View {
         }
     }
 
-    private var paymentCard: some View {
+    private func paymentCard(_ template: PDFTemplate) -> some View {
         @Bindable var t = template
         return AppCard {
             VStack(alignment: .leading, spacing: 12) {
@@ -200,7 +216,7 @@ struct PDFTemplateScreen: View {
         }
     }
 
-    private var appearanceCard: some View {
+    private func appearanceCard(_ template: PDFTemplate) -> some View {
         @Bindable var t = template
         return AppCard {
             VStack(alignment: .leading, spacing: 14) {
