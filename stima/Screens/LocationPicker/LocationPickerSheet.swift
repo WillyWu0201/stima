@@ -11,9 +11,11 @@ struct LocationPickerSheet: View {
 
     @State private var searchText = ""
     @State private var completer = LocationSearchCompleter()
+    @State private var fetcher = LocationFetcher()
     @State private var pickedTitle: String?
     @State private var pickedSubtitle: String?
     @State private var pickedCoordinate: CLLocationCoordinate2D?
+    @State private var showingDeniedAlert = false
     @State private var cameraPosition: MapCameraPosition = .region(
         MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 25.0330, longitude: 121.5654),  // 台北
@@ -26,6 +28,7 @@ struct LocationPickerSheet: View {
             navBar
             mapView
             VStack(spacing: 10) {
+                currentLocationRow
                 SearchField(text: $searchText, placeholder: "搜尋地址、地標")
                 suggestionsList
             }
@@ -50,6 +53,82 @@ struct LocationPickerSheet: View {
             if !address.isEmpty && searchText.isEmpty {
                 searchText = address
             }
+        }
+        .alert("無法存取位置", isPresented: $showingDeniedAlert) {
+            Button("好", role: .cancel) {}
+        } message: {
+            Text("位置權限被拒。請到「設定 → 隱私權與安全性 → 定位服務 → 師傅號」開啟，再回來試一次。")
+        }
+    }
+
+    // MARK: - 使用目前位置
+
+    private var currentLocationRow: some View {
+        Button {
+            Task { await useCurrentLocation() }
+        } label: {
+            HStack(spacing: 10) {
+                Image(systemName: "location.fill")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(Color.accent)
+                VStack(alignment: .leading, spacing: 1) {
+                    Text("使用目前位置")
+                        .font(AppFont.sans(14, weight: .semibold))
+                        .foregroundStyle(Color.ink)
+                    Text(currentLocationSubtitle)
+                        .font(AppFont.sans(11))
+                        .foregroundStyle(Color.inkSoft)
+                }
+                Spacer()
+                if case .requesting = fetcher.state {
+                    ProgressView().controlSize(.small)
+                }
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 12)
+            .background(Color.appSurface,
+                        in: RoundedRectangle(cornerRadius: Radius.card, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: Radius.card, style: .continuous)
+                    .strokeBorder(Color.appBorder, lineWidth: 1)
+            )
+        }
+        .buttonStyle(.plain)
+        .disabled({
+            if case .requesting = fetcher.state { return true } else { return false }
+        }())
+    }
+
+    private var currentLocationSubtitle: String {
+        switch fetcher.state {
+        case .idle:                                          "點下取得 GPS 位置"
+        case .requesting:                                    "定位中…"
+        case .denied:                                        "位置權限被拒"
+        case .success(_, let address) where !address.isEmpty: address
+        case .success:                                       "已取得座標"
+        case .failed(let msg):                               "定位失敗：\(msg)"
+        }
+    }
+
+    private func useCurrentLocation() async {
+        await fetcher.requestCurrentLocation()
+        switch fetcher.state {
+        case .success(let coord, let address):
+            pickedTitle = address.isEmpty ? "目前位置" : address
+            pickedSubtitle = nil
+            pickedCoordinate = coord
+            searchText = pickedTitle ?? ""
+            withAnimation(.easeOut(duration: 0.4)) {
+                cameraPosition = .region(
+                    MKCoordinateRegion(center: coord,
+                                       span: MKCoordinateSpan(latitudeDelta: 0.01,
+                                                              longitudeDelta: 0.01))
+                )
+            }
+        case .denied:
+            showingDeniedAlert = true
+        default:
+            break
         }
     }
 
