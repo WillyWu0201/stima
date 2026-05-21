@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import PhotosUI
 
 /// 畫面 13 · PDF 模板自訂
 /// 從 Settings → 報價單模板 push 進來。右上「預覽」按鈕開 PDFPreviewSheet 看效果。
@@ -66,7 +67,7 @@ struct PDFTemplateScreen: View {
                     businessCard(t)
 
                     SectionTitle("Logo 與印章")
-                    uploadCard
+                    uploadCard(t)
 
                     SectionTitle("聯絡資訊")
                     contactCard(t)
@@ -126,14 +127,17 @@ struct PDFTemplateScreen: View {
         }
     }
 
-    private var uploadCard: some View {
-        AppCard {
+    private func uploadCard(_ template: PDFTemplate) -> some View {
+        @Bindable var t = template
+        return AppCard {
             VStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 12) {
                     UploadSlot(systemImage: "building.2",
-                               label: "商號 Logo", hint: "左上角", hasFile: false)
+                               label: "商號 Logo", hint: "左上角",
+                               data: $t.logoData)
                     UploadSlot(systemImage: "seal",
-                               label: "印章", hint: "右下簽章", hasFile: false)
+                               label: "印章", hint: "右下簽章",
+                               data: $t.stampData)
                 }
                 Text("支援 PNG（建議透明背景）、JPG。最大 2MB / 邊長 1200px。")
                     .font(AppFont.sans(11))
@@ -362,44 +366,91 @@ private struct UploadSlot: View {
     let systemImage: String
     let label: String
     let hint: String
-    let hasFile: Bool
+    @Binding var data: Data?
+
+    @State private var selection: PhotosPickerItem?
+
+    private var hasFile: Bool { data != nil }
 
     var body: some View {
-        Button {
-            // TODO: PhotosPicker 接 PNG/JPG
-        } label: {
-            VStack(spacing: 6) {
-                ZStack {
-                    Circle()
-                        .fill(hasFile ? Color.accent.opacity(0.14) : Color.surfaceAlt)
-                    Image(systemName: systemImage)
-                        .font(.system(size: 22, weight: .regular))
-                        .foregroundStyle(hasFile ? Color.accent : Color.inkFaint)
+        ZStack(alignment: .topTrailing) {
+            PhotosPicker(selection: $selection, matching: .images) {
+                content
+            }
+            .buttonStyle(.plain)
+
+            if hasFile {
+                Button {
+                    data = nil
+                    selection = nil
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.system(size: 18))
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(Color.appSurface, Color.inkSoft)
                 }
+                .buttonStyle(.plain)
+                .padding(6)
+                .accessibilityLabel("移除圖片")
+            }
+        }
+        .onChange(of: selection) { _, item in
+            Task { await load(item) }
+        }
+    }
+
+    @ViewBuilder
+    private var content: some View {
+        VStack(spacing: 6) {
+            preview
                 .frame(width: 48, height: 48)
 
-                Text(label)
-                    .font(AppFont.sans(13, weight: .semibold))
-                    .foregroundStyle(Color.ink)
-                Text(hint)
-                    .font(AppFont.sans(10))
-                    .foregroundStyle(Color.inkSoft)
-                Text(hasFile ? "✓ 已上傳" : "+ 點此上傳")
-                    .font(AppFont.sans(11, weight: .semibold))
-                    .foregroundStyle(hasFile ? Color.positive : Color.accent)
-                    .padding(.top, 2)
-            }
-            .frame(maxWidth: .infinity)
-            .padding(14)
-            .background(Color.appSurface,
-                        in: RoundedRectangle(cornerRadius: Radius.card, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: Radius.card, style: .continuous)
-                    .strokeBorder(style: StrokeStyle(lineWidth: 1.5, dash: [4, 4]))
-                    .foregroundStyle(hasFile ? Color.accent : Color.borderStrong)
-            )
+            Text(label)
+                .font(AppFont.sans(13, weight: .semibold))
+                .foregroundStyle(Color.ink)
+            Text(hint)
+                .font(AppFont.sans(10))
+                .foregroundStyle(Color.inkSoft)
+            Text(hasFile ? "✓ 已上傳" : "+ 點此上傳")
+                .font(AppFont.sans(11, weight: .semibold))
+                .foregroundStyle(hasFile ? Color.positive : Color.accent)
+                .padding(.top, 2)
         }
-        .buttonStyle(.plain)
+        .frame(maxWidth: .infinity)
+        .padding(14)
+        .background(Color.appSurface,
+                    in: RoundedRectangle(cornerRadius: Radius.card, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: Radius.card, style: .continuous)
+                .strokeBorder(style: StrokeStyle(lineWidth: 1.5, dash: [4, 4]))
+                .foregroundStyle(hasFile ? Color.accent : Color.borderStrong)
+        )
+    }
+
+    @ViewBuilder
+    private var preview: some View {
+        if let data, let uiImage = UIImage(data: data) {
+            Image(uiImage: uiImage)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 48, height: 48)
+                .clipShape(Circle())
+                .overlay(Circle().strokeBorder(Color.accent.opacity(0.3), lineWidth: 1))
+        } else {
+            ZStack {
+                Circle().fill(Color.surfaceAlt)
+                Image(systemName: systemImage)
+                    .font(.system(size: 22, weight: .regular))
+                    .foregroundStyle(Color.inkFaint)
+            }
+        }
+    }
+
+    private func load(_ item: PhotosPickerItem?) async {
+        guard let item else { return }
+        if let loaded = try? await item.loadTransferable(type: Data.self) {
+            data = loaded
+        }
     }
 }
 

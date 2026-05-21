@@ -1,4 +1,7 @@
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 /// A4 紙張內容（letterhead + 致 / 項目 / 總計 / 付款條件 / 簽名）。
 /// 不含 shadow / clipShape — 那些是 PDFPreviewSheet 預覽時的 chrome，PDF 渲染時不需要。
@@ -42,20 +45,34 @@ struct QuotePaper: View {
         .overlay(watermark)
     }
 
+    // MARK: - Logo
+
+    @ViewBuilder
+    private var logoView: some View {
+        if let data = template?.logoData, let img = UIImage(data: data) {
+            Image(uiImage: img)
+                .resizable()
+                .scaledToFit()
+                .padding(2)
+        } else {
+            ZStack {
+                RoundedRectangle(cornerRadius: 6)
+                    .strokeBorder(Color(white: 0.7),
+                                  style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
+                Text("LOGO")
+                    .font(.system(size: 9, weight: .semibold))
+                    .foregroundStyle(Color(white: 0.55))
+            }
+        }
+    }
+
     // MARK: - Letterhead
 
     private var letterhead: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .top, spacing: 12) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 6)
-                        .strokeBorder(Color(white: 0.7),
-                                      style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
-                    Text("LOGO")
-                        .font(.system(size: 9, weight: .semibold))
-                        .foregroundStyle(Color(white: 0.55))
-                }
-                .frame(width: 56, height: 56)
+                logoView
+                    .frame(width: 56, height: 56)
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(businessName)
@@ -252,6 +269,10 @@ struct QuotePaper: View {
         HStack(alignment: .bottom, spacing: 24) {
             signatureLine(label: "甲方（客戶）簽名")
             signatureLine(label: "乙方（廠商）簽章")
+                .overlay(alignment: .trailing) {
+                    stampOverlay
+                        .offset(x: 4, y: -18)
+                }
         }
     }
 
@@ -261,6 +282,17 @@ struct QuotePaper: View {
             Text(label)
                 .font(.system(size: 9))
                 .foregroundStyle(Color(white: 0.5))
+        }
+    }
+
+    @ViewBuilder
+    private var stampOverlay: some View {
+        if let data = template?.stampData, let img = UIImage(data: data) {
+            Image(uiImage: img)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 54, height: 54)
+                .opacity(0.85)
         }
     }
 
