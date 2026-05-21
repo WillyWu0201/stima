@@ -10,6 +10,8 @@ struct HomeScreen: View {
     @State private var search: String = ""
     @State private var selectedTab: FilterTab = .all
     @State private var showingNewQuote = false
+    @State private var showingLimitAlert = false
+    @State private var showingPaywall = false
 
     enum FilterTab: Hashable {
         case all
@@ -31,6 +33,16 @@ struct HomeScreen: View {
                 onFinished: { showingNewQuote = false }
             )
         }
+        .fullScreenCover(isPresented: $showingPaywall) {
+            PaywallScreen { showingPaywall = false }
+                .environment(settings)
+        }
+        .alert("本月免費額度已用完", isPresented: $showingLimitAlert) {
+            Button("升級 PRO") { showingPaywall = true }
+            Button("再看看", role: .cancel) {}
+        } message: {
+            Text("免費版每月最多 \(TierConfig.freeMonthlyQuoteLimit) 張報價單，下個月會自動重置。升級 PRO 解鎖無限張。")
+        }
     }
 
     // MARK: - Sections
@@ -42,7 +54,11 @@ struct HomeScreen: View {
             accent: true
         ) {
             Button {
-                showingNewQuote = true
+                if TierGate.canCreateQuote(isPro: settings.isPro, quotes: quotes) {
+                    showingNewQuote = true
+                } else {
+                    showingLimitAlert = true
+                }
             } label: {
                 Image(systemName: "plus")
                     .font(.system(size: 24, weight: .regular))
