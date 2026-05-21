@@ -9,6 +9,8 @@ struct SettingsScreen: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \CustomItem.name) private var customItems: [CustomItem]
 
+    @State private var paywallOpen = false
+
     /// 不可刪除的內建分類（仍可編輯名稱，但不會出現垃圾桶按鈕）。
     private static let fixedCategories: Set<String> = ["拆除", "水電", "泥作", "木作", "油漆"]
 
@@ -51,6 +53,10 @@ struct SettingsScreen: View {
         }
         .background(Color.bgPaper)
         .toolbar(.hidden, for: .navigationBar)
+        .fullScreenCover(isPresented: $paywallOpen) {
+            PaywallScreen { paywallOpen = false }
+                .environment(settings)
+        }
     }
 
     // MARK: - PRO banner
@@ -89,7 +95,7 @@ struct SettingsScreen: View {
         } else {
             // 未訂閱：accent dark 升級卡
             Button {
-                // TODO: 推進 PaywallScreen
+                paywallOpen = true
             } label: {
                 HStack(spacing: 12) {
                     Image(systemName: "sparkles")
@@ -120,28 +126,34 @@ struct SettingsScreen: View {
     // MARK: - iCloud sync
 
     private var iCloudCard: some View {
-        AppCard {
-            HStack(spacing: 10) {
-                Circle()
-                    .fill(settings.isPro ? Color.positive : Color.inkFaint)
-                    .frame(width: 8, height: 8)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("iCloud 自動備份")
-                        .font(AppFont.sans(15, weight: .semibold))
-                        .foregroundStyle(Color.ink)
-                    Text(settings.isPro
-                         ? "已啟用 · 最後同步 12 秒前"
-                         : "需要 PRO · 換手機資料自動還原")
-                        .font(AppFont.sans(12))
-                        .foregroundStyle(Color.inkSoft)
+        Button {
+            if !settings.isPro { paywallOpen = true }
+        } label: {
+            AppCard {
+                HStack(spacing: 10) {
+                    Circle()
+                        .fill(settings.isPro ? Color.positive : Color.inkFaint)
+                        .frame(width: 8, height: 8)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("iCloud 自動備份")
+                            .font(AppFont.sans(15, weight: .semibold))
+                            .foregroundStyle(Color.ink)
+                        Text(settings.isPro
+                             ? "已啟用 · 最後同步 12 秒前"
+                             : "需要 PRO · 換手機資料自動還原")
+                            .font(AppFont.sans(12))
+                            .foregroundStyle(Color.inkSoft)
+                    }
+                    Spacer()
+                    Toggle("", isOn: .constant(settings.isPro))
+                        .labelsHidden()
+                        .tint(Color.accent)
+                        .disabled(true)     // 切換邏輯由父層處理（未訂閱推 Paywall）
                 }
-                Spacer()
-                Toggle("", isOn: .constant(settings.isPro))
-                    .labelsHidden()
-                    .tint(Color.accent)
-                    .disabled(true)     // 切換 by Paywall 流程，這個只是顯示
             }
         }
+        .buttonStyle(.plain)
+        .disabled(settings.isPro)   // PRO 已啟用就不點
     }
 
     // MARK: - 抬頭
