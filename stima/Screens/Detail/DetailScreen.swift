@@ -8,6 +8,7 @@ struct DetailScreen: View {
     @Environment(\.dismiss) private var dismiss
     @Query private var allClients: [Client]
     @State private var pdfPreviewOpen = false
+    @State private var goingToInvoice = false
 
     private var matchingClient: Client? {
         allClients.first { $0.name == quote.clientName }
@@ -55,6 +56,9 @@ struct DetailScreen: View {
             PDFPreviewSheet(quote: quote)
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
+        }
+        .navigationDestination(isPresented: $goingToInvoice) {
+            InvoiceScreen(quote: quote)
         }
     }
 
@@ -206,7 +210,7 @@ struct DetailScreen: View {
                 }
                 if quote.quoteStatus == .ongoing || quote.quoteStatus == .done {
                     SecondaryButton("轉請款單", systemImage: "dollarsign.circle") {
-                        // TODO: 推進 InvoiceScreen
+                        goingToInvoice = true
                     }
                 }
             }
