@@ -233,9 +233,7 @@ struct StatsScreen: View {
     }
 
     private func topItemRow(rank: Int, item: YearStats.TopItem) -> some View {
-        Button {
-            // TODO: 推進項目詳情
-        } label: {
+        NavigationLink(value: ItemRoute(name: item.name)) {
             HStack(spacing: 10) {
                 ZStack {
                     Circle().fill(rank == 1 ? Color.accent : Color.bgSoft)

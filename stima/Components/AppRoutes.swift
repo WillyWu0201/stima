@@ -5,7 +5,12 @@ struct ClientRoute: Hashable {
     let name: String
 }
 
-/// 套用 app 標準 drill-in 路由：報價單詳情、客戶詳情。
+/// 項目詳情頁的 navigation value。
+struct ItemRoute: Hashable {
+    let name: String
+}
+
+/// 套用 app 標準 drill-in 路由：報價單詳情、客戶詳情、項目詳情。
 /// 每個 NavigationStack root 用一次即可，stack 內任何 view 都能 push。
 struct AppRoutesModifier: ViewModifier {
     func body(content: Content) -> some View {
@@ -15,6 +20,9 @@ struct AppRoutesModifier: ViewModifier {
             }
             .navigationDestination(for: ClientRoute.self) { route in
                 ClientDetailScreen(clientName: route.name)
+            }
+            .navigationDestination(for: ItemRoute.self) { route in
+                ItemDetailScreen(itemName: route.name)
             }
     }
 }
