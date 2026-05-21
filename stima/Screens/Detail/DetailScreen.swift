@@ -8,8 +8,12 @@ struct DetailScreen: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(AppSettings.self) private var settings
     @Query private var allClients: [Client]
+    @Query private var allQuotes: [Quote]
     @State private var pdfPreviewOpen = false
     @State private var goingToInvoice = false
+    @State private var showingCopyFlow = false
+    @State private var showingLimitAlert = false
+    @State private var showingPaywall = false
 
     private var matchingClient: Client? {
         allClients.first { $0.name == quote.clientName }
@@ -61,6 +65,37 @@ struct DetailScreen: View {
         .navigationDestination(isPresented: $goingToInvoice) {
             InvoiceScreen(quote: quote)
         }
+        .fullScreenCover(isPresented: $showingCopyFlow) {
+            NewQuoteFlow(
+                initialDraft: makeCopyDraft(),
+                startAt:      .review,
+                onClose:      { showingCopyFlow = false },
+                onFinished:   { showingCopyFlow = false }
+            )
+        }
+        .fullScreenCover(isPresented: $showingPaywall) {
+            PaywallScreen { showingPaywall = false }
+                .environment(settings)
+        }
+        .alert("本月免費額度已用完", isPresented: $showingLimitAlert) {
+            Button("升級 PRO") { showingPaywall = true }
+            Button("再看看", role: .cancel) {}
+        } message: {
+            Text("免費版每月最多 \(TierConfig.freeMonthlyQuoteLimit) 張報價單，下個月會自動重置。升級 PRO 解鎖無限張。")
+        }
+    }
+
+    /// 從現有 quote 內容 clone 出一張 draft（新日期），用在「複製這張」流程。
+    private func makeCopyDraft() -> NewQuoteDraft {
+        let d = NewQuoteDraft()
+        d.clientName = quote.clientName
+        d.location   = quote.location
+        d.date       = .now
+        d.folder     = quote.folder
+        d.items      = quote.items.map {
+            .init(name: $0.name, unit: $0.unit, qty: $0.qty, price: $0.price)
+        }
+        return d
     }
 
     // MARK: - Cards
@@ -208,7 +243,11 @@ struct DetailScreen: View {
 
             HStack(spacing: 10) {
                 SecondaryButton("複製這張", systemImage: "plus") {
-                    // TODO: 複製成 draft 跳到 review
+                    if TierGate.canCreateQuote(isPro: settings.isPro, quotes: allQuotes) {
+                        showingCopyFlow = true
+                    } else {
+                        showingLimitAlert = true
+                    }
                 }
                 if quote.quoteStatus == .ongoing || quote.quoteStatus == .done {
                     SecondaryButton("轉請款單", systemImage: "dollarsign.circle") {

@@ -7,8 +7,8 @@ struct NewQuoteFlow: View {
     let onClose: () -> Void
     let onFinished: () -> Void
 
-    @State private var draft = NewQuoteDraft()
-    @State private var path: [Step] = []
+    @State private var draft: NewQuoteDraft
+    @State private var path: [Step]
     @State private var wasFirstQuote = false
     @State private var finalizedQuote: Quote? = nil
     @Environment(\.modelContext) private var modelContext
@@ -19,6 +19,26 @@ struct NewQuoteFlow: View {
         case items
         case review
         case exported
+    }
+
+    /// `initialDraft` 帶入 existing 內容（例：從 Detail「複製這張」）。
+    /// `startAt` 指定要直接跳到哪一步，會把前面的 step 也 push 進 stack 以保留返回路徑。
+    init(initialDraft: NewQuoteDraft? = nil,
+         startAt: Step? = nil,
+         onClose: @escaping () -> Void,
+         onFinished: @escaping () -> Void) {
+        self.onClose = onClose
+        self.onFinished = onFinished
+        _draft = State(initialValue: initialDraft ?? NewQuoteDraft())
+
+        var initialPath: [Step] = []
+        if let startAt {
+            let order: [Step] = [.items, .review, .exported]
+            if let idx = order.firstIndex(of: startAt) {
+                initialPath = Array(order[0...idx])
+            }
+        }
+        _path = State(initialValue: initialPath)
     }
 
     var body: some View {
