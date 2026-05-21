@@ -11,6 +11,7 @@ struct NewClientSheet: View {
     @State private var email = ""
     @State private var address = ""
     @State private var notes = ""
+    @State private var mapOpen = false
 
     private var canSave: Bool {
         !name.trimmingCharacters(in: .whitespaces).isEmpty
@@ -56,6 +57,11 @@ struct NewClientSheet: View {
             }
         }
         .background(Color.appSurface)
+        .sheet(isPresented: $mapOpen) {
+            LocationPickerSheet(address: $address)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
+        }
     }
 
     // MARK: - Nav bar
@@ -119,7 +125,7 @@ struct NewClientSheet: View {
 
     private var mapButton: some View {
         Button {
-            // TODO: 開啟 LocationPickerSheet
+            mapOpen = true
         } label: {
             HStack(spacing: 5) {
                 Image(systemName: "mappin")

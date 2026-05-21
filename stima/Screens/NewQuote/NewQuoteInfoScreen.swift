@@ -6,6 +6,7 @@ struct NewQuoteInfoScreen: View {
     @Bindable var draft: NewQuoteDraft
     let onCancel: () -> Void
     let onNext: () -> Void
+    @State private var mapOpen = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -63,11 +64,16 @@ struct NewQuoteInfoScreen: View {
                 }
             }
         }
+        .sheet(isPresented: $mapOpen) {
+            LocationPickerSheet(address: $draft.location)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
+        }
     }
 
     private var mapButton: some View {
         Button {
-            // TODO: 開啟 LocationPickerSheet
+            mapOpen = true
         } label: {
             HStack(spacing: 5) {
                 Image(systemName: "mappin")
