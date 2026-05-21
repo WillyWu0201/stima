@@ -187,10 +187,12 @@
 				};
 			};
 			buildConfigurationList = 3F7CC9F92FBD8F570019E29C /* Build configuration list for PBXProject "stima" */;
-			developmentRegion = en;
+			developmentRegion = "zh-Hant";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hant",
+				"zh-Hans",
 				Base,
 			);
 			mainGroup = 3F7CC9F52FBD8F570019E29C;

@@ -1,0 +1,162 @@
+{
+  "sourceLanguage" : "zh-Hant",
+  "strings" : {
+    "已收款" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Paid" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已收款" } }
+      }
+    },
+    "已完工" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Done" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已完工" } }
+      }
+    },
+    "出單，搞定!" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Finalize" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "出单，搞定!" } }
+      }
+    },
+    "升級到師傅號 PRO" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Upgrade to Pro" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "升级到师傅号 PRO" } }
+      }
+    },
+    "取消" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cancel" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "取消" } }
+      }
+    },
+    "客戶簿" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Contacts" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "客户簿" } }
+      }
+    },
+    "我的報價單" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "My Quotes" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "我的报价单" } }
+      }
+    },
+    "報價單" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Quotes" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "报价单" } }
+      }
+    },
+    "統計" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Stats" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "统计" } }
+      }
+    },
+    "設定" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Settings" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设定" } }
+      }
+    },
+    "新增報價單" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New Quote" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "新增报价单" } }
+      }
+    },
+    "進行中" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Ongoing" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "进行中" } }
+      }
+    },
+    "草稿" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Draft" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "草稿" } }
+      }
+    },
+    "下一步" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Next" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "下一步" } }
+      }
+    },
+    "確認出單" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Review" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "确认出单" } }
+      }
+    },
+    "傳給客戶" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Share" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "传给客户" } }
+      }
+    },
+    "預覽 PDF" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Preview PDF" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "预览 PDF" } }
+      }
+    },
+    "複製這張" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Duplicate" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "复制这张" } }
+      }
+    },
+    "轉請款單" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Make Invoice" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "转请款单" } }
+      }
+    },
+    "標記已收款" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mark Paid" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "标记已收款" } }
+      }
+    },
+    "報價單模板" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "PDF Template" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "报价单模板" } }
+      }
+    },
+    "確認此地點" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Confirm Location" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "确认此地点" } }
+      }
+    },
+    "使用目前位置" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Use Current Location" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "使用当前位置" } }
+      }
+    },
+    "升級 PRO" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Upgrade" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "升级 PRO" } }
+      }
+    },
+    "本月免費額度已用完" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Monthly Limit Reached" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "本月免费额度已用完" } }
+      }
+    },
+    "再看看" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Later" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "再看看" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}
