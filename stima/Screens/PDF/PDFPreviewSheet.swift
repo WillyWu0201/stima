@@ -324,9 +324,10 @@ struct PDFPreviewSheet: View {
 
     private var footerActions: some View {
         HStack(spacing: 10) {
-            SecondaryButton("分享", systemImage: "square.and.arrow.up") {
-                // TODO: ShareLink / UIActivityViewController
-            }
+            ShareSecondaryButton(
+                title: "分享",
+                message: ShareMessage.forQuote(quote, masterName: settings.masterName)
+            )
             PrimaryButton("儲存 PDF", systemImage: "doc.text") {
                 // TODO: PDFKit 真實 render + 寫檔
             }

@@ -6,6 +6,7 @@ import SwiftData
 struct DetailScreen: View {
     let quote: Quote
     @Environment(\.dismiss) private var dismiss
+    @Environment(AppSettings.self) private var settings
     @Query private var allClients: [Client]
     @State private var pdfPreviewOpen = false
     @State private var goingToInvoice = false
@@ -196,9 +197,10 @@ struct DetailScreen: View {
     private var actionRows: some View {
         VStack(spacing: 10) {
             HStack(spacing: 10) {
-                SecondaryButton("傳給客戶", systemImage: "square.and.arrow.up") {
-                    // TODO: 觸發 ShareLink / UIActivityViewController
-                }
+                ShareSecondaryButton(
+                    title: "傳給客戶",
+                    message: ShareMessage.forQuote(quote, masterName: settings.masterName)
+                )
                 SecondaryButton("預覽 PDF", systemImage: "doc.text") {
                     pdfPreviewOpen = true
                 }

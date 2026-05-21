@@ -7,6 +7,7 @@ import SwiftData
 struct InvoiceScreen: View {
     let quote: Quote
     @Environment(\.dismiss) private var dismiss
+    @Environment(AppSettings.self) private var settings
 
     private var subtotal: Int { quote.items.reduce(0) { $0 + $1.subtotal } }
     private var tax: Int { Int((Double(subtotal) * 0.05).rounded()) }
@@ -227,9 +228,10 @@ struct InvoiceScreen: View {
                 markAsPaid()
             }
             .disabled(quote.quoteStatus == .paid)
-            SecondaryButton("傳給客戶", systemImage: "square.and.arrow.up") {
-                // TODO: ShareLink
-            }
+            ShareSecondaryButton(
+                title: "傳給客戶",
+                message: ShareMessage.forInvoice(quote, masterName: settings.masterName)
+            )
         }
         .padding(.top, 4)
     }

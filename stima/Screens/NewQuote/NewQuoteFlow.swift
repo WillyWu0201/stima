@@ -10,7 +10,9 @@ struct NewQuoteFlow: View {
     @State private var draft = NewQuoteDraft()
     @State private var path: [Step] = []
     @State private var wasFirstQuote = false
+    @State private var finalizedQuote: Quote? = nil
     @Environment(\.modelContext) private var modelContext
+    @Environment(AppSettings.self) private var settings
     @Query private var allQuotes: [Quote]
 
     enum Step: Hashable {
@@ -42,7 +44,10 @@ struct NewQuoteFlow: View {
                     ExportedScreen(
                         isFirstTime: wasFirstQuote,
                         onHome:  { onFinished() },
-                        onShare: { /* TODO: ShareLink / UIActivityViewController */ }
+                        onShare: {},
+                        shareMessage: finalizedQuote.map {
+                            ShareMessage.forQuote($0, masterName: settings.masterName)
+                        }
                     )
                 }
             }
@@ -68,6 +73,7 @@ struct NewQuoteFlow: View {
         }
         quote.recalcTotal()
         modelContext.insert(quote)
+        finalizedQuote = quote
         path.append(.exported)
     }
 }

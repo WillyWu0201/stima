@@ -6,6 +6,7 @@ struct ExportedScreen: View {
     let isFirstTime: Bool
     let onHome: () -> Void
     let onShare: () -> Void
+    var shareMessage: String? = nil      // 若提供，「傳給客戶」用 ShareLink 自動觸發系統面板
 
     var body: some View {
         VStack(spacing: 0) {
@@ -44,8 +45,12 @@ struct ExportedScreen: View {
         .safeAreaInset(edge: .bottom) {
             BottomCTA {
                 VStack(spacing: 10) {
-                    SecondaryButton("傳給客戶", systemImage: "square.and.arrow.up") {
-                        onShare()
+                    if let shareMessage {
+                        ShareSecondaryButton(title: "傳給客戶", message: shareMessage)
+                    } else {
+                        SecondaryButton("傳給客戶", systemImage: "square.and.arrow.up") {
+                            onShare()
+                        }
                     }
                     PrimaryButton("太好了，看看主畫面") {
                         onHome()
