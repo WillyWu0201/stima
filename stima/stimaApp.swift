@@ -64,10 +64,13 @@ struct RootView: View {
     @Environment(AppSettings.self) private var settings
 
     var body: some View {
-        if settings.hasSeenOnboarding {
-            ContentView()
-        } else {
-            OnboardingFlow()
+        Group {
+            if settings.hasSeenOnboarding {
+                ContentView()
+            } else {
+                OnboardingFlow()
+            }
         }
+        .environment(\.locale, Locale(identifier: settings.language))
     }
 }

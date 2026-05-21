@@ -9,6 +9,9 @@ struct SettingsScreen: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \CustomItem.name) private var customItems: [CustomItem]
 
+    @State private var showingCurrencyPicker = false
+    @State private var showingLanguagePicker = false
+
     @State private var paywallOpen = false
 
     /// 不可刪除的內建分類（仍可編輯名稱，但不會出現垃圾桶按鈕）。
@@ -290,9 +293,10 @@ struct SettingsScreen: View {
     // MARK: - 國際化
 
     private var internationalCard: some View {
-        AppCard(padded: false) {
+        @Bindable var settings = settings
+        return AppCard(padded: false) {
             VStack(spacing: 0) {
-                Button { /* TODO: 切換貨幣 */ } label: {
+                Button { showingCurrencyPicker = true } label: {
                     SettingsRow(
                         systemImage: "dollarsign.circle",
                         iconColor: .cool,
@@ -301,10 +305,20 @@ struct SettingsScreen: View {
                     )
                 }
                 .buttonStyle(.plain)
+                .confirmationDialog("選擇貨幣", isPresented: $showingCurrencyPicker,
+                                    titleVisibility: .visible) {
+                    ForEach(AppSettings.Currency.all, id: \.self) { code in
+                        Button(Self.currencyLabel(code)) {
+                            settings.currency = code
+                            settings.taxRate  = Self.defaultTaxRate(for: code)
+                        }
+                    }
+                    Button("取消", role: .cancel) {}
+                }
 
                 rowDivider
 
-                Button { /* TODO: 切換語言 */ } label: {
+                Button { showingLanguagePicker = true } label: {
                     SettingsRow(
                         systemImage: "globe",
                         iconColor: .cool,
@@ -313,19 +327,40 @@ struct SettingsScreen: View {
                     )
                 }
                 .buttonStyle(.plain)
+                .confirmationDialog("選擇語言", isPresented: $showingLanguagePicker,
+                                    titleVisibility: .visible) {
+                    ForEach(AppSettings.Language.all, id: \.self) { code in
+                        Button(Self.languageLabel(code)) {
+                            settings.language = code
+                        }
+                    }
+                    Button("取消", role: .cancel) {}
+                }
 
                 rowDivider
 
-                Button { /* TODO: 切換稅制 */ } label: {
-                    SettingsRow(
-                        systemImage: "percent",
-                        iconColor: .cool,
-                        label: "稅制",
-                        rightValue: "\(Int(settings.taxRate))% · \(Self.taxRegion(settings.currency))"
-                    )
-                }
-                .buttonStyle(.plain)
+                // 稅制依貨幣自動決定，純展示不可點
+                SettingsRow(
+                    systemImage: "percent",
+                    iconColor: .cool,
+                    label: "稅制",
+                    rightValue: "\(Int(settings.taxRate))% · \(Self.taxRegion(settings.currency))",
+                    showChevron: false
+                )
             }
+        }
+    }
+
+    /// 各貨幣對應的預設營業稅率（切換貨幣時自動更新）
+    private static func defaultTaxRate(for currency: String) -> Double {
+        switch currency {
+        case "TWD": 5
+        case "VND": 10
+        case "IDR": 11
+        case "MYR": 6
+        case "PHP": 12
+        case "USD": 0
+        default:    5
         }
     }
 
