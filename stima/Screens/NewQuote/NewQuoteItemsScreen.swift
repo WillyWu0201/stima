@@ -44,7 +44,10 @@ struct NewQuoteItemsScreen: View {
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .bottom) { bottomBar }
         .sheet(isPresented: $pickerOpen) {
-            ItemPickerSheet(categories: settings.categories) { item in
+            ItemPickerSheet(
+                categories: settings.categories,
+                addedCounts: addedCounts
+            ) { item in
                 draft.items.append(item)
                 showToast(item.name)
             }
@@ -168,6 +171,15 @@ struct NewQuoteItemsScreen: View {
 
     private func remove(_ item: NewQuoteDraft.Item) {
         draft.items.removeAll { $0.id == item.id }
+    }
+
+    /// draft 內每個 name 出現幾次 — 給 picker 顯示「✓ 已加 ×N」用。
+    private var addedCounts: [String: Int] {
+        var counts: [String: Int] = [:]
+        for item in draft.items {
+            counts[item.name, default: 0] += 1
+        }
+        return counts
     }
 }
 

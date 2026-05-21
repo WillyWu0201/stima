@@ -5,14 +5,19 @@ import SwiftUI
 /// 加完 sheet 不關，方便批次加；主畫面會顯示「已加 OOO」toast。
 struct ItemPickerSheet: View {
     let categories: [String]
+    /// 目前 draft 內已加項目，依 name → 加過幾次。Picker 用來顯示「已加 ×N」marker。
+    let addedCounts: [String: Int]
     let onAdd: (NewQuoteDraft.Item) -> Void
     @Environment(\.dismiss) private var dismiss
 
     @State private var selectedTab: String
     @State private var customDraft = CustomDraft()
 
-    init(categories: [String], onAdd: @escaping (NewQuoteDraft.Item) -> Void) {
+    init(categories: [String],
+         addedCounts: [String: Int] = [:],
+         onAdd: @escaping (NewQuoteDraft.Item) -> Void) {
         self.categories = categories
+        self.addedCounts = addedCounts
         self.onAdd = onAdd
         // 預設 「常用」
         _selectedTab = State(initialValue: "常用")
@@ -94,7 +99,8 @@ struct ItemPickerSheet: View {
             ScrollView {
                 LazyVStack(spacing: 6) {
                     ForEach(ItemLibrary.entries(in: selectedTab)) { entry in
-                        LibraryEntryRow(entry: entry) {
+                        LibraryEntryRow(entry: entry,
+                                        addedCount: addedCounts[entry.name, default: 0]) {
                             onAdd(.init(name: entry.name,
                                         unit: entry.unit,
                                         qty: 1,
@@ -128,15 +134,28 @@ struct CustomDraft {
 
 private struct LibraryEntryRow: View {
     let entry: ItemLibrary.Entry
+    var addedCount: Int = 0
     let onAdd: () -> Void
+
+    private var alreadyAdded: Bool { addedCount > 0 }
 
     var body: some View {
         Button(action: onAdd) {
             HStack(spacing: 10) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(entry.name)
-                        .font(AppFont.sans(15, weight: .semibold))
-                        .foregroundStyle(Color.ink)
+                    HStack(spacing: 6) {
+                        Text(entry.name)
+                            .font(AppFont.sans(15, weight: .semibold))
+                            .foregroundStyle(Color.ink)
+                        if alreadyAdded {
+                            Text("✓ 已加 ×\(addedCount)")
+                                .font(AppFont.sans(10, weight: .bold))
+                                .foregroundStyle(Color.accent)
+                                .padding(.horizontal, 6)
+                                .padding(.vertical, 1)
+                                .background(Color.accent.opacity(0.14), in: Capsule())
+                        }
+                    }
                     HStack(spacing: 0) {
                         Text("上次 $\(entry.lastPrice.formatted()) / \(entry.unit)")
                         if let n = entry.usedCount {
@@ -148,7 +167,8 @@ private struct LibraryEntryRow: View {
                 }
                 Spacer(minLength: 8)
                 ZStack {
-                    Circle().fill(Color.accent)
+                    Circle()
+                        .fill(alreadyAdded ? Color.accent.opacity(0.4) : Color.accent)
                     Image(systemName: "plus")
                         .font(.system(size: 16, weight: .bold))
                         .foregroundStyle(.white)
@@ -161,7 +181,8 @@ private struct LibraryEntryRow: View {
                         in: RoundedRectangle(cornerRadius: 10, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .strokeBorder(Color.appBorder, lineWidth: 1)
+                    .strokeBorder(alreadyAdded ? Color.accent.opacity(0.4) : Color.appBorder,
+                                  lineWidth: 1)
             )
         }
         .buttonStyle(.plain)
