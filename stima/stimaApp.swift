@@ -3,6 +3,13 @@ import SwiftData
 
 @main
 struct stimaApp: App {
+    /// UI 測試專用 launch argument。出現任一就走測試模式：
+    /// - `--uitest-reset`：清掉 UserDefaults 內 onboarding / PRO 等狀態
+    /// - `--uitest-inmemory`：SwiftData 用 in-memory，每次 launch 都乾淨
+    private static var isUITesting: Bool {
+        ProcessInfo.processInfo.arguments.contains { $0.hasPrefix("--uitest-") }
+    }
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Quote.self,
@@ -11,7 +18,8 @@ struct stimaApp: App {
             CustomItem.self,
             PDFTemplate.self,
         ])
-        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        let inMemory = ProcessInfo.processInfo.arguments.contains("--uitest-inmemory")
+        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: inMemory)
         do {
             return try ModelContainer(for: schema, configurations: [config])
         } catch {
@@ -19,7 +27,17 @@ struct stimaApp: App {
         }
     }()
 
-    @State private var settings = AppSettings()
+    @State private var settings: AppSettings
+
+    init() {
+        if ProcessInfo.processInfo.arguments.contains("--uitest-reset") {
+            for key in ["hasSeenOnboarding", "isPro", "masterName", "taxRate",
+                        "currency", "language", "categories", "fontScale"] {
+                UserDefaults.standard.removeObject(forKey: key)
+            }
+        }
+        _settings = State(initialValue: AppSettings())
+    }
 
     var body: some Scene {
         WindowGroup {
