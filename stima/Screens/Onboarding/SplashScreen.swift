@@ -8,7 +8,7 @@ struct SplashScreen: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             // 版本 chip
-            Text("師傅號 · v2.0")
+            Text("Stima · v2.0")
                 .font(AppFont.sans(12, weight: .semibold))
                 .foregroundStyle(Color.accent)
                 .padding(.horizontal, 12)

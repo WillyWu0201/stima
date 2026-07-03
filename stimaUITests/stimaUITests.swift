@@ -18,7 +18,7 @@ final class stimaUITests: XCTestCase {
     @MainActor
     func testOnboardingFlowReachesHome() throws {
         // Splash
-        XCTAssertTrue(app.staticTexts["師傅號 · v2.0"].waitForExistence(timeout: 5),
+        XCTAssertTrue(app.staticTexts["Stima · v2.0"].waitForExistence(timeout: 5),
                       "Splash 版本 chip 沒出現")
         button(containing: "開工").tap()
 

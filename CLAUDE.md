@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-**師傅號** — a SwiftUI iOS app for Taiwanese home-renovation contractors (裝潢師傅) to build itemized quotes, track job status, manage clients, generate PDFs, and view business statistics.
+**Stima** — a SwiftUI iOS app for Taiwanese home-renovation contractors (裝潢師傅) to build itemized quotes, track job status, manage clients, generate PDFs, and view business statistics.
 
 Design reference: `design_handoff_quote_app/` — open `index.html` in a browser to view all 21 screens interactively. `README.md` inside that folder is the authoritative spec.
 

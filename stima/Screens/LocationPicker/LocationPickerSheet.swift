@@ -57,7 +57,7 @@ struct LocationPickerSheet: View {
         .alert("無法存取位置", isPresented: $showingDeniedAlert) {
             Button("好", role: .cancel) {}
         } message: {
-            Text("位置權限被拒。請到「設定 → 隱私權與安全性 → 定位服務 → 師傅號」開啟，再回來試一次。")
+            Text("位置權限被拒。請到「設定 → 隱私權與安全性 → 定位服務 → Stima」開啟，再回來試一次。")
         }
     }
 

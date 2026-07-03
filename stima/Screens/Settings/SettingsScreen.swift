@@ -20,7 +20,7 @@ struct SettingsScreen: View {
     var body: some View {
         @Bindable var settings = settings
         VStack(spacing: 0) {
-            AppHeader(title: "設定", subtitle: "師傅號 · v2.0", accent: true)
+            AppHeader(title: "設定", subtitle: "Stima · v2.0", accent: true)
 
             ScrollView {
                 VStack(alignment: .leading, spacing: Spacing.cardGap) {
@@ -73,7 +73,7 @@ struct SettingsScreen: View {
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundStyle(Color.positive)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("師傅號 PRO · 已訂閱")
+                    Text("Stima PRO · 已訂閱")
                         .font(AppFont.sans(15, weight: .bold))
                         .foregroundStyle(Color.ink)
                     Text("下次扣款 2027-05-20 · 年費 $2,400")
@@ -105,7 +105,7 @@ struct SettingsScreen: View {
                         .font(.system(size: 20, weight: .semibold))
                         .foregroundStyle(Color.accent2)
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("升級到師傅號 PRO")
+                        Text("升級到Stima PRO")
                             .font(AppFont.sans(15, weight: .bold))
                             .foregroundStyle(Color.accent2)
                         Text("無限報價單 · 自訂模板 · 移除浮水印 · iCloud 備份")
@@ -397,7 +397,7 @@ struct SettingsScreen: View {
     // MARK: - Footer
 
     private var buildStamp: some View {
-        Text("師傅號 · v2.0 · build 2026.05.20")
+        Text("Stima · v2.0 · build 2026.05.20")
             .font(AppFont.mono(11))
             .foregroundStyle(Color.inkFaint)
             .frame(maxWidth: .infinity)

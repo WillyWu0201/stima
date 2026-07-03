@@ -19,10 +19,10 @@
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "出单，搞定!" } }
       }
     },
-    "升級到師傅號 PRO" : {
+    "升級到Stima PRO" : {
       "localizations" : {
         "en" : { "stringUnit" : { "state" : "translated", "value" : "Upgrade to Pro" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "升级到师傅号 PRO" } }
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "升级到Stima PRO" } }
       }
     },
     "取消" : {

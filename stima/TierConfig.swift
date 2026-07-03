@@ -17,7 +17,7 @@ enum TierConfig {
     enum ProFeature: CaseIterable {
         case unlimitedQuotes    // >3 finalized quotes/month
         case customPDFTemplate  // logo, stamp, brand color, font
-        case removeWatermark    // no "師傅號 · 免費版" overlay on PDF
+        case removeWatermark    // no "Stima · 免費版" overlay on PDF
         case invoices           // 請款單 (quote → invoice conversion)
         case iCloudSync         // CloudKit backup
         case advancedStats      // net margin, cost tracking
@@ -29,7 +29,7 @@ enum TierConfig {
 
     // MARK: - PDF watermark
 
-    static let watermarkText    = "師傅號 · 免費版"
+    static let watermarkText    = "Stima · 免費版"
     static let watermarkAngle   = -30.0     // degrees
     static let watermarkOpacity = 0.06
 

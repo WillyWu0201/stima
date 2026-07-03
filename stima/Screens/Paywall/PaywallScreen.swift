@@ -85,7 +85,7 @@ struct PaywallScreen: View {
                 .foregroundStyle(Color.accentSurfaceInk.opacity(0.7))
             }
 
-            Text("師傅號 PRO")
+            Text("Stima PRO")
                 .font(AppFont.mono(11, weight: .bold))
                 .foregroundStyle(Color.accent2)
                 .kerning(1.6)
