@@ -7,12 +7,14 @@ struct HomeScreen: View {
     @Environment(AppSettings.self) private var settings
     @Environment(TutorialState.self) private var tutorial
     @Query(sort: \Quote.date, order: .reverse) private var quotes: [Quote]
+    @Environment(\.modelContext) private var modelContext
 
     @State private var search: String = ""
     @State private var selectedTab: FilterTab = .all
     @State private var showingNewQuote = false
     @State private var showingLimitAlert = false
     @State private var showingPaywall = false
+    @State private var pendingDelete: Quote?
 
     enum FilterTab: Hashable {
         case all
@@ -43,6 +45,20 @@ struct HomeScreen: View {
             Button("再看看", role: .cancel) {}
         } message: {
             Text("免費版每月最多 \(TierConfig.freeMonthlyQuoteLimit) 張報價單，下個月會自動重置。升級 PRO 解鎖無限張。")
+        }
+        .confirmationDialog(
+            "刪除這張報價單？",
+            isPresented: Binding(get: { pendingDelete != nil },
+                                 set: { if !$0 { pendingDelete = nil } }),
+            titleVisibility: .visible,
+            presenting: pendingDelete
+        ) { quote in
+            Button("刪除「\(quote.clientName)」", role: .destructive) {
+                modelContext.delete(quote)
+            }
+            Button("取消", role: .cancel) {}
+        } message: { _ in
+            Text("刪除後無法復原（含這張的所有項目）。")
         }
         .onAppear {
             // 從 onboarding「來試一張看看」進來：自動開新報價並帶 coach mark。
@@ -129,6 +145,13 @@ struct HomeScreen: View {
                             QuoteCard(quote: quote)
                         }
                         .buttonStyle(.plain)
+                        .contextMenu {
+                            Button(role: .destructive) {
+                                pendingDelete = quote
+                            } label: {
+                                Label("刪除報價單", systemImage: "trash")
+                            }
+                        }
                     }
                 }
             }

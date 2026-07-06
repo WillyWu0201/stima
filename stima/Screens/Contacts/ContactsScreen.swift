@@ -16,6 +16,7 @@ struct ContactsScreen: View {
     @State private var showingNewQuote = false
     @State private var showingLimitAlert = false
     @State private var showingPaywall = false
+    @State private var pendingDelete: Client?
 
     private var filtered: [Client] {
         guard !search.isEmpty else { return clients }
@@ -70,6 +71,13 @@ struct ContactsScreen: View {
                                 summary: summary(for: client),
                                 onNewQuote: { startNewQuote(for: client) }
                             )
+                            .contextMenu {
+                                Button(role: .destructive) {
+                                    pendingDelete = client
+                                } label: {
+                                    Label("刪除客戶", systemImage: "trash")
+                                }
+                            }
                         }
                     }
                 }
@@ -107,6 +115,20 @@ struct ContactsScreen: View {
             Button("再看看", role: .cancel) {}
         } message: {
             Text("免費版每月最多 \(TierConfig.freeMonthlyQuoteLimit) 張報價單，下個月會自動重置。升級 PRO 解鎖無限張。")
+        }
+        .confirmationDialog(
+            "刪除這位客戶？",
+            isPresented: Binding(get: { pendingDelete != nil },
+                                 set: { if !$0 { pendingDelete = nil } }),
+            titleVisibility: .visible,
+            presenting: pendingDelete
+        ) { client in
+            Button("刪除「\(client.name)」", role: .destructive) {
+                modelContext.delete(client)
+            }
+            Button("取消", role: .cancel) {}
+        } message: { _ in
+            Text("只會從客戶簿移除，不影響已建立的報價單。")
         }
     }
 
