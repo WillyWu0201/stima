@@ -50,3 +50,6 @@ iOSInjectionProject/
 
 # Logs
 *.log
+
+# UI 檢視截圖（本機產生，不進版控）
+ui-screenshots/

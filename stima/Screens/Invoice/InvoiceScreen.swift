@@ -10,7 +10,11 @@ struct InvoiceScreen: View {
     @Environment(AppSettings.self) private var settings
 
     private var subtotal: Int { quote.items.reduce(0) { $0 + $1.subtotal } }
-    private var tax: Int { Int((Double(subtotal) * 0.05).rounded()) }
+    /// 從已存的 total 反推稅金，與報價單明細一致。
+    private var tax: Int { max(0, quote.total - subtotal) }
+    private var taxPercent: Int {
+        subtotal > 0 ? Int((Double(tax) / Double(subtotal) * 100).rounded()) : 0
+    }
     private var invoiceID: String { "INV-\(String(quote.id.uuidString.prefix(4)))" }
     private var quoteIDLast4: String { String(quote.id.uuidString.prefix(4)) }
 
@@ -165,7 +169,7 @@ struct InvoiceScreen: View {
         AppCard(accent: true) {
             VStack(spacing: 6) {
                 summaryRow("小計", value: subtotal)
-                summaryRow("稅金 5%", value: tax)
+                summaryRow("稅金 \(taxPercent)%", value: tax)
                 Rectangle()
                     .fill(Color.accentSurfaceInk.opacity(0.2))
                     .frame(height: 1)

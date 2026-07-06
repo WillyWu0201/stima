@@ -6,6 +6,8 @@ struct stimaApp: App {
     /// UI 測試專用 launch argument。出現任一就走測試模式：
     /// - `--uitest-reset`：清掉 UserDefaults 內 onboarding / PRO 等狀態
     /// - `--uitest-inmemory`：SwiftData 用 in-memory，每次 launch 都乾淨
+    /// - `--uitest-seed`：把 PreviewData 範例 client / quote 灌進 DB（給需要資料的畫面測試）
+    /// - `--uitest-onboarded`：標記已看過 onboarding，直接進主畫面（跳過教學 coach mark）
     private static var isUITesting: Bool {
         ProcessInfo.processInfo.arguments.contains { $0.hasPrefix("--uitest-") }
     }
@@ -38,6 +40,7 @@ struct stimaApp: App {
     }()
 
     @State private var settings: AppSettings
+    @State private var tutorial = TutorialState()
 
     init() {
         if ProcessInfo.processInfo.arguments.contains("--uitest-reset") {
@@ -46,13 +49,39 @@ struct stimaApp: App {
                 UserDefaults.standard.removeObject(forKey: key)
             }
         }
+        if ProcessInfo.processInfo.arguments.contains("--uitest-onboarded") {
+            UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
+        }
         _settings = State(initialValue: AppSettings())
+        PurchaseManager.shared.configure()
+
+        if ProcessInfo.processInfo.arguments.contains("--uitest-seed") {
+            Self.seedSampleData(into: sharedModelContainer)
+        }
+    }
+
+    /// UI 測試用：把 PreviewData 的範例 client / quote 灌進 DB，
+    /// 讓 Detail / ClientDetail / ItemDetail / Stats 等需要資料的畫面能被 UI 測試走到。
+    @MainActor
+    private static func seedSampleData(into container: ModelContainer) {
+        let ctx = container.mainContext
+        PreviewData.makeSampleClients().forEach { ctx.insert($0) }
+        PreviewData.makeSampleQuotes().forEach { q in
+            q.recalcTotal()   // 用一致的 5% 稅金總計，避免詳情/PDF 反推出怪異稅率
+            ctx.insert(q)
+        }
+        let template = PDFTemplate()
+        template.businessName = "大發工程行"
+        template.phone = "02-2345-6789"
+        ctx.insert(template)
+        try? ctx.save()
     }
 
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environment(settings)
+                .environment(tutorial)
         }
         .modelContainer(sharedModelContainer)
     }
@@ -72,5 +101,8 @@ struct RootView: View {
             }
         }
         .environment(\.locale, Locale(identifier: settings.language))
+        .task {
+            await PurchaseManager.shared.syncEntitlement(into: settings)
+        }
     }
 }

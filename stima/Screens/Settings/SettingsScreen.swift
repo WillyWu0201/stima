@@ -8,11 +8,13 @@ struct SettingsScreen: View {
     @Environment(AppSettings.self) private var settings
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \CustomItem.name) private var customItems: [CustomItem]
+    @Query(sort: \Quote.date, order: .reverse) private var allQuotes: [Quote]
 
     @State private var showingCurrencyPicker = false
     @State private var showingLanguagePicker = false
 
     @State private var paywallOpen = false
+    @State private var exportFile: ExportableFile? = nil
 
     /// 不可刪除的內建分類（仍可編輯名稱，但不會出現垃圾桶按鈕）。
     private static let fixedCategories: Set<String> = ["拆除", "水電", "泥作", "木作", "油漆"]
@@ -60,6 +62,29 @@ struct SettingsScreen: View {
             PaywallScreen { paywallOpen = false }
                 .environment(settings)
         }
+        .sheet(item: $exportFile) { file in
+            exportShareView(file.url)
+        }
+    }
+
+    @ViewBuilder
+    private func exportShareView(_ url: URL) -> some View {
+        #if canImport(UIKit)
+        ShareSheet(items: [url])
+        #else
+        ShareLink(item: url) {
+            Text("分享 \(url.lastPathComponent)")
+        }
+        .padding()
+        #endif
+    }
+
+    private func openAppSettings() {
+        #if canImport(UIKit)
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(url)
+        }
+        #endif
     }
 
     // MARK: - PRO banner
@@ -76,7 +101,7 @@ struct SettingsScreen: View {
                     Text("Stima PRO · 已訂閱")
                         .font(AppFont.sans(15, weight: .bold))
                         .foregroundStyle(Color.ink)
-                    Text("下次扣款 2027-05-20 · 年費 $2,400")
+                    Text("透過 App Store 管理訂閱 · 可隨時取消")
                         .font(AppFont.sans(11))
                         .foregroundStyle(Color.inkSoft)
                 }
@@ -110,7 +135,7 @@ struct SettingsScreen: View {
                             .foregroundStyle(Color.accent2)
                         Text("無限報價單 · 自訂模板 · 移除浮水印 · iCloud 備份")
                             .font(AppFont.sans(11))
-                            .foregroundStyle(Color.accentSurfaceInk.opacity(0.7))
+                            .foregroundStyle(Color.onAccentMuted)
                     }
                     Spacer()
                     Image(systemName: "chevron.right")
@@ -142,7 +167,7 @@ struct SettingsScreen: View {
                             .font(AppFont.sans(15, weight: .semibold))
                             .foregroundStyle(Color.ink)
                         Text(settings.isPro
-                             ? "已啟用 · 最後同步 12 秒前"
+                             ? "已啟用 · 自動備份到 iCloud"
                              : "需要 PRO · 換手機資料自動還原")
                             .font(AppFont.sans(12))
                             .foregroundStyle(Color.inkSoft)
@@ -369,19 +394,24 @@ struct SettingsScreen: View {
     private var miscCard: some View {
         AppCard(padded: false) {
             VStack(spacing: 0) {
-                Button { /* TODO: 匯出 */ } label: {
+                Button {
+                    exportFile = QuoteCSV.export(allQuotes)
+                } label: {
                     SettingsRow(
                         systemImage: "square.and.arrow.up",
                         iconColor: .inkSoft,
                         label: "匯出全部資料",
-                        hint: "備份成 Excel / CSV"
+                        hint: "\(allQuotes.count) 張報價單備份成 CSV"
                     )
                 }
                 .buttonStyle(.plain)
+                .disabled(allQuotes.isEmpty)
 
                 rowDivider
 
-                Button { /* TODO: App 設定 */ } label: {
+                Button {
+                    openAppSettings()
+                } label: {
                     SettingsRow(
                         systemImage: "gearshape",
                         iconColor: .inkSoft,

@@ -6,11 +6,16 @@ import SwiftData
 struct ContactsScreen: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    @Environment(AppSettings.self) private var settings
     @Query(sort: \Client.name) private var clients: [Client]
     @Query private var quotes: [Quote]
 
     @State private var search = ""
     @State private var addOpen = false
+    @State private var prefillClient: Client? = nil
+    @State private var showingNewQuote = false
+    @State private var showingLimitAlert = false
+    @State private var showingPaywall = false
 
     private var filtered: [Client] {
         guard !search.isEmpty else { return clients }
@@ -49,17 +54,21 @@ struct ContactsScreen: View {
             ScrollView {
                 LazyVStack(spacing: 8) {
                     if filtered.isEmpty {
-                        Text(clients.isEmpty ? "還沒加過客戶。\n點右上「+」開始" : "找不到客戶")
-                            .font(AppFont.sans(14))
-                            .foregroundStyle(Color.inkSoft)
-                            .multilineTextAlignment(.center)
-                            .padding(.top, 60)
-                            .frame(maxWidth: .infinity)
+                        if clients.isEmpty {
+                            EmptyStateView(
+                                systemImage: "person.crop.circle.badge.plus",
+                                title: "還沒有客戶",
+                                message: "點右上「+」把常合作的客戶加進來。"
+                            )
+                        } else {
+                            EmptyStateView(systemImage: "magnifyingglass", title: "找不到客戶")
+                        }
                     } else {
                         ForEach(filtered) { client in
                             ClientCard(
                                 client: client,
-                                summary: summary(for: client)
+                                summary: summary(for: client),
+                                onNewQuote: { startNewQuote(for: client) }
                             )
                         }
                     }
@@ -79,6 +88,43 @@ struct ContactsScreen: View {
             .presentationDetents([.large])
             .presentationDragIndicator(.visible)
         }
+        .fullScreenCover(isPresented: $showingNewQuote) {
+            if let client = prefillClient {
+                NewQuoteFlow(
+                    initialDraft: makeDraft(for: client),
+                    onClose:      { showingNewQuote = false },
+                    onFinished:   { showingNewQuote = false }
+                )
+                .environment(settings)
+            }
+        }
+        .fullScreenCover(isPresented: $showingPaywall) {
+            PaywallScreen { showingPaywall = false }
+                .environment(settings)
+        }
+        .alert("本月免費額度已用完", isPresented: $showingLimitAlert) {
+            Button("升級 PRO") { showingPaywall = true }
+            Button("再看看", role: .cancel) {}
+        } message: {
+            Text("免費版每月最多 \(TierConfig.freeMonthlyQuoteLimit) 張報價單，下個月會自動重置。升級 PRO 解鎖無限張。")
+        }
+    }
+
+    /// 預填這位客戶（姓名 + 地址）開新報價；超過免費額度則導向升級。
+    private func startNewQuote(for client: Client) {
+        if TierGate.canCreateQuote(isPro: settings.isPro, quotes: quotes) {
+            prefillClient = client
+            showingNewQuote = true
+        } else {
+            showingLimitAlert = true
+        }
+    }
+
+    private func makeDraft(for client: Client) -> NewQuoteDraft {
+        let draft = NewQuoteDraft()
+        draft.clientName = client.name
+        draft.location = client.address
+        return draft
     }
 
     private var header: some View {
@@ -105,6 +151,7 @@ struct ContactsScreen: View {
 private struct ClientCard: View {
     let client: Client
     let summary: (count: Int, paid: Int)
+    let onNewQuote: () -> Void
 
     var body: some View {
         NavigationLink(value: ClientRoute(name: client.name)) {
@@ -183,7 +230,7 @@ private struct ClientCard: View {
                 openMaps()
             }
             QuickActionButton(systemImage: "plus", label: "新報價", primary: true) {
-                // TODO: 推進新增報價單流程，預填這位客戶
+                onNewQuote()
             }
         }
     }

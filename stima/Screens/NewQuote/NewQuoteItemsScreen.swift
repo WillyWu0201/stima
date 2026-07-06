@@ -8,8 +8,10 @@ struct NewQuoteItemsScreen: View {
 
     @Environment(\.dismiss) private var dismiss
     @Environment(AppSettings.self) private var settings
+    @Environment(TutorialState.self) private var tutorial
     @State private var pickerOpen = false
     @State private var toastText: String? = nil
+    @State private var coachDone = false
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -53,6 +55,11 @@ struct NewQuoteItemsScreen: View {
             }
             .presentationDetents([.large])
             .presentationDragIndicator(.visible)
+        }
+        .coachMark(active: tutorial.coachingActive && !coachDone,
+                   target: "items",
+                   text: "點「加項目」，從清單挑你要做的工，數量價錢都能改。") {
+            coachDone = true
         }
     }
 
@@ -109,6 +116,7 @@ struct NewQuoteItemsScreen: View {
                     .foregroundStyle(Color.accent)
             }
             .frame(width: 64, height: 64)
+            .accessibilityHidden(true)
 
             VStack(spacing: 4) {
                 Text("還沒加項目")
@@ -127,6 +135,7 @@ struct NewQuoteItemsScreen: View {
         BottomCTA {
             HStack(spacing: 8) {
                 addButton
+                    .coachAnchor("items")
                 PrimaryButton("下一步", systemImage: "arrow.right") {
                     onNext()
                 }
@@ -156,12 +165,7 @@ struct NewQuoteItemsScreen: View {
             .foregroundStyle(Color.ink)
             .padding(.horizontal, 16)
             .padding(.vertical, 14)
-            .background(Color.appSurface,
-                        in: RoundedRectangle(cornerRadius: Radius.card, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: Radius.card, style: .continuous)
-                    .strokeBorder(Color.borderStrong, lineWidth: 1.5)
-            )
+            .glassNeutral()
         }
         .buttonStyle(.plain)
         .fixedSize()
@@ -247,9 +251,9 @@ private struct EditableItemRow: View {
             .padding(.horizontal, 6)
             .padding(.vertical, 3)
             .background(Color.appSurface,
-                        in: RoundedRectangle(cornerRadius: 4, style: .continuous))
+                        in: RoundedRectangle(cornerRadius: Radius.small, style: .continuous))
             .overlay(
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                RoundedRectangle(cornerRadius: Radius.small, style: .continuous)
                     .strokeBorder(Color.appBorder, lineWidth: 1)
             )
     }
@@ -260,6 +264,7 @@ private struct EditableItemRow: View {
         NewQuoteItemsScreen(draft: NewQuoteDraft(), onNext: {})
     }
     .environment(AppSettings())
+    .environment(TutorialState())
 }
 
 #Preview("已加幾項") {
@@ -272,4 +277,5 @@ private struct EditableItemRow: View {
         NewQuoteItemsScreen(draft: draft, onNext: {})
     }
     .environment(AppSettings())
+    .environment(TutorialState())
 }

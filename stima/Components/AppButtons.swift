@@ -31,10 +31,7 @@ struct PrimaryButton: View {
             .foregroundStyle(.white)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 15)
-            .background(
-                isEnabled ? Color.accent : Color.inkFaint,
-                in: RoundedRectangle(cornerRadius: Radius.card, style: .continuous)
-            )
+            .glassTintedFill(isEnabled ? Color.accent : Color.inkFaint)
         }
         .buttonStyle(.plain)
     }
@@ -65,11 +62,7 @@ struct SecondaryButton: View {
             .foregroundStyle(Color.ink)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
-            .background(Color.appSurface, in: RoundedRectangle(cornerRadius: Radius.card, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: Radius.card, style: .continuous)
-                    .strokeBorder(Color.borderStrong, lineWidth: 1.5)
-            )
+            .glassNeutral()
         }
         .buttonStyle(.plain)
     }

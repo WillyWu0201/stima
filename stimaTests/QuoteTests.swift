@@ -19,7 +19,7 @@ struct QuoteTests {
     func recalcCustomTax() {
         let q = Quote(clientName: "x", location: "", date: .now)
         q.items.append(QuoteItem(name: "A", unit: "個", qty: 1, price: 1000))
-        q.recalcTotal(taxRate: 0.10)
+        q.recalcTotal(taxRatePercent: 10)
         #expect(q.total == 1100)
     }
 

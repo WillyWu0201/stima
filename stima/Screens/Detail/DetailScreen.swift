@@ -23,8 +23,11 @@ struct DetailScreen: View {
         quote.items.reduce(0) { $0 + $1.subtotal }
     }
 
-    private var tax: Int {
-        Int((Double(subtotal) * 0.05).rounded())
+    /// 從已存的 total 反推稅金，確保明細加總永遠等於出單當下的金額（即使之後改了稅率設定）。
+    private var tax: Int { max(0, quote.total - subtotal) }
+
+    private var taxPercent: Int {
+        subtotal > 0 ? Int((Double(tax) / Double(subtotal) * 100).rounded()) : 0
     }
 
     private var quoteIDLast4: String {
@@ -171,7 +174,9 @@ struct DetailScreen: View {
                     .padding(.bottom, 4)
 
                 ForEach(quote.items.indices, id: \.self) { i in
-                    itemRow(quote.items[i])
+                    let item = quote.items[i]
+                    QuoteItemRow(name: item.name, qty: item.qty, unit: item.unit,
+                                 price: item.price, subtotal: item.subtotal)
                         .padding(.vertical, 8)
                     if i < quote.items.count - 1 {
                         AppDivider()
@@ -181,29 +186,14 @@ struct DetailScreen: View {
         }
     }
 
-    private func itemRow(_ item: QuoteItem) -> some View {
-        HStack(alignment: .firstTextBaseline) {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(item.name)
-                    .font(AppFont.sans(14, weight: .semibold))
-                    .foregroundStyle(Color.ink)
-                Text("\(formatQty(item.qty)) \(item.unit) × $\(item.price.formatted())")
-                    .font(AppFont.mono(12))
-                    .foregroundStyle(Color.inkSoft)
-            }
-            Spacer()
-            Money(item.subtotal, size: 15, color: .ink)
-        }
-    }
-
     private var totalsCard: some View {
         AppCard(accent: true) {
             VStack(spacing: 6) {
-                summaryRow("小計", value: subtotal)
-                summaryRow("稅金 5%", value: tax)
+                AccentSummaryRow(label: "小計", value: subtotal)
+                AccentSummaryRow(label: "稅金 \(taxPercent)%", value: tax)
 
                 Rectangle()
-                    .fill(Color.accentSurfaceInk.opacity(0.2))
+                    .fill(Color.onAccentLine)
                     .frame(height: 1)
                     .padding(.vertical, 4)
 
@@ -218,40 +208,31 @@ struct DetailScreen: View {
         }
     }
 
-    private func summaryRow(_ label: String, value: Int) -> some View {
-        HStack {
-            Text(label)
-                .font(AppFont.sans(13))
-            Spacer()
-            Text("$\(value.formatted())")
-                .font(AppFont.mono(13))
-        }
-        .foregroundStyle(Color.accentSurfaceInk.opacity(0.7))
-    }
-
     private var actionRows: some View {
-        VStack(spacing: 10) {
-            HStack(spacing: 10) {
-                ShareSecondaryButton(
-                    title: "傳給客戶",
-                    message: ShareMessage.forQuote(quote, masterName: settings.masterName)
-                )
-                SecondaryButton("預覽 PDF", systemImage: "doc.text") {
-                    pdfPreviewOpen = true
-                }
-            }
-
-            HStack(spacing: 10) {
-                SecondaryButton("複製這張", systemImage: "plus") {
-                    if TierGate.canCreateQuote(isPro: settings.isPro, quotes: allQuotes) {
-                        showingCopyFlow = true
-                    } else {
-                        showingLimitAlert = true
+        GlassGroup(spacing: 10) {
+            VStack(spacing: 10) {
+                HStack(spacing: 10) {
+                    ShareSecondaryButton(
+                        title: "傳給客戶",
+                        message: ShareMessage.forQuote(quote, masterName: settings.masterName)
+                    )
+                    SecondaryButton("預覽 PDF", systemImage: "doc.text") {
+                        pdfPreviewOpen = true
                     }
                 }
-                if quote.quoteStatus == .ongoing || quote.quoteStatus == .done {
-                    SecondaryButton("轉請款單", systemImage: "dollarsign.circle") {
-                        goingToInvoice = true
+
+                HStack(spacing: 10) {
+                    SecondaryButton("複製這張", systemImage: "plus") {
+                        if TierGate.canCreateQuote(isPro: settings.isPro, quotes: allQuotes) {
+                            showingCopyFlow = true
+                        } else {
+                            showingLimitAlert = true
+                        }
+                    }
+                    if quote.quoteStatus == .ongoing || quote.quoteStatus == .done {
+                        SecondaryButton("轉請款單", systemImage: "dollarsign.circle") {
+                            goingToInvoice = true
+                        }
                     }
                 }
             }
@@ -259,10 +240,6 @@ struct DetailScreen: View {
     }
 
     // MARK: - Helpers
-
-    private func formatQty(_ qty: Double) -> String {
-        qty == qty.rounded() ? String(Int(qty)) : "\(qty)"
-    }
 
     private var dateString: String {
         Self.dateFormatter.string(from: quote.date)

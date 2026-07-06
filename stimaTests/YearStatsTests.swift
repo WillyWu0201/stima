@@ -144,4 +144,39 @@ struct YearStatsTests {
         ]
         #expect(YearStatsCalculator.availableYears(quotes: quotes) == [2026, 2025, 2024])
     }
+
+    // MARK: - YearStats struct（yoyPercent / TopItem.id）
+
+    /// 直接建構 YearStats 來測 yoyPercent —— compute 不會產出 prevYearPaid == 0
+    /// （它會轉成 nil），所以那個分支只能手動建構來覆蓋。
+    private func stats(paidTotal: Int, prevYearPaid: Int?) -> YearStats {
+        YearStats(total: 0, paidCount: 0, doneCount: 0, ongoingCount: 0,
+                  paidTotal: paidTotal, doneTotal: 0, ongoingTotal: 0,
+                  monthly: Array(repeating: 0, count: 12), maxMonthly: 1,
+                  topClient: nil, topItems: [], prevYearPaid: prevYearPaid)
+    }
+
+    @Test("yoyPercent：今年 200 / 去年 100 → +100%")
+    func yoyPositive() throws {
+        let pct = try #require(stats(paidTotal: 200, prevYearPaid: 100).yoyPercent)
+        #expect(abs(pct - 100) < 0.001)
+    }
+
+    @Test("yoyPercent：衰退為負值")
+    func yoyNegative() throws {
+        let pct = try #require(stats(paidTotal: 50, prevYearPaid: 100).yoyPercent)
+        #expect(abs(pct + 50) < 0.001)
+    }
+
+    @Test("yoyPercent：去年 nil 或 0 時為 nil")
+    func yoyNilWhenNoBaseline() {
+        #expect(stats(paidTotal: 200, prevYearPaid: nil).yoyPercent == nil)
+        #expect(stats(paidTotal: 200, prevYearPaid: 0).yoyPercent == nil)
+    }
+
+    @Test("TopItem.id 就是品項名稱")
+    func topItemIDIsName() {
+        let item = YearStats.TopItem(name: "拆除磁磚", count: 3, totalQty: 5, totalRev: 9000, unit: "坪")
+        #expect(item.id == "拆除磁磚")
+    }
 }

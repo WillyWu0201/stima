@@ -42,6 +42,13 @@ extension Color {
     static let accentSurface    = Color(light: 0x1A1A1A, dark: 0x0E0B07)
     static let accentSurfaceInk = Color(light: 0xF5F2EC, dark: 0xF2EDE3)
 
+    // MARK: - On-accent text tints
+    // Semantic shades for text / hairlines drawn over the dark accent surface,
+    // so the same opacities aren't re-typed across every hero card.
+    static let onAccentMuted = accentSurfaceInk.opacity(0.7)   // secondary labels
+    static let onAccentFaint = accentSurfaceInk.opacity(0.55)  // tertiary captions
+    static let onAccentLine  = accentSurfaceInk.opacity(0.2)   // divider hairline
+
     // MARK: - Hex init
     init(light: UInt, dark: UInt) {
         #if os(iOS) || os(visionOS)
@@ -140,6 +147,7 @@ enum Spacing {
 // MARK: - Radii
 
 enum Radius {
+    static let small: CGFloat = 6     // inline mini-fields, chips inside cards
     static let card:  CGFloat = 14
     static let big:   CGFloat = 22
     static let pill:  CGFloat = 999

@@ -5,6 +5,7 @@ import SwiftData
 /// 主要 landing 畫面：accent header + search + filter tabs + quote cards。
 struct HomeScreen: View {
     @Environment(AppSettings.self) private var settings
+    @Environment(TutorialState.self) private var tutorial
     @Query(sort: \Quote.date, order: .reverse) private var quotes: [Quote]
 
     @State private var search: String = ""
@@ -43,6 +44,14 @@ struct HomeScreen: View {
         } message: {
             Text("免費版每月最多 \(TierConfig.freeMonthlyQuoteLimit) 張報價單，下個月會自動重置。升級 PRO 解鎖無限張。")
         }
+        .onAppear {
+            // 從 onboarding「來試一張看看」進來：自動開新報價並帶 coach mark。
+            if tutorial.requestQuoteTutorial {
+                tutorial.requestQuoteTutorial = false
+                tutorial.coachingActive = true
+                showingNewQuote = true
+            }
+        }
     }
 
     // MARK: - Sections
@@ -53,18 +62,22 @@ struct HomeScreen: View {
             subtitle: "歡迎，\(displayName)",
             accent: true
         ) {
-            Button {
-                if TierGate.canCreateQuote(isPro: settings.isPro, quotes: quotes) {
-                    showingNewQuote = true
-                } else {
-                    showingLimitAlert = true
-                }
-            } label: {
+            Button(action: startNewQuote) {
                 Image(systemName: "plus")
                     .font(.system(size: 24, weight: .regular))
                     .foregroundStyle(Color.accent2)
             }
             .accessibilityLabel("新增報價單")
+        }
+    }
+
+    /// 進新增報價單流程；超過免費額度則導向升級提示。
+    /// Header 的「+」與空狀態的 CTA 共用。
+    private func startNewQuote() {
+        if TierGate.canCreateQuote(isPro: settings.isPro, quotes: quotes) {
+            showingNewQuote = true
+        } else {
+            showingLimitAlert = true
         }
     }
 
@@ -125,16 +138,23 @@ struct HomeScreen: View {
         }
     }
 
+    @ViewBuilder
     private var emptyState: some View {
-        VStack(spacing: 8) {
-            Text("🔍")
-                .font(.system(size: 36))
-            Text("這個分頁還是空的")
-                .font(AppFont.sans(14))
-                .foregroundStyle(Color.inkSoft)
+        if quotes.isEmpty {
+            // 全新使用者：給明確的第一步，不要只丟一個空畫面。
+            EmptyStateView(
+                systemImage: "doc.text.magnifyingglass",
+                title: "還沒有報價單",
+                message: "建好第一張，客戶、項目、收款都從這裡開始。"
+            ) {
+                PrimaryButton("建立第一張報價單", systemImage: "plus", action: startNewQuote)
+            }
+        } else {
+            EmptyStateView(
+                systemImage: "magnifyingglass",
+                title: search.isEmpty ? "這個分頁還是空的" : "找不到符合的報價單"
+            )
         }
-        .padding(.vertical, 40)
-        .frame(maxWidth: .infinity)
     }
 
     // MARK: - Derived data
@@ -187,5 +207,6 @@ struct HomeScreen: View {
             }
     }
     .environment(PreviewData.settings)
+    .environment(TutorialState())
     .modelContainer(PreviewData.container)
 }

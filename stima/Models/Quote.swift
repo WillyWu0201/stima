@@ -39,9 +39,10 @@ final class Quote {
         QuoteStatus(rawValue: status) ?? .draft
     }
 
-    func recalcTotal(taxRate: Double = 0.05) {
+    /// `taxRatePercent` 是百分比（例：5 代表 5%），與 `AppSettings.taxRate` 同單位。
+    func recalcTotal(taxRatePercent: Double = 5) {
         let subtotal = items.reduce(0) { $0 + $1.subtotal }
-        total = subtotal + Int((Double(subtotal) * taxRate).rounded())
+        total = subtotal + Int((Double(subtotal) * taxRatePercent / 100).rounded())
     }
 }
 

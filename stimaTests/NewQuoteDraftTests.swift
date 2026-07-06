@@ -38,8 +38,8 @@ struct NewQuoteDraftTests {
     func customTaxRate() {
         let d = NewQuoteDraft()
         d.items = [.init(name: "x", unit: "式", qty: 1, price: 10000)]
-        #expect(d.tax(rate: 0.10) == 1000)
-        #expect(d.total(rate: 0.10) == 11000)
+        #expect(d.tax(ratePercent: 10) == 1000)
+        #expect(d.total(ratePercent: 10) == 11000)
     }
 
     @Test("Item.subtotal = Int(qty) × price（目前 implementation 對小數 qty 取整）")

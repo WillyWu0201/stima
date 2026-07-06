@@ -13,6 +13,7 @@ struct NewQuoteFlow: View {
     @State private var finalizedQuote: Quote? = nil
     @Environment(\.modelContext) private var modelContext
     @Environment(AppSettings.self) private var settings
+    @Environment(TutorialState.self) private var tutorial
     @Query private var allQuotes: [Quote]
 
     enum Step: Hashable {
@@ -45,7 +46,10 @@ struct NewQuoteFlow: View {
         NavigationStack(path: $path) {
             NewQuoteInfoScreen(
                 draft: draft,
-                onCancel: { onClose() },
+                onCancel: {
+                    tutorial.endCoaching()
+                    onClose()
+                },
                 onNext:   { path.append(.items) }
             )
             .navigationDestination(for: Step.self) { step in
@@ -91,9 +95,10 @@ struct NewQuoteFlow: View {
                 QuoteItem(name: item.name, unit: item.unit, qty: item.qty, price: item.price)
             )
         }
-        quote.recalcTotal()
+        quote.recalcTotal(taxRatePercent: settings.taxRate)
         modelContext.insert(quote)
         finalizedQuote = quote
+        tutorial.endCoaching()
         path.append(.exported)
     }
 }
@@ -101,5 +106,6 @@ struct NewQuoteFlow: View {
 #Preview {
     NewQuoteFlow(onClose: {}, onFinished: {})
         .environment(AppSettings())
+        .environment(TutorialState())
         .modelContainer(PreviewData.container)
 }

@@ -9,7 +9,7 @@ import SwiftUI
 ///       .keyboardType(.decimalPad)
 struct AppTextField: View {
     @Binding var text: String
-    var placeholder: String
+    var placeholder: LocalizedStringKey
     var maxLength: Int? = nil
 
     var body: some View {

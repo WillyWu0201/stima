@@ -4,6 +4,7 @@ import SwiftUI
 /// 完成後設 `settings.hasSeenOnboarding = true`，RootView 會自動切到 ContentView。
 struct OnboardingFlow: View {
     @Environment(AppSettings.self) private var settings
+    @Environment(TutorialState.self) private var tutorial
     @State private var path: [Step] = []
 
     enum Step: Hashable {
@@ -24,7 +25,10 @@ struct OnboardingFlow: View {
                     }
                 case .tutorialCTA:
                     TutorialCTAScreen(
-                        onStart: { finish() },
+                        onStart: {
+                            tutorial.requestQuoteTutorial = true
+                            finish()
+                        },
                         onSkip:  { finish() }
                     )
                 }
@@ -40,4 +44,5 @@ struct OnboardingFlow: View {
 #Preview {
     OnboardingFlow()
         .environment(AppSettings())
+        .environment(TutorialState())
 }

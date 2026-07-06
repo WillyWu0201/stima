@@ -15,7 +15,7 @@ struct AppHeader<Trailing: View>: View {
 
     var body: some View {
         let fg = accent ? Color.accentSurfaceInk : Color.ink
-        let subFg = accent ? Color.accentSurfaceInk.opacity(0.7) : Color.inkSoft
+        let subFg = accent ? Color.onAccentMuted : Color.inkSoft
 
         HStack(alignment: .top, spacing: 12) {
             if let onBack {

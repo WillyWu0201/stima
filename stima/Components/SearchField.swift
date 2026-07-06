@@ -6,7 +6,7 @@ import SwiftUI
 ///   SearchField(text: $search, placeholder: "搜尋客戶、地點、項目（例：冷氣）")
 struct SearchField: View {
     @Binding var text: String
-    var placeholder: String
+    var placeholder: LocalizedStringKey
 
     var body: some View {
         HStack(spacing: 10) {

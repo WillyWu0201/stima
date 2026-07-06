@@ -38,6 +38,10 @@ enum TierConfig {
     static let iapMonthlyID = "com.willy.stima.pro_monthly"
     static let iapYearlyID  = "com.willy.stima.pro_yearly"
 
+    /// RevenueCat public SDK key。留空 → PurchaseManager 走開發用 fallback（直接解鎖）。
+    /// 填入後台的 key 並加入 RevenueCat SPM 套件即啟用真實購買。詳見 PurchaseManager.swift。
+    static let revenueCatAPIKey = ""
+
     // MARK: - Display prices (fallback until StoreKit loads real prices)
 
     static let displayMonthlyPrice = "NT$ 299"

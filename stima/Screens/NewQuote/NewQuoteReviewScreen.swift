@@ -9,6 +9,8 @@ struct NewQuoteReviewScreen: View {
 
     @Environment(\.dismiss) private var dismiss
     @Environment(AppSettings.self) private var settings
+    @Environment(TutorialState.self) private var tutorial
+    @State private var coachDone = false
 
     private var askName: Bool {
         settings.masterName.trimmingCharacters(in: .whitespaces).isEmpty
@@ -48,7 +50,13 @@ struct NewQuoteReviewScreen: View {
                     onFinish()
                 }
                 .disabled(!canFinish)
+                .coachAnchor("review")
             }
+        }
+        .coachMark(active: tutorial.coachingActive && !coachDone,
+                   target: "review",
+                   text: "填一下抬頭（你的店名或稱呼），金額沒問題就按「出單」，完成第一張！") {
+            coachDone = true
         }
     }
 
@@ -128,7 +136,9 @@ struct NewQuoteReviewScreen: View {
                         .padding(.vertical, 12)
                 } else {
                     ForEach(draft.items.indices, id: \.self) { i in
-                        itemRow(draft.items[i])
+                        let item = draft.items[i]
+                        QuoteItemRow(name: item.name, qty: item.qty, unit: item.unit,
+                                     price: item.price, subtotal: item.subtotal)
                             .padding(.vertical, 8)
                         if i < draft.items.count - 1 {
                             AppDivider()
@@ -139,29 +149,15 @@ struct NewQuoteReviewScreen: View {
         }
     }
 
-    private func itemRow(_ item: NewQuoteDraft.Item) -> some View {
-        HStack(alignment: .firstTextBaseline) {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(item.name)
-                    .font(AppFont.sans(14, weight: .semibold))
-                    .foregroundStyle(Color.ink)
-                Text("\(Int(item.qty)) \(item.unit) × $\(item.price.formatted())")
-                    .font(AppFont.sans(12))
-                    .foregroundStyle(Color.inkSoft)
-            }
-            Spacer()
-            Money(item.subtotal, size: 15, color: .ink)
-        }
-    }
-
     private var totalsCard: some View {
         AppCard(accent: true) {
             VStack(spacing: 6) {
-                summaryRow("小計", value: draft.subtotal)
-                summaryRow("稅金 5%", value: draft.tax())
+                AccentSummaryRow(label: "小計", value: draft.subtotal)
+                AccentSummaryRow(label: "稅金 \(Int(settings.taxRate))%",
+                                 value: draft.tax(ratePercent: settings.taxRate))
 
                 Rectangle()
-                    .fill(Color.accentSurfaceInk.opacity(0.2))
+                    .fill(Color.onAccentLine)
                     .frame(height: 1)
                     .padding(.vertical, 4)
 
@@ -170,21 +166,10 @@ struct NewQuoteReviewScreen: View {
                         .font(AppFont.sans(14, weight: .bold))
                         .foregroundStyle(Color.accentSurfaceInk)
                     Spacer()
-                    Money(draft.total(), size: 26, color: .accent2)
+                    Money(draft.total(ratePercent: settings.taxRate), size: 26, color: .accent2)
                 }
             }
         }
-    }
-
-    private func summaryRow(_ label: String, value: Int) -> some View {
-        HStack {
-            Text(label)
-                .font(AppFont.sans(13))
-            Spacer()
-            Text("$\(value.formatted())")
-                .font(AppFont.mono(13))
-        }
-        .foregroundStyle(Color.accentSurfaceInk.opacity(0.7))
     }
 
     // MARK: - Helpers
@@ -209,6 +194,7 @@ struct NewQuoteReviewScreen: View {
         NewQuoteReviewScreen(draft: draft, onFinish: {})
     }
     .environment(AppSettings())     // 空抬頭
+    .environment(TutorialState())
 }
 
 #Preview("已有抬頭") {
@@ -224,4 +210,5 @@ struct NewQuoteReviewScreen: View {
         NewQuoteReviewScreen(draft: draft, onFinish: {})
     }
     .environment(settings)
+    .environment(TutorialState())
 }

@@ -6,7 +6,9 @@ struct NewQuoteInfoScreen: View {
     @Bindable var draft: NewQuoteDraft
     let onCancel: () -> Void
     let onNext: () -> Void
+    @Environment(TutorialState.self) private var tutorial
     @State private var mapOpen = false
+    @State private var coachDone = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -23,6 +25,7 @@ struct NewQuoteInfoScreen: View {
                                      placeholder: "例：王先生、林太太",
                                      maxLength: 30)
                     }
+                    .coachAnchor("info")
 
                     FieldRow(label: "工程地點", systemImage: "mappin") {
                         HStack(spacing: 8) {
@@ -70,6 +73,11 @@ struct NewQuoteInfoScreen: View {
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
         }
+        .coachMark(active: tutorial.coachingActive && !coachDone,
+                   target: "info",
+                   text: "先填客戶名跟工程地點，填好按下面的「下一步」。") {
+            coachDone = true
+        }
     }
 
     private var mapButton: some View {
@@ -106,4 +114,5 @@ struct NewQuoteInfoScreen: View {
             onNext: {}
         )
     }
+    .environment(TutorialState())
 }

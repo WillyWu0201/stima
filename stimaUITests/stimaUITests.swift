@@ -10,13 +10,15 @@ final class stimaUITests: XCTestCase {
         continueAfterFailure = false
         app = XCUIApplication()
         app.launchArguments = ["--uitest-reset", "--uitest-inmemory"]
-        app.launch()
+        // 各 test 自行 launch（可依需求追加 --uitest-onboarded 等參數）
     }
 
     // MARK: - Onboarding
 
     @MainActor
     func testOnboardingFlowReachesHome() throws {
+        app.launch()
+
         // Splash
         XCTAssertTrue(app.staticTexts["Stima · v2.0"].waitForExistence(timeout: 5),
                       "Splash 版本 chip 沒出現")
@@ -43,9 +45,10 @@ final class stimaUITests: XCTestCase {
 
     @MainActor
     func testTabBarSwitching() throws {
-        skipOnboarding()
+        app.launchArguments += ["--uitest-onboarded"]
+        app.launch()
 
-        XCTAssertTrue(app.staticTexts["我的報價單"].waitForExistence(timeout: 3))
+        XCTAssertTrue(app.staticTexts["我的報價單"].waitForExistence(timeout: 8))
 
         app.tabBars.buttons["統計"].tap()
         XCTAssertTrue(app.staticTexts["營運統計"].waitForExistence(timeout: 2))
@@ -61,7 +64,8 @@ final class stimaUITests: XCTestCase {
 
     @MainActor
     func testNewQuoteHappyPath() throws {
-        skipOnboarding()
+        app.launchArguments += ["--uitest-onboarded"]
+        app.launch()
 
         // Home → 點 +
         let plusButton = app.buttons["新增報價單"]
@@ -70,7 +74,7 @@ final class stimaUITests: XCTestCase {
 
         // 04 基本資料：填客戶稱呼
         XCTAssertTrue(app.staticTexts["基本資料"].waitForExistence(timeout: 2), "沒進到 04 基本資料")
-        let clientField = app.textFields["例:王先生、林太太"]
+        let clientField = app.textFields["例：王先生、林太太"]
         XCTAssertTrue(clientField.waitForExistence(timeout: 2), "找不到客戶稱呼欄位")
         clientField.tap()
         clientField.typeText("測試客戶")
@@ -101,7 +105,7 @@ final class stimaUITests: XCTestCase {
 
         // 06 確認 — 第一次出單會要求填抬頭
         XCTAssertTrue(app.staticTexts["確認出單"].waitForExistence(timeout: 2), "沒進到 06 確認出單")
-        let masterField = app.textFields["例:陳師傅 / 大發工程行"]
+        let masterField = app.textFields["例：陳師傅 / 大發工程行"]
         XCTAssertTrue(masterField.waitForExistence(timeout: 2), "找不到抬頭欄位")
         masterField.tap()
         masterField.typeText("測試師傅")
@@ -122,19 +126,6 @@ final class stimaUITests: XCTestCase {
     }
 
     // MARK: - Helpers
-
-    /// 跳過 onboarding 三步。
-    @MainActor
-    private func skipOnboarding() {
-        let splash = button(containing: "開工")
-        if splash.waitForExistence(timeout: 5) { splash.tap() }
-
-        let intro = button(containing: "看起來不錯")
-        if intro.waitForExistence(timeout: 3) { intro.tap() }
-
-        let tutorial = button(containing: "來試一張看看")
-        if tutorial.waitForExistence(timeout: 3) { tutorial.tap() }
-    }
 
     /// 找 label 包含 substring 的第一個 button（PrimaryButton 內 HStack image+text，
     /// 完整 label 可能含 icon 名稱，用 contains 比較穩）。

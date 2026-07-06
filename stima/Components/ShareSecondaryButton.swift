@@ -21,12 +21,7 @@ struct ShareSecondaryButton: View {
             .foregroundStyle(Color.ink)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
-            .background(Color.appSurface,
-                        in: RoundedRectangle(cornerRadius: Radius.card, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: Radius.card, style: .continuous)
-                    .strokeBorder(Color.borderStrong, lineWidth: 1.5)
-            )
+            .glassNeutral()
         }
     }
 }

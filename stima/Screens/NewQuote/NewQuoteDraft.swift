@@ -24,11 +24,12 @@ final class NewQuoteDraft {
         items.reduce(0) { $0 + $1.subtotal }
     }
 
-    func tax(rate: Double = 0.05) -> Int {
-        Int((Double(subtotal) * rate).rounded())
+    /// `ratePercent` 是百分比（例：5 代表 5%），與 `AppSettings.taxRate` 同單位。
+    func tax(ratePercent: Double = 5) -> Int {
+        Int((Double(subtotal) * ratePercent / 100).rounded())
     }
 
-    func total(rate: Double = 0.05) -> Int {
-        subtotal + tax(rate: rate)
+    func total(ratePercent: Double = 5) -> Int {
+        subtotal + tax(ratePercent: ratePercent)
     }
 }

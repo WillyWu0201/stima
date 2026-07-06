@@ -13,7 +13,11 @@ struct QuotePaper: View {
     let watermarked: Bool
 
     private var subtotal: Int { quote.items.reduce(0) { $0 + $1.subtotal } }
-    private var tax: Int { Int((Double(subtotal) * 0.05).rounded()) }
+    /// 從已存的 total 反推稅金，與畫面顯示一致。
+    private var tax: Int { max(0, quote.total - subtotal) }
+    private var taxPercent: Int {
+        subtotal > 0 ? Int((Double(tax) / Double(subtotal) * 100).rounded()) : 0
+    }
     private var brandColor: Color { Self.parseHex(template?.brandColor ?? "#C9522A") }
     private var quoteIDLast4: String { String(quote.id.uuidString.prefix(4)) }
 
@@ -220,7 +224,7 @@ struct QuotePaper: View {
     private var totalsBlock: some View {
         VStack(alignment: .trailing, spacing: 6) {
             totalsRow("小計", "$\(subtotal.formatted())")
-            totalsRow("稅金 5%", "$\(tax.formatted())")
+            totalsRow("稅金 \(taxPercent)%", "$\(tax.formatted())")
             brandColor.frame(height: 2).padding(.top, 2)
             HStack(alignment: .firstTextBaseline, spacing: 8) {
                 Text("總計  NT$")

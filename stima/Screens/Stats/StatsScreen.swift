@@ -99,7 +99,7 @@ struct StatsScreen: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text("\(String(year)) 年已收款 · \(stats.paidCount) 張")
                     .font(AppFont.mono(11, weight: .semibold))
-                    .foregroundStyle(Color.accentSurfaceInk.opacity(0.7))
+                    .foregroundStyle(Color.onAccentMuted)
                     .kerning(1.4)
                     .textCase(.uppercase)
 
@@ -112,7 +112,7 @@ struct StatsScreen: View {
                         Text("比去年同期 \(pct >= 0 ? "▲" : "▼") \(String(format: "%.1f%%", abs(pct)))（去年 $\(prev.formatted())）")
                     }
                     .font(AppFont.sans(13))
-                    .foregroundStyle(Color.accentSurfaceInk.opacity(0.55))
+                    .foregroundStyle(Color.onAccentFaint)
                 }
             }
         }
@@ -162,7 +162,7 @@ struct StatsScreen: View {
 
     private func monthRow(monthIndex i: Int) -> some View {
         let amt = stats.monthly[i]
-        let pct = Double(amt) / Double(stats.maxMonthly)
+        let pct = stats.maxMonthly > 0 ? Double(amt) / Double(stats.maxMonthly) : 0
         let isMax = amt == stats.maxMonthly && amt > 0
         return HStack(spacing: 8) {
             Text(MonthLabel.zhHant[i])

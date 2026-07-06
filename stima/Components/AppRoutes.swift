@@ -24,6 +24,8 @@ struct AppRoutesModifier: ViewModifier {
             .navigationDestination(for: ItemRoute.self) { route in
                 ItemDetailScreen(itemName: route.name)
             }
+            // 畫面都隱藏了原生 nav bar，這裡把左緣滑動返回手勢接回來。
+            .enableSwipeBack()
     }
 }
 

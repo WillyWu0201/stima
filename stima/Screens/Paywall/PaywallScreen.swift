@@ -3,11 +3,8 @@ import SwiftUI
 /// 畫面 16 · 訂閱 PRO
 /// 從 Settings PRO banner、PDF 模板 PRO badge、4th quote 限制等位置以 fullScreenCover 推進。
 ///
-/// TODO: RevenueCat 接點
-/// - offerings：用 `Purchases.shared.getOfferings()` 取代 hardcoded yearlyPackage/monthlyPackage
-/// - subscribe：用 `Purchases.shared.purchase(package:)` 取代 mock 直接設 isPro
-/// - restore：用 `Purchases.shared.restorePurchases()` 取代 mock 直接設 isPro
-/// - paywall 顯示前可先 fetch offerings 確認商品存在，若失敗顯示 error fallback
+/// 購買 / 還原透過 `PurchaseManager`（RevenueCat）。沒裝 SDK 時自動 fallback（直接解鎖），
+/// 加入套件並填 `TierConfig.revenueCatAPIKey` 後即走真實購買。詳見 PurchaseManager.swift。
 struct PaywallScreen: View {
     let onClose: () -> Void
     @Environment(AppSettings.self) private var settings
@@ -79,7 +76,7 @@ struct PaywallScreen: View {
                 Spacer()
 
                 Button("還原購買") {
-                    mockRestore()
+                    restore()
                 }
                 .font(AppFont.sans(13, weight: .semibold))
                 .foregroundStyle(Color.accentSurfaceInk.opacity(0.7))
@@ -239,7 +236,7 @@ struct PaywallScreen: View {
     private var ctaBar: some View {
         BottomCTA {
             PrimaryButton(ctaLabel, systemImage: "sparkles") {
-                mockSubscribe()
+                subscribe()
             }
         }
     }
@@ -251,18 +248,21 @@ struct PaywallScreen: View {
         }
     }
 
-    // MARK: - Mock actions
+    // MARK: - Purchase actions
 
-    /// MOCK：直接設 isPro = true 模擬訂閱成功。RevenueCat 接上後改成 `Purchases.shared.purchase(package:)`
-    private func mockSubscribe() {
-        settings.isPro = true
-        onClose()
+    private func subscribe() {
+        Task {
+            let ok = plan == .yearly
+                ? await PurchaseManager.shared.purchaseYearly(into: settings)
+                : await PurchaseManager.shared.purchaseMonthly(into: settings)
+            if ok { onClose() }
+        }
     }
 
-    /// MOCK：直接設 isPro = true 模擬還原成功。RevenueCat 接上後改成 `Purchases.shared.restorePurchases()`
-    private func mockRestore() {
-        settings.isPro = true
-        onClose()
+    private func restore() {
+        Task {
+            if await PurchaseManager.shared.restore(into: settings) { onClose() }
+        }
     }
 }
 

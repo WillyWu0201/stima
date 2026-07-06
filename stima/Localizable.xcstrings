@@ -1,161 +1,1056 @@
 {
   "sourceLanguage" : "zh-Hant",
   "strings" : {
-    "已收款" : {
+    "" : {
+
+    },
+    "  ·  %@" : {
+
+    },
+    "  ·  自 %@ 起" : {
+
+    },
+    " · 用過 %lld 次" : {
+
+    },
+    "—" : {
+
+    },
+    "·" : {
+
+    },
+    "「%@」已經在客戶簿內。請改名或直接到列表編輯既有資料。" : {
+
+    },
+    "/ %@" : {
+
+    },
+    "%@  %@" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Paid" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已收款" } }
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@  %2$@"
+          }
+        }
       }
     },
-    "已完工" : {
+    "%@  %@   ·   %@  %@" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Done" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已完工" } }
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@  %2$@   ·   %3$@  %4$@"
+          }
+        }
       }
     },
-    "出單，搞定!" : {
+    "%@ · %@ %@" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Finalize" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "出单，搞定!" } }
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · %2$@ %3$@"
+          }
+        }
       }
     },
-    "升級到Stima PRO" : {
+    "%@ %@" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Upgrade to Pro" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "升级到Stima PRO" } }
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
       }
     },
-    "取消" : {
+    "%@ %@ × $%@" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cancel" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "取消" } }
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@ × $%3$@"
+          }
+        }
       }
     },
-    "客戶簿" : {
+    "%@ × $" : {
+
+    },
+    "%@ 年" : {
+
+    },
+    "%@ 年已收款 · %lld 張" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Contacts" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "客户簿" } }
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ 年已收款 · %2$lld 張"
+          }
+        }
       }
     },
-    "我的報價單" : {
+    "%@%@" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "My Quotes" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "我的报价单" } }
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@%2$@"
+          }
+        }
       }
     },
-    "報價單" : {
+    "%lld" : {
+
+    },
+    "%lld %@ × $%@" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Quotes" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "报价单" } }
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld %2$@ × $%3$@"
+          }
+        }
       }
     },
-    "統計" : {
+    "%lld 個項目" : {
+
+    },
+    "%lld 張已完工待收" : {
+
+    },
+    "%lld 案" : {
+
+    },
+    "%lld 次 · 共 %lld %@" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Stats" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "统计" } }
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld 次 · 共 %2$lld %3$@"
+          }
+        }
       }
     },
-    "設定" : {
+    "%lld 次合作" : {
+
+    },
+    "+ 點此上傳" : {
+
+    },
+    "×%lld" : {
+
+    },
+    "✓ 已上傳" : {
+
+    },
+    "✓ 已加 ×%lld" : {
+
+    },
+    "🏆 %@" : {
+
+    },
+    "📝" : {
+
+    },
+    "$%@" : {
+
+    },
+    "$%@ / %@" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Settings" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设定" } }
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "$%1$@ / %2$@"
+          }
+        }
       }
     },
-    "新增報價單" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "New Quote" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "新增报价单" } }
-      }
+    "$%lldk" : {
+
     },
-    "進行中" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Ongoing" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "进行中" } }
-      }
+    "0" : {
+
     },
-    "草稿" : {
+    "1" : {
+
+    },
+    "7 天免費試用，隨時可取消\n訂閱透過 App Store 收費，可在「設定 → Apple ID」隨時關閉" : {
+
+    },
+    "0912-345-678" : {
+
+    },
+    "chen@example.com" : {
+
+    },
+    "example@email.com" : {
+
+    },
+    "iCloud 自動備份" : {
+
+    },
+    "LOGO" : {
+
+    },
+    "PDF 產生失敗" : {
+
+    },
+    "PDF 預覽" : {
+
+    },
+    "PRO" : {
+
+    },
+    "三件不用再用紙筆做的事 ↓" : {
+
+    },
+    "上次 $%@ / %@" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Draft" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "草稿" } }
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "上次 $%1$@ / %2$@"
+          }
+        }
       }
     },
     "下一步" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Next" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "下一步" } }
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下一步"
+          }
+        }
       }
     },
-    "確認出單" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Review" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "确认出单" } }
-      }
+    "下次跟同個客戶報價時，我們會自動幫你填好資料。" : {
+
     },
-    "傳給客戶" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Share" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "传给客户" } }
-      }
+    "不用先註冊，按下去就可以開始試。" : {
+
     },
-    "預覽 PDF" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Preview PDF" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "预览 PDF" } }
-      }
+    "付款到期日：%@" : {
+
     },
-    "複製這張" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Duplicate" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "复制这张" } }
-      }
+    "付款方式" : {
+
     },
-    "轉請款單" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Make Invoice" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "转请款单" } }
-      }
+    "付款條件" : {
+
     },
-    "標記已收款" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mark Paid" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "标记已收款" } }
-      }
-    },
-    "報價單模板" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "PDF Template" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "报价单模板" } }
-      }
-    },
-    "確認此地點" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Confirm Location" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "确认此地点" } }
-      }
+    "位置權限被拒。請到「設定 → 隱私權與安全性 → 定位服務 → Stima」開啟，再回來試一次。" : {
+
     },
     "使用目前位置" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Use Current Location" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "使用当前位置" } }
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use Current Location"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用当前位置"
+          }
+        }
       }
     },
-    "升級 PRO" : {
+    "例：交期不拖、價錢實在" : {
+
+    },
+    "例：台北市信義區" : {
+
+    },
+    "例：台北市信義區松仁路" : {
+
+    },
+    "例：大發工程行" : {
+
+    },
+    "例：張先生介紹、喜歡北歐風、付款乾脆⋯" : {
+
+    },
+    "例：拆冷氣、磨地板、外牆貼磚" : {
+
+    },
+    "例：王先生、林太太" : {
+
+    },
+    "例：王先生、林太太、陳老闆" : {
+
+    },
+    "例：簽約付 30%，完工驗收付 60%，保固期滿付 10%" : {
+
+    },
+    "例：統編 12345678 / 台北市信義區⋯" : {
+
+    },
+    "例：陳師傅 / 大發工程行" : {
+
+    },
+    "傳給客戶" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Upgrade" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "升级 PRO" } }
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "传给客户"
+          }
+        }
       }
     },
-    "本月免費額度已用完" : {
+    "價格趨勢" : {
+
+    },
+    "儲存" : {
+
+    },
+    "先填客戶名跟工程地點，填好按下面的「下一步」。" : {
+
+    },
+    "先跳過，等等再說 →" : {
+
+    },
+    "免費版每月最多 %lld 張報價單，下個月會自動重置。升級 PRO 解鎖無限張。" : {
+
+    },
+    "免費版限制" : {
+
+    },
+    "共做了 %@ %@" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Monthly Limit Reached" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "本月免费额度已用完" } }
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "共做了 %1$@ %2$@"
+          }
+        }
       }
     },
     "再看看" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Later" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "再看看" } }
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Later"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再看看"
+          }
+        }
       }
+    },
+    "最近單價" : {
+
+    },
+    "出單" : {
+
+    },
+    "出單，搞定!" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finalize"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "出单，搞定!"
+          }
+        }
+      }
+    },
+    "出單完成" : {
+
+    },
+    "出現在每張報價單的左上方" : {
+
+    },
+    "刪除" : {
+
+    },
+    "刪除分類" : {
+
+    },
+    "加" : {
+
+    },
+    "加新分類，例：清潔、家具" : {
+
+    },
+    "加進你的項目庫，下次直接挑就行。" : {
+
+    },
+    "加進來後，未來的報價單只要輸入名字，地址跟電話會自動帶入。統計頁也會自動歸戶這位客戶的累計營收。" : {
+
+    },
+    "加進去" : {
+
+    },
+    "加項目" : {
+
+    },
+    "升級 PRO" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upgrade"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "升级 PRO"
+          }
+        }
+      }
+    },
+    "升級到Stima PRO" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upgrade to Pro"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "升级到Stima PRO"
+          }
+        }
+      }
+    },
+    "取消" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        }
+      }
+    },
+    "台北市信義區" : {
+
+    },
+    "合作 %lld 次" : {
+
+    },
+    "嗨，%@ 👋" : {
+
+    },
+    "地圖" : {
+
+    },
+    "報 價 單" : {
+
+    },
+    "報價單" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quotes"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "报价单"
+          }
+        }
+      }
+    },
+    "報價單 · %@" : {
+
+    },
+    "報價單 #%@" : {
+
+    },
+    "報價單抬頭" : {
+
+    },
+    "報價單抬頭 · 第一次問，之後記著" : {
+
+    },
+    "報價單模板" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PDF Template"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "报价单模板"
+          }
+        }
+      }
+    },
+    "報價收款，\n一支手機\n全包了。" : {
+
+    },
+    "報得快、收得回，\n師傅的生意更穩。" : {
+
+    },
+    "填一下抬頭（你的店名或稱呼），金額沒問題就按「出單」，完成第一張！" : {
+
+    },
+    "好" : {
+
+    },
+    "它能幫你做什麼？" : {
+
+    },
+    "完成" : {
+
+    },
+    "客戶" : {
+
+    },
+    "客戶名稱重複" : {
+
+    },
+    "客戶簿" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contacts"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "客户簿"
+          }
+        }
+      }
+    },
+    "客戶資料" : {
+
+    },
+    "小提示" : {
+
+    },
+    "小計" : {
+
+    },
+    "工地老闆，幾步就上手。算項目、看數字、追收款，都在這。" : {
+
+    },
+    "已加 「%@」" : {
+
+    },
+    "已加 %lld" : {
+
+    },
+    "已完工" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已完工"
+          }
+        }
+      }
+    },
+    "已收款" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paid"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已收款"
+          }
+        }
+      }
+    },
+    "已啟用 · 自動備份到 iCloud" : {
+
+    },
+    "Stima · v2.0" : {
+
+    },
+    "Stima · v2.0 · build 2026.05.20" : {
+
+    },
+    "Stima PRO" : {
+
+    },
+    "Stima PRO · 已訂閱" : {
+
+    },
+    "建好第一張，客戶、項目、收款都從這裡開始。" : {
+
+    },
+    "待收款" : {
+
+    },
+    "從地圖選地點" : {
+
+    },
+    "從報價單 #%@ 轉成請款單 · 工程已完工" : {
+
+    },
+    "我們來試做\n第一張報價單。" : {
+
+    },
+    "我的報價單" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Quotes"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我的报价单"
+          }
+        }
+      }
+    },
+    "所有新項目都會自動進「常用」，加上分類後也會出現在那個分頁。" : {
+
+    },
+    "找不到客戶" : {
+
+    },
+    "找不到符合的地點" : {
+
+    },
+    "找不到符合的報價單" : {
+
+    },
+    "挑項目，或自己加" : {
+
+    },
+    "搜尋地址、地標" : {
+
+    },
+    "搜尋客戶、地點、項目（例：冷氣）" : {
+
+    },
+    "搜尋客戶名、電話、地址" : {
+
+    },
+    "支援 PNG（建議透明背景）、JPG。最大 2MB / 邊長 1200px。" : {
+
+    },
+    "新增報價單" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Quote"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新增报价单"
+          }
+        }
+      }
+    },
+    "新增客戶" : {
+
+    },
+    "日期 / DATE" : {
+
+    },
+    "有效期限 %lld 天" : {
+
+    },
+    "本月免費額度已用完" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monthly Limit Reached"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本月免费额度已用完"
+          }
+        }
+      }
+    },
+    "查看客戶" : {
+
+    },
+    "標記已收款" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mark Paid"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "标记已收款"
+          }
+        }
+      }
+    },
+    "每月 3 張報價單，PDF 含浮水印。升級 Pro 解鎖無限張、自訂模板、移除浮水印。" : {
+
+    },
+    "比去年同期 %@ %@（去年 $%@）" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "比去年同期 %1$@ %2$@（去年 $%3$@）"
+          }
+        }
+      }
+    },
+    "清除搜尋" : {
+
+    },
+    "無法存取位置" : {
+
+    },
+    "無法產生這份報價單的 PDF。請再試一次，若持續失敗請重新啟動 app。" : {
+
+    },
+    "無限報價單 · 自訂模板 · 移除浮水印 · iCloud 備份" : {
+
+    },
+    "王先生" : {
+
+    },
+    "目前小計" : {
+
+    },
+    "知道了" : {
+
+    },
+    "確定刪除「%@」？" : {
+
+    },
+    "確定刪除「%@」分類？" : {
+
+    },
+    "確認出單" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Review"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "确认出单"
+          }
+        }
+      }
+    },
+    "確認此地點" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm Location"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "确认此地点"
+          }
+        }
+      }
+    },
+    "移除" : {
+
+    },
+    "移除圖片" : {
+
+    },
+    "稅金 %lld%%" : {
+
+    },
+    "第一張完成！" : {
+
+    },
+    "範圍 $%@–$%@" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "範圍 $%1$@–$%2$@"
+          }
+        }
+      }
+    },
+    "累積營收（%lld 次）" : {
+
+    },
+    "累計營收" : {
+
+    },
+    "統計" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stats"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "统计"
+          }
+        }
+      }
+    },
+    "編輯" : {
+
+    },
+    "總計" : {
+
+    },
+    "總計  NT$" : {
+
+    },
+    "致 / TO" : {
+
+    },
+    "草稿" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draft"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "草稿"
+          }
+        }
+      }
+    },
+    "複製這張" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duplicate"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "复制这张"
+          }
+        }
+      }
+    },
+    "設定" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设定"
+          }
+        }
+      }
+    },
+    "請款中" : {
+
+    },
+    "請款明細" : {
+
+    },
+    "請款金額" : {
+
+    },
+    "轉請款單" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Make Invoice"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "转请款单"
+          }
+        }
+      }
+    },
+    "返回" : {
+
+    },
+    "透過 App Store 管理訂閱 · 可隨時取消" : {
+
+    },
+    "這個分頁還是空的" : {
+
+    },
+    "這個分類下的自訂項目仍會保留。" : {
+
+    },
+    "進行中" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ongoing"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "进行中"
+          }
+        }
+      }
+    },
+    "過程中我會在旁邊指一下重點。\n放心，假的，做壞了也沒事。" : {
+
+    },
+    "選擇語言" : {
+
+    },
+    "選擇貨幣" : {
+
+    },
+    "選項目" : {
+
+    },
+    "還原購買" : {
+
+    },
+    "還沒加過自訂項目。\n在「新增報價單 → 加項目 → + 自訂」就能加。" : {
+
+    },
+    "還沒加項目" : {
+
+    },
+    "還沒有報價單" : {
+
+    },
+    "還沒有客戶" : {
+
+    },
+    "還沒有項目" : {
+
+    },
+    "重試" : {
+
+    },
+    "關閉" : {
+
+    },
+    "需要 PRO · 換手機資料自動還原" : {
+
+    },
+    "項目 A" : {
+
+    },
+    "項目 B" : {
+
+    },
+    "項目 C" : {
+
+    },
+    "項目明細" : {
+
+    },
+    "預覽" : {
+
+    },
+    "預覽 PDF" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preview PDF"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "预览 PDF"
+          }
+        }
+      }
+    },
+    "顯示甲乙方簽名欄（給客戶簽名用）" : {
+
+    },
+    "點「加項目」，從清單挑你要做的工，數量價錢都能改。" : {
+
+    },
+    "點下方的「+ 加項目」開始" : {
+
+    },
+    "點右上「+」把常合作的客戶加進來。" : {
+
     }
   },
   "version" : "1.0"

@@ -30,19 +30,14 @@ struct BottomCTA<Content: View, Above: View>: View {
     var body: some View {
         VStack(spacing: 10) {
             above()
-            content()
+            GlassGroup(spacing: 8) {
+                content()
+            }
         }
         .padding(.horizontal, 22)
         .padding(.top, 14)
         .padding(.bottom, 36)
-        .background(withBackground ? Color.bgPaper : Color.clear)
-        .overlay(alignment: .top) {
-            if withBackground {
-                Rectangle()
-                    .fill(Color.appBorder)
-                    .frame(height: 1)
-            }
-        }
+        .ctaBarBackground(active: withBackground)
     }
 }
 
