@@ -16,19 +16,26 @@ struct PDFPreviewSheet: View {
     private var template: PDFTemplate? { templates.first }
 
     var body: some View {
-        VStack(spacing: 0) {
-            header
+        NavigationStack {
             ScrollView {
                 paper
                     .padding(.horizontal, 20)
                     .padding(.top, 14)
                     .padding(.bottom, 14)
             }
+            .background(Color(red: 0.898, green: 0.886, blue: 0.863))  // 桌面暖灰
+            .navigationTitle("PDF 預覽")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("完成") { dismiss() }
+                }
+            }
+            .safeAreaInset(edge: .bottom) {
+                footerActions
+            }
         }
-        .background(Color(red: 0.898, green: 0.886, blue: 0.863))  // 桌面暖灰
-        .safeAreaInset(edge: .bottom) {
-            footerActions
-        }
+        .tint(.accent)
         .task {
             await render()
         }
@@ -56,30 +63,6 @@ struct PDFPreviewSheet: View {
             pdfURL = nil
             renderFailed = true
         }
-    }
-
-    // MARK: - Header
-
-    private var header: some View {
-        HStack {
-            Text("PDF 預覽")
-                .font(AppFont.sans(17, weight: .bold))
-                .foregroundStyle(Color.ink)
-            Spacer()
-            Button {
-                dismiss()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundStyle(Color.inkSoft)
-                    .frame(width: 32, height: 32)
-                    .background(Color.bgSoft, in: Circle())
-            }
-            .buttonStyle(.plain)
-        }
-        .padding(.horizontal, 16)
-        .padding(.top, 8)
-        .padding(.bottom, 12)
     }
 
     // MARK: - Paper preview（用 QuotePaper 渲染，包個 shadow + rounded corner 當 chrome）

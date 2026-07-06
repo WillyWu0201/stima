@@ -24,41 +24,50 @@ struct LocationPickerSheet: View {
     )
 
     var body: some View {
-        VStack(spacing: 0) {
-            navBar
-            mapView
-            VStack(spacing: 10) {
-                currentLocationRow
-                SearchField(text: $searchText, placeholder: "搜尋地址、地標")
-                suggestionsList
-            }
-            .padding(.horizontal, 20)
-            .padding(.top, 14)
-            .frame(maxHeight: .infinity, alignment: .top)
-        }
-        .background(Color.bgPaper)
-        .safeAreaInset(edge: .bottom) {
-            BottomCTA {
-                PrimaryButton("確認此地點", systemImage: "checkmark") {
-                    commit()
+        NavigationStack {
+            VStack(spacing: 0) {
+                mapView
+                VStack(spacing: 10) {
+                    currentLocationRow
+                    SearchField(text: $searchText, placeholder: "搜尋地址、地標")
+                    suggestionsList
                 }
-                .disabled(!canConfirm)
+                .padding(.horizontal, 20)
+                .padding(.top, 14)
+                .frame(maxHeight: .infinity, alignment: .top)
+            }
+            .background(Color.bgPaper)
+            .navigationTitle("從地圖選地點")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("取消") { dismiss() }
+                }
+            }
+            .safeAreaInset(edge: .bottom) {
+                BottomCTA {
+                    PrimaryButton("確認此地點", systemImage: "checkmark") {
+                        commit()
+                    }
+                    .disabled(!canConfirm)
+                }
+            }
+            .onChange(of: searchText) { _, newValue in
+                completer.updateQuery(newValue)
+            }
+            .onAppear {
+                // 把現有地址帶進 search 方便修
+                if !address.isEmpty && searchText.isEmpty {
+                    searchText = address
+                }
+            }
+            .alert("無法存取位置", isPresented: $showingDeniedAlert) {
+                Button("好", role: .cancel) {}
+            } message: {
+                Text("位置權限被拒。請到「設定 → 隱私權與安全性 → 定位服務 → Stima」開啟，再回來試一次。")
             }
         }
-        .onChange(of: searchText) { _, newValue in
-            completer.updateQuery(newValue)
-        }
-        .onAppear {
-            // 把現有地址帶進 search 方便修
-            if !address.isEmpty && searchText.isEmpty {
-                searchText = address
-            }
-        }
-        .alert("無法存取位置", isPresented: $showingDeniedAlert) {
-            Button("好", role: .cancel) {}
-        } message: {
-            Text("位置權限被拒。請到「設定 → 隱私權與安全性 → 定位服務 → Stima」開啟，再回來試一次。")
-        }
+        .tint(.accent)
     }
 
     // MARK: - 使用目前位置
@@ -130,30 +139,6 @@ struct LocationPickerSheet: View {
         default:
             break
         }
-    }
-
-    // MARK: - Nav bar
-
-    private var navBar: some View {
-        HStack {
-            Text("從地圖選地點")
-                .font(AppFont.sans(17, weight: .bold))
-                .foregroundStyle(Color.ink)
-            Spacer()
-            Button {
-                dismiss()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundStyle(Color.inkSoft)
-                    .frame(width: 32, height: 32)
-                    .background(Color.bgSoft, in: Circle())
-            }
-            .buttonStyle(.plain)
-        }
-        .padding(.horizontal, 16)
-        .padding(.top, 4)
-        .padding(.bottom, 12)
     }
 
     // MARK: - Map

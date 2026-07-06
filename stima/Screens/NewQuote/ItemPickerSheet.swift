@@ -26,37 +26,21 @@ struct ItemPickerSheet: View {
     private var allTabs: [String] { ["自訂"] + categories }
 
     var body: some View {
-        VStack(spacing: 0) {
-            headerRow
-            tabRow
-            content
-        }
-        .background(Color.appSurface)
-    }
-
-    // MARK: - Header
-
-    private var headerRow: some View {
-        HStack {
-            Text("挑項目，或自己加")
-                .font(AppFont.sans(18, weight: .bold))
-                .foregroundStyle(Color.ink)
-            Spacer()
-            Button {
-                dismiss()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundStyle(Color.inkSoft)
-                    .frame(width: 32, height: 32)
-                    .background(Color.bgSoft, in: Circle())
+        NavigationStack {
+            VStack(spacing: 0) {
+                tabRow
+                content
             }
-            .buttonStyle(.plain)
-            .accessibilityLabel("關閉")
+            .background(Color.appSurface)
+            .navigationTitle("挑項目")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("完成") { dismiss() }
+                }
+            }
         }
-        .padding(.horizontal, 20)
-        .padding(.top, 4)
-        .padding(.bottom, 14)
+        .tint(.accent)
     }
 
     // MARK: - Tabs
@@ -76,6 +60,7 @@ struct ItemPickerSheet: View {
             }
             .padding(.horizontal, 20)
         }
+        .padding(.top, 8)
         .padding(.bottom, 10)
     }
 

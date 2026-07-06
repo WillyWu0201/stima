@@ -111,6 +111,19 @@ final class stimaScreenshotUITests: XCTestCase {
         _ = stC("新增客戶").waitForExistence(timeout: 6);          snap("52-NewClientSheet")
     }
 
+    // MARK: - 地圖選點 sheet（新增客戶 → 地圖）
+
+    @MainActor
+    func testShotsLocationPicker() throws {
+        launchSeeded()
+        app.tabBars.buttons["設定"].tap()
+        tapIfPresent(stC("客戶簿"))
+        _ = stC("林太太").waitForExistence(timeout: 10)
+        if app.buttons["新增客戶"].waitForExistence(timeout: 6) { app.buttons["新增客戶"].tap() }
+        tapIfPresent(btnC("地圖"))
+        _ = stC("從地圖選地點").waitForExistence(timeout: 8);      snap("53-LocationPicker")
+    }
+
     // MARK: - PDF 模板
 
     @MainActor

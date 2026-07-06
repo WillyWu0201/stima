@@ -20,9 +20,7 @@ struct NewClientSheet: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            navBar
-
+        NavigationStack {
             ScrollView {
                 VStack(spacing: 14) {
                     avatarPreview
@@ -65,45 +63,30 @@ struct NewClientSheet: View {
                 .padding(.horizontal, 20)
                 .padding(.bottom, 28)
             }
+            .background(Color.appSurface)
+            .navigationTitle("新增客戶")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("取消") { dismiss() }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("儲存") { save() }
+                        .disabled(!canSave)
+                }
+            }
+            .sheet(isPresented: $mapOpen) {
+                LocationPickerSheet(address: $address)
+                    .presentationDetents([.large])
+                    .presentationDragIndicator(.visible)
+            }
+            .alert("客戶名稱重複", isPresented: $showingDuplicateAlert) {
+                Button("好") {}
+            } message: {
+                Text("「\(name.trimmingCharacters(in: .whitespaces))」已經在客戶簿內。請改名或直接到列表編輯既有資料。")
+            }
         }
-        .background(Color.appSurface)
-        .sheet(isPresented: $mapOpen) {
-            LocationPickerSheet(address: $address)
-                .presentationDetents([.large])
-                .presentationDragIndicator(.visible)
-        }
-        .alert("客戶名稱重複", isPresented: $showingDuplicateAlert) {
-            Button("好") {}
-        } message: {
-            Text("「\(name.trimmingCharacters(in: .whitespaces))」已經在客戶簿內。請改名或直接到列表編輯既有資料。")
-        }
-    }
-
-    // MARK: - Nav bar
-
-    private var navBar: some View {
-        HStack {
-            Button("取消") { dismiss() }
-                .foregroundStyle(Color.inkSoft)
-            Spacer()
-            Text("新增客戶")
-                .font(AppFont.sans(17, weight: .bold))
-                .foregroundStyle(Color.ink)
-            Spacer()
-            Button("儲存") { save() }
-                .foregroundStyle(canSave ? Color.accent : Color.inkFaint)
-                .font(AppFont.sans(15, weight: .bold))
-                .disabled(!canSave)
-        }
-        .font(AppFont.sans(15))
-        .padding(.horizontal, 16)
-        .padding(.top, 4)
-        .padding(.bottom, 14)
-        .overlay(alignment: .bottom) {
-            Rectangle()
-                .fill(Color.appBorder)
-                .frame(height: 1)
-        }
+        .tint(.accent)
     }
 
     // MARK: - 大 avatar 預覽
