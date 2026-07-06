@@ -101,6 +101,7 @@ struct RootView: View {
             }
         }
         .environment(\.locale, Locale(identifier: settings.language))
+        .environment(\.currencySymbol, settings.currencySymbol)
         .task {
             await PurchaseManager.shared.syncEntitlement(into: settings)
         }

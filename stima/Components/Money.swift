@@ -9,10 +9,13 @@ struct Money: View {
     let amount: Int
     var size: CGFloat = 18
     var color: Color = .accent
-    var prefix: String = "$"
+    /// nil → 用目前幣別符號（`EnvironmentValues.currencySymbol`）。
+    var prefix: String? = nil
     var bold: Bool = true
 
-    init(_ amount: Int, size: CGFloat = 18, color: Color = .accent, prefix: String = "$", bold: Bool = true) {
+    @Environment(\.currencySymbol) private var currencySymbol
+
+    init(_ amount: Int, size: CGFloat = 18, color: Color = .accent, prefix: String? = nil, bold: Bool = true) {
         self.amount = amount
         self.size = size
         self.color = color
@@ -21,7 +24,7 @@ struct Money: View {
     }
 
     var body: some View {
-        Text("\(prefix)\(amount.formatted(.number.grouping(.automatic)))")
+        Text("\(prefix ?? currencySymbol)\(amount.formatted(.number.grouping(.automatic)))")
             .font(AppFont.sans(size, weight: bold ? .bold : .medium))
             .monospacedDigit()
             .foregroundStyle(color)

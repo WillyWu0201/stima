@@ -70,7 +70,7 @@ struct NewQuoteFlow: View {
                         onHome:  { onFinished() },
                         onShare: {},
                         shareMessage: finalizedQuote.map {
-                            ShareMessage.forQuote($0, masterName: settings.masterName)
+                            ShareMessage.forQuote($0, masterName: settings.masterName, currencySymbol: settings.currencySymbol)
                         }
                     )
                 }

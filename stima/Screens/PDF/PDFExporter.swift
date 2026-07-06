@@ -15,13 +15,15 @@ enum PDFExporter {
         _ quote: Quote,
         template: PDFTemplate?,
         masterName: String,
-        watermarked: Bool
+        watermarked: Bool,
+        currencySymbol: String = "$"
     ) -> URL? {
         let paper = QuotePaper(
             quote:       quote,
             template:    template,
             masterName:  masterName,
-            watermarked: watermarked
+            watermarked: watermarked,
+            currencySymbol: currencySymbol
         )
         .frame(width: a4Width, alignment: .top)
         .background(Color.white)

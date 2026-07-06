@@ -9,13 +9,15 @@ struct QuoteItemRow: View {
     let price: Int
     let subtotal: Int
 
+    @Environment(\.currencySymbol) private var currencySymbol
+
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
             VStack(alignment: .leading, spacing: 2) {
                 Text(name)
                     .font(AppFont.sans(14, weight: .semibold))
                     .foregroundStyle(Color.ink)
-                Text("\(qtyText) \(unit) × $\(price.formatted())")
+                Text("\(qtyText) \(unit) × \(currencySymbol)\(price.formatted())")
                     .font(AppFont.mono(12))
                     .foregroundStyle(Color.inkSoft)
             }
@@ -35,12 +37,14 @@ struct AccentSummaryRow: View {
     let label: LocalizedStringKey
     let value: Int
 
+    @Environment(\.currencySymbol) private var currencySymbol
+
     var body: some View {
         HStack {
             Text(label)
                 .font(AppFont.sans(13))
             Spacer()
-            Text("$\(value.formatted())")
+            Text("\(currencySymbol)\(value.formatted())")
                 .font(AppFont.mono(13))
                 .monospacedDigit()
         }

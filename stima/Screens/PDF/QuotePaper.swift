@@ -11,6 +11,7 @@ struct QuotePaper: View {
     let template: PDFTemplate?
     let masterName: String
     let watermarked: Bool
+    var currencySymbol: String = "$"
 
     private var subtotal: Int { quote.items.reduce(0) { $0 + $1.subtotal } }
     /// 從已存的 total 反推稅金，與畫面顯示一致。
@@ -173,8 +174,8 @@ struct QuotePaper: View {
                     col(item.name,                          width: nil, align: .leading,  flexible: true)
                     col(item.unit,                          width: 36,  align: .center)
                     col(String(Int(item.qty)),              width: 42,  align: .trailing, mono: true)
-                    col("$\(item.price.formatted())",       width: 56,  align: .trailing, mono: true)
-                    col("$\(item.subtotal.formatted())",    width: 70,  align: .trailing, mono: true)
+                    col("\(currencySymbol)\(item.price.formatted())",    width: 56,  align: .trailing, mono: true)
+                    col("\(currencySymbol)\(item.subtotal.formatted())", width: 70,  align: .trailing, mono: true)
                 }
                 .font(.system(size: 11))
                 .foregroundStyle(Color.black.opacity(0.8))
@@ -223,11 +224,11 @@ struct QuotePaper: View {
 
     private var totalsBlock: some View {
         VStack(alignment: .trailing, spacing: 6) {
-            totalsRow("小計", "$\(subtotal.formatted())")
-            totalsRow("稅金 \(taxPercent)%", "$\(tax.formatted())")
+            totalsRow("小計", "\(currencySymbol)\(subtotal.formatted())")
+            totalsRow("稅金 \(taxPercent)%", "\(currencySymbol)\(tax.formatted())")
             brandColor.frame(height: 2).padding(.top, 2)
             HStack(alignment: .firstTextBaseline, spacing: 8) {
-                Text("總計  NT$")
+                Text("總計  \(currencySymbol)")
                     .font(.system(size: 12, weight: .semibold, design: .monospaced))
                     .foregroundStyle(Color(white: 0.5))
                 Text(quote.total.formatted())

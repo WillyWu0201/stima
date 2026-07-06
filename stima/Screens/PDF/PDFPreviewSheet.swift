@@ -54,7 +54,8 @@ struct PDFPreviewSheet: View {
             quote,
             template:    template,
             masterName:  settings.masterName,
-            watermarked: !settings.isPro
+            watermarked: !settings.isPro,
+            currencySymbol: settings.currencySymbol
         )
         if let url {
             pdfURL = url
@@ -72,7 +73,8 @@ struct PDFPreviewSheet: View {
             quote:       quote,
             template:    template,
             masterName:  settings.masterName,
-            watermarked: !settings.isPro
+            watermarked: !settings.isPro,
+            currencySymbol: settings.currencySymbol
         )
         .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
         .shadow(color: .black.opacity(0.12), radius: 14, x: 0, y: 8)
@@ -85,7 +87,7 @@ struct PDFPreviewSheet: View {
             if let pdfURL {
                 ShareLink(item: pdfURL,
                           subject: Text("報價單 · \(quote.clientName)"),
-                          message: Text(ShareMessage.forQuote(quote, masterName: settings.masterName))) {
+                          message: Text(ShareMessage.forQuote(quote, masterName: settings.masterName, currencySymbol: settings.currencySymbol))) {
                     secondaryButtonLabel(title: "分享", systemImage: "square.and.arrow.up")
                 }
                 ShareLink(item: pdfURL,

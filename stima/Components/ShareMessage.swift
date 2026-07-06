@@ -9,9 +9,9 @@ enum ShareMessage {
         return f
     }()
 
-    static func forQuote(_ q: Quote, masterName: String) -> String {
+    static func forQuote(_ q: Quote, masterName: String, currencySymbol: String = "$") -> String {
         let date = formatter.string(from: q.date)
-        let total = "NT$ \(q.total.formatted())"
+        let total = "\(currencySymbol) \(q.total.formatted())"
         let signOff = masterName.isEmpty ? "" : "\n\(masterName)"
         var lines: [String] = []
         lines.append("【報價單】\(q.clientName)")
@@ -27,8 +27,8 @@ enum ShareMessage {
         return lines.joined(separator: "\n")
     }
 
-    static func forInvoice(_ q: Quote, masterName: String) -> String {
-        let total = "NT$ \(q.total.formatted())"
+    static func forInvoice(_ q: Quote, masterName: String, currencySymbol: String = "$") -> String {
+        let total = "\(currencySymbol) \(q.total.formatted())"
         let due = q.dueDate.map { formatter.string(from: $0) } ?? "—"
         let signOff = masterName.isEmpty ? "" : "\n\(masterName)"
         var lines: [String] = []

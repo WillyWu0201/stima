@@ -124,6 +124,23 @@ final class stimaScreenshotUITests: XCTestCase {
         _ = stC("從地圖選地點").waitForExistence(timeout: 8);      snap("53-LocationPicker")
     }
 
+    // MARK: - 幣別切換驗證（切越南盾 → 金額應變 ₫）
+
+    @MainActor
+    func testShotsCurrencyVND() throws {
+        launchSeeded()
+        app.tabBars.buttons["設定"].tap()
+        _ = stC("設定").waitForExistence(timeout: 8)
+        tapIfPresent(stC("貨幣"))
+        tapIfPresent(btnC("越南盾"))          // confirmationDialog：「₫ 越南盾」
+        app.tabBars.buttons["報價單"].tap()
+        _ = stC("我的報價單").waitForExistence(timeout: 8);        snap("A0-Currency-Home-VND")
+        tapIfPresent(stC("王先生"), timeout: 8)
+        _ = btnC("預覽 PDF").waitForExistence(timeout: 6);        snap("A1-Currency-Detail-VND")
+        tapIfPresent(btnC("預覽 PDF"))
+        _ = stC("PDF 預覽").waitForExistence(timeout: 8);         snap("A2-Currency-PDF-VND")
+    }
+
     // MARK: - PDF 模板
 
     @MainActor

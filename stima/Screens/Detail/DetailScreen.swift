@@ -214,7 +214,7 @@ struct DetailScreen: View {
                 HStack(spacing: 10) {
                     ShareSecondaryButton(
                         title: "傳給客戶",
-                        message: ShareMessage.forQuote(quote, masterName: settings.masterName)
+                        message: ShareMessage.forQuote(quote, masterName: settings.masterName, currencySymbol: settings.currencySymbol)
                     )
                     SecondaryButton("預覽 PDF", systemImage: "doc.text") {
                         pdfPreviewOpen = true

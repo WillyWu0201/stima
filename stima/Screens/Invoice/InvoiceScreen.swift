@@ -8,6 +8,7 @@ struct InvoiceScreen: View {
     let quote: Quote
     @Environment(\.dismiss) private var dismiss
     @Environment(AppSettings.self) private var settings
+    @Environment(\.currencySymbol) private var currencySymbol
 
     private var subtotal: Int { quote.items.reduce(0) { $0 + $1.subtotal } }
     /// 從已存的 total 反推稅金，與報價單明細一致。
@@ -154,7 +155,7 @@ struct InvoiceScreen: View {
                 Text(item.name)
                     .font(AppFont.sans(14, weight: .semibold))
                     .foregroundStyle(Color.ink)
-                Text("\(Int(item.qty)) \(item.unit) × $\(item.price.formatted())")
+                Text("\(Int(item.qty)) \(item.unit) × \(currencySymbol)\(item.price.formatted())")
                     .font(AppFont.mono(12))
                     .foregroundStyle(Color.inkSoft)
             }
@@ -189,7 +190,7 @@ struct InvoiceScreen: View {
         HStack {
             Text(label).font(AppFont.sans(13))
             Spacer()
-            Text("$\(value.formatted())").font(AppFont.mono(13))
+            Text("\(currencySymbol)\(value.formatted())").font(AppFont.mono(13))
         }
         .foregroundStyle(Color.accentSurfaceInk.opacity(0.7))
     }
@@ -234,7 +235,7 @@ struct InvoiceScreen: View {
             .disabled(quote.quoteStatus == .paid)
             ShareSecondaryButton(
                 title: "傳給客戶",
-                message: ShareMessage.forInvoice(quote, masterName: settings.masterName)
+                message: ShareMessage.forInvoice(quote, masterName: settings.masterName, currencySymbol: settings.currencySymbol)
             )
         }
         .padding(.top, 4)

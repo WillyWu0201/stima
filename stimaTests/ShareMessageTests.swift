@@ -24,7 +24,7 @@ struct ShareMessageTests {
         #expect(msg.contains("2026-05-15"))
         #expect(msg.contains("台北市信義區"))
         #expect(msg.contains("項目共 2 筆"))
-        #expect(msg.contains("NT$"))
+        #expect(msg.contains("$"))
         #expect(msg.contains("\(q.total.formatted())"))
         #expect(msg.contains("陳師傅"))
     }
