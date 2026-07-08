@@ -9,6 +9,7 @@ final class PDFTemplate {
     var email: String
     var address: String
     var paymentTerms: String
+    var paymentInfo: String     // 收款資訊（匯款帳號 / LINE Pay / 現金…），一行一項；空 → 請款單不顯示
     var validDays: Int          // 7 / 14 / 30 / 60 / 90
     var showSignatureLine: Bool
     var brandColor: String      // hex string, default "#C9522A"
@@ -23,6 +24,7 @@ final class PDFTemplate {
         self.email = ""
         self.address = ""
         self.paymentTerms = ""
+        self.paymentInfo = ""
         self.validDays = 30
         self.showSignatureLine = false
         self.brandColor = "#C9522A"

@@ -9,6 +9,12 @@ struct InvoiceScreen: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(AppSettings.self) private var settings
     @Environment(\.currencySymbol) private var currencySymbol
+    @Query private var templates: [PDFTemplate]
+
+    /// 使用者在 PDF 模板設定填的收款資訊；沒填就是空陣列 → 隱藏付款方式卡。
+    private var paymentLines: [String] {
+        InvoicePayment.lines(from: templates.first?.paymentInfo ?? "")
+    }
 
     private var subtotal: Int { quote.items.reduce(0) { $0 + $1.subtotal } }
     /// 從已存的 total 反推稅金，與報價單明細一致。
@@ -36,7 +42,9 @@ struct InvoiceScreen: View {
                     factsCard
                     itemsCard
                     totalsCard
-                    paymentMethodsCard
+                    if !paymentLines.isEmpty {
+                        paymentMethodsCard
+                    }
                     actionRow
                 }
                 .padding(.horizontal, Spacing.screenH)
@@ -206,9 +214,9 @@ struct InvoiceScreen: View {
                     .kerning(1.4)
                     .textCase(.uppercase)
 
-                methodRow("匯款：玉山銀行 (808) 123-4567-890-1")
-                methodRow("LINE Pay / 街口：掃描下方 QR Code")
-                methodRow("現金：請聯絡 0912-345-678 約時間")
+                ForEach(paymentLines, id: \.self) { line in
+                    methodRow(line)
+                }
             }
         }
     }

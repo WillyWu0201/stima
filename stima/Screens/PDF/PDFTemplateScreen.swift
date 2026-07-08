@@ -177,6 +177,13 @@ struct PDFTemplateScreen: View {
                 labeledField("付款條件") {
                     paymentTermsEditor(text: $t.paymentTerms)
                 }
+                labeledField("收款資訊（顯示在請款單）") {
+                    paymentTermsEditor(text: $t.paymentInfo,
+                                       placeholder: "例：匯款 玉山銀行(808) 1234-567-890\nLINE Pay 掃描 QR Code\n現金請電 0912-345-678")
+                    Text("一行一項；留空的話請款單就不顯示付款方式。")
+                        .font(AppFont.sans(11))
+                        .foregroundStyle(Color.inkFaint)
+                }
                 labeledField("有效期限（天）") {
                     HStack(spacing: 4) {
                         ForEach(Self.validDayOptions, id: \.self) { d in
@@ -318,7 +325,8 @@ struct PDFTemplateScreen: View {
         }
     }
 
-    private func paymentTermsEditor(text: Binding<String>) -> some View {
+    private func paymentTermsEditor(text: Binding<String>,
+                                    placeholder: String = "例：簽約付 30%，完工驗收付 60%，保固期滿付 10%") -> some View {
         ZStack(alignment: .topLeading) {
             TextEditor(text: text)
                 .font(AppFont.sans(14))
@@ -333,7 +341,7 @@ struct PDFTemplateScreen: View {
                         .strokeBorder(Color.appBorder, lineWidth: 1.5)
                 )
             if text.wrappedValue.isEmpty {
-                Text("例：簽約付 30%，完工驗收付 60%，保固期滿付 10%")
+                Text(placeholder)
                     .font(AppFont.sans(14))
                     .foregroundStyle(Color.inkFaint)
                     .padding(.horizontal, 14)
