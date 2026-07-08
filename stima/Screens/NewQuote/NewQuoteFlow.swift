@@ -92,7 +92,7 @@ struct NewQuoteFlow: View {
         )
         for item in draft.items {
             quote.items.append(
-                QuoteItem(name: item.name, unit: item.unit, qty: item.qty, price: item.price)
+                QuoteItem(name: item.name, unit: item.unit, qty: item.qty, price: item.price, cost: item.cost)
             )
         }
         quote.recalcTotal(taxRatePercent: settings.taxRate)

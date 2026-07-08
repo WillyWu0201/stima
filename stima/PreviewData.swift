@@ -49,6 +49,7 @@ enum PreviewData {
         let template = PDFTemplate()
         template.businessName = "大發工程行"
         template.phone = "02-2345-6789"
+        template.paymentInfo = "匯款：玉山銀行(808) 1234-567-890\nLINE Pay：掃描下方 QR Code\n現金：請電 0912-345-678"
         ctx.insert(template)
 
         // 範例自訂項目
@@ -98,7 +99,9 @@ enum PreviewData {
                 status:     d.status
             )
             d.items.forEach { name, unit, qty, price in
-                q.items.append(QuoteItem(name: name, unit: unit, qty: qty, price: price))
+                // 範例成本抓單價 6 成，讓進階統計的淨利/淨利率有東西可看。
+                q.items.append(QuoteItem(name: name, unit: unit, qty: qty, price: price,
+                                         cost: Int(Double(price) * 0.6)))
             }
             q.total = d.total
             return q

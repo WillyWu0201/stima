@@ -96,7 +96,7 @@ struct DetailScreen: View {
         d.date       = .now
         d.folder     = quote.folder
         d.items      = quote.items.map {
-            .init(name: $0.name, unit: $0.unit, qty: $0.qty, price: $0.price)
+            .init(name: $0.name, unit: $0.unit, qty: $0.qty, price: $0.price, cost: $0.cost)
         }
         return d
     }

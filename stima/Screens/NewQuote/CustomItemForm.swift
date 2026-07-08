@@ -7,6 +7,8 @@ struct CustomItemForm: View {
     let categories: [String]    // 不含「常用」
     let onAdd: (NewQuoteDraft.Item) -> Void
 
+    @Environment(\.currencySymbol) private var currencySymbol
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             hintCard
@@ -14,6 +16,7 @@ struct CustomItemForm: View {
             categoryField
             unitField
             priceQtyRow
+            costField
             previewCard
             addButton
         }
@@ -102,7 +105,7 @@ struct CustomItemForm: View {
                     .font(AppFont.sans(14, weight: .semibold))
                     .foregroundStyle(draft.name.isEmpty ? Color.inkFaint : Color.ink)
                 HStack(spacing: 0) {
-                    Text("\(Int(draft.qtyNumber)) \(draft.unit) × $\(draft.priceNumber.formatted())")
+                    Text("\(Int(draft.qtyNumber)) \(draft.unit) × \(currencySymbol)\(draft.priceNumber.formatted())")
                     if let cat = draft.category {
                         Text("  ·  \(cat)")
                             .foregroundStyle(Color.accent)
@@ -125,6 +128,14 @@ struct CustomItemForm: View {
                 .strokeBorder(style: StrokeStyle(lineWidth: 1.5, dash: [4, 4]))
                 .foregroundStyle(Color.accent)
         )
+    }
+
+    private var costField: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            label("成本（選填，用來算淨利）")
+            AppTextField(text: $draft.cost, placeholder: "0")
+                .keyboardType(.numberPad)
+        }
     }
 
     private var addButton: some View {
@@ -159,7 +170,8 @@ struct CustomItemForm: View {
             name: draft.name.trimmingCharacters(in: .whitespaces),
             unit: draft.unit,
             qty: draft.qtyNumber,
-            price: draft.priceNumber
+            price: draft.priceNumber,
+            cost: draft.costNumber
         ))
     }
 

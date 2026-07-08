@@ -7,6 +7,7 @@ struct ItemDetailScreen: View {
     let itemName: String
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.currencySymbol) private var currencySymbol
     @Query(sort: \Quote.date, order: .reverse) private var quotes: [Quote]
 
     /// 一筆價格紀錄（從 Quote.items 平展抽出）
@@ -145,7 +146,7 @@ struct ItemDetailScreen: View {
                     .font(AppFont.sans(18, weight: .bold))
                     .monospacedDigit()
                     .foregroundStyle(color)
-                Text("範圍 $\(min.formatted())–$\(max.formatted())")
+                Text("範圍 \(currencySymbol)\(min.formatted())–\(currencySymbol)\(max.formatted())")
                     .font(AppFont.sans(11))
                     .foregroundStyle(Color.inkSoft)
             }

@@ -627,6 +627,7 @@ private struct NewCategoryInput: View {
 private struct CustomItemRow: View {
     let item: CustomItem
     let onDelete: () -> Void
+    @Environment(\.currencySymbol) private var currencySymbol
     @State private var showingDeleteConfirm = false
 
     var body: some View {
@@ -636,7 +637,7 @@ private struct CustomItemRow: View {
                     .font(AppFont.sans(15, weight: .semibold))
                     .foregroundStyle(Color.ink)
                 HStack(spacing: 6) {
-                    Text("$\(item.price.formatted()) / \(item.unit)")
+                    Text("\(currencySymbol)\(item.price.formatted()) / \(item.unit)")
                         .font(AppFont.mono(12))
                         .foregroundStyle(Color.inkSoft)
                     Text(item.category)

@@ -16,6 +16,7 @@ final class NewQuoteDraft {
         var unit: String
         var qty: Double
         var price: Int
+        var cost: Int = 0
 
         var subtotal: Int { Int(qty) * price }
     }

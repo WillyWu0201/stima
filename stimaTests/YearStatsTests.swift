@@ -149,11 +149,12 @@ struct YearStatsTests {
 
     /// 直接建構 YearStats 來測 yoyPercent —— compute 不會產出 prevYearPaid == 0
     /// （它會轉成 nil），所以那個分支只能手動建構來覆蓋。
-    private func stats(paidTotal: Int, prevYearPaid: Int?) -> YearStats {
+    private func stats(paidTotal: Int, prevYearPaid: Int?, costTotal: Int = 0) -> YearStats {
         YearStats(total: 0, paidCount: 0, doneCount: 0, ongoingCount: 0,
                   paidTotal: paidTotal, doneTotal: 0, ongoingTotal: 0,
                   monthly: Array(repeating: 0, count: 12), maxMonthly: 1,
-                  topClient: nil, topItems: [], prevYearPaid: prevYearPaid)
+                  topClient: nil, topItems: [], prevYearPaid: prevYearPaid,
+                  costTotal: costTotal)
     }
 
     @Test("yoyPercent：今年 200 / 去年 100 → +100%")
@@ -178,5 +179,34 @@ struct YearStatsTests {
     func topItemIDIsName() {
         let item = YearStats.TopItem(name: "拆除磁磚", count: 3, totalQty: 5, totalRev: 9000, unit: "坪")
         #expect(item.id == "拆除磁磚")
+    }
+
+    // MARK: - 成本 / 淨利
+
+    @Test("netProfit = 營收 − 成本；marginPercent 正確")
+    func netProfitAndMargin() throws {
+        let s = stats(paidTotal: 1000, prevYearPaid: nil, costTotal: 600)
+        #expect(s.netProfit == 400)
+        let m = try #require(s.marginPercent)
+        #expect(abs(m - 40) < 0.001)
+    }
+
+    @Test("沒填成本（costTotal 0）時 marginPercent 為 nil")
+    func marginNilWhenNoCost() {
+        #expect(stats(paidTotal: 1000, prevYearPaid: nil, costTotal: 0).marginPercent == nil)
+    }
+
+    @Test("compute 只從『已收款』的項目累計成本")
+    func computeCostTotalFromPaidOnly() {
+        let paidQ = makeQuote(year: 2026, month: 5, status: .paid,
+                              items: [("A", "式", 2, 1000), ("B", "坪", 3, 500)])
+        paidQ.items[0].cost = 600     // ×2 = 1200
+        paidQ.items[1].cost = 200     // ×3 = 600
+        let ongoingQ = makeQuote(year: 2026, month: 6, status: .ongoing,
+                                 items: [("C", "式", 1, 9999)])
+        ongoingQ.items[0].cost = 8000 // 進行中不該被算進成本
+        let s = YearStatsCalculator.compute(quotes: [paidQ, ongoingQ], year: 2026)
+        #expect(s.costTotal == 1800)
+        #expect(s.netProfit == s.paidTotal - 1800)
     }
 }

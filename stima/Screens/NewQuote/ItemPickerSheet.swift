@@ -109,9 +109,11 @@ struct CustomDraft {
     var unit: String = "坪"
     var price: String = ""
     var qty: String = "1"
+    var cost: String = ""
 
     var qtyNumber: Double { Double(qty) ?? 1 }
     var priceNumber: Int { Int(price) ?? 0 }
+    var costNumber: Int { Int(cost) ?? 0 }
     var canSubmit: Bool { !name.trimmingCharacters(in: .whitespaces).isEmpty && priceNumber > 0 }
 }
 
@@ -121,6 +123,8 @@ private struct LibraryEntryRow: View {
     let entry: ItemLibrary.Entry
     var addedCount: Int = 0
     let onAdd: () -> Void
+
+    @Environment(\.currencySymbol) private var currencySymbol
 
     private var alreadyAdded: Bool { addedCount > 0 }
 
@@ -142,7 +146,7 @@ private struct LibraryEntryRow: View {
                         }
                     }
                     HStack(spacing: 0) {
-                        Text("上次 $\(entry.lastPrice.formatted()) / \(entry.unit)")
+                        Text("上次 \(currencySymbol)\(entry.lastPrice.formatted()) / \(entry.unit)")
                         if let n = entry.usedCount {
                             Text(" · 用過 \(n) 次")
                         }

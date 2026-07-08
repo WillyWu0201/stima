@@ -6,9 +6,11 @@ import SwiftData
 /// → top client → top items（最常做）
 struct StatsScreen: View {
     @Environment(AppSettings.self) private var settings
+    @Environment(\.currencySymbol) private var currencySymbol
     @Query(sort: \Quote.date, order: .reverse) private var quotes: [Quote]
 
     @State private var year: Int = Calendar.current.component(.year, from: .now)
+    @State private var paywallOpen = false
 
     private var availableYears: [Int] {
         let years = YearStatsCalculator.availableYears(quotes: quotes)
@@ -35,6 +37,13 @@ struct StatsScreen: View {
                     heroCard
                     miniStats
 
+                    SectionTitle("淨利（進階）")
+                    if settings.isPro {
+                        netProfitCard
+                    } else {
+                        netProfitLockedCard
+                    }
+
                     SectionTitle("每月已收款")
                     monthlyChart
 
@@ -60,6 +69,10 @@ struct StatsScreen: View {
             if !availableYears.contains(year), let first = availableYears.first {
                 year = first
             }
+        }
+        .fullScreenCover(isPresented: $paywallOpen) {
+            PaywallScreen { paywallOpen = false }
+                .environment(settings)
         }
     }
 
@@ -109,7 +122,7 @@ struct StatsScreen: View {
                     HStack(spacing: 4) {
                         Image(systemName: pct >= 0 ? "arrowtriangle.up.fill" : "arrowtriangle.down.fill")
                             .font(.system(size: 9, weight: .bold))
-                        Text("比去年同期 \(pct >= 0 ? "▲" : "▼") \(String(format: "%.1f%%", abs(pct)))（去年 $\(prev.formatted())）")
+                        Text("比去年同期 \(pct >= 0 ? "▲" : "▼") \(String(format: "%.1f%%", abs(pct)))（去年 \(currencySymbol)\(prev.formatted())）")
                     }
                     .font(AppFont.sans(13))
                     .foregroundStyle(Color.onAccentFaint)
@@ -146,6 +159,75 @@ struct StatsScreen: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
+    }
+
+    // MARK: - 淨利卡（PRO · 用各項目成本算）
+
+    private var netProfitCard: some View {
+        AppCard {
+            HStack(alignment: .top, spacing: 12) {
+                netProfitCell(label: "成本", value: stats.costTotal, color: .inkMid)
+                netProfitCell(label: "淨利", value: stats.netProfit, color: .positive)
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("淨利率")
+                        .font(AppFont.mono(11, weight: .semibold))
+                        .foregroundStyle(Color.inkSoft)
+                        .kerning(1.2)
+                        .textCase(.uppercase)
+                    Text(stats.marginPercent.map { String(format: "%.0f%%", $0) } ?? "—")
+                        .font(AppFont.sans(17, weight: .bold))
+                        .monospacedDigit()
+                        .foregroundStyle(stats.marginPercent == nil ? Color.inkFaint : Color.positive)
+                    Text("已收款扣成本")
+                        .font(AppFont.sans(11))
+                        .foregroundStyle(Color.inkSoft)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+    }
+
+    /// 免費用戶：不隱藏功能，改顯示鎖定 teaser → 點擊導向 Paywall（符合「不可靜默略過，要 upsell」）。
+    private var netProfitLockedCard: some View {
+        Button {
+            paywallOpen = true
+        } label: {
+            AppCard {
+                HStack(spacing: 12) {
+                    Image(systemName: "lock.fill")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundStyle(Color.inkFaint)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("看每張單的成本與淨利")
+                            .font(AppFont.sans(15, weight: .semibold))
+                            .foregroundStyle(Color.ink)
+                        Text("PRO 專屬 · 升級解鎖淨利與淨利率統計")
+                            .font(AppFont.sans(12))
+                            .foregroundStyle(Color.inkSoft)
+                    }
+                    Spacer()
+                    Text("升級")
+                        .font(AppFont.sans(13, weight: .bold))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 6)
+                        .background(Color.accent, in: Capsule())
+                }
+            }
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func netProfitCell(label: String, value: Int, color: Color) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(label)
+                .font(AppFont.mono(11, weight: .semibold))
+                .foregroundStyle(Color.inkSoft)
+                .kerning(1.2)
+                .textCase(.uppercase)
+            Money(value, size: 17, color: color)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     // MARK: - Monthly chart

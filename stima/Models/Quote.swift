@@ -52,13 +52,18 @@ final class QuoteItem {
     var unit: String
     var qty: Double
     var price: Int
+    /// 單位成本（進階統計算淨利用；0 = 未填）。
+    var cost: Int = 0
 
-    init(name: String, unit: String, qty: Double, price: Int) {
+    init(name: String, unit: String, qty: Double, price: Int, cost: Int = 0) {
         self.name = name
         self.unit = unit
         self.qty = qty
         self.price = price
+        self.cost = cost
     }
 
     var subtotal: Int { Int(qty) * price }
+    /// 這筆項目的成本小計 = 數量 × 單位成本。
+    var costSubtotal: Int { Int(qty) * cost }
 }

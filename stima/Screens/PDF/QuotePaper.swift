@@ -81,11 +81,11 @@ struct QuotePaper: View {
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(businessName)
-                        .font(.system(size: 17, weight: .bold))
+                        .font(bodyFont(17, weight: .bold))
                         .foregroundStyle(brandColor)
                     if !slogan.isEmpty {
                         Text(slogan)
-                            .font(.system(size: 11))
+                            .font(bodyFont(11))
                             .foregroundStyle(Color(white: 0.4))
                     }
                     if !contactLine.isEmpty {
@@ -100,7 +100,7 @@ struct QuotePaper: View {
                         .font(.system(size: 9, design: .monospaced))
                         .foregroundStyle(Color(white: 0.55))
                     Text("報 價 單")
-                        .font(.system(size: 17, weight: .bold))
+                        .font(bodyFont(17, weight: .bold))
                         .foregroundStyle(Color.black.opacity(0.85))
                         .kerning(2)
                     Text("有效期限 \(template?.validDays ?? 30) 天")
@@ -124,11 +124,11 @@ struct QuotePaper: View {
                     .foregroundStyle(Color(white: 0.55))
                     .kerning(1)
                 Text(quote.clientName)
-                    .font(.system(size: 15, weight: .bold))
+                    .font(bodyFont(15, weight: .bold))
                     .foregroundStyle(Color.black.opacity(0.85))
                 if !quote.location.isEmpty {
                     Text(quote.location)
-                        .font(.system(size: 10))
+                        .font(bodyFont(10))
                         .foregroundStyle(Color(white: 0.45))
                 }
             }
@@ -201,7 +201,7 @@ struct QuotePaper: View {
     private func col(_ text: String, width: CGFloat?, align: Alignment,
                      flexible: Bool = false, mono: Bool = false) -> some View {
         let view = Text(text)
-            .font(mono ? .system(size: 11, design: .monospaced) : .system(size: 11))
+            .font(mono ? .system(size: 11, design: .monospaced) : bodyFont(11))
             .multilineTextAlignment(textAlign(align))
         if let width {
             view.frame(width: width, alignment: align)
@@ -257,12 +257,12 @@ struct QuotePaper: View {
     private var paymentTerms: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text("付款條件")
-                .font(.system(size: 11, weight: .bold))
+                .font(bodyFont(11, weight: .bold))
                 .foregroundStyle(Color.black.opacity(0.8))
             Text(template?.paymentTerms.isEmpty == false
                  ? template!.paymentTerms
                  : "簽約付 30%、完工驗收 60%、保固期滿 10%")
-                .font(.system(size: 10))
+                .font(bodyFont(10))
                 .foregroundStyle(Color(white: 0.45))
                 .lineSpacing(2)
         }
@@ -321,6 +321,15 @@ struct QuotePaper: View {
         f.dateFormat = "yyyy-MM-dd"
         return f
     }()
+
+    /// 依模板選的字體回傳「內文」字型；數字/等寬欄不受影響（仍維持 monospaced）。
+    private func bodyFont(_ size: CGFloat, weight: Font.Weight = .regular) -> Font {
+        switch template?.fontStyle {
+        case "明體": return .system(size: size, weight: weight, design: .serif)
+        case "楷體": return .custom("Kaiti TC", size: size).weight(weight)
+        default:     return .system(size: size, weight: weight)   // 黑體 / 預設（sans）
+        }
+    }
 
     static func parseHex(_ hex: String) -> Color {
         var s = hex.trimmingCharacters(in: .whitespaces)

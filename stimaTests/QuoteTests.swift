@@ -71,4 +71,10 @@ struct QuoteTests {
     func statusLabel(_ status: QuoteStatus, _ expected: String) {
         #expect(status.label == expected)
     }
+
+    @Test("QuoteItem.costSubtotal = Int(qty) × cost；cost 預設 0")
+    func itemCostSubtotal() {
+        #expect(QuoteItem(name: "x", unit: "式", qty: 3, price: 1000, cost: 200).costSubtotal == 600)
+        #expect(QuoteItem(name: "x", unit: "式", qty: 1, price: 100).cost == 0)
+    }
 }

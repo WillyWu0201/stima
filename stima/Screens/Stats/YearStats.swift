@@ -14,6 +14,7 @@ struct YearStats {
     let topClient: TopClient?
     let topItems: [TopItem]
     let prevYearPaid: Int?       // 去年已收款（沒資料時為 nil）
+    let costTotal: Int           // 已收款的成本合計（0 = 沒填成本）
 
     struct TopClient: Equatable {
         let name: String
@@ -34,6 +35,15 @@ struct YearStats {
     var yoyPercent: Double? {
         guard let prev = prevYearPaid, prev > 0 else { return nil }
         return Double(paidTotal - prev) / Double(prev) * 100
+    }
+
+    /// 已收款淨利 = 營收 − 成本。
+    var netProfit: Int { paidTotal - costTotal }
+
+    /// 淨利率（％）。沒填成本（costTotal == 0）或無營收時為 nil。
+    var marginPercent: Double? {
+        guard paidTotal > 0, costTotal > 0 else { return nil }
+        return Double(netProfit) / Double(paidTotal) * 100
     }
 }
 
@@ -95,6 +105,11 @@ enum YearStatsCalculator {
 
         // 先把 reduce 抽出來，避免大 init 內多次 type inference 拖慢編譯
         let paidTotal    = paid.reduce(0)    { $0 + $1.total }
+        // 用 for-loop 明確累計，避免巢狀 reduce 讓型別推斷卡住編譯（同檔上方 Aggregate 註解）。
+        var costTotal = 0
+        for q in paid {
+            for it in q.items { costTotal += it.costSubtotal }
+        }
         let doneTotal    = done.reduce(0)    { $0 + $1.total }
         let ongoingTotal = ongoing.reduce(0) { $0 + $1.total }
         let prevPaid     = prevYearQuotes
@@ -113,7 +128,8 @@ enum YearStatsCalculator {
             maxMonthly:   maxMonthly,
             topClient:    topClient,
             topItems:     topItems,
-            prevYearPaid: prevPaid > 0 ? prevPaid : nil
+            prevYearPaid: prevPaid > 0 ? prevPaid : nil,
+            costTotal:    costTotal
         )
     }
 

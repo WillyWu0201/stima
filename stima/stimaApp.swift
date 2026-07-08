@@ -8,6 +8,7 @@ struct stimaApp: App {
     /// - `--uitest-inmemory`：SwiftData 用 in-memory，每次 launch 都乾淨
     /// - `--uitest-seed`：把 PreviewData 範例 client / quote 灌進 DB（給需要資料的畫面測試）
     /// - `--uitest-onboarded`：標記已看過 onboarding，直接進主畫面（跳過教學 coach mark）
+    /// - `--uitest-pro`：標記為 PRO 用戶（測進階功能，如統計淨利卡）
     private static var isUITesting: Bool {
         ProcessInfo.processInfo.arguments.contains { $0.hasPrefix("--uitest-") }
     }
@@ -52,6 +53,9 @@ struct stimaApp: App {
         if ProcessInfo.processInfo.arguments.contains("--uitest-onboarded") {
             UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
         }
+        if ProcessInfo.processInfo.arguments.contains("--uitest-pro") {
+            UserDefaults.standard.set(true, forKey: "isPro")
+        }
         _settings = State(initialValue: AppSettings())
         PurchaseManager.shared.configure()
 
@@ -73,6 +77,7 @@ struct stimaApp: App {
         let template = PDFTemplate()
         template.businessName = "大發工程行"
         template.phone = "02-2345-6789"
+        template.paymentInfo = "匯款：玉山銀行(808) 1234-567-890\nLINE Pay：掃描下方 QR Code\n現金：請電 0912-345-678"
         ctx.insert(template)
         try? ctx.save()
     }
