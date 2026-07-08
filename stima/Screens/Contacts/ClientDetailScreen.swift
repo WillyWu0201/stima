@@ -60,7 +60,7 @@ struct ClientDetailScreen: View {
     var body: some View {
         VStack(spacing: 0) {
             AppHeader(
-                title: clientName,
+                title: "\(clientName)",
                 subtitle: "客戶詳情",
                 onBack: { dismiss() }
             ) {
@@ -98,7 +98,10 @@ struct ClientDetailScreen: View {
                 NewClientSheet(
                     existingNames: Set(allClients.map(\.name)).subtracting([c.name]),
                     editingClient: c
-                ) { _ in }
+                ) { updated in
+                    // 改了名字 → 本頁捕捉的 clientName 已失效（quotes 已連動改名），退回列表
+                    if updated.name != clientName { dismiss() }
+                }
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
             }
@@ -188,7 +191,7 @@ struct ClientDetailScreen: View {
 
             if let chipLabel, let action {
                 Button(action: action) {
-                    Text(chipLabel)
+                    Text(LocalizedStringKey(chipLabel))
                         .font(AppFont.sans(12, weight: .bold))
                         .foregroundStyle(chipColor)
                         .padding(.horizontal, 10)

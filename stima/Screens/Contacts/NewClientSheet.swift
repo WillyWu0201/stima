@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 /// 畫面 12b · 新增客戶（page-sheet）
 /// 從 ContactsScreen 右上 + 按鈕召喚。儲存後呼叫 onSave，由父層 insert 進 SwiftData。
@@ -8,6 +9,7 @@ struct NewClientSheet: View {
     var editingClient: Client? = nil
     let onSave: (Client) -> Void
     @Environment(\.dismiss) private var dismiss
+    @Query private var allQuotes: [Quote]
 
     @State private var name = ""
     @State private var phone = ""
@@ -208,7 +210,8 @@ struct NewClientSheet: View {
 
         // 編輯模式：直接更新這筆 Client（改名撞到「別人」才擋）。
         if let editingClient {
-            if trimmed != editingClient.name, existingNames.contains(trimmed) {
+            let oldName = editingClient.name
+            if trimmed != oldName, existingNames.contains(trimmed) {
                 showingDuplicateAlert = true
                 return
             }
@@ -217,6 +220,10 @@ struct NewClientSheet: View {
             editingClient.email   = email.trimmingCharacters(in: .whitespaces)
             editingClient.address = address.trimmingCharacters(in: .whitespaces)
             editingClient.notes   = notes
+            // 客戶改名 → 連動更新所有既有報價單的 clientName（denormalized 字串，
+            // 否則統計／客戶簿／客戶詳情會對不上這位客戶）。
+            Self.cascadeRename(from: oldName, to: trimmed, in: allQuotes)
+            onSave(editingClient)
             dismiss()
             return
         }
@@ -234,6 +241,19 @@ struct NewClientSheet: View {
         )
         onSave(client)
         dismiss()
+    }
+
+    /// 客戶改名時，連動更新既有報價單的 denormalized `clientName`。回傳受影響筆數。
+    /// （Quote.clientName 是複製字串、非關聯，不連動會讓統計/客戶簿對不上。）
+    @discardableResult
+    static func cascadeRename(from oldName: String, to newName: String, in quotes: [Quote]) -> Int {
+        guard oldName != newName else { return 0 }
+        var affected = 0
+        for q in quotes where q.clientName == oldName {
+            q.clientName = newName
+            affected += 1
+        }
+        return affected
     }
 
     /// 編輯模式一次性把既有 Client 內容帶進表單。
