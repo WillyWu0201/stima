@@ -36,6 +36,10 @@ final class stimaScreenshotUITests: XCTestCase {
         app.launchArguments = ["--uitest-reset", "--uitest-inmemory", "--uitest-seed", "--uitest-onboarded"]
         app.launch()
     }
+    private func launchSeededPro() {
+        app.launchArguments = ["--uitest-reset", "--uitest-inmemory", "--uitest-seed", "--uitest-onboarded", "--uitest-pro"]
+        app.launch()
+    }
 
     // MARK: - Onboarding（不帶 --uitest-onboarded）
 
@@ -141,6 +145,31 @@ final class stimaScreenshotUITests: XCTestCase {
         _ = stC("PDF 預覽").waitForExistence(timeout: 8);         snap("A2-Currency-PDF-VND")
     }
 
+    // MARK: - PDF 字體驗證（選明體 / 楷體 → 預覽 PDF 應變字體）
+
+    @MainActor
+    func testShotsPDFFont() throws {
+        launchSeeded()
+        app.tabBars.buttons["設定"].tap()
+        tapIfPresent(stC("報價單模板"))
+        _ = app.buttons["預覽"].waitForExistence(timeout: 8)
+        selectFont("明體")
+        tapIfPresent(app.buttons["預覽"])
+        _ = stC("PDF 預覽").waitForExistence(timeout: 8);          snap("B1-PDF-Font-明體")
+        tapIfPresent(btnC("完成"))
+        selectFont("楷體")
+        tapIfPresent(app.buttons["預覽"])
+        _ = stC("PDF 預覽").waitForExistence(timeout: 8);          snap("B2-PDF-Font-楷體")
+    }
+
+    /// 字體選擇器在模板頁最底部，往下捲到「字體」chip 再點。
+    @MainActor private func selectFont(_ name: String) {
+        let btn = app.buttons[name]
+        var n = 0
+        while !btn.isHittable && n < 15 { app.swipeUp(); n += 1 }
+        if btn.isHittable { btn.tap() }
+    }
+
     // MARK: - PDF 模板
 
     @MainActor
@@ -211,5 +240,33 @@ final class stimaScreenshotUITests: XCTestCase {
         tapIfPresent(btnC("下一步"))
         _ = stC("確認出單").waitForExistence(timeout: 6);          snap("94-NewQuoteReview")
         app.swipeUp();                                            snap("94b-Review-scroll")
+    }
+
+    // MARK: - 統計 · 淨利卡（PRO 專屬 · --uitest-pro）
+
+    @MainActor
+    func testShotsStatsProNetProfit() throws {
+        launchSeededPro()
+        app.tabBars.buttons["統計"].tap()
+        _ = stC("營運統計").waitForExistence(timeout: 10)
+        // 淨利卡在 mini stats 下方，往下捲一點確保入鏡
+        _ = stC("淨利率").waitForExistence(timeout: 6)
+        XCTAssertTrue(stC("淨利率").exists, "PRO 用戶的統計頁應顯示淨利卡")
+        snap("21-Stats-PRO-NetProfit")
+    }
+
+    // MARK: - 請款單 · 付款方式（吃 PDF 模板設定值，非寫死假帳號）
+
+    @MainActor
+    func testShotsInvoicePayment() throws {
+        launchSeeded()
+        tapIfPresent(stC("王先生"), timeout: 10)          // ongoing → 詳情有「轉請款單」
+        _ = btnC("預覽 PDF").waitForExistence(timeout: 6)
+        tapIfPresent(btnC("轉請款單"))
+        _ = stC("請款單").waitForExistence(timeout: 8)
+        app.swipeUp()
+        XCTAssertTrue(stC("玉山銀行").waitForExistence(timeout: 6),
+                      "請款單付款方式應顯示模板設定的收款資訊")
+        snap("42-Invoice-Payment")
     }
 }

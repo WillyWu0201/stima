@@ -169,6 +169,7 @@ struct NewQuoteItemsScreen: View {
         }
         .buttonStyle(.plain)
         .fixedSize()
+        .accessibilityIdentifier("addItemButton")
     }
 
     // MARK: - Mutations
