@@ -169,6 +169,29 @@ final class stimaUITests: XCTestCase {
                       "填完基本資料（含日期）後無法進入下一頁")
     }
 
+    // MARK: - Regression：CTA 兩側也要能點（.contentShape）
+
+    /// 「下一步」等 CTA 是 maxWidth:.infinity 的玻璃按鈕；缺 contentShape 時只有中央文字
+    /// 可觸發、兩側只有玻璃動畫卻不進下一頁。此測試點靠邊緣座標守這條回歸。
+    @MainActor
+    func testPrimaryButtonEdgeIsTappable() throws {
+        app.launchArguments += ["--uitest-onboarded"]
+        app.launch()
+        app.buttons["新增報價單"].tap()
+        let cf = app.textFields["例：王先生、林太太"]
+        XCTAssertTrue(cf.waitForExistence(timeout: 5), "沒進到基本資料")
+        cf.tap(); cf.typeText("測試客戶")
+        // 先收鍵盤（點日期列→關 sheet），避免鍵盤影響底部按鈕命中量測
+        app.buttons["dateRow"].tap()
+        if app.buttons["完成"].waitForExistence(timeout: 3) { app.buttons["完成"].tap() }
+        let next = button(containing: "下一步")
+        XCTAssertTrue(next.waitForExistence(timeout: 3), "找不到「下一步」按鈕")
+        // 點靠左緣（非中央）也要能進下一頁 → 命中區須涵蓋整條
+        next.coordinate(withNormalizedOffset: CGVector(dx: 0.08, dy: 0.5)).tap()
+        XCTAssertTrue(app.staticTexts["加項目"].waitForExistence(timeout: 4),
+                      "「下一步」兩側點不到（命中區僅中央文字）")
+    }
+
     // MARK: - Helpers
 
     /// 找 label 包含 substring 的第一個 button（PrimaryButton 內 HStack image+text，

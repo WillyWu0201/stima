@@ -32,6 +32,8 @@ struct PrimaryButton: View {
             .frame(maxWidth: .infinity)
             .padding(.vertical, 15)
             .glassTintedFill(isEnabled ? Color.accent : Color.inkFaint)
+            // 整條都可點：maxWidth:.infinity + glass 讓兩側只有動畫、命中區卻只到中央文字
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
     }
@@ -63,6 +65,8 @@ struct SecondaryButton: View {
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
             .glassNeutral()
+            // 整條都可點（同 PrimaryButton）
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
     }
