@@ -254,7 +254,7 @@ struct PDFTemplateScreen: View {
                             Button {
                                 t.fontStyle = f
                             } label: {
-                                Text(f)
+                                Text(LocalizedStringKey(f))
                                     .font(AppFont.sans(13, weight: .semibold))
                                     .foregroundStyle(t.fontStyle == f ? .white : Color.ink)
                                     .frame(maxWidth: .infinity)
@@ -317,7 +317,7 @@ struct PDFTemplateScreen: View {
                     Image(systemName: systemImage)
                         .font(.system(size: 11, weight: .semibold))
                 }
-                Text(label)
+                Text(LocalizedStringKey(label))
             }
             .font(AppFont.sans(12, weight: .semibold))
             .foregroundStyle(Color.inkSoft)
@@ -341,7 +341,7 @@ struct PDFTemplateScreen: View {
                         .strokeBorder(Color.appBorder, lineWidth: 1.5)
                 )
             if text.wrappedValue.isEmpty {
-                Text(placeholder)
+                Text(LocalizedStringKey(placeholder))
                     .font(AppFont.sans(14))
                     .foregroundStyle(Color.inkFaint)
                     .padding(.horizontal, 14)
@@ -413,10 +413,10 @@ private struct UploadSlot: View {
             preview
                 .frame(width: 48, height: 48)
 
-            Text(label)
+            Text(LocalizedStringKey(label))
                 .font(AppFont.sans(13, weight: .semibold))
                 .foregroundStyle(Color.ink)
-            Text(hint)
+            Text(LocalizedStringKey(hint))
                 .font(AppFont.sans(10))
                 .foregroundStyle(Color.inkSoft)
             Text(hasFile ? "✓ 已上傳" : "+ 點此上傳")

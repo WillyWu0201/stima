@@ -15,7 +15,7 @@ struct ShareSecondaryButton: View {
             HStack(spacing: 8) {
                 Image(systemName: systemImage)
                     .font(.system(size: 15, weight: .semibold))
-                Text(title)
+                Text(LocalizedStringKey(title))
                     .font(AppFont.sans(15, weight: .semibold))
             }
             .foregroundStyle(Color.ink)

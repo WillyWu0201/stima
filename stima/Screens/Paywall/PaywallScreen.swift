@@ -127,10 +127,10 @@ struct PaywallScreen: View {
             .frame(width: 38, height: 38)
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(f.title)
+                Text(LocalizedStringKey(f.title))
                     .font(AppFont.sans(15, weight: .bold))
                     .foregroundStyle(Color.ink)
-                Text(f.sub)
+                Text(LocalizedStringKey(f.sub))
                     .font(AppFont.sans(12))
                     .foregroundStyle(Color.inkSoft)
                     .lineSpacing(2)
@@ -176,10 +176,10 @@ struct PaywallScreen: View {
         } label: {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(title)
+                    Text(LocalizedStringKey(title))
                         .font(AppFont.sans(16, weight: .bold))
                         .foregroundStyle(Color.ink)
-                    Text(sub)
+                    Text(LocalizedStringKey(sub))
                         .font(AppFont.sans(12))
                         .foregroundStyle(Color.inkSoft)
                 }
@@ -189,7 +189,7 @@ struct PaywallScreen: View {
                         .font(AppFont.sans(20, weight: .bold))
                         .monospacedDigit()
                         .foregroundStyle(Color.ink)
-                    Text(period)
+                    Text(LocalizedStringKey(period))
                         .font(AppFont.sans(11))
                         .foregroundStyle(Color.inkSoft)
                 }

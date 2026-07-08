@@ -19,7 +19,7 @@ struct TabChip: View {
                     Image(systemName: "folder")
                         .font(.system(size: 11, weight: .semibold))
                 }
-                Text(label)
+                Text(LocalizedStringKey(label))
                     .font(AppFont.sans(13, weight: .semibold))
                 Text("\(count)")
                     .font(AppFont.sans(11, weight: .semibold))

@@ -38,7 +38,7 @@ struct DetailScreen: View {
     var body: some View {
         VStack(spacing: 0) {
             AppHeader(
-                title: quote.clientName,
+                title: "\(quote.clientName)",
                 subtitle: "報價單 · #\(quoteIDLast4)",
                 accent: true,
                 onBack: { dismiss() }
@@ -160,7 +160,7 @@ struct DetailScreen: View {
             HStack(spacing: 4) {
                 Image(systemName: symbol)
                     .font(.system(size: 11))
-                Text(label)
+                Text(LocalizedStringKey(label))
             }
             .font(AppFont.sans(11))
             .foregroundStyle(Color.inkSoft)

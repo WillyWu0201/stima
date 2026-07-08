@@ -63,7 +63,7 @@ struct ItemDetailScreen: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            AppHeader(title: itemName,
+            AppHeader(title: "\(itemName)",
                       subtitle: "項目分析",
                       onBack: { dismiss() })
 
@@ -196,7 +196,7 @@ struct ItemDetailScreen: View {
     }
 
     private func tag(_ text: String, color: Color) -> some View {
-        Text(text)
+        Text(LocalizedStringKey(text))
             .font(AppFont.mono(10, weight: .bold))
             .foregroundStyle(color)
             .padding(.horizontal, 6)

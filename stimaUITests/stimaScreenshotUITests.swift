@@ -145,6 +145,27 @@ final class stimaScreenshotUITests: XCTestCase {
         _ = stC("PDF 預覽").waitForExistence(timeout: 8);         snap("A2-Currency-PDF-VND")
     }
 
+    // MARK: - 語言切換驗證（切越南文 → 介面文字應變 vi）
+
+    @MainActor
+    func testShotsLanguageVI() throws {
+        launchSeeded()
+        app.tabBars.buttons["設定"].tap()
+        _ = stC("設定").waitForExistence(timeout: 8)
+        tapIfPresent(stC("語言"))
+        tapIfPresent(btnC("Tiếng Việt"))          // confirmationDialog 選項
+        // 切回首頁（tab label 此時已變 vi，用 index 點）
+        app.tabBars.buttons.element(boundBy: 0).tap()
+        _ = stC("Báo giá của tôi").waitForExistence(timeout: 8); snap("C0-Lang-VI-Home")
+        XCTAssertTrue(stC("Báo giá của tôi").exists, "切 vi 後首頁標題沒變成越南文")
+        XCTAssertFalse(app.staticTexts["我的報價單"].exists, "切 vi 後仍顯示中文標題")
+        // 次要畫面也截圖供人工檢視 vi 覆蓋（統計 / 設定）
+        app.tabBars.buttons.element(boundBy: 1).tap()
+        _ = stC("Thống kê").waitForExistence(timeout: 6);          snap("C1-Lang-VI-Stats")
+        app.tabBars.buttons.element(boundBy: 2).tap()
+        _ = stC("Cài đặt").waitForExistence(timeout: 6);           snap("C2-Lang-VI-Settings")
+    }
+
     // MARK: - PDF 字體驗證（選明體 / 楷體 → 預覽 PDF 應變字體）
 
     @MainActor

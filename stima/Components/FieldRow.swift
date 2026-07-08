@@ -19,7 +19,7 @@ struct FieldRow<Content: View>: View {
                     Image(systemName: systemImage)
                         .font(.system(size: 13, weight: .regular))
                 }
-                Text(label)
+                Text(LocalizedStringKey(label))
                     .font(AppFont.sans(13, weight: .semibold))
             }
             .foregroundStyle(Color.inkSoft)

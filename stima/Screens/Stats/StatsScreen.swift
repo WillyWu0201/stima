@@ -29,7 +29,7 @@ struct StatsScreen: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            AppHeader(title: "營運統計", subtitle: displayName, accent: true)
+            AppHeader(title: "營運統計", subtitle: "\(displayName)", accent: true)
 
             ScrollView {
                 VStack(alignment: .leading, spacing: Spacing.cardGap) {
@@ -145,7 +145,7 @@ struct StatsScreen: View {
     private func miniStat(label: String, value: Int, sub: String, color: Color) -> some View {
         AppCard {
             VStack(alignment: .leading, spacing: 6) {
-                Text(label)
+                Text(LocalizedStringKey(label))
                     .font(AppFont.mono(11, weight: .semibold))
                     .foregroundStyle(Color.inkSoft)
                     .kerning(1.2)
@@ -220,7 +220,7 @@ struct StatsScreen: View {
 
     private func netProfitCell(label: String, value: Int, color: Color) -> some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(label)
+            Text(LocalizedStringKey(label))
                 .font(AppFont.mono(11, weight: .semibold))
                 .foregroundStyle(Color.inkSoft)
                 .kerning(1.2)

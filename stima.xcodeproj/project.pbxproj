@@ -193,6 +193,8 @@
 				en,
 				"zh-Hant",
 				"zh-Hans",
+				vi,
+				id,
 				Base,
 			);
 			mainGroup = 3F7CC9F52FBD8F570019E29C;

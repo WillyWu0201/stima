@@ -1,1057 +1,6364 @@
 {
-  "sourceLanguage" : "zh-Hant",
-  "strings" : {
-    "" : {
-
-    },
-    "  ·  %@" : {
-
-    },
-    "  ·  自 %@ 起" : {
-
-    },
-    " · 用過 %lld 次" : {
-
-    },
-    "—" : {
-
-    },
-    "·" : {
-
-    },
-    "「%@」已經在客戶簿內。請改名或直接到列表編輯既有資料。" : {
-
-    },
-    "/ %@" : {
-
-    },
-    "%@  %@" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@  %2$@"
-          }
-        }
-      }
-    },
-    "%@  %@   ·   %@  %@" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@  %2$@   ·   %3$@  %4$@"
-          }
-        }
-      }
-    },
-    "%@ · %@ %@" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ · %2$@ %3$@"
-          }
-        }
-      }
-    },
-    "%@ %@" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$@"
-          }
-        }
-      }
-    },
-    "%@ %@ × $%@" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$@ × $%3$@"
-          }
-        }
-      }
-    },
-    "%@ × $" : {
-
-    },
-    "%@ 年" : {
-
-    },
-    "%@ 年已收款 · %lld 張" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ 年已收款 · %2$lld 張"
-          }
-        }
-      }
-    },
-    "%@%@" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@%2$@"
-          }
-        }
-      }
-    },
-    "%lld" : {
-
-    },
-    "%lld %@ × $%@" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld %2$@ × $%3$@"
-          }
-        }
-      }
-    },
-    "%lld 個項目" : {
-
-    },
-    "%lld 張已完工待收" : {
-
-    },
-    "%lld 案" : {
-
-    },
-    "%lld 次 · 共 %lld %@" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld 次 · 共 %2$lld %3$@"
-          }
-        }
-      }
-    },
-    "%lld 次合作" : {
-
-    },
-    "+ 點此上傳" : {
-
-    },
-    "×%lld" : {
-
-    },
-    "✓ 已上傳" : {
-
-    },
-    "✓ 已加 ×%lld" : {
-
-    },
-    "🏆 %@" : {
-
-    },
-    "📝" : {
-
-    },
-    "$%@" : {
-
-    },
-    "$%@ / %@" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "$%1$@ / %2$@"
-          }
-        }
-      }
-    },
-    "$%lldk" : {
-
-    },
-    "0" : {
-
-    },
-    "1" : {
-
-    },
-    "7 天免費試用，隨時可取消\n訂閱透過 App Store 收費，可在「設定 → Apple ID」隨時關閉" : {
-
-    },
-    "0912-345-678" : {
-
-    },
-    "chen@example.com" : {
-
-    },
-    "example@email.com" : {
-
-    },
-    "iCloud 自動備份" : {
-
-    },
-    "LOGO" : {
-
-    },
-    "PDF 產生失敗" : {
-
-    },
-    "PDF 預覽" : {
-
-    },
-    "PRO" : {
-
-    },
-    "三件不用再用紙筆做的事 ↓" : {
-
-    },
-    "上次 $%@ / %@" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "上次 $%1$@ / %2$@"
-          }
-        }
-      }
-    },
-    "下一步" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next"
+  "sourceLanguage": "zh-Hant",
+  "strings": {
+    "": {},
+    "  ·  %@": {},
+    "  ·  自 %@ 起": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "  ·  từ %@"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "下一步"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "  ·  sejak %@"
           }
         }
       }
     },
-    "下次跟同個客戶報價時，我們會自動幫你填好資料。" : {
-
-    },
-    "不用先註冊，按下去就可以開始試。" : {
-
-    },
-    "付款到期日：%@" : {
-
-    },
-    "付款方式" : {
-
-    },
-    "付款條件" : {
-
-    },
-    "位置權限被拒。請到「設定 → 隱私權與安全性 → 定位服務 → Stima」開啟，再回來試一次。" : {
-
-    },
-    "使用目前位置" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use Current Location"
+    " · 用過 %lld 次": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · đã dùng %lld lần"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用当前位置"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · dipakai %lld kali"
           }
         }
       }
     },
-    "例：交期不拖、價錢實在" : {
-
-    },
-    "例：台北市信義區" : {
-
-    },
-    "例：台北市信義區松仁路" : {
-
-    },
-    "例：大發工程行" : {
-
-    },
-    "例：張先生介紹、喜歡北歐風、付款乾脆⋯" : {
-
-    },
-    "例：拆冷氣、磨地板、外牆貼磚" : {
-
-    },
-    "例：王先生、林太太" : {
-
-    },
-    "例：王先生、林太太、陳老闆" : {
-
-    },
-    "例：簽約付 30%，完工驗收付 60%，保固期滿付 10%" : {
-
-    },
-    "例：統編 12345678 / 台北市信義區⋯" : {
-
-    },
-    "例：陳師傅 / 大發工程行" : {
-
-    },
-    "傳給客戶" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Share"
+    "—": {},
+    "·": {},
+    "「%@」已經在客戶簿內。請改名或直接到列表編輯既有資料。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「%@」đã có trong danh bạ khách hàng. Hãy đổi tên hoặc sửa trực tiếp trong danh sách."
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "传给客户"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「%@」sudah ada di buku klien. Ubah nama atau edit langsung di daftar."
           }
         }
       }
     },
-    "價格趨勢" : {
-
-    },
-    "儲存" : {
-
-    },
-    "先填客戶名跟工程地點，填好按下面的「下一步」。" : {
-
-    },
-    "先跳過，等等再說 →" : {
-
-    },
-    "免費版每月最多 %lld 張報價單，下個月會自動重置。升級 PRO 解鎖無限張。" : {
-
-    },
-    "免費版限制" : {
-
-    },
-    "共做了 %@ %@" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "共做了 %1$@ %2$@"
+    "/ %@": {},
+    "%@  %@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@  %2$@"
           }
         }
       }
     },
-    "再看看" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Later"
+    "%@  %@   ·   %@  %@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@  %2$@   ·   %3$@  %4$@"
+          }
+        }
+      }
+    },
+    "%@ · %@ %@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ · %2$@ %3$@"
+          }
+        }
+      }
+    },
+    "%@ %@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%@ %@ × $%@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ %2$@ × $%3$@"
+          }
+        }
+      }
+    },
+    "%@ × $": {},
+    "%@ 年": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Năm %@"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "再看看"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tahun %@"
           }
         }
       }
     },
-    "最近單價" : {
-
-    },
-    "出單" : {
-
-    },
-    "出單，搞定!" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Finalize"
+    "%@ 年已收款 · %lld 張": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ 年已收款 · %2$lld 張"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "出单，搞定!"
-          }
-        }
-      }
-    },
-    "出單完成" : {
-
-    },
-    "出現在每張報價單的左上方" : {
-
-    },
-    "刪除" : {
-
-    },
-    "刪除分類" : {
-
-    },
-    "加" : {
-
-    },
-    "加新分類，例：清潔、家具" : {
-
-    },
-    "加進你的項目庫，下次直接挑就行。" : {
-
-    },
-    "加進來後，未來的報價單只要輸入名字，地址跟電話會自動帶入。統計頁也會自動歸戶這位客戶的累計營收。" : {
-
-    },
-    "加進去" : {
-
-    },
-    "加項目" : {
-
-    },
-    "升級 PRO" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Upgrade"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã thu năm %@ · %lld đơn"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "升级 PRO"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diterima tahun %@ · %lld nota"
           }
         }
       }
     },
-    "升級到Stima PRO" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Upgrade to Pro"
+    "%@%@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@%2$@"
+          }
+        }
+      }
+    },
+    "%lld": {},
+    "%lld %@ × $%@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld %2$@ × $%3$@"
+          }
+        }
+      }
+    },
+    "%lld 個項目": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld hạng mục"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "升级到Stima PRO"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld item"
           }
         }
       }
     },
-    "取消" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cancel"
+    "%lld 張已完工待收": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld đơn đã hoàn công chờ thu"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "取消"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld nota selesai menunggu pembayaran"
           }
         }
       }
     },
-    "台北市信義區" : {
-
-    },
-    "合作 %lld 次" : {
-
-    },
-    "嗨，%@ 👋" : {
-
-    },
-    "地圖" : {
-
-    },
-    "報 價 單" : {
-
-    },
-    "報價單" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quotes"
+    "%lld 案": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld dự án"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "报价单"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld proyek"
           }
         }
       }
     },
-    "報價單 · %@" : {
-
-    },
-    "報價單 #%@" : {
-
-    },
-    "報價單抬頭" : {
-
-    },
-    "報價單抬頭 · 第一次問，之後記著" : {
-
-    },
-    "報價單模板" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PDF Template"
+    "%lld 次 · 共 %lld %@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld 次 · 共 %2$lld %3$@"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "报价单模板"
-          }
-        }
-      }
-    },
-    "報價收款，\n一支手機\n全包了。" : {
-
-    },
-    "報得快、收得回，\n師傅的生意更穩。" : {
-
-    },
-    "填一下抬頭（你的店名或稱呼），金額沒問題就按「出單」，完成第一張！" : {
-
-    },
-    "好" : {
-
-    },
-    "它能幫你做什麼？" : {
-
-    },
-    "完成" : {
-
-    },
-    "客戶" : {
-
-    },
-    "客戶名稱重複" : {
-
-    },
-    "客戶簿" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Contacts"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld lần · tổng %lld %@"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "客户簿"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld kali · total %lld %@"
           }
         }
       }
     },
-    "客戶資料" : {
-
-    },
-    "小提示" : {
-
-    },
-    "小計" : {
-
-    },
-    "工地老闆，幾步就上手。算項目、看數字、追收款，都在這。" : {
-
-    },
-    "已加 「%@」" : {
-
-    },
-    "已加 %lld" : {
-
-    },
-    "已完工" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Done"
+    "%lld 次合作": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld lần hợp tác"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已完工"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld kali kerja sama"
           }
         }
       }
     },
-    "已收款" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paid"
+    "+ 點此上傳": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ Nhấn để tải lên"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已收款"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ Ketuk untuk unggah"
           }
         }
       }
     },
-    "已啟用 · 自動備份到 iCloud" : {
-
-    },
-    "Stima · v2.0" : {
-
-    },
-    "Stima · v2.0 · build 2026.05.20" : {
-
-    },
-    "Stima PRO" : {
-
-    },
-    "Stima PRO · 已訂閱" : {
-
-    },
-    "建好第一張，客戶、項目、收款都從這裡開始。" : {
-
-    },
-    "待收款" : {
-
-    },
-    "從地圖選地點" : {
-
-    },
-    "從報價單 #%@ 轉成請款單 · 工程已完工" : {
-
-    },
-    "我們來試做\n第一張報價單。" : {
-
-    },
-    "我的報價單" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "My Quotes"
+    "×%lld": {},
+    "✓ 已上傳": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Đã tải lên"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "我的报价单"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Terunggah"
           }
         }
       }
     },
-    "所有新項目都會自動進「常用」，加上分類後也會出現在那個分頁。" : {
-
-    },
-    "找不到客戶" : {
-
-    },
-    "找不到符合的地點" : {
-
-    },
-    "找不到符合的報價單" : {
-
-    },
-    "挑項目，或自己加" : {
-
-    },
-    "搜尋地址、地標" : {
-
-    },
-    "搜尋客戶、地點、項目（例：冷氣）" : {
-
-    },
-    "搜尋客戶名、電話、地址" : {
-
-    },
-    "支援 PNG（建議透明背景）、JPG。最大 2MB / 邊長 1200px。" : {
-
-    },
-    "新增報價單" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New Quote"
+    "✓ 已加 ×%lld": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Đã thêm ×%lld"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新增报价单"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Ditambah ×%lld"
           }
         }
       }
     },
-    "新增客戶" : {
-
+    "🏆 %@": {},
+    "📝": {},
+    "$%@": {},
+    "$%@ / %@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "$%1$@ / %2$@"
+          }
+        }
+      }
     },
-    "日期 / DATE" : {
-
-    },
-    "有效期限 %lld 天" : {
-
-    },
-    "本月免費額度已用完" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Monthly Limit Reached"
+    "$%lldk": {},
+    "0": {},
+    "1": {},
+    "7 天免費試用，隨時可取消\n訂閱透過 App Store 收費，可在「設定 → Apple ID」隨時關閉": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dùng thử miễn phí 7 ngày, hủy bất cứ lúc nào\nThanh toán qua App Store, có thể tắt trong「Cài đặt → Apple ID」bất cứ lúc nào"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "本月免费额度已用完"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uji coba gratis 7 hari, batalkan kapan saja\nPembayaran lewat App Store, bisa dimatikan di「Pengaturan → Apple ID」kapan saja"
           }
         }
       }
     },
-    "查看客戶" : {
-
-    },
-    "標記已收款" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mark Paid"
+    "0912-345-678": {},
+    "chen@example.com": {},
+    "example@email.com": {},
+    "iCloud 自動備份": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tự động sao lưu iCloud"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "标记已收款"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cadangan otomatis iCloud"
           }
         }
       }
     },
-    "每月 3 張報價單，PDF 含浮水印。升級 Pro 解鎖無限張、自訂模板、移除浮水印。" : {
-
-    },
-    "比去年同期 %@ %@（去年 $%@）" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "比去年同期 %1$@ %2$@（去年 $%3$@）"
-          }
-        }
-      }
-    },
-    "清除搜尋" : {
-
-    },
-    "無法存取位置" : {
-
-    },
-    "無法產生這份報價單的 PDF。請再試一次，若持續失敗請重新啟動 app。" : {
-
-    },
-    "無限報價單 · 自訂模板 · 移除浮水印 · iCloud 備份" : {
-
-    },
-    "王先生" : {
-
-    },
-    "目前小計" : {
-
-    },
-    "知道了" : {
-
-    },
-    "確定刪除「%@」？" : {
-
-    },
-    "確定刪除「%@」分類？" : {
-
-    },
-    "確認出單" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Review"
+    "LOGO": {},
+    "PDF 產生失敗": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tạo PDF thất bại"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "确认出单"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gagal membuat PDF"
           }
         }
       }
     },
-    "確認此地點" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Confirm Location"
+    "PDF 預覽": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xem trước PDF"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "确认此地点"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pratinjau PDF"
           }
         }
       }
     },
-    "移除" : {
-
-    },
-    "移除圖片" : {
-
-    },
-    "稅金 %lld%%" : {
-
-    },
-    "第一張完成！" : {
-
-    },
-    "範圍 $%@–$%@" : {
-      "localizations" : {
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "範圍 $%1$@–$%2$@"
-          }
-        }
-      }
-    },
-    "累積營收（%lld 次）" : {
-
-    },
-    "累計營收" : {
-
-    },
-    "統計" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stats"
+    "PRO": {},
+    "三件不用再用紙筆做的事 ↓": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ba việc không cần giấy bút nữa ↓"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "统计"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiga hal yang tak perlu kertas lagi ↓"
           }
         }
       }
     },
-    "編輯" : {
-
-    },
-    "總計" : {
-
-    },
-    "總計  NT$" : {
-
-    },
-    "致 / TO" : {
-
-    },
-    "草稿" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Draft"
+    "上次 $%@ / %@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "上次 $%1$@ / %2$@"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "草稿"
-          }
-        }
-      }
-    },
-    "複製這張" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Duplicate"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lần trước $%@ / %@"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "复制这张"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terakhir $%@ / %@"
           }
         }
       }
     },
-    "設定" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings"
+    "下一步": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "设定"
-          }
-        }
-      }
-    },
-    "請款中" : {
-
-    },
-    "請款明細" : {
-
-    },
-    "請款金額" : {
-
-    },
-    "轉請款單" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Make Invoice"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下一步"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "转请款单"
-          }
-        }
-      }
-    },
-    "返回" : {
-
-    },
-    "透過 App Store 管理訂閱 · 可隨時取消" : {
-
-    },
-    "這個分頁還是空的" : {
-
-    },
-    "這個分類下的自訂項目仍會保留。" : {
-
-    },
-    "進行中" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ongoing"
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiếp tục"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "进行中"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lanjut"
           }
         }
       }
     },
-    "過程中我會在旁邊指一下重點。\n放心，假的，做壞了也沒事。" : {
-
-    },
-    "選擇語言" : {
-
-    },
-    "選擇貨幣" : {
-
-    },
-    "選項目" : {
-
-    },
-    "還原購買" : {
-
-    },
-    "還沒加過自訂項目。\n在「新增報價單 → 加項目 → + 自訂」就能加。" : {
-
-    },
-    "還沒加項目" : {
-
-    },
-    "還沒有報價單" : {
-
-    },
-    "還沒有客戶" : {
-
-    },
-    "還沒有項目" : {
-
-    },
-    "重試" : {
-
-    },
-    "關閉" : {
-
-    },
-    "需要 PRO · 換手機資料自動還原" : {
-
-    },
-    "項目 A" : {
-
-    },
-    "項目 B" : {
-
-    },
-    "項目 C" : {
-
-    },
-    "項目明細" : {
-
-    },
-    "預覽" : {
-
-    },
-    "預覽 PDF" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preview PDF"
+    "下次跟同個客戶報價時，我們會自動幫你填好資料。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lần sau báo giá cho cùng khách hàng, chúng tôi sẽ tự điền thông tin cho bạn."
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "预览 PDF"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saat membuat penawaran untuk klien yang sama, kami akan mengisi datanya otomatis."
           }
         }
       }
     },
-    "顯示甲乙方簽名欄（給客戶簽名用）" : {
-
+    "不用先註冊，按下去就可以開始試。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không cần đăng ký, nhấn vào là bắt đầu dùng thử."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanpa daftar dulu, tekan langsung mulai coba."
+          }
+        }
+      }
     },
-    "點「加項目」，從清單挑你要做的工，數量價錢都能改。" : {
-
+    "付款到期日：%@": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hạn thanh toán: %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jatuh tempo: %@"
+          }
+        }
+      }
     },
-    "點下方的「+ 加項目」開始" : {
-
+    "付款方式": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Phương thức thanh toán"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metode pembayaran"
+          }
+        }
+      }
     },
-    "點右上「+」把常合作的客戶加進來。" : {
-
+    "付款條件": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Điều khoản thanh toán"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ketentuan pembayaran"
+          }
+        }
+      }
+    },
+    "位置權限被拒。請到「設定 → 隱私權與安全性 → 定位服務 → Stima」開啟，再回來試一次。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quyền vị trí bị từ chối. Hãy vào「Cài đặt → Quyền riêng tư & Bảo mật → Dịch vụ định vị → Stima」để bật, rồi thử lại."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Izin lokasi ditolak. Buka「Pengaturan → Privasi & Keamanan → Layanan Lokasi → Stima」untuk mengaktifkan, lalu coba lagi."
+          }
+        }
+      }
+    },
+    "使用目前位置": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use Current Location"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用当前位置"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dùng vị trí hiện tại"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gunakan lokasi saat ini"
+          }
+        }
+      }
+    },
+    "例：交期不拖、價錢實在": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VD: Đúng hạn, giá thật"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cth: Tepat waktu, harga jujur"
+          }
+        }
+      }
+    },
+    "例：台北市信義區": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VD: Quận Tín Nghĩa, Đài Bắc"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cth: Distrik Xinyi, Taipei"
+          }
+        }
+      }
+    },
+    "例：台北市信義區松仁路": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VD: Đường Tùng Nhân, Quận Tín Nghĩa, Đài Bắc"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cth: Jalan Songren, Distrik Xinyi, Taipei"
+          }
+        }
+      }
+    },
+    "例：大發工程行": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VD: Xưởng thi công Đại Phát"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cth: Kontraktor Dafa"
+          }
+        }
+      }
+    },
+    "例：張先生介紹、喜歡北歐風、付款乾脆⋯": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VD: Anh Trương giới thiệu, thích phong cách Bắc Âu, thanh toán dứt khoát⋯"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cth: Referensi Pak Zhang, suka gaya Nordik, bayar lancar⋯"
+          }
+        }
+      }
+    },
+    "例：拆冷氣、磨地板、外牆貼磚": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VD: Tháo máy lạnh, mài sàn, ốp gạch tường ngoài"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cth: Bongkar AC, poles lantai, pasang keramik dinding luar"
+          }
+        }
+      }
+    },
+    "例：王先生、林太太": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VD: Anh Vương, chị Lâm"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cth: Pak Wang, Bu Lin"
+          }
+        }
+      }
+    },
+    "例：王先生、林太太、陳老闆": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VD: Anh Vương, chị Lâm, ông chủ Trần"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cth: Pak Wang, Bu Lin, Bos Chen"
+          }
+        }
+      }
+    },
+    "例：簽約付 30%，完工驗收付 60%，保固期滿付 10%": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VD: Ký hợp đồng trả 30%, nghiệm thu trả 60%, hết bảo hành trả 10%"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cth: Tanda tangan bayar 30%, serah terima 60%, akhir garansi 10%"
+          }
+        }
+      }
+    },
+    "例：統編 12345678 / 台北市信義區⋯": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VD: MST 12345678 / Quận Tín Nghĩa, Đài Bắc⋯"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cth: NPWP 12345678 / Distrik Xinyi, Taipei⋯"
+          }
+        }
+      }
+    },
+    "例：陳師傅 / 大發工程行": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VD: Thợ Trần / Xưởng thi công Đại Phát"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cth: Tukang Chen / Kontraktor Dafa"
+          }
+        }
+      }
+    },
+    "傳給客戶": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "传给客户"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gửi cho khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kirim ke klien"
+          }
+        }
+      }
+    },
+    "價格趨勢": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xu hướng giá"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tren harga"
+          }
+        }
+      }
+    },
+    "儲存": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lưu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simpan"
+          }
+        }
+      }
+    },
+    "先填客戶名跟工程地點，填好按下面的「下一步」。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Điền tên khách hàng và địa điểm thi công trước, xong nhấn「Tiếp tục」bên dưới."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Isi nama klien dan lokasi proyek dulu, lalu tekan「Lanjut」di bawah."
+          }
+        }
+      }
+    },
+    "先跳過，等等再說 →": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bỏ qua, để sau →"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lewati dulu, nanti saja →"
+          }
+        }
+      }
+    },
+    "免費版每月最多 %lld 張報價單，下個月會自動重置。升級 PRO 解鎖無限張。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bản miễn phí tối đa %lld báo giá mỗi tháng, sẽ tự đặt lại tháng sau. Nâng cấp PRO để mở khóa không giới hạn."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versi gratis maksimal %lld penawaran per bulan, otomatis reset bulan depan. Naik ke PRO untuk tanpa batas."
+          }
+        }
+      }
+    },
+    "免費版限制": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Giới hạn bản miễn phí"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Batas versi gratis"
+          }
+        }
+      }
+    },
+    "共做了 %@ %@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "共做了 %1$@ %2$@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã làm %@ %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total %@ %@"
+          }
+        }
+      }
+    },
+    "再看看": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Later"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再看看"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Để sau"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nanti dulu"
+          }
+        }
+      }
+    },
+    "最近單價": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đơn giá gần đây"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Harga satuan terbaru"
+          }
+        }
+      }
+    },
+    "出單": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xuất đơn"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terbitkan"
+          }
+        }
+      }
+    },
+    "出單，搞定!": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finalize"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "出单，搞定!"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xuất đơn, xong!"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terbitkan, selesai!"
+          }
+        }
+      }
+    },
+    "出單完成": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã xuất đơn"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berhasil terbit"
+          }
+        }
+      }
+    },
+    "出現在每張報價單的左上方": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hiển thị ở góc trên bên trái mỗi báo giá"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muncul di kiri atas setiap penawaran"
+          }
+        }
+      }
+    },
+    "刪除": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus"
+          }
+        }
+      }
+    },
+    "刪除分類": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa danh mục"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus kategori"
+          }
+        }
+      }
+    },
+    "加": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thêm"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah"
+          }
+        }
+      }
+    },
+    "加新分類，例：清潔、家具": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thêm danh mục mới, VD: Vệ sinh, Nội thất"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah kategori baru, cth: Kebersihan, Furnitur"
+          }
+        }
+      }
+    },
+    "加進你的項目庫，下次直接挑就行。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thêm vào thư viện hạng mục, lần sau chọn trực tiếp."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambahkan ke pustaka item, lain kali tinggal pilih."
+          }
+        }
+      }
+    },
+    "加進來後，未來的報價單只要輸入名字，地址跟電話會自動帶入。統計頁也會自動歸戶這位客戶的累計營收。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sau khi thêm, báo giá sau này chỉ cần nhập tên là địa chỉ và điện thoại tự điền. Trang thống kê cũng tự cộng doanh thu tích lũy của khách hàng này."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setelah ditambahkan, penawaran berikutnya cukup masukkan nama, alamat dan telepon terisi otomatis. Halaman statistik juga otomatis mengelompokkan pendapatan klien ini."
+          }
+        }
+      }
+    },
+    "加進去": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thêm vào"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambahkan"
+          }
+        }
+      }
+    },
+    "加項目": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thêm hạng mục"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah item"
+          }
+        }
+      }
+    },
+    "升級 PRO": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upgrade"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "升级 PRO"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nâng cấp PRO"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naik ke PRO"
+          }
+        }
+      }
+    },
+    "升級到Stima PRO": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upgrade to Pro"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "升级到Stima PRO"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nâng cấp lên Stima PRO"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naik ke Stima PRO"
+          }
+        }
+      }
+    },
+    "取消": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "取消"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hủy"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Batal"
+          }
+        }
+      }
+    },
+    "台北市信義區": {},
+    "合作 %lld 次": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hợp tác %lld lần"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kerja sama %lld kali"
+          }
+        }
+      }
+    },
+    "嗨，%@ 👋": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chào %@ 👋"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai, %@ 👋"
+          }
+        }
+      }
+    },
+    "地圖": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bản đồ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peta"
+          }
+        }
+      }
+    },
+    "報 價 單": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BÁO GIÁ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PENAWARAN"
+          }
+        }
+      }
+    },
+    "報價單": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quotes"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报价单"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Báo giá"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran"
+          }
+        }
+      }
+    },
+    "報價單 · %@": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Báo giá · %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran · %@"
+          }
+        }
+      }
+    },
+    "報價單 #%@": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Báo giá #%@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran #%@"
+          }
+        }
+      }
+    },
+    "報價單抬頭": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiêu đề báo giá"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Judul penawaran"
+          }
+        }
+      }
+    },
+    "報價單抬頭 · 第一次問，之後記著": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiêu đề báo giá · hỏi lần đầu, sau đó ghi nhớ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Judul penawaran · ditanya sekali, lalu diingat"
+          }
+        }
+      }
+    },
+    "報價單模板": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF Template"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报价单模板"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mẫu báo giá"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Templat penawaran"
+          }
+        }
+      }
+    },
+    "報價收款，\n一支手機\n全包了。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Báo giá thu tiền,\nmột chiếc điện thoại\nlo hết."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran & tagihan,\nsatu ponsel\nsemua beres."
+          }
+        }
+      }
+    },
+    "報得快、收得回，\n師傅的生意更穩。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Báo giá nhanh, thu tiền chắc,\nviệc làm ăn vững hơn."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cepat menawar, lancar menagih,\nbisnismu makin mantap."
+          }
+        }
+      }
+    },
+    "填一下抬頭（你的店名或稱呼），金額沒問題就按「出單」，完成第一張！": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Điền tiêu đề (tên cửa hàng hoặc xưng hô của bạn), nếu số tiền ổn thì nhấn「Xuất đơn」, hoàn thành đơn đầu tiên!"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Isi judul (nama toko atau panggilanmu), jika jumlahnya sudah benar tekan「Terbitkan」, selesaikan nota pertama!"
+          }
+        }
+      }
+    },
+    "好": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "它能幫你做什麼？": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nó giúp được gì cho bạn?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apa yang bisa dibantu?"
+          }
+        }
+      }
+    },
+    "完成": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xong"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selesai"
+          }
+        }
+      }
+    },
+    "客戶": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klien"
+          }
+        }
+      }
+    },
+    "客戶名稱重複": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tên khách hàng trùng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nama klien duplikat"
+          }
+        }
+      }
+    },
+    "客戶簿": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contacts"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "客户簿"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Danh bạ khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buku klien"
+          }
+        }
+      }
+    },
+    "客戶資料": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thông tin khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Data klien"
+          }
+        }
+      }
+    },
+    "小提示": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mẹo nhỏ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tips"
+          }
+        }
+      }
+    },
+    "小計": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tạm tính"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtotal"
+          }
+        }
+      }
+    },
+    "工地老闆，幾步就上手。算項目、看數字、追收款，都在這。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ông chủ công trình, vài bước là thành thạo. Tính hạng mục, xem con số, theo dõi thu tiền, tất cả ở đây."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bos proyek, beberapa langkah langsung mahir. Hitung item, lihat angka, pantau pembayaran, semua di sini."
+          }
+        }
+      }
+    },
+    "已加 「%@」": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã thêm 「%@」"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ditambah 「%@」"
+          }
+        }
+      }
+    },
+    "已加 %lld": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã thêm %lld"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ditambah %lld"
+          }
+        }
+      }
+    },
+    "已完工": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已完工"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã hoàn công"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selesai"
+          }
+        }
+      }
+    },
+    "已收款": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paid"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已收款"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã thu tiền"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sudah dibayar"
+          }
+        }
+      }
+    },
+    "已啟用 · 自動備份到 iCloud": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã bật · tự động sao lưu vào iCloud"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktif · cadangan otomatis ke iCloud"
+          }
+        }
+      }
+    },
+    "Stima · v2.0": {},
+    "Stima · v2.0 · build 2026.05.20": {},
+    "Stima PRO": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima PRO"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima PRO"
+          }
+        }
+      }
+    },
+    "Stima PRO · 已訂閱": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima PRO · Đã đăng ký"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima PRO · Berlangganan"
+          }
+        }
+      }
+    },
+    "建好第一張，客戶、項目、收款都從這裡開始。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tạo đơn đầu tiên, khách hàng, hạng mục và thu tiền đều bắt đầu từ đây."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat nota pertama, klien, item, dan pembayaran dimulai dari sini."
+          }
+        }
+      }
+    },
+    "待收款": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chờ thu tiền"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menunggu pembayaran"
+          }
+        }
+      }
+    },
+    "從地圖選地點": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chọn địa điểm trên bản đồ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilih lokasi di peta"
+          }
+        }
+      }
+    },
+    "從報價單 #%@ 轉成請款單 · 工程已完工": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chuyển từ báo giá #%@ thành hóa đơn · công trình đã hoàn công"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diubah dari penawaran #%@ menjadi tagihan · proyek selesai"
+          }
+        }
+      }
+    },
+    "我們來試做\n第一張報價單。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hãy cùng thử làm\nbáo giá đầu tiên."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mari coba buat\npenawaran pertama."
+          }
+        }
+      }
+    },
+    "我的報價單": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "My Quotes"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "我的报价单"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Báo giá của tôi"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran saya"
+          }
+        }
+      }
+    },
+    "所有新項目都會自動進「常用」，加上分類後也會出現在那個分頁。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mọi hạng mục mới đều tự vào「Thường dùng」, sau khi thêm danh mục cũng xuất hiện ở tab đó."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semua item baru otomatis masuk「Sering dipakai」, setelah diberi kategori juga muncul di tab itu."
+          }
+        }
+      }
+    },
+    "找不到客戶": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không tìm thấy khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klien tidak ditemukan"
+          }
+        }
+      }
+    },
+    "找不到符合的地點": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không tìm thấy địa điểm phù hợp"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lokasi cocok tidak ditemukan"
+          }
+        }
+      }
+    },
+    "找不到符合的報價單": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không tìm thấy báo giá phù hợp"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran cocok tidak ditemukan"
+          }
+        }
+      }
+    },
+    "挑項目，或自己加": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chọn hạng mục, hoặc tự thêm"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilih item, atau tambah sendiri"
+          }
+        }
+      }
+    },
+    "搜尋地址、地標": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tìm địa chỉ, địa danh"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cari alamat, tempat"
+          }
+        }
+      }
+    },
+    "搜尋客戶、地點、項目（例：冷氣）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tìm khách hàng, địa điểm, hạng mục (VD: máy lạnh)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cari klien, lokasi, item (cth: AC)"
+          }
+        }
+      }
+    },
+    "搜尋客戶名、電話、地址": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tìm tên khách hàng, điện thoại, địa chỉ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cari nama klien, telepon, alamat"
+          }
+        }
+      }
+    },
+    "支援 PNG（建議透明背景）、JPG。最大 2MB / 邊長 1200px。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hỗ trợ PNG (nên dùng nền trong suốt), JPG. Tối đa 2MB / cạnh 1200px."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mendukung PNG (disarankan latar transparan), JPG. Maksimal 2MB / sisi 1200px."
+          }
+        }
+      }
+    },
+    "新增報價單": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New Quote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新增报价单"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tạo báo giá mới"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat penawaran"
+          }
+        }
+      }
+    },
+    "新增客戶": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thêm khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah klien"
+          }
+        }
+      }
+    },
+    "日期 / DATE": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ngày / DATE"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanggal / DATE"
+          }
+        }
+      }
+    },
+    "有效期限 %lld 天": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hiệu lực %lld ngày"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berlaku %lld hari"
+          }
+        }
+      }
+    },
+    "本月免費額度已用完": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monthly Limit Reached"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本月免费额度已用完"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã hết hạn mức miễn phí tháng này"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kuota gratis bulan ini habis"
+          }
+        }
+      }
+    },
+    "查看客戶": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xem khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lihat klien"
+          }
+        }
+      }
+    },
+    "標記已收款": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark Paid"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "标记已收款"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đánh dấu đã thu tiền"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tandai sudah dibayar"
+          }
+        }
+      }
+    },
+    "每月 3 張報價單，PDF 含浮水印。升級 Pro 解鎖無限張、自訂模板、移除浮水印。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 báo giá mỗi tháng, PDF có hình mờ. Nâng cấp Pro để mở khóa không giới hạn, mẫu tùy chỉnh, xóa hình mờ."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 penawaran per bulan, PDF berwatermark. Naik ke Pro untuk tanpa batas, templat kustom, hapus watermark."
+          }
+        }
+      }
+    },
+    "比去年同期 %@ %@（去年 $%@）": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "比去年同期 %1$@ %2$@（去年 $%3$@）"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "So với cùng kỳ năm ngoái %@ %@ (năm ngoái $%@)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dibanding periode sama tahun lalu %@ %@ (tahun lalu $%@)"
+          }
+        }
+      }
+    },
+    "清除搜尋": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa tìm kiếm"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus pencarian"
+          }
+        }
+      }
+    },
+    "無法存取位置": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không thể truy cập vị trí"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tak bisa akses lokasi"
+          }
+        }
+      }
+    },
+    "無法產生這份報價單的 PDF。請再試一次，若持續失敗請重新啟動 app。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không thể tạo PDF cho báo giá này. Hãy thử lại, nếu vẫn lỗi hãy khởi động lại app."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tak bisa membuat PDF untuk penawaran ini. Coba lagi, jika tetap gagal mulai ulang app."
+          }
+        }
+      }
+    },
+    "無限報價單 · 自訂模板 · 移除浮水印 · iCloud 備份": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Báo giá không giới hạn · mẫu tùy chỉnh · xóa hình mờ · sao lưu iCloud"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran tanpa batas · templat kustom · hapus watermark · cadangan iCloud"
+          }
+        }
+      }
+    },
+    "王先生": {},
+    "目前小計": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tạm tính hiện tại"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtotal saat ini"
+          }
+        }
+      }
+    },
+    "知道了": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã hiểu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mengerti"
+          }
+        }
+      }
+    },
+    "確定刪除「%@」？": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa「%@」?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus「%@」?"
+          }
+        }
+      }
+    },
+    "確定刪除「%@」分類？": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa danh mục「%@」?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus kategori「%@」?"
+          }
+        }
+      }
+    },
+    "確認出單": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Review"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "确认出单"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xác nhận xuất đơn"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Konfirmasi terbit"
+          }
+        }
+      }
+    },
+    "確認此地點": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirm Location"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "确认此地点"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xác nhận địa điểm này"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Konfirmasi lokasi ini"
+          }
+        }
+      }
+    },
+    "移除": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gỡ bỏ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus"
+          }
+        }
+      }
+    },
+    "移除圖片": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gỡ ảnh"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus gambar"
+          }
+        }
+      }
+    },
+    "稅金 %lld%%": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thuế %lld%%"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pajak %lld%%"
+          }
+        }
+      }
+    },
+    "第一張完成！": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoàn thành đơn đầu tiên!"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nota pertama selesai!"
+          }
+        }
+      }
+    },
+    "範圍 $%@–$%@": {
+      "localizations": {
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "範圍 $%1$@–$%2$@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khoảng $%@–$%@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rentang $%@–$%@"
+          }
+        }
+      }
+    },
+    "累積營收（%lld 次）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doanh thu tích lũy (%lld lần)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pendapatan kumulatif (%lld kali)"
+          }
+        }
+      }
+    },
+    "累計營收": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doanh thu tích lũy"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pendapatan kumulatif"
+          }
+        }
+      }
+    },
+    "統計": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stats"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "统计"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thống kê"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Statistik"
+          }
+        }
+      }
+    },
+    "編輯": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sửa"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit"
+          }
+        }
+      }
+    },
+    "總計": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tổng cộng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total"
+          }
+        }
+      }
+    },
+    "總計  NT$": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tổng cộng  NT$"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total  NT$"
+          }
+        }
+      }
+    },
+    "致 / TO": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kính gửi / TO"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kepada / TO"
+          }
+        }
+      }
+    },
+    "草稿": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draft"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "草稿"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bản nháp"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draf"
+          }
+        }
+      }
+    },
+    "複製這張": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duplicate"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "复制这张"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sao chép đơn này"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salin nota ini"
+          }
+        }
+      }
+    },
+    "設定": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设定"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cài đặt"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pengaturan"
+          }
+        }
+      }
+    },
+    "請款中": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang thu tiền"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menagih"
+          }
+        }
+      }
+    },
+    "請款明細": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chi tiết hóa đơn"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rincian tagihan"
+          }
+        }
+      }
+    },
+    "請款金額": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Số tiền hóa đơn"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jumlah tagihan"
+          }
+        }
+      }
+    },
+    "轉請款單": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make Invoice"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "转请款单"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chuyển thành hóa đơn"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jadikan tagihan"
+          }
+        }
+      }
+    },
+    "返回": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quay lại"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kembali"
+          }
+        }
+      }
+    },
+    "透過 App Store 管理訂閱 · 可隨時取消": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quản lý đăng ký qua App Store · hủy bất cứ lúc nào"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kelola langganan lewat App Store · batalkan kapan saja"
+          }
+        }
+      }
+    },
+    "這個分頁還是空的": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tab này vẫn trống"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tab ini masih kosong"
+          }
+        }
+      }
+    },
+    "這個分類下的自訂項目仍會保留。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Các hạng mục tùy chỉnh trong danh mục này vẫn được giữ lại."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item kustom di kategori ini tetap disimpan."
+          }
+        }
+      }
+    },
+    "進行中": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ongoing"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "进行中"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang thực hiện"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berlangsung"
+          }
+        }
+      }
+    },
+    "過程中我會在旁邊指一下重點。\n放心，假的，做壞了也沒事。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trong quá trình tôi sẽ chỉ ra những điểm chính bên cạnh.\nYên tâm, đây là bản thử, làm hỏng cũng không sao."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selama proses saya akan menunjukkan poin pentingnya.\nTenang, ini contoh, salah pun tak apa."
+          }
+        }
+      }
+    },
+    "選擇語言": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chọn ngôn ngữ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilih bahasa"
+          }
+        }
+      }
+    },
+    "選擇貨幣": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chọn tiền tệ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilih mata uang"
+          }
+        }
+      }
+    },
+    "選項目": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chọn hạng mục"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilih item"
+          }
+        }
+      }
+    },
+    "還原購買": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khôi phục mua hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulihkan pembelian"
+          }
+        }
+      }
+    },
+    "還沒加過自訂項目。\n在「新增報價單 → 加項目 → + 自訂」就能加。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chưa thêm hạng mục tùy chỉnh nào.\nCó thể thêm ở「Tạo báo giá mới → Thêm hạng mục → + Tùy chỉnh」."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada item kustom.\nBisa ditambah di「Buat penawaran → Tambah item → + Kustom」."
+          }
+        }
+      }
+    },
+    "還沒加項目": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chưa thêm hạng mục"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada item"
+          }
+        }
+      }
+    },
+    "還沒有報價單": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chưa có báo giá"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada penawaran"
+          }
+        }
+      }
+    },
+    "還沒有客戶": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chưa có khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada klien"
+          }
+        }
+      }
+    },
+    "還沒有項目": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chưa có hạng mục"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada item"
+          }
+        }
+      }
+    },
+    "重試": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thử lại"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coba lagi"
+          }
+        }
+      }
+    },
+    "關閉": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đóng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tutup"
+          }
+        }
+      }
+    },
+    "需要 PRO · 換手機資料自動還原": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cần PRO · đổi điện thoại tự khôi phục dữ liệu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perlu PRO · ganti ponsel data pulih otomatis"
+          }
+        }
+      }
+    },
+    "項目 A": {},
+    "項目 B": {},
+    "項目 C": {},
+    "項目明細": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chi tiết hạng mục"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rincian item"
+          }
+        }
+      }
+    },
+    "預覽": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xem trước"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pratinjau"
+          }
+        }
+      }
+    },
+    "預覽 PDF": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview PDF"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "预览 PDF"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xem trước PDF"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pratinjau PDF"
+          }
+        }
+      }
+    },
+    "顯示甲乙方簽名欄（給客戶簽名用）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hiển thị ô ký tên hai bên (để khách hàng ký)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tampilkan kolom tanda tangan kedua pihak (untuk klien)"
+          }
+        }
+      }
+    },
+    "點「加項目」，從清單挑你要做的工，數量價錢都能改。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nhấn「Thêm hạng mục」, chọn công việc cần làm từ danh sách, có thể sửa số lượng và giá."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ketuk「Tambah item」, pilih pekerjaan dari daftar, jumlah dan harga bisa diubah."
+          }
+        }
+      }
+    },
+    "點下方的「+ 加項目」開始": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nhấn「+ Thêm hạng mục」bên dưới để bắt đầu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ketuk「+ Tambah item」di bawah untuk mulai"
+          }
+        }
+      }
+    },
+    "點右上「+」把常合作的客戶加進來。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nhấn「+」ở góc trên bên phải để thêm khách hàng thường hợp tác."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ketuk「+」di kanan atas untuk menambah klien langganan."
+          }
+        }
+      }
+    },
+    "淨利（進階）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lợi nhuận (nâng cao)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laba (lanjutan)"
+          }
+        }
+      }
+    },
+    "成本": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chi phí"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biaya"
+          }
+        }
+      }
+    },
+    "淨利": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lợi nhuận"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laba"
+          }
+        }
+      }
+    },
+    "淨利率": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tỷ suất lợi nhuận"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Margin laba"
+          }
+        }
+      }
+    },
+    "已收款扣成本": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã thu trừ chi phí"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diterima dikurangi biaya"
+          }
+        }
+      }
+    },
+    "看每張單的成本與淨利": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xem chi phí và lợi nhuận từng đơn"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lihat biaya & laba tiap penawaran"
+          }
+        }
+      }
+    },
+    "PRO 專屬 · 升級解鎖淨利與淨利率統計": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dành riêng cho PRO · Nâng cấp để mở khóa thống kê lợi nhuận"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khusus PRO · Tingkatkan untuk membuka statistik laba"
+          }
+        }
+      }
+    },
+    "升級": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nâng cấp"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tingkatkan"
+          }
+        }
+      }
+    },
+    "成本（選填，用來算淨利）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chi phí (tùy chọn, để tính lợi nhuận)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biaya (opsional, untuk hitung laba)"
+          }
+        }
+      }
+    },
+    "收款資訊（顯示在請款單）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thông tin thu tiền (hiển thị trên hóa đơn)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Info pembayaran (tampil di tagihan)"
+          }
+        }
+      }
+    },
+    "一行一項；留空的話請款單就不顯示付款方式。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mỗi dòng một mục; để trống thì hóa đơn sẽ không hiển thị phương thức thanh toán."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satu item per baris; jika kosong, tagihan tidak menampilkan metode pembayaran."
+          }
+        }
+      }
+    },
+    "例：匯款 玉山銀行(808) 1234-567-890\nLINE Pay 掃描 QR Code\n現金請電 0912-345-678": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ví dụ: Chuyển khoản Ngân hàng E.Sun (808) 1234-567-890\nLINE Pay quét mã QR\nTiền mặt gọi 0912-345-678"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contoh: Transfer Bank E.Sun (808) 1234-567-890\nLINE Pay pindai kode QR\nTunai hubungi 0912-345-678"
+          }
+        }
+      }
+    },
+    "編輯客戶": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sửa khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit klien"
+          }
+        }
+      }
+    },
+    "工程地點": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Địa điểm công trình"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lokasi proyek"
+          }
+        }
+      }
+    },
+    "完工日": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ngày hoàn thành"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanggal selesai"
+          }
+        }
+      }
+    },
+    "地點": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Địa điểm"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lokasi"
+          }
+        }
+      }
+    },
+    "日期": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ngày"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanggal"
+          }
+        }
+      }
+    },
+    "分類": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Phân loại"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategori"
+          }
+        }
+      }
+    },
+    "黑體": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sans-serif"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sans-serif"
+          }
+        }
+      }
+    },
+    "明體": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Có chân (Serif)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serif"
+          }
+        }
+      }
+    },
+    "楷體": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chữ Khải"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaisho"
+          }
+        }
+      }
+    },
+    "公司／工作室名稱（抬頭）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tên công ty / xưởng (tiêu đề)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nama perusahaan / studio (kop)"
+          }
+        }
+      }
+    },
+    "標語／slogan（可空白）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khẩu hiệu / slogan (có thể để trống)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slogan (boleh dikosongkan)"
+          }
+        }
+      }
+    },
+    "電話": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Điện thoại"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Telepon"
+          }
+        }
+      }
+    },
+    "Email": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email"
+          }
+        }
+      }
+    },
+    "統編／營業地址": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mã số thuế / địa chỉ kinh doanh"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NPWP / alamat usaha"
+          }
+        }
+      }
+    },
+    "有效期限（天）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thời hạn hiệu lực (ngày)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Masa berlaku (hari)"
+          }
+        }
+      }
+    },
+    "主色（PDF 上的強調色）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Màu chủ đạo (màu nhấn trên PDF)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warna utama (aksen pada PDF)"
+          }
+        }
+      }
+    },
+    "字體": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Phông chữ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Font"
+          }
+        }
+      }
+    },
+    "商號 Logo": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo cửa hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo usaha"
+          }
+        }
+      }
+    },
+    "印章": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con dấu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stempel"
+          }
+        }
+      }
+    },
+    "左上角": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Góc trên bên trái"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kiri atas"
+          }
+        }
+      }
+    },
+    "右下簽章": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ký tên góc dưới bên phải"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanda tangan kanan bawah"
+          }
+        }
+      }
+    },
+    "分享": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chia sẻ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bagikan"
+          }
+        }
+      }
+    },
+    "儲存 PDF": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lưu PDF"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simpan PDF"
+          }
+        }
+      }
+    },
+    "無限張報價單": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Báo giá không giới hạn"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran tanpa batas"
+          }
+        }
+      }
+    },
+    "免費版每月只能 3 張": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bản miễn phí chỉ 3 báo giá mỗi tháng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versi gratis hanya 3 penawaran per bulan"
+          }
+        }
+      }
+    },
+    "自訂 PDF 模板": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mẫu PDF tùy chỉnh"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Templat PDF khusus"
+          }
+        }
+      }
+    },
+    "Logo、抬頭、付款條件、簽名欄、印章": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo, tiêu đề, điều khoản thanh toán, ô chữ ký, con dấu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo, kop, syarat pembayaran, kolom tanda tangan, stempel"
+          }
+        }
+      }
+    },
+    "移除浮水印": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa hình mờ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus watermark"
+          }
+        }
+      }
+    },
+    "客戶不會看到「免費版」字樣": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khách hàng sẽ không thấy chữ “bản miễn phí”"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klien tidak akan melihat tulisan “versi gratis”"
+          }
+        }
+      }
+    },
+    "請款單 & 收款追蹤": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hóa đơn & theo dõi thu tiền"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagihan & pelacakan pembayaran"
+          }
+        }
+      }
+    },
+    "報價→施工→請款一條龍": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Báo giá → thi công → hóa đơn liền mạch"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran → pengerjaan → tagihan sekaligus"
+          }
+        }
+      }
+    },
+    "進階統計與成本記錄": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thống kê nâng cao và ghi chép chi phí"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Statistik lanjutan dan catatan biaya"
+          }
+        }
+      }
+    },
+    "看每案淨利、年度趨勢": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xem lợi nhuận ròng từng đơn, xu hướng theo năm"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lihat laba bersih tiap proyek, tren tahunan"
+          }
+        }
+      }
+    },
+    "換手機也不怕資料不見": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đổi điện thoại cũng không lo mất dữ liệu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ganti ponsel pun data tetap aman"
+          }
+        }
+      }
+    },
+    "年訂閱": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gói năm"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langganan tahunan"
+          }
+        }
+      }
+    },
+    "每月只要 $200，年付便宜兩個月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chỉ $200 mỗi tháng, trả năm rẻ hơn hai tháng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hanya $200 per bulan, bayar tahunan hemat dua bulan"
+          }
+        }
+      }
+    },
+    "月訂閱": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gói tháng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langganan bulanan"
+          }
+        }
+      }
+    },
+    "先試一個月看看": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dùng thử một tháng xem sao"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coba dulu satu bulan"
+          }
+        }
+      }
+    },
+    "/ 年": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "/ năm"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "/ tahun"
+          }
+        }
+      }
+    },
+    "/ 月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "/ tháng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "/ bulan"
+          }
+        }
+      }
+    },
+    "項目名稱": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tên hạng mục"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nama item"
+          }
+        }
+      }
+    },
+    "歸到哪個分類": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thuộc phân loại nào"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Masuk kategori mana"
+          }
+        }
+      }
+    },
+    "單位": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đơn vị"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satuan"
+          }
+        }
+      }
+    },
+    "單價 (NT$)": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đơn giá (NT$)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Harga satuan (NT$)"
+          }
+        }
+      }
+    },
+    "數量": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Số lượng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jumlah"
+          }
+        }
+      }
+    },
+    "最高": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cao nhất"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tertinggi"
+          }
+        }
+      }
+    },
+    "最低": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thấp nhất"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terendah"
+          }
+        }
+      }
+    },
+    "撥打": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gọi"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Telepon"
+          }
+        }
+      }
+    },
+    "導航": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chỉ đường"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Navigasi"
+          }
+        }
+      }
+    },
+    "刪除後無法復原（含這張的所有項目）。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sau khi xóa không thể khôi phục (bao gồm mọi hạng mục của báo giá này)."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setelah dihapus tidak dapat dipulihkan (termasuk semua item penawaran ini)."
+          }
+        }
+      }
+    },
+    "全部": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tất cả"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semua"
+          }
+        }
+      }
+    },
+    "1月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng 1"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan 1"
+          }
+        }
+      }
+    },
+    "2月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng 2"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan 2"
+          }
+        }
+      }
+    },
+    "3月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng 3"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan 3"
+          }
+        }
+      }
+    },
+    "4月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng 4"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan 4"
+          }
+        }
+      }
+    },
+    "5月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng 5"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan 5"
+          }
+        }
+      }
+    },
+    "6月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng 6"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan 6"
+          }
+        }
+      }
+    },
+    "7月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng 7"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan 7"
+          }
+        }
+      }
+    },
+    "8月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng 8"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan 8"
+          }
+        }
+      }
+    },
+    "9月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng 9"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan 9"
+          }
+        }
+      }
+    },
+    "10月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng 10"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan 10"
+          }
+        }
+      }
+    },
+    "11月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng 11"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan 11"
+          }
+        }
+      }
+    },
+    "12月": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng 12"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan 12"
+          }
+        }
+      }
+    },
+    "App 設定": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cài đặt App"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pengaturan App"
+          }
+        }
+      }
+    },
+    "其他": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khác"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lainnya"
+          }
+        }
+      }
+    },
+    "國際化": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quốc tế hóa"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Internasionalisasi"
+          }
+        }
+      }
+    },
+    "匯出全部資料": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xuất toàn bộ dữ liệu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekspor semua data"
+          }
+        }
+      }
+    },
+    "同步與備份": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đồng bộ & Sao lưu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sinkronisasi & Cadangan"
+          }
+        }
+      }
+    },
+    "個人": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cá nhân"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pribadi"
+          }
+        }
+      }
+    },
+    "商務": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doanh nghiệp"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bisnis"
+          }
+        }
+      }
+    },
+    "稅制": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chế độ thuế"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistem pajak"
+          }
+        }
+      }
+    },
+    "語言": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ngôn ngữ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bahasa"
+          }
+        }
+      }
+    },
+    "貨幣": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiền tệ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mata uang"
+          }
+        }
+      }
+    },
+    "項目分類": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Phân loại hạng mục"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategori item"
+          }
+        }
+      }
+    },
+    "報價單模板（PDF）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mẫu báo giá (PDF)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Templat penawaran (PDF)"
+          }
+        }
+      }
+    },
+    "所有客戶與聯絡資料": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toàn bộ khách hàng và thông tin liên hệ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semua klien dan info kontak"
+          }
+        }
+      }
+    },
+    "Logo、抬頭、付款條件、印章": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo, tiêu đề, điều khoản thanh toán, con dấu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo, kop, syarat pembayaran, stempel"
+          }
+        }
+      }
+    },
+    "通知、深色模式、字體大小": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thông báo, chế độ tối, cỡ chữ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifikasi, mode gelap, ukuran font"
+          }
+        }
+      }
+    },
+    "NT$ 新台幣": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NT$ Đài tệ mới"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NT$ Dolar Taiwan Baru"
+          }
+        }
+      }
+    },
+    "US$ 美元": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "US$ Đô la Mỹ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "US$ Dolar AS"
+          }
+        }
+      }
+    },
+    "Rp 印尼盾": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rp Rupiah Indonesia"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rp Rupiah Indonesia"
+          }
+        }
+      }
+    },
+    "RM 馬幣": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RM Ringgit Malaysia"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RM Ringgit Malaysia"
+          }
+        }
+      }
+    },
+    "₫ 越南盾": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "₫ Đồng Việt Nam"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "₫ Dong Vietnam"
+          }
+        }
+      }
+    },
+    "₱ 菲律賓比索": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "₱ Peso Philippines"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "₱ Peso Filipina"
+          }
+        }
+      }
+    },
+    "台灣營業稅": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thuế doanh thu Đài Loan"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pajak penjualan Taiwan"
+          }
+        }
+      }
+    },
+    "越南 VAT": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VAT Việt Nam"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PPN Vietnam"
+          }
+        }
+      }
+    },
+    "印尼 PPN": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PPN Indonesia"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PPN Indonesia"
+          }
+        }
+      }
+    },
+    "馬來 SST": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SST Malaysia"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SST Malaysia"
+          }
+        }
+      }
+    },
+    "菲律賓 VAT": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VAT Philippines"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VAT Filipina"
+          }
+        }
+      }
+    },
+    "繁體中文": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiếng Trung phồn thể"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mandarin Tradisional"
+          }
+        }
+      }
+    },
+    "簡體中文": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiếng Trung giản thể"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mandarin Sederhana"
+          }
+        }
+      }
+    },
+    "營運統計": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thống kê kinh doanh"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Statistik bisnis"
+          }
+        }
+      }
+    },
+    "每月已收款": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã thu mỗi tháng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diterima per bulan"
+          }
+        }
+      }
+    },
+    "最大客戶": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khách hàng lớn nhất"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klien terbesar"
+          }
+        }
+      }
+    },
+    "最常做的項目": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hạng mục làm nhiều nhất"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item paling sering"
+          }
+        }
+      }
+    },
+    "項目分析": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Phân tích hạng mục"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Analisis item"
+          }
+        }
+      }
+    },
+    "單價歷史": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lịch sử đơn giá"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Riwayat harga satuan"
+          }
+        }
+      }
+    },
+    "師傅的人脈": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mối quan hệ của thợ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jaringan tukang"
+          }
+        }
+      }
+    },
+    "客戶詳情": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chi tiết khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detail klien"
+          }
+        }
+      }
+    },
+    "常為他做": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thường làm cho họ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sering dikerjakan untuknya"
+          }
+        }
+      }
+    },
+    "刪除客戶": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus klien"
+          }
+        }
+      }
+    },
+    "刪除這位客戶？": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa khách hàng này?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus klien ini?"
+          }
+        }
+      }
+    },
+    "只會從客戶簿移除，不影響已建立的報價單。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chỉ xóa khỏi danh bạ khách hàng, không ảnh hưởng đến báo giá đã tạo."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hanya dihapus dari daftar klien, tidak memengaruhi penawaran yang sudah dibuat."
+          }
+        }
+      }
+    },
+    "刪除報價單": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa báo giá"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus penawaran"
+          }
+        }
+      }
+    },
+    "刪除這張報價單？": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa báo giá này?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus penawaran ini?"
+          }
+        }
+      }
+    },
+    "新報價": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Báo giá mới"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran baru"
+          }
+        }
+      }
+    },
+    "建立第一張報價單": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tạo báo giá đầu tiên"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat penawaran pertama"
+          }
+        }
+      }
+    },
+    "基本資料": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thông tin cơ bản"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informasi dasar"
+          }
+        }
+      }
+    },
+    "報價日期": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ngày báo giá"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanggal penawaran"
+          }
+        }
+      }
+    },
+    "客戶稱呼": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xưng hô khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sebutan klien"
+          }
+        }
+      }
+    },
+    "客戶稱呼 ＊": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xưng hô khách hàng ＊"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sebutan klien ＊"
+          }
+        }
+      }
+    },
+    "新增報價單 · 1 / 3": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thêm báo giá · 1 / 3"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah penawaran · 1 / 3"
+          }
+        }
+      }
+    },
+    "新增報價單 · 2 / 3": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thêm báo giá · 2 / 3"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah penawaran · 2 / 3"
+          }
+        }
+      }
+    },
+    "新增報價單 · 3 / 3": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thêm báo giá · 3 / 3"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah penawaran · 3 / 3"
+          }
+        }
+      }
+    },
+    "尚未加入客戶簿": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chưa thêm vào danh bạ khách hàng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ditambahkan ke daftar klien"
+          }
+        }
+      }
+    },
+    "未命名客戶": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khách hàng chưa đặt tên"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klien tanpa nama"
+          }
+        }
+      }
+    },
+    "太好了，看看主畫面": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tuyệt vời, xem màn hình chính"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bagus, lihat layar utama"
+          }
+        }
+      }
+    },
+    "挑項目": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chọn hạng mục"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilih item"
+          }
+        }
+      }
+    },
+    "自訂": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tùy chỉnh"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kustom"
+          }
+        }
+      }
+    },
+    "常用": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thường dùng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sering dipakai"
+          }
+        }
+      }
+    },
+    "— 未填地點 —": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "— Chưa điền địa điểm —"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "— Lokasi belum diisi —"
+          }
+        }
+      }
+    },
+    "— 項目名稱 —": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "— Tên hạng mục —"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "— Nama item —"
+          }
+        }
+      }
+    },
+    "下一步:加項目": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bước tiếp:Thêm hạng mục"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berikutnya:Tambah item"
+          }
+        }
+      }
+    },
+    "Email（可省略）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email (có thể bỏ trống)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email (opsional)"
+          }
+        }
+      }
+    },
+    "備註（可省略）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ghi chú (có thể bỏ trống)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Catatan (opsional)"
+          }
+        }
+      }
+    },
+    "工程地址": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Địa chỉ công trình"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alamat proyek"
+          }
+        }
+      }
+    },
+    "人/日": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "người/ngày"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "orang/hari"
+          }
+        }
+      }
+    },
+    "坪": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ping"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ping"
+          }
+        }
+      }
+    },
+    "尺": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "thước"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kaki"
+          }
+        }
+      }
+    },
+    "式": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bộ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "set"
+          }
+        }
+      }
+    },
+    "個": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cái"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "buah"
+          }
+        }
+      }
+    },
+    "組": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bộ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "set"
+          }
+        }
+      }
+    },
+    "車": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "xe"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "truk"
+          }
+        }
+      }
+    },
+    "拆除": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháo dỡ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pembongkaran"
+          }
+        }
+      }
+    },
+    "木作": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mộc"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kayu"
+          }
+        }
+      }
+    },
+    "水電": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Điện nước"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listrik & pipa"
+          }
+        }
+      }
+    },
+    "泥作": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xây trát"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plesteran"
+          }
+        }
+      }
+    },
+    "油漆": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sơn"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cat"
+          }
+        }
+      }
+    },
+    "冷氣排水管": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ống thoát nước điều hòa"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pipa pembuangan AC"
+          }
+        }
+      }
+    },
+    "拆除木作": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháo dỡ đồ mộc"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bongkar kayu"
+          }
+        }
+      }
+    },
+    "拆除磁磚": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháo dỡ gạch"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bongkar ubin"
+          }
+        }
+      }
+    },
+    "拆除隔間牆": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháo dỡ vách ngăn"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bongkar dinding partisi"
+          }
+        }
+      }
+    },
+    "新增插座": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thêm ổ cắm"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah stopkontak"
+          }
+        }
+      }
+    },
+    "木作天花板": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trần thạch cao mộc"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plafon kayu"
+          }
+        }
+      }
+    },
+    "木地板施作": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thi công sàn gỗ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pemasangan lantai kayu"
+          }
+        }
+      }
+    },
+    "水電配管": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lắp đặt điện nước"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Instalasi listrik & pipa"
+          }
+        }
+      }
+    },
+    "油漆批土": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sơn bả matit"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cat dempul"
+          }
+        }
+      }
+    },
+    "泥作粉光": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trát vữa hoàn thiện"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plesteran halus"
+          }
+        }
+      }
+    },
+    "燈具安裝": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lắp đèn"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pemasangan lampu"
+          }
+        }
+      }
+    },
+    "系統櫃": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tủ hệ thống"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lemari sistem"
+          }
+        }
+      }
+    },
+    "貼磁磚": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ốp gạch"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pemasangan ubin"
+          }
+        }
+      }
+    },
+    "防水工程": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chống thấm"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pekerjaan anti bocor"
+          }
+        }
+      }
+    },
+    "位置權限被拒": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quyền vị trí bị từ chối"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Izin lokasi ditolak"
+          }
+        }
+      }
+    },
+    "定位中…": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang định vị…"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menentukan lokasi…"
+          }
+        }
+      }
+    },
+    "已取得座標": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã lấy tọa độ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Koordinat diperoleh"
+          }
+        }
+      }
+    },
+    "目前位置": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vị trí hiện tại"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lokasi saat ini"
+          }
+        }
+      }
+    },
+    "點下取得 GPS 位置": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nhấn để lấy vị trí GPS"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ketuk untuk ambil lokasi GPS"
+          }
+        }
+      }
+    },
+    "師傅": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thợ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tukang"
+          }
+        }
+      }
+    },
+    "來試一張看看": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thử tạo một tờ xem"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coba buat satu"
+          }
+        }
+      }
+    },
+    "建立報價單": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tạo báo giá"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buat penawaran"
+          }
+        }
+      }
+    },
+    "追收款進度": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Theo dõi tiến độ thu tiền"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lacak status penagihan"
+          }
+        }
+      }
+    },
+    "看自己賺多少": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xem mình kiếm được bao nhiêu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lihat berapa yang Anda hasilkan"
+          }
+        }
+      }
+    },
+    "看起來不錯，繼續": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trông ổn đấy, tiếp tục"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terlihat bagus, lanjut"
+          }
+        }
+      }
+    },
+    "開工": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bắt đầu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mulai kerja"
+          }
+        }
+      }
+    },
+    "套用以前用過的項目，不用每次重新查價。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Áp dụng các hạng mục đã dùng trước đây, không cần tra giá lại mỗi lần."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terapkan item yang pernah dipakai, tak perlu cek harga ulang tiap kali."
+          }
+        }
+      }
+    },
+    "每月收入、最大客戶、最賺項目，都幫你算好。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thu nhập hàng tháng, khách hàng lớn nhất, hạng mục lời nhất, đều tính sẵn cho bạn."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pendapatan bulanan, klien terbesar, item terlaba, semua dihitung untuk Anda."
+          }
+        }
+      }
+    },
+    "進行中、已完工、已收款，自動分類，一眼看清。": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang làm, đã hoàn thành, đã thu tiền, tự động phân loại, nhìn là rõ."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berjalan, selesai, dibayar, otomatis dikelompokkan, jelas sekilas."
+          }
+        }
+      }
+    },
+    "商號識別": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nhận diện thương hiệu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Identitas usaha"
+          }
+        }
+      }
+    },
+    "Logo 與印章": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo và con dấu"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo dan stempel"
+          }
+        }
+      }
+    },
+    "聯絡資訊": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thông tin liên hệ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informasi kontak"
+          }
+        }
+      }
+    },
+    "付款條件 & 簽名": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Điều khoản thanh toán & Chữ ký"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Syarat pembayaran & Tanda tangan"
+          }
+        }
+      }
+    },
+    "外觀": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Giao diện"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tampilan"
+          }
+        }
+      }
+    },
+    "日期,客戶,地點,狀態,項目數,總計": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ngày,Khách hàng,Địa điểm,Trạng thái,Số hạng mục,Tổng cộng"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanggal,Klien,Lokasi,Status,Jumlah item,Total"
+          }
+        }
+      }
+    },
+    "陳師傅": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thợ Trần"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tukang Chen"
+          }
+        }
+      }
+    },
+    "報價單 · #%@": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Báo giá · #%@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Penawaran · #%@"
+          }
+        }
+      }
+    },
+    "歡迎，%@": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chào mừng, %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selamat datang, %@"
+          }
+        }
+      }
+    },
+    "請款單 · %@": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hóa đơn · %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagihan · %@"
+          }
+        }
+      }
+    },
+    "我的自訂項目（%lld）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hạng mục tùy chỉnh của tôi (%lld)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item kustom saya (%lld)"
+          }
+        }
+      }
+    },
+    "歷史報價單（%lld 張）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Báo giá đã tạo (%lld tờ)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Riwayat penawaran (%lld lembar)"
+          }
+        }
+      }
+    },
+    "刪除「%@」": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa “%@”"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus “%@”"
+          }
+        }
+      }
+    },
+    "上次 %@%@ / %@": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lần trước %@%@ / %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terakhir %@%@ / %@"
+          }
+        }
+      }
+    },
+    "範圍 %@%@–%@%@": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khoảng %@%@–%@%@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rentang %@%@–%@%@"
+          }
+        }
+      }
+    },
+    "比去年同期 %@ %@（去年 %@%@）": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "So với cùng kỳ năm trước %@ %@ (năm trước %@%@)"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dibanding tahun lalu %@ %@ (tahun lalu %@%@)"
+          }
+        }
+      }
+    },
+    "訂閱 PRO · 年付 %@": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đăng ký PRO · Trả năm %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langganan PRO · Bayar tahunan %@"
+          }
+        }
+      }
+    },
+    "訂閱 PRO · 月付 %@": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đăng ký PRO · Trả tháng %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langganan PRO · Bayar bulanan %@"
+          }
+        }
+      }
+    },
+    "分享 %@": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chia sẻ %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bagikan %@"
+          }
+        }
+      }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

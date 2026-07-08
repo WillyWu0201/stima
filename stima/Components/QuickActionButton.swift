@@ -20,7 +20,7 @@ struct QuickActionButton: View {
             HStack(spacing: 4) {
                 Image(systemName: systemImage)
                     .font(.system(size: 12, weight: .bold))
-                Text(label)
+                Text(LocalizedStringKey(label))
                     .font(AppFont.sans(12, weight: .semibold))
             }
             .foregroundStyle(primary ? .white : Color.ink)

@@ -7,8 +7,8 @@ import SwiftUI
 ///       Button { } label: { Image(systemName: "plus") }
 ///   }
 struct AppHeader<Trailing: View>: View {
-    let title: String
-    var subtitle: String? = nil
+    let title: LocalizedStringKey
+    var subtitle: LocalizedStringKey? = nil
     var accent: Bool = false
     var onBack: (() -> Void)? = nil
     @ViewBuilder var trailing: () -> Trailing
@@ -51,7 +51,7 @@ struct AppHeader<Trailing: View>: View {
 }
 
 extension AppHeader where Trailing == EmptyView {
-    init(title: String, subtitle: String? = nil, accent: Bool = false, onBack: (() -> Void)? = nil) {
+    init(title: LocalizedStringKey, subtitle: LocalizedStringKey? = nil, accent: Bool = false, onBack: (() -> Void)? = nil) {
         self.title = title
         self.subtitle = subtitle
         self.accent = accent

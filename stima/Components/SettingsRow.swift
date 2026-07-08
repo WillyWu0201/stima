@@ -32,7 +32,7 @@ struct SettingsRow: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 HStack(spacing: 6) {
-                    Text(label)
+                    Text(LocalizedStringKey(label))
                         .font(AppFont.sans(15, weight: .semibold))
                         .foregroundStyle(Color.ink)
                     if proLabel {

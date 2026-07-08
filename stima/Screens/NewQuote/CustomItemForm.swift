@@ -176,7 +176,7 @@ struct CustomItemForm: View {
     }
 
     private func label(_ text: String) -> some View {
-        Text(text)
+        Text(LocalizedStringKey(text))
             .font(AppFont.sans(12, weight: .semibold))
             .foregroundStyle(Color.inkSoft)
     }

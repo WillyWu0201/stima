@@ -12,7 +12,7 @@ struct SectionTitle: View {
     }
 
     var body: some View {
-        Text(title)
+        Text(LocalizedStringKey(title))
             .font(AppFont.sans(13, weight: .semibold))
             .foregroundStyle(Color.inkSoft)
             .padding(.top, 4)

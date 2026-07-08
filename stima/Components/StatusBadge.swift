@@ -20,7 +20,7 @@ struct StatusBadge: View {
             Circle()
                 .fill(color)
                 .frame(width: 6, height: 6)
-            Text(status.label)
+            Text(LocalizedStringKey(status.label))
                 .font(AppFont.sans(large ? 12 : 11, weight: .semibold))
                 .foregroundStyle(color)
         }

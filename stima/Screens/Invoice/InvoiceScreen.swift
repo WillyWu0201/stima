@@ -28,7 +28,7 @@ struct InvoiceScreen: View {
     var body: some View {
         VStack(spacing: 0) {
             AppHeader(
-                title: quote.clientName,
+                title: "\(quote.clientName)",
                 subtitle: "請款單 · \(invoiceID)",
                 accent: true,
                 onBack: { dismiss() }
@@ -123,7 +123,7 @@ struct InvoiceScreen: View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(spacing: 4) {
                 Image(systemName: symbol).font(.system(size: 11))
-                Text(label)
+                Text(LocalizedStringKey(label))
             }
             .font(AppFont.sans(11))
             .foregroundStyle(Color.inkSoft)
@@ -196,7 +196,7 @@ struct InvoiceScreen: View {
 
     private func summaryRow(_ label: String, value: Int) -> some View {
         HStack {
-            Text(label).font(AppFont.sans(13))
+            Text(LocalizedStringKey(label)).font(AppFont.sans(13))
             Spacer()
             Text("\(currencySymbol)\(value.formatted())").font(AppFont.mono(13))
         }

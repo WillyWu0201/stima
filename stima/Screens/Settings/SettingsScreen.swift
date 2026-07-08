@@ -166,9 +166,9 @@ struct SettingsScreen: View {
                         Text("iCloud 自動備份")
                             .font(AppFont.sans(15, weight: .semibold))
                             .foregroundStyle(Color.ink)
-                        Text(settings.isPro
+                        Text(LocalizedStringKey(settings.isPro
                              ? "已啟用 · 自動備份到 iCloud"
-                             : "需要 PRO · 換手機資料自動還原")
+                             : "需要 PRO · 換手機資料自動還原"))
                             .font(AppFont.sans(12))
                             .foregroundStyle(Color.inkSoft)
                     }
@@ -529,7 +529,7 @@ private struct CategoryRow: View {
                     focused = true
                 }
             } label: {
-                Text(isEditing ? "完成" : "編輯")
+                Text(LocalizedStringKey(isEditing ? "完成" : "編輯"))
                     .font(AppFont.sans(12, weight: .semibold))
                     .foregroundStyle(Color.inkSoft)
                     .padding(4)

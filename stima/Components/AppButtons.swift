@@ -25,7 +25,7 @@ struct PrimaryButton: View {
                     Image(systemName: systemImage)
                         .font(.system(size: 16, weight: .semibold))
                 }
-                Text(title)
+                Text(LocalizedStringKey(title))
                     .font(AppFont.sans(16, weight: .semibold))
             }
             .foregroundStyle(.white)
@@ -56,7 +56,7 @@ struct SecondaryButton: View {
                     Image(systemName: systemImage)
                         .font(.system(size: 15, weight: .semibold))
                 }
-                Text(title)
+                Text(LocalizedStringKey(title))
                     .font(AppFont.sans(15, weight: .semibold))
             }
             .foregroundStyle(Color.ink)
