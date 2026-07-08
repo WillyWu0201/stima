@@ -12,6 +12,7 @@ struct DetailScreen: View {
     @State private var pdfPreviewOpen = false
     @State private var goingToInvoice = false
     @State private var showingCopyFlow = false
+    @State private var showingEditFlow = false
     @State private var showingLimitAlert = false
     @State private var showingPaywall = false
 
@@ -74,6 +75,14 @@ struct DetailScreen: View {
                 startAt:      .review,
                 onClose:      { showingCopyFlow = false },
                 onFinished:   { showingCopyFlow = false }
+            )
+        }
+        .fullScreenCover(isPresented: $showingEditFlow) {
+            NewQuoteFlow(
+                initialDraft: .from(quote),
+                editingQuote: quote,
+                onClose:      { showingEditFlow = false },
+                onFinished:   { showingEditFlow = false }
             )
         }
         .fullScreenCover(isPresented: $showingPaywall) {
@@ -222,6 +231,9 @@ struct DetailScreen: View {
                 }
 
                 HStack(spacing: 10) {
+                    SecondaryButton("編輯", systemImage: "pencil") {
+                        showingEditFlow = true
+                    }
                     SecondaryButton("複製這張", systemImage: "plus") {
                         if TierGate.canCreateQuote(isPro: settings.isPro, quotes: allQuotes) {
                             showingCopyFlow = true
@@ -229,10 +241,10 @@ struct DetailScreen: View {
                             showingLimitAlert = true
                         }
                     }
-                    if quote.quoteStatus == .ongoing || quote.quoteStatus == .done {
-                        SecondaryButton("轉請款單", systemImage: "dollarsign.circle") {
-                            goingToInvoice = true
-                        }
+                }
+                if quote.quoteStatus == .ongoing || quote.quoteStatus == .done {
+                    SecondaryButton("轉請款單", systemImage: "dollarsign.circle") {
+                        goingToInvoice = true
                     }
                 }
             }

@@ -67,6 +67,42 @@ final class stimaScreenCoverageUITests: XCTestCase {
                       "沒開新增客戶 sheet")
     }
 
+    // MARK: - 客戶詳情 → 編輯客戶（預填 + sheet）
+
+    @MainActor
+    func testEditClientEntry() throws {
+        // 走 報價單詳情 →「查看客戶」到客戶詳情（同 testContactsAndClientDetail 路徑）
+        let quote = app.staticTexts["林太太"]
+        XCTAssertTrue(quote.waitForExistence(timeout: 8), "Home 沒看到林太太的報價單")
+        quote.tap()
+        let viewClient = button(containing: "查看客戶")
+        XCTAssertTrue(viewClient.waitForExistence(timeout: 5), "詳情沒有查看客戶")
+        viewClient.tap()
+        XCTAssertTrue(staticTextContaining("累計營收").waitForExistence(timeout: 5), "沒進到客戶詳情")
+
+        app.buttons["編輯"].tap()
+        XCTAssertTrue(app.staticTexts["編輯客戶"].waitForExistence(timeout: 5), "沒開編輯客戶 sheet")
+        // 預填欄位不再顯示 placeholder，改以 value 比對（不依賴 placeholder/順序）
+        let prefilled = app.textFields.matching(NSPredicate(format: "value == %@", "林太太")).firstMatch
+        XCTAssertTrue(prefilled.waitForExistence(timeout: 3), "編輯客戶沒有預填既有名稱")
+    }
+
+    // MARK: - 報價單詳情 → 編輯報價單（開完整流程 + 預填）
+
+    @MainActor
+    func testEditQuoteEntry() throws {
+        let quote = app.staticTexts["王先生"]
+        XCTAssertTrue(quote.waitForExistence(timeout: 8), "Home 沒看到王先生的報價單")
+        quote.tap()
+        let editBtn = app.buttons["編輯"]
+        XCTAssertTrue(editBtn.waitForExistence(timeout: 5), "詳情沒有編輯按鈕")
+        editBtn.tap()
+        // 編輯 = 走完整流程，開在「基本資料」且客戶稱呼已預填
+        XCTAssertTrue(app.staticTexts["基本資料"].waitForExistence(timeout: 5), "編輯沒開到基本資料")
+        let prefilled = app.textFields.matching(NSPredicate(format: "value == %@", "王先生")).firstMatch
+        XCTAssertTrue(prefilled.waitForExistence(timeout: 3), "編輯報價沒有預填既有客戶名")
+    }
+
     // MARK: - Settings → PDF 模板
 
     @MainActor

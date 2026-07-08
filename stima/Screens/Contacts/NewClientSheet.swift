@@ -4,6 +4,8 @@ import SwiftUI
 /// 從 ContactsScreen 右上 + 按鈕召喚。儲存後呼叫 onSave，由父層 insert 進 SwiftData。
 struct NewClientSheet: View {
     var existingNames: Set<String> = []
+    /// 非 nil 表示「編輯既有客戶」：預填欄位、標題改「編輯客戶」、儲存直接改這筆而非新增。
+    var editingClient: Client? = nil
     let onSave: (Client) -> Void
     @Environment(\.dismiss) private var dismiss
 
@@ -14,6 +16,7 @@ struct NewClientSheet: View {
     @State private var notes = ""
     @State private var mapOpen = false
     @State private var showingDuplicateAlert = false
+    @State private var prefilled = false
 
     private var canSave: Bool {
         !name.trimmingCharacters(in: .whitespaces).isEmpty
@@ -64,8 +67,9 @@ struct NewClientSheet: View {
                 .padding(.bottom, 28)
             }
             .background(Color.appSurface)
-            .navigationTitle("新增客戶")
+            .navigationTitle(editingClient == nil ? "新增客戶" : "編輯客戶")
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear(perform: prefillFromEditingClient)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("取消") { dismiss() }
@@ -201,6 +205,22 @@ struct NewClientSheet: View {
     private func save() {
         guard canSave else { return }
         let trimmed = name.trimmingCharacters(in: .whitespaces)
+
+        // 編輯模式：直接更新這筆 Client（改名撞到「別人」才擋）。
+        if let editingClient {
+            if trimmed != editingClient.name, existingNames.contains(trimmed) {
+                showingDuplicateAlert = true
+                return
+            }
+            editingClient.name    = trimmed
+            editingClient.phone   = phone.trimmingCharacters(in: .whitespaces)
+            editingClient.email   = email.trimmingCharacters(in: .whitespaces)
+            editingClient.address = address.trimmingCharacters(in: .whitespaces)
+            editingClient.notes   = notes
+            dismiss()
+            return
+        }
+
         if existingNames.contains(trimmed) {
             showingDuplicateAlert = true
             return
@@ -214,6 +234,17 @@ struct NewClientSheet: View {
         )
         onSave(client)
         dismiss()
+    }
+
+    /// 編輯模式一次性把既有 Client 內容帶進表單。
+    private func prefillFromEditingClient() {
+        guard let c = editingClient, !prefilled else { return }
+        prefilled = true
+        name = c.name
+        phone = c.phone
+        email = c.email
+        address = c.address
+        notes = c.notes
     }
 }
 

@@ -9,6 +9,7 @@ struct ClientDetailScreen: View {
     @Environment(\.dismiss) private var dismiss
     @Query private var allQuotes: [Quote]
     @Query private var allClients: [Client]
+    @State private var editOpen = false
 
     private var client: Client? {
         allClients.first { $0.name == clientName }
@@ -62,7 +63,12 @@ struct ClientDetailScreen: View {
                 title: clientName,
                 subtitle: "客戶詳情",
                 onBack: { dismiss() }
-            )
+            ) {
+                if client != nil {
+                    Button("編輯") { editOpen = true }
+                        .font(AppFont.sans(15, weight: .semibold))
+                }
+            }
 
             ScrollView {
                 VStack(alignment: .leading, spacing: Spacing.cardGap) {
@@ -87,6 +93,16 @@ struct ClientDetailScreen: View {
         }
         .background(Color.bgPaper)
         .toolbar(.hidden, for: .navigationBar)
+        .sheet(isPresented: $editOpen) {
+            if let c = client {
+                NewClientSheet(
+                    existingNames: Set(allClients.map(\.name)).subtracting([c.name]),
+                    editingClient: c
+                ) { _ in }
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
+            }
+        }
     }
 
     // MARK: - Cards

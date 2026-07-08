@@ -6,6 +6,8 @@ import SwiftData
 struct NewQuoteFlow: View {
     let onClose: () -> Void
     let onFinished: () -> Void
+    /// 非 nil 表示「編輯既有報價單」：finalize 會就地更新這張而非新增。
+    let editingQuote: Quote?
 
     @State private var draft: NewQuoteDraft
     @State private var path: [Step]
@@ -26,10 +28,12 @@ struct NewQuoteFlow: View {
     /// `startAt` 指定要直接跳到哪一步，會把前面的 step 也 push 進 stack 以保留返回路徑。
     init(initialDraft: NewQuoteDraft? = nil,
          startAt: Step? = nil,
+         editingQuote: Quote? = nil,
          onClose: @escaping () -> Void,
          onFinished: @escaping () -> Void) {
         self.onClose = onClose
         self.onFinished = onFinished
+        self.editingQuote = editingQuote
         _draft = State(initialValue: initialDraft ?? NewQuoteDraft())
 
         var initialPath: [Step] = []
@@ -80,6 +84,14 @@ struct NewQuoteFlow: View {
 
     /// 把 draft 寫成 Quote 進 SwiftData，然後推進 .exported。
     private func finalize() {
+        // 編輯模式：就地更新既有報價單，存完直接關閉（不進「出單完成」頁）。
+        if let editingQuote {
+            draft.apply(to: editingQuote, taxRatePercent: settings.taxRate)
+            tutorial.endCoaching()
+            onFinished()
+            return
+        }
+
         // 在 insert 之前記錄是否為第一筆，以便 ExportedScreen 顯示不同文案。
         wasFirstQuote = allQuotes.isEmpty
 
