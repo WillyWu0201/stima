@@ -145,14 +145,25 @@ final class stimaUITests: XCTestCase {
         let cf = app.textFields["例：王先生、林太太"]
         XCTAssertTrue(cf.waitForExistence(timeout: 5), "沒進到基本資料")
         cf.tap(); cf.typeText("測試客戶")
-        let loc = app.textFields["例：台北市信義區"]
-        if loc.exists { loc.tap(); loc.typeText("台北市大安區") }
-        // 與日期選擇器互動（模擬使用者填日期）
-        let dp = app.datePickers.firstMatch
-        if dp.exists { dp.tap() }
+        let hadKeyboard = app.keyboards.count > 0
+
+        // 打完字直接點日期列 → 應收鍵盤（不與日曆並存）並開日期 sheet
+        let dateRow = app.buttons["dateRow"]
+        XCTAssertTrue(dateRow.waitForExistence(timeout: 3), "找不到日期列")
+        dateRow.tap()
+        if hadKeyboard {
+            let kbGone = expectation(for: NSPredicate(format: "count == 0"),
+                                     evaluatedWith: app.keyboards)
+            wait(for: [kbGone], timeout: 3)   // 點日期後鍵盤必須收起
+        }
+        // 關掉日期 sheet（若有開）
+        let done = app.buttons["完成"]
+        if done.waitForExistence(timeout: 3) { done.tap() }
+
+        // 「下一步」不被任何 overlay 擋住、可點、可進下一頁
         let next = button(containing: "下一步")
         XCTAssertTrue(next.waitForExistence(timeout: 3), "找不到「下一步」按鈕")
-        XCTAssertTrue(next.isHittable, "「下一步」被日期選擇器蓋住點不到（compact popover 回歸）")
+        XCTAssertTrue(next.isHittable, "「下一步」被 overlay 蓋住點不到")
         next.tap()
         XCTAssertTrue(app.staticTexts["加項目"].waitForExistence(timeout: 4),
                       "填完基本資料（含日期）後無法進入下一頁")

@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 /// 畫面 04 · 新增報價單 — 基本資料
 /// 三個欄位：客戶稱呼 / 工程地點（含「地圖」按鈕）/ 報價日期。
@@ -8,6 +9,7 @@ struct NewQuoteInfoScreen: View {
     let onNext: () -> Void
     @Environment(TutorialState.self) private var tutorial
     @State private var mapOpen = false
+    @State private var dateSheetOpen = false
     @State private var coachDone = false
 
     var body: some View {
@@ -37,17 +39,23 @@ struct NewQuoteInfoScreen: View {
                     }
 
                     FieldRow(label: "報價日期", systemImage: "calendar") {
-                        // 用 .graphical（inline）而非 .compact：compact 展開的日曆是帶
-                        // 全螢幕關閉背板的 overlay，開著時會蓋住底部「下一步」讓它點不到
-                        // → 使用者填完日期後會卡住無法進下一頁。inline 不擋任何控制項。
-                        DatePicker("", selection: $draft.date,
-                                   displayedComponents: .date)
-                            .datePickerStyle(.graphical)
-                            .labelsHidden()
-                            .tint(.accent)
-                            .frame(maxWidth: .infinity)
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 6)
+                        // 點一下開 sheet 挑日期：先收鍵盤（避免「鍵盤+日曆並存」），
+                        // 日曆在 sheet 裡有完整空間，也不會像 compact overlay 蓋住底部「下一步」。
+                        Button {
+                            dismissKeyboard()
+                            dateSheetOpen = true
+                        } label: {
+                            HStack(spacing: 8) {
+                                Text(Self.dateString(draft.date))
+                                    .font(AppFont.sans(15))
+                                    .foregroundStyle(Color.ink)
+                                Spacer()
+                                Image(systemName: "calendar")
+                                    .font(.system(size: 15))
+                                    .foregroundStyle(Color.inkSoft)
+                            }
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 13)
                             .background(Color.appSurface,
                                         in: RoundedRectangle(cornerRadius: Radius.card,
                                                              style: .continuous))
@@ -56,12 +64,16 @@ struct NewQuoteInfoScreen: View {
                                                  style: .continuous)
                                     .strokeBorder(Color.appBorder, lineWidth: 1.5)
                             )
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityIdentifier("dateRow")
                     }
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 16)
                 .padding(.bottom, 30)
             }
+            .scrollDismissesKeyboard(.interactively)
         }
         .background(Color.bgPaper)
         .toolbar(.hidden, for: .navigationBar)
@@ -77,11 +89,45 @@ struct NewQuoteInfoScreen: View {
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
         }
+        .sheet(isPresented: $dateSheetOpen) {
+            NavigationStack {
+                VStack {
+                    DatePicker("報價日期", selection: $draft.date,
+                               displayedComponents: .date)
+                        .datePickerStyle(.graphical)
+                        .labelsHidden()
+                        .tint(.accent)
+                        .padding()
+                    Spacer()
+                }
+                .background(Color.bgPaper)
+                .navigationTitle("報價日期")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("完成") { dateSheetOpen = false }
+                    }
+                }
+            }
+            .presentationDetents([.medium, .large])
+            .presentationDragIndicator(.visible)
+        }
         .coachMark(active: tutorial.coachingActive && !coachDone,
                    target: "info",
                    text: "先填客戶名跟工程地點，填好按下面的「下一步」。") {
             coachDone = true
         }
+    }
+
+    private func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                        to: nil, from: nil, for: nil)
+    }
+
+    private static func dateString(_ d: Date) -> String {
+        let f = DateFormatter()
+        f.dateFormat = "yyyy-MM-dd"
+        return f.string(from: d)
     }
 
     private var mapButton: some View {
