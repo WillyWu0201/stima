@@ -37,13 +37,17 @@ struct NewQuoteInfoScreen: View {
                     }
 
                     FieldRow(label: "報價日期", systemImage: "calendar") {
+                        // 用 .graphical（inline）而非 .compact：compact 展開的日曆是帶
+                        // 全螢幕關閉背板的 overlay，開著時會蓋住底部「下一步」讓它點不到
+                        // → 使用者填完日期後會卡住無法進下一頁。inline 不擋任何控制項。
                         DatePicker("", selection: $draft.date,
                                    displayedComponents: .date)
-                            .datePickerStyle(.compact)
+                            .datePickerStyle(.graphical)
                             .labelsHidden()
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, 14)
-                            .padding(.vertical, 9)
+                            .tint(.accent)
+                            .frame(maxWidth: .infinity)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 6)
                             .background(Color.appSurface,
                                         in: RoundedRectangle(cornerRadius: Radius.card,
                                                              style: .continuous))

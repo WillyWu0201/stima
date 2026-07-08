@@ -132,6 +132,32 @@ final class stimaUITests: XCTestCase {
                       "Home 沒看到剛建的客戶名")
     }
 
+    // MARK: - Regression：基本資料填完（含互動日期）後「下一步」仍可點
+
+    /// 曾用 .compact 日期選擇器，展開的日曆是帶全螢幕背板的 overlay，
+    /// 會把底部「下一步」蓋住（isHittable == false）→ 使用者填完日期後卡住無法下一步。
+    /// 改用 .graphical（inline）後 CTA 不再被擋。此測試守這條回歸。
+    @MainActor
+    func testInfoNextReachableWithDatePicker() throws {
+        app.launchArguments += ["--uitest-onboarded"]
+        app.launch()
+        app.buttons["新增報價單"].tap()
+        let cf = app.textFields["例：王先生、林太太"]
+        XCTAssertTrue(cf.waitForExistence(timeout: 5), "沒進到基本資料")
+        cf.tap(); cf.typeText("測試客戶")
+        let loc = app.textFields["例：台北市信義區"]
+        if loc.exists { loc.tap(); loc.typeText("台北市大安區") }
+        // 與日期選擇器互動（模擬使用者填日期）
+        let dp = app.datePickers.firstMatch
+        if dp.exists { dp.tap() }
+        let next = button(containing: "下一步")
+        XCTAssertTrue(next.waitForExistence(timeout: 3), "找不到「下一步」按鈕")
+        XCTAssertTrue(next.isHittable, "「下一步」被日期選擇器蓋住點不到（compact popover 回歸）")
+        next.tap()
+        XCTAssertTrue(app.staticTexts["加項目"].waitForExistence(timeout: 4),
+                      "填完基本資料（含日期）後無法進入下一頁")
+    }
+
     // MARK: - Helpers
 
     /// 找 label 包含 substring 的第一個 button（PrimaryButton 內 HStack image+text，
