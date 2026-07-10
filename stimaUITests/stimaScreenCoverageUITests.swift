@@ -194,6 +194,22 @@ final class stimaScreenCoverageUITests: XCTestCase {
                       "沒顯示自訂項目表單")
     }
 
+    // MARK: - 進行中 →「標記完工」
+
+    @MainActor
+    func testMarkQuoteAsDone() throws {
+        let quote = app.staticTexts["王先生"]   // seed 裡王先生是進行中
+        XCTAssertTrue(quote.waitForExistence(timeout: 8), "Home 沒看到王先生的報價單")
+        quote.tap()
+        let markDone = button(containing: "標記完工")
+        XCTAssertTrue(markDone.waitForExistence(timeout: 5), "進行中報價單詳情應有「標記完工」")
+        markDone.tap()
+        // 標記完工後狀態離開「進行中」→ 該按鈕消失（僅進行中顯示）；仍留在詳情、可轉請款單
+        let gone = expectation(for: NSPredicate(format: "exists == false"), evaluatedWith: markDone)
+        wait(for: [gone], timeout: 4)
+        XCTAssertTrue(button(containing: "轉請款單").exists, "已完工詳情應仍可轉請款單")
+    }
+
     // MARK: - Helpers
 
     @MainActor private func button(containing text: String) -> XCUIElement {

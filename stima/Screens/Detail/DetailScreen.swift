@@ -242,13 +242,27 @@ struct DetailScreen: View {
                         }
                     }
                 }
-                if quote.quoteStatus == .ongoing || quote.quoteStatus == .done {
+                if quote.quoteStatus == .ongoing {
+                    HStack(spacing: 10) {
+                        SecondaryButton("標記完工", systemImage: "checkmark.circle") {
+                            markAsDone()
+                        }
+                        SecondaryButton("轉請款單", systemImage: "dollarsign.circle") {
+                            goingToInvoice = true
+                        }
+                    }
+                } else if quote.quoteStatus == .done {
                     SecondaryButton("轉請款單", systemImage: "dollarsign.circle") {
                         goingToInvoice = true
                     }
                 }
             }
         }
+    }
+
+    /// 進行中 → 已完工（工程做完、待收款）。狀態徽章會即時更新。
+    private func markAsDone() {
+        quote.status = QuoteStatus.done.rawValue
     }
 
     // MARK: - Helpers
