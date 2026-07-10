@@ -39,6 +39,8 @@ struct ExportedScreen: View {
 
             Spacer()
         }
+        // 撐滿整個畫面，否則 VStack 寬度只到內容欄寬，兩側會露出底下的黑色
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.bgPaper)
         .toolbar(.hidden, for: .navigationBar)
         .navigationBarBackButtonHidden()    // 沒返回路徑，已 finalized
