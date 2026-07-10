@@ -22,6 +22,7 @@ struct ShareSecondaryButton: View {
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
             .glassNeutral()
+            .contentShape(Rectangle())   // 整條都可點（同 Primary/Secondary）
         }
     }
 }

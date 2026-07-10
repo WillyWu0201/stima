@@ -166,6 +166,8 @@ struct NewQuoteItemsScreen: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 14)
             .glassNeutral()
+            // 整顆（含 padding/glass 區）都可點：否則只有中央「＋ 加項目」文字能觸發
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .fixedSize()
