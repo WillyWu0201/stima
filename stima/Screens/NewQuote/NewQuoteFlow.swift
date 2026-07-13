@@ -16,7 +16,6 @@ struct NewQuoteFlow: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(AppSettings.self) private var settings
     @Environment(TutorialState.self) private var tutorial
-    @Query private var allQuotes: [Quote]
 
     enum Step: Hashable {
         case items
@@ -93,7 +92,11 @@ struct NewQuoteFlow: View {
         }
 
         // 在 insert 之前記錄是否為第一筆，以便 ExportedScreen 顯示不同文案。
-        wasFirstQuote = allQuotes.isEmpty
+        // 用一次性 fetchCount，而非在 body 持有 @Query：後者放在擁有 NavigationStack(path:)
+        // 的 view 內，query re-emit 會重算 body、重註冊 navigationDestination，把已 push 的
+        // 「加項目」頁自動 pop 回「基本資料」（真機有 store 活動時觸發，模擬器空 store 不會）。
+        let existingCount = (try? modelContext.fetchCount(FetchDescriptor<Quote>())) ?? 0
+        wasFirstQuote = existingCount == 0
 
         let quote = Quote(
             clientName: draft.clientName.isEmpty ? "未命名客戶" : draft.clientName,
