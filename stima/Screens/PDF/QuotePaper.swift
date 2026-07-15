@@ -24,7 +24,8 @@ struct QuotePaper: View {
 
     private var businessName: String {
         if let t = template, !t.businessName.isEmpty { return t.businessName }
-        return masterName.isEmpty ? "陳師傅" : masterName
+        // 最後 fallback 用 App 名稱，而非寫死的範例人名（抬頭理論上一定有值，這只是防呆）。
+        return masterName.isEmpty ? "Stima" : masterName
     }
     private var slogan: String { template?.slogan ?? "" }
     private var contactLine: String {
