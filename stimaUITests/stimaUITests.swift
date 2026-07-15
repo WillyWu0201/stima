@@ -192,6 +192,25 @@ final class stimaUITests: XCTestCase {
                       "「下一步」兩側點不到（命中區僅中央文字）")
     }
 
+    // MARK: - 點空白處收鍵盤（全 App）
+
+    @MainActor
+    func testTapOutsideDismissesKeyboard() throws {
+        app.launchArguments += ["--uitest-onboarded"]
+        app.launch()
+        app.buttons["新增報價單"].tap()
+        let cf = app.textFields["例：王先生、林太太"]
+        XCTAssertTrue(cf.waitForExistence(timeout: 5), "沒進到基本資料")
+        cf.tap(); cf.typeText("測試")
+        guard app.keyboards.firstMatch.waitForExistence(timeout: 3) else {
+            throw XCTSkip("此模擬器沒有軟體鍵盤，無法驗證收鍵盤")
+        }
+        // 點畫面空白處（非輸入元件）→ 應收鍵盤
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.45)).tap()
+        let kbGone = expectation(for: NSPredicate(format: "count == 0"), evaluatedWith: app.keyboards)
+        wait(for: [kbGone], timeout: 3)
+    }
+
     // MARK: - Helpers
 
     /// 找 label 包含 substring 的第一個 button（PrimaryButton 內 HStack image+text，

@@ -108,6 +108,7 @@ struct RootView: View {
         }
         .environment(\.locale, Locale(identifier: settings.language))
         .environment(\.currencySymbol, settings.currencySymbol)
+        .dismissKeyboardOnTapOutside()
         .task {
             await PurchaseManager.shared.syncEntitlement(into: settings)
         }
