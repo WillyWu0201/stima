@@ -25,13 +25,14 @@ struct stimaApp: App {
         let primary = ModelConfiguration(schema: schema, isStoredInMemoryOnly: inMemory)
 
         // 先試 disk-based（或 UI 測試指定的 in-memory）
-        if let container = try? ModelContainer(for: schema, configurations: [primary]) {
-            return container
+        do {
+            return try ModelContainer(for: schema, configurations: [primary])
+        } catch {
+            // 失敗 → fallback in-memory，至少不要 crash。務必印出真正原因：
+            // 最常見是「新加的 @Model 欄位沒有屬性層級預設值」導致輕量遷移失敗，
+            // 靜默 fallback 會讓資料每次啟動都不見，很難察覺。
+            print("⚠️ Disk-based ModelContainer 建立失敗，fallback in-memory（資料不會儲存）：\(error)")
         }
-
-        // 失敗 → fallback in-memory，至少不要 crash
-        // 常見原因：schema migration 失敗、磁碟空間不足、context corrupt
-        print("⚠️ Disk-based ModelContainer 建立失敗，fallback in-memory（資料不會儲存）")
         let fallback = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
         do {
             return try ModelContainer(for: schema, configurations: [fallback])
