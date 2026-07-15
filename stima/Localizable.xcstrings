@@ -16,6 +16,18 @@
             "state": "translated",
             "value": "  ·  từ %@"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "  ·  Since %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "  ·  自 %@ 起"
+          }
         }
       }
     },
@@ -31,6 +43,18 @@
           "stringUnit": {
             "state": "translated",
             "value": " · đã dùng %lld lần"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · Used %lld times"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · 用过 %lld 次"
           }
         }
       }
@@ -50,6 +74,18 @@
             "state": "translated",
             "value": "— Chưa điền địa điểm —"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "— No location —"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "— 未填地点 —"
+          }
         }
       }
     },
@@ -67,6 +103,18 @@
             "state": "translated",
             "value": "— Tên hạng mục —"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "— Item name —"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "— 项目名称 —"
+          }
         }
       }
     },
@@ -83,6 +131,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "「%@」đã có trong danh bạ khách hàng. Hãy đổi tên hoặc sửa trực tiếp trong danh sách."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\"%@\" is already in your contacts. Rename it, or go to the list to edit the existing entry."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「%@」已经在客户簿内。请改名或直接到列表编辑既有资料。"
           }
         }
       }
@@ -102,6 +162,18 @@
             "state": "translated",
             "value": "/ năm"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "/ year"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "/ 年"
+          }
         }
       }
     },
@@ -118,6 +190,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "/ tháng"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "/ mo"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "/ 月"
           }
         }
       }
@@ -187,6 +271,18 @@
             "state": "translated",
             "value": "Năm %@"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 年"
+          }
         }
       }
     },
@@ -208,6 +304,18 @@
           "stringUnit": {
             "state": "new",
             "value": "%1$@ 年已收款 · %2$lld 張"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paid in %1$@ · %2$lld invoices"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 年已收款 · %2$lld 张"
           }
         }
       }
@@ -256,6 +364,18 @@
             "state": "translated",
             "value": "%lld hạng mục"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld items"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 个项目"
+          }
         }
       }
     },
@@ -272,6 +392,18 @@
             "state": "translated",
             "value": "%lld đơn đã hoàn công chờ thu"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld completed, pending payment"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 张已完工待收"
+          }
         }
       }
     },
@@ -287,6 +419,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld dự án"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld jobs"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 案"
           }
         }
       }
@@ -310,6 +454,18 @@
             "state": "new",
             "value": "%1$lld 次 · 共 %2$lld %3$@"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld times · %2$lld %3$@ total"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld 次 · 共 %2$lld %3$@"
+          }
         }
       }
     },
@@ -326,6 +482,18 @@
             "state": "translated",
             "value": "%lld lần hợp tác"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld jobs"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 次合作"
+          }
         }
       }
     },
@@ -341,6 +509,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "+ Nhấn để tải lên"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ Tap to upload"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ 点此上传"
           }
         }
       }
@@ -359,6 +539,18 @@
             "state": "translated",
             "value": "✓ Đã tải lên"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Uploaded"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ 已上传"
+          }
         }
       }
     },
@@ -375,12 +567,105 @@
             "state": "translated",
             "value": "✓ Đã thêm ×%lld"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Added ×%lld"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ 已加 ×%lld"
+          }
         }
       }
     },
-    "🏆 %@": {},
-    "📝": {},
-    "$%lldk": {},
+    "🏆 %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🏆 %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🏆 %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🏆 %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🏆 %@"
+          }
+        }
+      }
+    },
+    "📝": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "📝"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "📝"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "📝"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "📝"
+          }
+        }
+      }
+    },
+    "$%lldk": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "$%lldk"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "$%lldk"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "$%lldk"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "$%lldk"
+          }
+        }
+      }
+    },
     "₫ 越南盾": {
       "extractionState": "stale",
       "localizations": {
@@ -394,6 +679,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "₫ Đồng Việt Nam"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "₫ Vietnamese Dong"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "₫ 越南盾"
           }
         }
       }
@@ -411,6 +708,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "₱ Peso Philippines"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "₱ Philippine Peso"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "₱ 菲律宾比索"
           }
         }
       }
@@ -431,6 +740,18 @@
             "state": "translated",
             "value": "Tháng 1"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jan"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1月"
+          }
         }
       }
     },
@@ -447,6 +768,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tháng 2"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feb"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2月"
           }
         }
       }
@@ -465,6 +798,18 @@
             "state": "translated",
             "value": "Tháng 3"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mar"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3月"
+          }
         }
       }
     },
@@ -481,6 +826,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tháng 4"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apr"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "4月"
           }
         }
       }
@@ -499,6 +856,18 @@
             "state": "translated",
             "value": "Tháng 5"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "May"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "5月"
+          }
         }
       }
     },
@@ -516,6 +885,18 @@
             "state": "translated",
             "value": "Tháng 6"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jun"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "6月"
+          }
         }
       }
     },
@@ -531,6 +912,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dùng thử miễn phí 7 ngày, hủy bất cứ lúc nào\nThanh toán qua App Store, có thể tắt trong「Cài đặt → Apple ID」bất cứ lúc nào"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "7-day free trial, cancel anytime\nBilled through the App Store; turn off anytime in Settings → Apple ID"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "7 天免费试用，随时可取消\n订阅通过 App Store 收费，可在「设置 → Apple ID」随时关闭"
           }
         }
       }
@@ -549,6 +942,18 @@
             "state": "translated",
             "value": "Tháng 7"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jul"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "7月"
+          }
         }
       }
     },
@@ -565,6 +970,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tháng 8"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aug"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "8月"
           }
         }
       }
@@ -583,6 +1000,18 @@
             "state": "translated",
             "value": "Tháng 9"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sep"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "9月"
+          }
         }
       }
     },
@@ -599,6 +1028,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tháng 10"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oct"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10月"
           }
         }
       }
@@ -617,6 +1058,18 @@
             "state": "translated",
             "value": "Tháng 11"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nov"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "11月"
+          }
         }
       }
     },
@@ -633,6 +1086,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tháng 12"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dec"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12月"
           }
         }
       }
@@ -652,10 +1117,49 @@
             "state": "translated",
             "value": "Cài đặt App"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App settings"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App 设置"
+          }
         }
       }
     },
-    "chen@example.com": {},
+    "chen@example.com": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "chen@example.com"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "chen@example.com"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "chen@example.com"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "chen@example.com"
+          }
+        }
+      }
+    },
     "Email": {
       "extractionState": "stale",
       "localizations": {
@@ -669,6 +1173,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Email"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "电子邮箱"
           }
         }
       }
@@ -687,10 +1203,49 @@
             "state": "translated",
             "value": "Email (có thể bỏ trống)"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email (optional)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email（可省略）"
+          }
         }
       }
     },
-    "example@email.com": {},
+    "example@email.com": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "example@email.com"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "example@email.com"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "example@email.com"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "example@email.com"
+          }
+        }
+      }
+    },
     "iCloud 自動備份": {
       "localizations": {
         "id": {
@@ -704,10 +1259,49 @@
             "state": "translated",
             "value": "Tự động sao lưu iCloud"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud auto-backup"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud 自动备份"
+          }
         }
       }
     },
-    "LOGO": {},
+    "LOGO": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LOGO"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LOGO"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LOGO"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LOGO"
+          }
+        }
+      }
+    },
     "Logo 與印章": {
       "extractionState": "stale",
       "localizations": {
@@ -721,6 +1315,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Logo và con dấu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo & stamp"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo 与印章"
           }
         }
       }
@@ -739,6 +1345,18 @@
             "state": "translated",
             "value": "Logo, tiêu đề, điều khoản thanh toán, con dấu"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo, letterhead, payment terms, stamp"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo、抬头、付款条件、印章"
+          }
         }
       }
     },
@@ -755,6 +1373,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Logo, tiêu đề, điều khoản thanh toán, ô chữ ký, con dấu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo, header, payment terms, signature line, stamp"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logo、抬头、付款条件、签名栏、印章"
           }
         }
       }
@@ -773,6 +1403,18 @@
             "state": "translated",
             "value": "NT$ Đài tệ mới"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NT$ New Taiwan Dollar"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NT$ 新台币"
+          }
         }
       }
     },
@@ -788,6 +1430,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tạo PDF thất bại"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF generation failed"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF 生成失败"
           }
         }
       }
@@ -805,10 +1459,49 @@
             "state": "translated",
             "value": "Xem trước PDF"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF preview"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF 预览"
+          }
         }
       }
     },
-    "PRO": {},
+    "PRO": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRO"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRO"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRO"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRO"
+          }
+        }
+      }
+    },
     "PRO 專屬 · 升級解鎖淨利與淨利率統計": {
       "localizations": {
         "id": {
@@ -821,6 +1514,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dành riêng cho PRO · Nâng cấp để mở khóa thống kê lợi nhuận"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRO only · Upgrade to unlock net profit & margin stats"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRO 专属 · 升级解锁净利与净利率统计"
           }
         }
       }
@@ -839,6 +1544,18 @@
             "state": "translated",
             "value": "RM Ringgit Malaysia"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RM Malaysian Ringgit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RM 马币"
+          }
         }
       }
     },
@@ -856,11 +1573,77 @@
             "state": "translated",
             "value": "Rp Rupiah Indonesia"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rp Indonesian Rupiah"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rp 印尼盾"
+          }
         }
       }
     },
-    "Stima · v2.0": {},
-    "Stima · v2.0 · build 2026.05.20": {},
+    "Stima · v2.0": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima · v2.0"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima · v2.0"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima · v2.0"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima · v2.0"
+          }
+        }
+      }
+    },
+    "Stima · v2.0 · build 2026.05.20": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima · v2.0 · build 2026.05.20"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima · v2.0 · build 2026.05.20"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima · v2.0 · build 2026.05.20"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima · v2.0 · build 2026.05.20"
+          }
+        }
+      }
+    },
     "Stima PRO": {
       "localizations": {
         "id": {
@@ -870,6 +1653,18 @@
           }
         },
         "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima PRO"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima PRO"
+          }
+        },
+        "zh-Hans": {
           "stringUnit": {
             "state": "translated",
             "value": "Stima PRO"
@@ -890,6 +1685,18 @@
             "state": "translated",
             "value": "Stima PRO · Đã đăng ký"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima PRO · Subscribed"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stima PRO · 已订阅"
+          }
         }
       }
     },
@@ -907,6 +1714,18 @@
             "state": "translated",
             "value": "US$ Đô la Mỹ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "US$ US Dollar"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "US$ 美元"
+          }
         }
       }
     },
@@ -922,6 +1741,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mỗi dòng một mục; để trống thì hóa đơn sẽ không hiển thị phương thức thanh toán."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One item per line; leave blank and the invoice won't show a payment method."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "一行一项；留空的话请款单就不显示付款方式。"
           }
         }
       }
@@ -939,6 +1770,18 @@
             "state": "translated",
             "value": "Ba việc không cần giấy bút nữa ↓"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Three things you no longer do on paper ↓"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "三件不用再用纸笔做的事 ↓"
+          }
         }
       }
     },
@@ -954,6 +1797,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lần trước %@%@ / %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last %@%@ / %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上次 %@%@ / %@"
           }
         }
       }
@@ -976,6 +1831,18 @@
         "zh-Hant": {
           "stringUnit": {
             "state": "new",
+            "value": "上次 $%1$@ / %2$@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last $%1$@ / %2$@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
             "value": "上次 $%1$@ / %2$@"
           }
         }
@@ -1024,6 +1891,18 @@
             "state": "translated",
             "value": "Bước tiếp:Thêm hạng mục"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next: Add items"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下一步:加项目"
+          }
         }
       }
     },
@@ -1040,6 +1919,18 @@
             "state": "translated",
             "value": "Lần sau báo giá cho cùng khách hàng, chúng tôi sẽ tự điền thông tin cho bạn."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next time you quote the same client, we'll auto-fill their details for you."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下次跟同个客户报价时，我们会自动帮你填好资料。"
+          }
         }
       }
     },
@@ -1055,6 +1946,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Không cần đăng ký, nhấn vào là bắt đầu dùng thử."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No sign-up needed — just tap to start."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不用先注册，按下去就可以开始试。"
           }
         }
       }
@@ -1073,6 +1976,18 @@
             "state": "translated",
             "value": "Màu chủ đạo (màu nhấn trên PDF)"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primary color (accent on PDF)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "主色（PDF 上的强调色）"
+          }
         }
       }
     },
@@ -1090,6 +2005,18 @@
             "state": "translated",
             "value": "người/ngày"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "person/day"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "人/日"
+          }
         }
       }
     },
@@ -1105,6 +2032,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hạn thanh toán: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment due: %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "付款到期日：%@"
           }
         }
       }
@@ -1122,6 +2061,18 @@
             "state": "translated",
             "value": "Phương thức thanh toán"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment method"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "付款方式"
+          }
         }
       }
     },
@@ -1137,6 +2088,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Điều khoản thanh toán"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment terms"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "付款条件"
           }
         }
       }
@@ -1155,6 +2118,18 @@
             "state": "translated",
             "value": "Điều khoản thanh toán & Chữ ký"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment terms & signature"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "付款条件 & 签名"
+          }
         }
       }
     },
@@ -1172,6 +2147,18 @@
             "state": "translated",
             "value": "Quyền vị trí bị từ chối"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location permission denied"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "位置权限被拒"
+          }
         }
       }
     },
@@ -1187,6 +2174,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quyền vị trí bị từ chối. Hãy vào「Cài đặt → Quyền riêng tư & Bảo mật → Dịch vụ định vị → Stima」để bật, rồi thử lại."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location access denied. Go to Settings → Privacy & Security → Location Services → Stima to turn it on, then try again."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "位置权限被拒。请到“设置 → 隐私与安全性 → 定位服务 → Stima”开启，再回来试一次。"
           }
         }
       }
@@ -1233,6 +2232,18 @@
             "state": "translated",
             "value": "Thử tạo một tờ xem"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try making one"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "来试一张看看"
+          }
         }
       }
     },
@@ -1248,6 +2259,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "VD: Đúng hạn, giá thật"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. On-time delivery, honest prices"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：交期不拖、价钱实在"
           }
         }
       }
@@ -1266,6 +2289,18 @@
             "state": "translated",
             "value": "Ví dụ: Chuyển khoản Ngân hàng E.Sun (808) 1234-567-890\nLINE Pay quét mã QR\nTiền mặt gọi 0912-345-678"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. Bank transfer 玉山銀行(808) 1234-567-890\nLINE Pay scan QR Code\nFor cash, call 0912-345-678"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：汇款 玉山银行(808) 1234-567-890\nLINE Pay 扫描 QR Code\n现金请电 0912-345-678"
+          }
         }
       }
     },
@@ -1281,6 +2316,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "VD: Quận Tín Nghĩa, Đài Bắc"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. 台北市信義區"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：台北市信义区"
           }
         }
       }
@@ -1298,6 +2345,18 @@
             "state": "translated",
             "value": "VD: Đường Tùng Nhân, Quận Tín Nghĩa, Đài Bắc"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. 台北市信義區松仁路"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：台北市信义区松仁路"
+          }
         }
       }
     },
@@ -1313,6 +2372,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "VD: Xưởng thi công Đại Phát"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. 大發工程行"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：大发工程行"
           }
         }
       }
@@ -1330,6 +2401,18 @@
             "state": "translated",
             "value": "VD: Anh Trương giới thiệu, thích phong cách Bắc Âu, thanh toán dứt khoát⋯"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. Referred by 張先生, likes Nordic style, pays promptly⋯"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：张先生介绍、喜欢北欧风、付款干脆⋯"
+          }
         }
       }
     },
@@ -1345,6 +2428,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "VD: Tháo máy lạnh, mài sàn, ốp gạch tường ngoài"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. remove AC, sand floors, tile exterior wall"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：拆空调、磨地板、外墙贴砖"
           }
         }
       }
@@ -1362,6 +2457,18 @@
             "state": "translated",
             "value": "VD: Anh Vương, chị Lâm"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. 王先生、林太太"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：王先生、林太太"
+          }
         }
       }
     },
@@ -1377,6 +2484,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "VD: Anh Vương, chị Lâm, ông chủ Trần"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. 王先生、林太太、陳老闆"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：王先生、林太太、陈老板"
           }
         }
       }
@@ -1395,6 +2514,18 @@
             "state": "translated",
             "value": "VD: Ký hợp đồng trả 30%, nghiệm thu trả 60%, hết bảo hành trả 10%"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. 30% on signing, 60% on completion, 10% at end of warranty"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：签约付 30%，完工验收付 60%，保修期满付 10%"
+          }
         }
       }
     },
@@ -1411,6 +2542,18 @@
             "state": "translated",
             "value": "VD: MST 12345678 / Quận Tín Nghĩa, Đài Bắc⋯"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. Tax ID 12345678 / 台北市信義區⋯"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：统编 12345678 / 台北市信义区⋯"
+          }
         }
       }
     },
@@ -1426,6 +2569,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "VD: Thợ Trần / Xưởng thi công Đại Phát"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. 陳師傅 / 大發工程行"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：陈师傅 / 大发工程行"
           }
         }
       }
@@ -1444,6 +2599,18 @@
             "state": "translated",
             "value": "cái"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pcs"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "个"
+          }
         }
       }
     },
@@ -1461,6 +2628,18 @@
             "state": "translated",
             "value": "Cá nhân"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personal"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "个人"
+          }
         }
       }
     },
@@ -1477,6 +2656,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ghi chú (có thể bỏ trống)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notes (optional)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "备注（可省略）"
           }
         }
       }
@@ -1523,6 +2714,18 @@
             "state": "translated",
             "value": "Xu hướng giá"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Price trend"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "价格趋势"
+          }
         }
       }
     },
@@ -1538,6 +2741,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lưu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保存"
           }
         }
       }
@@ -1556,6 +2771,18 @@
             "state": "translated",
             "value": "Lưu PDF"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save PDF"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保存 PDF"
+          }
         }
       }
     },
@@ -1571,6 +2798,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Điền tên khách hàng và địa điểm thi công trước, xong nhấn「Tiếp tục」bên dưới."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter the client name and job location first, then tap \"Next\" below."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先填客户名和工程地点，填好按下面的“下一步”。"
           }
         }
       }
@@ -1589,6 +2828,18 @@
             "state": "translated",
             "value": "Dùng thử một tháng xem sao"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try a month first"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先试一个月看看"
+          }
         }
       }
     },
@@ -1605,6 +2856,18 @@
             "state": "translated",
             "value": "Bỏ qua, để sau →"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip for now →"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先跳过，等等再说 →"
+          }
         }
       }
     },
@@ -1620,6 +2883,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bản miễn phí tối đa %lld báo giá mỗi tháng, sẽ tự đặt lại tháng sau. Nâng cấp PRO để mở khóa không giới hạn."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The free plan allows up to %lld quotes per month, resetting automatically next month. Upgrade to PRO for unlimited quotes."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "免费版每月最多 %lld 张报价单，下个月会自动重置。升级 PRO 解锁无限张。"
           }
         }
       }
@@ -1638,6 +2913,18 @@
             "state": "translated",
             "value": "Bản miễn phí chỉ 3 báo giá mỗi tháng"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free plan: only 3 per month"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "免费版每月只能 3 张"
+          }
         }
       }
     },
@@ -1653,6 +2940,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Giới hạn bản miễn phí"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free plan limits"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "免费版限制"
           }
         }
       }
@@ -1671,6 +2970,18 @@
             "state": "translated",
             "value": "Tất cả"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部"
+          }
         }
       }
     },
@@ -1687,6 +2998,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tên công ty / xưởng (tiêu đề)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Company / studio name (letterhead)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "公司／工作室名称（抬头）"
           }
         }
       }
@@ -1710,6 +3033,18 @@
             "state": "new",
             "value": "共做了 %1$@ %2$@"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ %2$@ completed in total"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "共做了 %1$@ %2$@"
+          }
         }
       }
     },
@@ -1726,6 +3061,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Khác"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "其他"
           }
         }
       }
@@ -1772,6 +3119,18 @@
             "state": "translated",
             "value": "Thấp nhất"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lowest"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最低"
+          }
         }
       }
     },
@@ -1788,6 +3147,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Khách hàng lớn nhất"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Top client"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最大客户"
           }
         }
       }
@@ -1806,6 +3177,18 @@
             "state": "translated",
             "value": "Hạng mục làm nhiều nhất"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Most-used items"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最常做的项目"
+          }
         }
       }
     },
@@ -1821,6 +3204,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Đơn giá gần đây"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recent unit price"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最近单价"
           }
         }
       }
@@ -1839,6 +3234,18 @@
             "state": "translated",
             "value": "Cao nhất"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Highest"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最高"
+          }
         }
       }
     },
@@ -1856,6 +3263,18 @@
             "state": "translated",
             "value": "Ống thoát nước điều hòa"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AC drain pipe"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "空调排水管"
+          }
         }
       }
     },
@@ -1871,6 +3290,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Xuất đơn"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issue"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "出单"
           }
         }
       }
@@ -1917,6 +3348,18 @@
             "state": "translated",
             "value": "Đã xuất đơn"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quote issued"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "出单完成"
+          }
         }
       }
     },
@@ -1932,6 +3375,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hiển thị ở góc trên bên trái mỗi báo giá"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appears in the top-left of every quote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "出现在每张报价单的左上方"
           }
         }
       }
@@ -1950,6 +3405,18 @@
             "state": "translated",
             "value": "Chia sẻ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分享"
+          }
         }
       }
     },
@@ -1966,6 +3433,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Chia sẻ %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分享 %@"
           }
         }
       }
@@ -1984,6 +3463,18 @@
             "state": "translated",
             "value": "Phân loại"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Category"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分类"
+          }
         }
       }
     },
@@ -1999,6 +3490,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Xóa"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除"
           }
         }
       }
@@ -2016,6 +3519,18 @@
             "state": "translated",
             "value": "Xóa “%@”"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete \"%@\""
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除「%@」"
+          }
         }
       }
     },
@@ -2031,6 +3546,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Xóa danh mục"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete category"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除分类"
           }
         }
       }
@@ -2048,6 +3575,18 @@
             "state": "translated",
             "value": "Xóa báo giá"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete quote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除报价单"
+          }
         }
       }
     },
@@ -2063,6 +3602,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Xóa khách hàng"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete client"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除客户"
           }
         }
       }
@@ -2080,6 +3631,18 @@
             "state": "translated",
             "value": "Sau khi xóa không thể khôi phục (bao gồm mọi hạng mục của báo giá này)."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Can't be undone (includes all items on this quote)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除后无法恢复（含这张的所有项目）。"
+          }
         }
       }
     },
@@ -2095,6 +3658,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Xóa khách hàng này?"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete this client?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除这位客户？"
           }
         }
       }
@@ -2112,6 +3687,18 @@
             "state": "translated",
             "value": "Xóa báo giá này?"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete this quote?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "删除这张报价单？"
+          }
         }
       }
     },
@@ -2127,6 +3714,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thêm"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "加"
           }
         }
       }
@@ -2144,6 +3743,18 @@
             "state": "translated",
             "value": "Thêm danh mục mới, VD: Vệ sinh, Nội thất"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add category, e.g. Cleaning, Furniture"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "加新分类，例：清洁、家具"
+          }
         }
       }
     },
@@ -2159,6 +3770,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thêm vào thư viện hạng mục, lần sau chọn trực tiếp."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add to your item library so you can just pick it next time."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "加进你的项目库，下次直接挑就行。"
           }
         }
       }
@@ -2176,6 +3799,18 @@
             "state": "translated",
             "value": "Sau khi thêm, báo giá sau này chỉ cần nhập tên là địa chỉ và điện thoại tự điền. Trang thống kê cũng tự cộng doanh thu tích lũy của khách hàng này."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Once added, you'll only need to type the name on future quotes — the address and phone fill in automatically. The stats page also tallies this client's total revenue."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "加进来后，未来的报价单只要输入名字，地址跟电话会自动带入。统计页也会自动归户这位客户的累计营收。"
+          }
         }
       }
     },
@@ -2192,6 +3827,18 @@
             "state": "translated",
             "value": "Thêm vào"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "加进去"
+          }
         }
       }
     },
@@ -2207,6 +3854,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thêm hạng mục"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add item"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "加项目"
           }
         }
       }
@@ -2225,6 +3884,18 @@
             "state": "translated",
             "value": "Xuất toàn bộ dữ liệu"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export all data"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导出全部数据"
+          }
         }
       }
     },
@@ -2240,6 +3911,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nâng cấp"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upgrade"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "升级"
           }
         }
       }
@@ -2314,6 +3997,18 @@
             "state": "translated",
             "value": "PPN Indonesia"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Indonesia PPN"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "印尼 PPN"
+          }
         }
       }
     },
@@ -2330,6 +4025,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con dấu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stamp"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "印章"
           }
         }
       }
@@ -2375,10 +4082,49 @@
             "state": "translated",
             "value": "Chỉ xóa khỏi danh bạ khách hàng, không ảnh hưởng đến báo giá đã tạo."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only removed from your contacts — existing quotes are unaffected."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "只会从客户簿移除，不影响已建立的报价单。"
+          }
         }
       }
     },
-    "台北市信義區": {},
+    "台北市信義區": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "台北市信義區"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "台北市信义区"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "台北市信義區"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "台北市信義區"
+          }
+        }
+      }
+    },
     "台灣營業稅": {
       "extractionState": "stale",
       "localizations": {
@@ -2392,6 +4138,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thuế doanh thu Đài Loan"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taiwan VAT"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "台湾营业税"
           }
         }
       }
@@ -2410,6 +4168,18 @@
             "state": "translated",
             "value": "Ký tên góc dưới bên phải"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bottom-right signature"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "右下签章"
+          }
         }
       }
     },
@@ -2425,6 +4195,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hợp tác %lld lần"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld jobs together"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "合作 %lld 次"
           }
         }
       }
@@ -2443,6 +4225,18 @@
             "state": "translated",
             "value": "Đồng bộ & Sao lưu"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sync & backup"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "同步与备份"
+          }
         }
       }
     },
@@ -2459,6 +4253,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Doanh nghiệp"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Business"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "商务"
           }
         }
       }
@@ -2477,6 +4283,18 @@
             "state": "translated",
             "value": "Logo cửa hàng"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Business logo"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "商号 Logo"
+          }
         }
       }
     },
@@ -2493,6 +4311,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nhận diện thương hiệu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Business identity"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "商号识别"
           }
         }
       }
@@ -2511,6 +4341,18 @@
             "state": "translated",
             "value": "Đơn vị"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "单位"
+          }
         }
       }
     },
@@ -2527,6 +4369,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Đơn giá (NT$)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unit price (NT$)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "单价 (NT$)"
           }
         }
       }
@@ -2545,6 +4399,18 @@
             "state": "translated",
             "value": "Lịch sử đơn giá"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unit price history"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "单价历史"
+          }
         }
       }
     },
@@ -2560,6 +4426,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Chào %@ 👋"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hi, %@ 👋"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "嗨，%@ 👋"
           }
         }
       }
@@ -2578,6 +4456,18 @@
             "state": "translated",
             "value": "Quốc tế hóa"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "International"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "国际化"
+          }
         }
       }
     },
@@ -2593,6 +4483,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bản đồ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Map"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地图"
           }
         }
       }
@@ -2611,6 +4513,18 @@
             "state": "translated",
             "value": "Địa điểm"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地点"
+          }
         }
       }
     },
@@ -2628,6 +4542,18 @@
             "state": "translated",
             "value": "ping"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ping"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "坪"
+          }
         }
       }
     },
@@ -2643,6 +4569,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thông tin cơ bản"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basic info"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "基本资料"
           }
         }
       }
@@ -2660,6 +4598,18 @@
             "state": "translated",
             "value": "BÁO GIÁ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QUOTATION"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报 价 单"
+          }
         }
       }
     },
@@ -2676,6 +4626,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Báo giá → thi công → hóa đơn liền mạch"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quote → Build → Invoice, all in one"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报价→施工→请款一条龙"
           }
         }
       }
@@ -2721,6 +4683,18 @@
             "state": "translated",
             "value": "Báo giá · #%@"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quote · #%@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报价单 · #%@"
+          }
         }
       }
     },
@@ -2736,6 +4710,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Báo giá · %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quote · %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报价单 · %@"
           }
         }
       }
@@ -2753,6 +4739,18 @@
             "state": "translated",
             "value": "Báo giá #%@"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quote #%@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报价单 #%@"
+          }
         }
       }
     },
@@ -2769,6 +4767,18 @@
             "state": "translated",
             "value": "Tiêu đề báo giá"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quote letterhead"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报价单抬头"
+          }
         }
       }
     },
@@ -2784,6 +4794,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tiêu đề báo giá · hỏi lần đầu, sau đó ghi nhớ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quote letterhead · Asked once, saved after"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报价单抬头 · 第一次问，之后记着"
           }
         }
       }
@@ -2830,6 +4852,18 @@
             "state": "translated",
             "value": "Mẫu báo giá (PDF)"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quote template (PDF)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报价单模板（PDF）"
+          }
         }
       }
     },
@@ -2845,6 +4879,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Báo giá thu tiền,\nmột chiếc điện thoại\nlo hết."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quotes & payments,\none phone\ndoes it all."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报价收款，\n一支手机\n全包了。"
           }
         }
       }
@@ -2862,6 +4908,18 @@
             "state": "translated",
             "value": "Ngày báo giá"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quote date"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报价日期"
+          }
         }
       }
     },
@@ -2878,6 +4936,18 @@
             "state": "translated",
             "value": "Báo giá nhanh, thu tiền chắc,\nviệc làm ăn vững hơn."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quote fast, collect faster —\nsteadier business for you."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报得快、收得回，\n师傅的生意更稳。"
+          }
         }
       }
     },
@@ -2893,6 +4963,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Điền tiêu đề (tên cửa hàng hoặc xưng hô của bạn), nếu số tiền ổn thì nhấn「Xuất đơn」, hoàn thành đơn đầu tiên!"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fill in the header (your shop name or what you go by). If the total looks right, tap \"Issue\" to finish your first one!"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "填一下抬头（你的店名或称呼），金额没问题就按「出单」，完成第一张！"
           }
         }
       }
@@ -2911,6 +4993,18 @@
             "state": "translated",
             "value": "Giao diện"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appearance"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "外观"
+          }
         }
       }
     },
@@ -2927,6 +5021,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tuyệt vời, xem màn hình chính"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Great — let's see the home screen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "太好了，看看主画面"
           }
         }
       }
@@ -2945,6 +5051,18 @@
             "state": "translated",
             "value": "Áp dụng các hạng mục đã dùng trước đây, không cần tra giá lại mỗi lần."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reuse items you've used before — no need to look up prices each time."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "套用以前用过的项目，不用每次重新查价。"
+          }
         }
       }
     },
@@ -2960,6 +5078,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "OK"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "好"
           }
         }
       }
@@ -2978,6 +5108,18 @@
             "state": "translated",
             "value": "Phông chữ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Font"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "字体"
+          }
         }
       }
     },
@@ -2993,6 +5135,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nó giúp được gì cho bạn?"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What can it do for you?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "它能帮你做什么？"
           }
         }
       }
@@ -3011,6 +5165,18 @@
             "state": "translated",
             "value": "Ngày hoàn thành"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completion date"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完工日"
+          }
         }
       }
     },
@@ -3026,6 +5192,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Xong"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完成"
           }
         }
       }
@@ -3044,6 +5222,18 @@
             "state": "translated",
             "value": "Đang định vị…"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Locating…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "定位中…"
+          }
         }
       }
     },
@@ -3059,6 +5249,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Khách hàng"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "客户"
           }
         }
       }
@@ -3077,6 +5279,18 @@
             "state": "translated",
             "value": "Khách hàng sẽ không thấy chữ “bản miễn phí”"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clients won't see a \"Free plan\" label"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "客户不会看到“免费版”字样"
+          }
         }
       }
     },
@@ -3092,6 +5306,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tên khách hàng trùng"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duplicate client name"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "客户名称重复"
           }
         }
       }
@@ -3110,6 +5336,18 @@
             "state": "translated",
             "value": "Xưng hô khách hàng"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client name"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "客户称呼"
+          }
         }
       }
     },
@@ -3126,6 +5364,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Xưng hô khách hàng ＊"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client name ＊"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "客户称呼 ＊"
           }
         }
       }
@@ -3171,6 +5421,18 @@
             "state": "translated",
             "value": "Chi tiết khách hàng"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client details"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "客户详情"
+          }
         }
       }
     },
@@ -3186,6 +5448,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thông tin khách hàng"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Client info"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "客户资料"
           }
         }
       }
@@ -3204,6 +5478,18 @@
             "state": "translated",
             "value": "Chỉ đường"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Directions"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导航"
+          }
         }
       }
     },
@@ -3220,6 +5506,18 @@
             "state": "translated",
             "value": "Mẹo nhỏ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tip"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "小提示"
+          }
         }
       }
     },
@@ -3235,6 +5533,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tạm tính"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtotal"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "小计"
           }
         }
       }
@@ -3253,6 +5563,18 @@
             "state": "translated",
             "value": "Chưa thêm vào danh bạ khách hàng"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not in your contacts yet"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "尚未加入客户簿"
+          }
         }
       }
     },
@@ -3270,6 +5592,18 @@
             "state": "translated",
             "value": "thước"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ft"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "尺"
+          }
         }
       }
     },
@@ -3285,6 +5619,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ông chủ công trình, vài bước là thành thạo. Tính hạng mục, xem con số, theo dõi thu tiền, tất cả ở đây."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built for site bosses — get going in a few taps. Tally items, track numbers, chase payments, all in one place."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "工地老板，几步就上手。算项目、看数字、追收款，都在这。"
           }
         }
       }
@@ -3303,6 +5649,18 @@
             "state": "translated",
             "value": "Địa chỉ công trình"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Site address"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "工程地址"
+          }
         }
       }
     },
@@ -3319,6 +5677,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Địa điểm công trình"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Job site"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "工程地点"
           }
         }
       }
@@ -3337,6 +5707,18 @@
             "state": "translated",
             "value": "Góc trên bên trái"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Top-left"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "左上角"
+          }
         }
       }
     },
@@ -3352,6 +5734,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Đã thêm 「%@」"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Added \"%@\""
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已加 「%@」"
           }
         }
       }
@@ -3369,6 +5763,18 @@
             "state": "translated",
             "value": "Đã thêm %lld"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld added"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已加 %lld"
+          }
         }
       }
     },
@@ -3385,6 +5791,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Đã lấy tọa độ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coordinates captured"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已获取坐标"
           }
         }
       }
@@ -3460,6 +5878,18 @@
             "state": "translated",
             "value": "Đã thu trừ chi phí"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payments received minus cost"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已收款扣成本"
+          }
         }
       }
     },
@@ -3476,6 +5906,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Đã bật · tự động sao lưu vào iCloud"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enabled · Auto-backup to iCloud"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已启用 · 自动备份到 iCloud"
           }
         }
       }
@@ -3494,6 +5936,18 @@
             "state": "translated",
             "value": "Thợ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Master"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "师傅"
+          }
         }
       }
     },
@@ -3509,6 +5963,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mối quan hệ của thợ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your network"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "师傅的人脉"
           }
         }
       }
@@ -3527,6 +5993,18 @@
             "state": "translated",
             "value": "Thường làm cho họ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regular work"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "常为他做"
+          }
         }
       }
     },
@@ -3543,6 +6021,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thường dùng"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frequent"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "常用"
           }
         }
       }
@@ -3561,6 +6051,18 @@
             "state": "translated",
             "value": "Gói năm"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yearly"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "年订阅"
+          }
         }
       }
     },
@@ -3576,6 +6078,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tạo đơn đầu tiên, khách hàng, hạng mục và thu tiền đều bắt đầu từ đây."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make your first one — clients, items, and payments all start here."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "建好第一张，客户、项目、收款都从这里开始。"
           }
         }
       }
@@ -3594,6 +6108,18 @@
             "state": "translated",
             "value": "Tạo báo giá"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create quote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "创建报价单"
+          }
         }
       }
     },
@@ -3610,6 +6136,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tạo báo giá đầu tiên"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create your first quote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "创建第一张报价单"
           }
         }
       }
@@ -3628,6 +6166,18 @@
             "state": "translated",
             "value": "bộ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "lot"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "式"
+          }
         }
       }
     },
@@ -3643,6 +6193,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Chờ thu tiền"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Awaiting payment"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "待收款"
           }
         }
       }
@@ -3660,6 +6222,18 @@
             "state": "translated",
             "value": "Chọn địa điểm trên bản đồ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pick location on map"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从地图选地点"
+          }
         }
       }
     },
@@ -3675,6 +6249,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Chuyển từ báo giá #%@ thành hóa đơn · công trình đã hoàn công"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Converted from quote #%@ to invoice · Work completed"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从报价单 #%@ 转成请款单 · 工程已完工"
           }
         }
       }
@@ -3693,6 +6279,18 @@
             "state": "translated",
             "value": "Chi phí"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cost"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "成本"
+          }
         }
       }
     },
@@ -3710,6 +6308,18 @@
             "state": "translated",
             "value": "Chi phí (tùy chọn, để tính lợi nhuận)"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cost (optional, used to calculate net profit)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "成本（选填，用来算净利）"
+          }
         }
       }
     },
@@ -3725,6 +6335,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hãy cùng thử làm\nbáo giá đầu tiên."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's make your\nfirst quote."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "我们来试做\n第一张报价单。"
           }
         }
       }
@@ -3771,6 +6393,18 @@
             "state": "translated",
             "value": "Hạng mục tùy chỉnh của tôi (%lld)"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "My custom items (%lld)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "我的自定义项目（%lld）"
+          }
         }
       }
     },
@@ -3788,6 +6422,18 @@
             "state": "translated",
             "value": "Toàn bộ khách hàng và thông tin liên hệ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All clients and contact info"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "所有客户与联系方式"
+          }
         }
       }
     },
@@ -3803,6 +6449,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mọi hạng mục mới đều tự vào「Thường dùng」, sau khi thêm danh mục cũng xuất hiện ở tab đó."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All new items go into \"Frequent\" automatically; once you add a category, they'll also show on that tab."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "所有新项目都会自动进「常用」，加上分类后也会出现在那个分页。"
           }
         }
       }
@@ -3820,6 +6478,18 @@
             "state": "translated",
             "value": "Không tìm thấy khách hàng"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No clients found"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "找不到客户"
+          }
         }
       }
     },
@@ -3836,6 +6506,18 @@
             "state": "translated",
             "value": "Không tìm thấy địa điểm phù hợp"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No matching locations"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "找不到符合的地点"
+          }
         }
       }
     },
@@ -3851,6 +6533,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Không tìm thấy báo giá phù hợp"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No matching quotes"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "找不到符合的报价单"
           }
         }
       }
@@ -3869,6 +6563,18 @@
             "state": "translated",
             "value": "Tháo dỡ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demolition"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拆除"
+          }
         }
       }
     },
@@ -3885,6 +6591,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tháo dỡ đồ mộc"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demolition & carpentry"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拆除木作"
           }
         }
       }
@@ -3903,6 +6621,18 @@
             "state": "translated",
             "value": "Tháo dỡ gạch"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tile removal"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拆除瓷砖"
+          }
         }
       }
     },
@@ -3920,6 +6650,18 @@
             "state": "translated",
             "value": "Tháo dỡ vách ngăn"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demolish partition wall"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拆除隔断墙"
+          }
         }
       }
     },
@@ -3935,6 +6677,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Chọn hạng mục"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pick items"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "挑项目"
           }
         }
       }
@@ -3953,6 +6707,18 @@
             "state": "translated",
             "value": "Chọn hạng mục, hoặc tự thêm"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pick items, or add your own"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "挑项目，或自己加"
+          }
         }
       }
     },
@@ -3970,6 +6736,18 @@
             "state": "translated",
             "value": "Đổi điện thoại cũng không lo mất dữ liệu"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Switch phones without losing your data"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "换手机也不怕资料丢失"
+          }
         }
       }
     },
@@ -3985,6 +6763,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tìm địa chỉ, địa danh"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search address or landmark"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "搜索地址、地标"
           }
         }
       }
@@ -4002,6 +6792,18 @@
             "state": "translated",
             "value": "Tìm khách hàng, địa điểm, hạng mục (VD: máy lạnh)"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search clients, sites, items (e.g. AC)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "搜索客户、地点、项目（例：冷气）"
+          }
         }
       }
     },
@@ -4017,6 +6819,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tìm tên khách hàng, điện thoại, địa chỉ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search name, phone, address"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "搜索客户名、电话、地址"
           }
         }
       }
@@ -4035,6 +6849,18 @@
             "state": "translated",
             "value": "Gọi"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Call"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拨打"
+          }
         }
       }
     },
@@ -4050,6 +6876,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hỗ trợ PNG (nên dùng nền trong suốt), JPG. Tối đa 2MB / cạnh 1200px."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supports PNG (transparent background recommended) and JPG. Max 2MB / 1200px per side."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "支持 PNG（建议透明背景）、JPG。最大 2MB / 边长 1200px。"
           }
         }
       }
@@ -4068,6 +6906,18 @@
             "state": "translated",
             "value": "Thông tin thu tiền (hiển thị trên hóa đơn)"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment info (shown on the invoice)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "收款信息（显示在请款单）"
+          }
         }
       }
     },
@@ -4085,6 +6935,18 @@
             "state": "translated",
             "value": "Số lượng"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quantity"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "数量"
+          }
         }
       }
     },
@@ -4101,6 +6963,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Báo giá mới"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New quote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新报价"
           }
         }
       }
@@ -4146,6 +7020,18 @@
             "state": "translated",
             "value": "Thêm báo giá · 1 / 3"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New quote · 1 / 3"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新建报价单 · 1 / 3"
+          }
         }
       }
     },
@@ -4161,6 +7047,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thêm báo giá · 2 / 3"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New quote · 2 / 3"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新增报价单 · 2 / 3"
           }
         }
       }
@@ -4178,6 +7076,18 @@
             "state": "translated",
             "value": "Thêm báo giá · 3 / 3"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New quote · 3 / 3"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新增报价单 · 3 / 3"
+          }
         }
       }
     },
@@ -4193,6 +7103,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thêm khách hàng"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add client"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新增客户"
           }
         }
       }
@@ -4211,6 +7133,18 @@
             "state": "translated",
             "value": "Thêm ổ cắm"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add power outlet"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新增插座"
+          }
         }
       }
     },
@@ -4228,6 +7162,18 @@
             "state": "translated",
             "value": "Ngày"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "日期"
+          }
         }
       }
     },
@@ -4243,6 +7189,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ngày / DATE"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "日期 / DATE"
           }
         }
       }
@@ -4261,6 +7219,18 @@
             "state": "translated",
             "value": "Ngày,Khách hàng,Địa điểm,Trạng thái,Số hạng mục,Tổng cộng"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date,Client,Location,Status,Items,Total"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "日期,客户,地点,状态,项目数,总计"
+          }
         }
       }
     },
@@ -4277,6 +7247,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Có chân (Serif)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serif"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "宋体"
           }
         }
       }
@@ -4295,6 +7277,18 @@
             "state": "translated",
             "value": "Gói tháng"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monthly plan"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "月订阅"
+          }
         }
       }
     },
@@ -4310,6 +7304,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hiệu lực %lld ngày"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valid for %lld days"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "有效期限 %lld 天"
           }
         }
       }
@@ -4328,6 +7334,18 @@
             "state": "translated",
             "value": "Thời hạn hiệu lực (ngày)"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valid for (days)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "有效期限（天）"
+          }
         }
       }
     },
@@ -4344,6 +7362,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mộc"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carpentry"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "木作"
           }
         }
       }
@@ -4362,6 +7392,18 @@
             "state": "translated",
             "value": "Trần thạch cao mộc"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wood ceiling"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "木作天花板"
+          }
         }
       }
     },
@@ -4379,6 +7421,18 @@
             "state": "translated",
             "value": "Thi công sàn gỗ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wood floor installation"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "木地板施作"
+          }
         }
       }
     },
@@ -4395,6 +7449,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Khách hàng chưa đặt tên"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unnamed client"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未命名客户"
           }
         }
       }
@@ -4440,6 +7506,18 @@
             "state": "translated",
             "value": "Xem khách hàng"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View client"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "查看客户"
+          }
         }
       }
     },
@@ -4457,6 +7535,18 @@
             "state": "translated",
             "value": "Chữ Khải"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kai"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "楷体"
+          }
         }
       }
     },
@@ -4473,6 +7563,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Đánh dấu hoàn công"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark as done"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "标记完工"
           }
         }
       }
@@ -4520,6 +7622,18 @@
             "state": "translated",
             "value": "Khẩu hiệu / slogan (có thể để trống)"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slogan (optional)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "标语／slogan（可空白）"
+          }
         }
       }
     },
@@ -4536,10 +7650,49 @@
             "state": "translated",
             "value": "Chào mừng, %@"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome, %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "欢迎，%@"
+          }
         }
       }
     },
-    "歡迎，陳師傅": {},
+    "歡迎，陳師傅": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome, 陳師傅"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "欢迎，陈师傅"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chào mừng, 陳師傅"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selamat datang, 陳師傅"
+          }
+        }
+      }
+    },
     "歷史報價單（%lld 張）": {
       "extractionState": "stale",
       "localizations": {
@@ -4553,6 +7706,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Báo giá đã tạo (%lld tờ)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Past quotes (%lld)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "历史报价单（%lld 张）"
           }
         }
       }
@@ -4571,6 +7736,18 @@
             "state": "translated",
             "value": "Thuộc phân loại nào"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Assign to category"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "归到哪个分类"
+          }
         }
       }
     },
@@ -4586,6 +7763,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "3 báo giá mỗi tháng, PDF có hình mờ. Nâng cấp Pro để mở khóa không giới hạn, mẫu tùy chỉnh, xóa hình mờ."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 quotes a month, with a watermark on the PDF. Upgrade to Pro for unlimited quotes, custom templates, and no watermark."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每月 3 张报价单，PDF 含水印。升级 Pro 解锁无限张、自定义模板、移除水印。"
           }
         }
       }
@@ -4604,6 +7793,18 @@
             "state": "translated",
             "value": "Chỉ $200 mỗi tháng, trả năm rẻ hơn hai tháng"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Just $200/month — pay yearly, save two months"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每月只要 $200，年付便宜两个月"
+          }
         }
       }
     },
@@ -4620,6 +7821,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Đã thu mỗi tháng"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monthly received"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每月已收款"
           }
         }
       }
@@ -4638,6 +7851,18 @@
             "state": "translated",
             "value": "Thu nhập hàng tháng, khách hàng lớn nhất, hạng mục lời nhất, đều tính sẵn cho bạn."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monthly income, top clients, most profitable items — all calculated for you."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每月收入、最大客户、最赚项目，都帮你算好。"
+          }
         }
       }
     },
@@ -4653,6 +7878,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "So với cùng kỳ năm trước %@ %@ (năm trước %@%@)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ %@ vs. same period last year (last year %@%@)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "比去年同期 %@ %@（去年 %@%@）"
           }
         }
       }
@@ -4677,6 +7914,18 @@
             "state": "new",
             "value": "比去年同期 %1$@ %2$@（去年 $%3$@）"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ %2$@ vs. same period last year (last year $%3$@)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "比去年同期 %1$@ %2$@（去年 $%3$@）"
+          }
         }
       }
     },
@@ -4693,6 +7942,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Điện nước"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plumbing & electrical"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "水电"
           }
         }
       }
@@ -4711,6 +7972,18 @@
             "state": "translated",
             "value": "Lắp đặt điện nước"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plumbing & electrical"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "水电配管"
+          }
         }
       }
     },
@@ -4727,6 +8000,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sơn"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Painting"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "油漆"
           }
         }
       }
@@ -4745,6 +8030,18 @@
             "state": "translated",
             "value": "Sơn bả matit"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paint & plaster"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "油漆批土"
+          }
         }
       }
     },
@@ -4761,6 +8058,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Xây trát"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Masonry"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "泥作"
           }
         }
       }
@@ -4779,6 +8088,18 @@
             "state": "translated",
             "value": "Trát vữa hoàn thiện"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plastering & skim coat"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "泥作粉光"
+          }
         }
       }
     },
@@ -4795,6 +8116,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lợi nhuận"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Net profit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "净利"
           }
         }
       }
@@ -4813,6 +8146,18 @@
             "state": "translated",
             "value": "Lợi nhuận (nâng cao)"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Net profit (advanced)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "净利（进阶）"
+          }
         }
       }
     },
@@ -4828,6 +8173,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tỷ suất lợi nhuận"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Net margin"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "净利率"
           }
         }
       }
@@ -4845,6 +8202,18 @@
             "state": "translated",
             "value": "Xóa tìm kiếm"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear search"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "清除搜索"
+          }
         }
       }
     },
@@ -4860,6 +8229,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Không thể truy cập vị trí"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Can't access location"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法访问位置"
           }
         }
       }
@@ -4877,6 +8258,18 @@
             "state": "translated",
             "value": "Không thể tạo PDF cho báo giá này. Hãy thử lại, nếu vẫn lỗi hãy khởi động lại app."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't generate the PDF for this quote. Please try again; if it keeps failing, restart the app."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法生成这份报价单的 PDF。请再试一次，若持续失败请重新启动 app。"
+          }
         }
       }
     },
@@ -4892,6 +8285,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Báo giá không giới hạn · mẫu tùy chỉnh · xóa hình mờ · sao lưu iCloud"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlimited quotes · Custom templates · No watermark · iCloud backup"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无限报价单 · 自定义模板 · 移除水印 · iCloud 备份"
           }
         }
       }
@@ -4910,6 +8315,18 @@
             "state": "translated",
             "value": "Báo giá không giới hạn"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlimited quotes"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无限张报价单"
+          }
         }
       }
     },
@@ -4927,6 +8344,18 @@
             "state": "translated",
             "value": "Lắp đèn"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light fixture installation"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "灯具安装"
+          }
         }
       }
     },
@@ -4943,10 +8372,49 @@
             "state": "translated",
             "value": "Thống kê kinh doanh"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Business stats"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "运营统计"
+          }
         }
       }
     },
-    "王先生": {},
+    "王先生": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "王先生"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "王先生"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "王先生"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "王先生"
+          }
+        }
+      }
+    },
     "目前位置": {
       "extractionState": "stale",
       "localizations": {
@@ -4960,6 +8428,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vị trí hiện tại"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current location"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当前位置"
           }
         }
       }
@@ -4977,6 +8457,18 @@
             "state": "translated",
             "value": "Tạm tính hiện tại"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current subtotal"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当前小计"
+          }
         }
       }
     },
@@ -4992,6 +8484,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Xem chi phí và lợi nhuận từng đơn"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See cost and net profit for each quote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "看每张单的成本与净利"
           }
         }
       }
@@ -5010,6 +8514,18 @@
             "state": "translated",
             "value": "Xem lợi nhuận ròng từng đơn, xu hướng theo năm"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See per-job profit & yearly trends"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "看每案净利、年度趋势"
+          }
         }
       }
     },
@@ -5026,6 +8542,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Xem mình kiếm được bao nhiêu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See how much you've earned"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "看自己赚多少"
           }
         }
       }
@@ -5044,6 +8572,18 @@
             "state": "translated",
             "value": "Trông ổn đấy, tiếp tục"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looks good, continue"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "看起来不错，继续"
+          }
         }
       }
     },
@@ -5059,6 +8599,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Đã hiểu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Got it"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "知道了"
           }
         }
       }
@@ -5076,6 +8628,18 @@
             "state": "translated",
             "value": "Xóa「%@」?"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete \"%@\"?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "确定删除「%@」？"
+          }
         }
       }
     },
@@ -5091,6 +8655,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Xóa danh mục「%@」?"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete the \"%@\" category?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "确定删除「%@」分类？"
           }
         }
       }
@@ -5165,6 +8741,18 @@
             "state": "translated",
             "value": "Gỡ bỏ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移除"
+          }
         }
       }
     },
@@ -5180,6 +8768,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gỡ ảnh"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove image"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移除图片"
           }
         }
       }
@@ -5198,6 +8798,18 @@
             "state": "translated",
             "value": "Xóa hình mờ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove watermark"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移除水印"
+          }
         }
       }
     },
@@ -5215,6 +8827,18 @@
             "state": "translated",
             "value": "Chế độ thuế"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tax scheme"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "税制"
+          }
         }
       }
     },
@@ -5230,6 +8854,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thuế %lld%%"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tax %lld%%"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "税金 %lld%%"
           }
         }
       }
@@ -5247,6 +8883,18 @@
             "state": "translated",
             "value": "Hoàn thành đơn đầu tiên!"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First one done!"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "第一张完成！"
+          }
         }
       }
     },
@@ -5262,6 +8910,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Khoảng %@%@–%@%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Range %@%@–%@%@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "范围 %@%@–%@%@"
           }
         }
       }
@@ -5286,25 +8946,23 @@
             "state": "new",
             "value": "範圍 $%1$@–$%2$@"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Range $%1$@–$%2$@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "范围 $%1$@–$%2$@"
+          }
         }
       }
     },
     "簡體中文": {
-      "extractionState": "stale",
-      "localizations": {
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mandarin Sederhana"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tiếng Trung giản thể"
-          }
-        }
-      }
+      "shouldTranslate": false
     },
     "系統櫃": {
       "extractionState": "stale",
@@ -5319,6 +8977,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tủ hệ thống"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System cabinets"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "系统柜"
           }
         }
       }
@@ -5336,6 +9006,18 @@
             "state": "translated",
             "value": "Doanh thu tích lũy (%lld lần)"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total revenue (%lld jobs)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "累积营收（%lld 次）"
+          }
         }
       }
     },
@@ -5351,6 +9033,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Doanh thu tích lũy"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total revenue"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "累计营收"
           }
         }
       }
@@ -5369,6 +9063,18 @@
             "state": "translated",
             "value": "bộ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "set"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "组"
+          }
         }
       }
     },
@@ -5385,6 +9091,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mã số thuế / địa chỉ kinh doanh"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tax ID / business address"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "统编／营业地址"
           }
         }
       }
@@ -5430,6 +9148,18 @@
             "state": "translated",
             "value": "Sửa"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "编辑"
+          }
         }
       }
     },
@@ -5445,6 +9175,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sửa khách hàng"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit client"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "编辑客户"
           }
         }
       }
@@ -5462,10 +9204,49 @@
             "state": "translated",
             "value": "Tổng cộng"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "总计"
+          }
         }
       }
     },
-    "總計  %@": {},
+    "總計  %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total  %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "总计  %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tổng cộng  %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total  %@"
+          }
+        }
+      }
+    },
     "總計  NT$": {
       "extractionState": "stale",
       "localizations": {
@@ -5480,25 +9261,23 @@
             "state": "translated",
             "value": "Tổng cộng  NT$"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total  NT$"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "总计  NT$"
+          }
         }
       }
     },
     "繁體中文": {
-      "extractionState": "stale",
-      "localizations": {
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mandarin Tradisional"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tiếng Trung phồn thể"
-          }
-        }
-      }
+      "shouldTranslate": false
     },
     "聯絡資訊": {
       "extractionState": "stale",
@@ -5513,6 +9292,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thông tin liên hệ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contact info"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "联系方式"
           }
         }
       }
@@ -5531,6 +9322,18 @@
             "state": "translated",
             "value": "Tùy chỉnh"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自定义"
+          }
         }
       }
     },
@@ -5548,6 +9351,18 @@
             "state": "translated",
             "value": "Mẫu PDF tùy chỉnh"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom PDF template"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自定义 PDF 模板"
+          }
         }
       }
     },
@@ -5563,6 +9378,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kính gửi / TO"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "致 / TO"
           }
         }
       }
@@ -5610,6 +9437,18 @@
             "state": "translated",
             "value": "VAT Philippines"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Philippines VAT"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "菲律宾 VAT"
+          }
         }
       }
     },
@@ -5656,6 +9495,18 @@
             "state": "translated",
             "value": "Đăng ký PRO · Trả năm %@"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscribe to PRO · %@/year"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "订阅 PRO · 年付 %@"
+          }
         }
       }
     },
@@ -5672,6 +9523,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Đăng ký PRO · Trả tháng %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscribe to PRO · %@/month"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "订阅 PRO · 月付 %@"
           }
         }
       }
@@ -5718,6 +9581,18 @@
             "state": "translated",
             "value": "Ngôn ngữ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "语言"
+          }
         }
       }
     },
@@ -5734,6 +9609,18 @@
             "state": "translated",
             "value": "Đang thu tiền"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Billing"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请款中"
+          }
         }
       }
     },
@@ -5749,6 +9636,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hóa đơn · %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoice · %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请款单 · %@"
           }
         }
       }
@@ -5767,6 +9666,18 @@
             "state": "translated",
             "value": "Hóa đơn & theo dõi thu tiền"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoices & payment tracking"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请款单 & 收款追踪"
+          }
         }
       }
     },
@@ -5783,6 +9694,18 @@
             "state": "translated",
             "value": "Chi tiết hóa đơn"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invoice details"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请款明细"
+          }
         }
       }
     },
@@ -5798,6 +9721,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Số tiền hóa đơn"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Billing amount"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请款金额"
           }
         }
       }
@@ -5816,6 +9751,18 @@
             "state": "translated",
             "value": "Tiền tệ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Currency"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "货币"
+          }
         }
       }
     },
@@ -5832,6 +9779,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ốp gạch"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiling"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "贴瓷砖"
           }
         }
       }
@@ -5850,6 +9809,18 @@
             "state": "translated",
             "value": "VAT Việt Nam"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vietnam VAT"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "越南 VAT"
+          }
         }
       }
     },
@@ -5866,6 +9837,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "xe"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "truckload"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "车"
           }
         }
       }
@@ -5912,6 +9895,18 @@
             "state": "translated",
             "value": "Quay lại"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "返回"
+          }
         }
       }
     },
@@ -5929,6 +9924,18 @@
             "state": "translated",
             "value": "Theo dõi tiến độ thu tiền"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Track payment progress"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "追收款进度"
+          }
         }
       }
     },
@@ -5944,6 +9951,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quản lý đăng ký qua App Store · hủy bất cứ lúc nào"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manage subscription via App Store · Cancel anytime"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通过 App Store 管理订阅 · 可随时取消"
           }
         }
       }
@@ -5961,6 +9980,18 @@
             "state": "translated",
             "value": "Tab này vẫn trống"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This tab is still empty"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "这个标签页还是空的"
+          }
         }
       }
     },
@@ -5976,6 +10007,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Các hạng mục tùy chỉnh trong danh mục này vẫn được giữ lại."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom items in this category will be kept."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "这个分类下的自定义项目仍会保留。"
           }
         }
       }
@@ -5993,6 +10036,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thông báo, chế độ tối, cỡ chữ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications, dark mode, font size"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "通知、深色模式、字体大小"
           }
         }
       }
@@ -6040,6 +10095,18 @@
             "state": "translated",
             "value": "Đang làm, đã hoàn thành, đã thu tiền, tự động phân loại, nhìn là rõ."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ongoing, completed, paid — auto-sorted so you can see it all at a glance."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "进行中、已完工、已收款，自动分类，一眼看清。"
+          }
         }
       }
     },
@@ -6057,6 +10124,18 @@
             "state": "translated",
             "value": "Thống kê nâng cao và ghi chép chi phí"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Advanced stats and cost tracking"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高级统计与成本记录"
+          }
         }
       }
     },
@@ -6072,6 +10151,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Trong quá trình tôi sẽ chỉ ra những điểm chính bên cạnh.\nYên tâm, đây là bản thử, làm hỏng cũng không sao."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I'll point out the key bits as we go.\nDon't worry — it's just a demo, no harm if you mess it up."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "过程中我会在旁边指一下重点。\n放心，假的，做坏了也没事。"
           }
         }
       }
@@ -6089,6 +10180,18 @@
             "state": "translated",
             "value": "Chọn ngôn ngữ"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose language"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选择语言"
+          }
         }
       }
     },
@@ -6104,6 +10207,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Chọn tiền tệ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select currency"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选择货币"
           }
         }
       }
@@ -6121,6 +10236,18 @@
             "state": "translated",
             "value": "Chọn hạng mục"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select items"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选项目"
+          }
         }
       }
     },
@@ -6136,6 +10263,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Khôi phục mua hàng"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore purchases"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "恢复购买"
           }
         }
       }
@@ -6153,6 +10292,18 @@
             "state": "translated",
             "value": "Chưa thêm hạng mục tùy chỉnh nào.\nCó thể thêm ở「Tạo báo giá mới → Thêm hạng mục → + Tùy chỉnh」."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No custom items yet.\nAdd one in New quote → Add items → + Custom."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没加过自定义项目。\n在「新增报价单 → 加项目 → + 自定义」就能加。"
+          }
         }
       }
     },
@@ -6168,6 +10319,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Chưa thêm hạng mục"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No items yet"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没加项目"
           }
         }
       }
@@ -6185,6 +10348,18 @@
             "state": "translated",
             "value": "Chưa có báo giá"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No quotes yet"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没有报价单"
+          }
         }
       }
     },
@@ -6200,6 +10375,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Chưa có khách hàng"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No clients yet"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没有客户"
           }
         }
       }
@@ -6217,6 +10404,18 @@
             "state": "translated",
             "value": "Chưa có hạng mục"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No items yet"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没有项目"
+          }
         }
       }
     },
@@ -6232,6 +10431,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thử lại"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retry"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重试"
           }
         }
       }
@@ -6250,6 +10461,18 @@
             "state": "translated",
             "value": "Bắt đầu"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start job"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开工"
+          }
         }
       }
     },
@@ -6265,6 +10488,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Đóng"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "关闭"
           }
         }
       }
@@ -6283,6 +10518,18 @@
             "state": "translated",
             "value": "Chống thấm"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waterproofing"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "防水工程"
+          }
         }
       }
     },
@@ -6299,6 +10546,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thợ Trần"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "陳師傅"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "陈师傅"
           }
         }
       }
@@ -6317,6 +10576,18 @@
             "state": "translated",
             "value": "Điện thoại"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Phone"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "电话"
+          }
         }
       }
     },
@@ -6334,12 +10605,105 @@
             "state": "translated",
             "value": "Cần PRO · đổi điện thoại tự khôi phục dữ liệu"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requires PRO · Data restores automatically on a new phone"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "需要 PRO · 换手机数据自动恢复"
+          }
         }
       }
     },
-    "項目 A": {},
-    "項目 B": {},
-    "項目 C": {},
+    "項目 A": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item A"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "项目 A"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mục A"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item A"
+          }
+        }
+      }
+    },
+    "項目 B": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item B"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "项目 B"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mục B"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item B"
+          }
+        }
+      }
+    },
+    "項目 C": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item C"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "项目 C"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mục C"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item C"
+          }
+        }
+      }
+    },
     "項目分析": {
       "localizations": {
         "id": {
@@ -6352,6 +10716,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Phân tích hạng mục"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item analysis"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "项目分析"
           }
         }
       }
@@ -6370,6 +10746,18 @@
             "state": "translated",
             "value": "Phân loại hạng mục"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item category"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "项目分类"
+          }
         }
       }
     },
@@ -6387,6 +10775,18 @@
             "state": "translated",
             "value": "Tên hạng mục"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item name"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "项目名称"
+          }
         }
       }
     },
@@ -6403,6 +10803,18 @@
             "state": "translated",
             "value": "Chi tiết hạng mục"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Item details"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "项目明细"
+          }
         }
       }
     },
@@ -6418,6 +10830,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Xem trước"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "预览"
           }
         }
       }
@@ -6464,6 +10888,18 @@
             "state": "translated",
             "value": "Hiển thị ô ký tên hai bên (để khách hàng ký)"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show signature fields for both parties (for client to sign)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "显示甲乙方签名栏（给客户签名用）"
+          }
         }
       }
     },
@@ -6480,6 +10916,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "SST Malaysia"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malaysia SST"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "马来 SST"
           }
         }
       }
@@ -6498,6 +10946,18 @@
             "state": "translated",
             "value": "Sans-serif"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sans-serif"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "黑体"
+          }
         }
       }
     },
@@ -6513,6 +10973,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nhấn「Thêm hạng mục」, chọn công việc cần làm từ danh sách, có thể sửa số lượng và giá."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap \"Add item\" and pick the work you'll do from the list — quantity and price are both editable."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点「加项目」，从清单挑你要做的工，数量价钱都能改。"
           }
         }
       }
@@ -6531,6 +11003,18 @@
             "state": "translated",
             "value": "Nhấn để lấy vị trí GPS"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap to get GPS location"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击获取 GPS 位置"
+          }
         }
       }
     },
@@ -6546,6 +11030,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nhấn「+ Thêm hạng mục」bên dưới để bắt đầu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap \"+ Add item\" below to start"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点下方的「+ 加项目」开始"
           }
         }
       }
@@ -6563,6 +11059,18 @@
             "state": "translated",
             "value": "Nhấn「+」ở góc trên bên phải để thêm khách hàng thường hợp tác."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap \"+\" at the top right to add clients you work with often."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点右上角“+”把常合作的客户加进来。"
+          }
         }
       }
     },
@@ -6578,6 +11086,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lihat tagihan"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View invoice"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "查看请款单"
           }
         }
       }
@@ -6595,6 +11115,18 @@
             "state": "translated",
             "value": "%lld tagihan menunggu pembayaran"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld awaiting payment"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 张待收款"
+          }
         }
       }
     },
@@ -6610,6 +11142,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Contoh: Stima"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. Stima"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "例：Stima"
           }
         }
       }
@@ -6627,6 +11171,18 @@
             "state": "translated",
             "value": "Tampilan"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Display"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "显示"
+          }
         }
       }
     },
@@ -6642,6 +11198,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ukuran font"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Font size"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "字体大小"
           }
         }
       }
@@ -6659,6 +11227,18 @@
             "state": "translated",
             "value": "Kecil"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Small"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "小"
+          }
         }
       }
     },
@@ -6674,6 +11254,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Standar"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "标准"
           }
         }
       }
@@ -6691,6 +11283,18 @@
             "state": "translated",
             "value": "Besar"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Large"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "大"
+          }
         }
       }
     },
@@ -6706,6 +11310,270 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sangat besar"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extra large"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "特大"
+          }
+        }
+      }
+    },
+    "%lld% · 台灣營業稅": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · Taiwan VAT"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · 台湾营业税"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · VAT Đài Loan"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · PPN Taiwan"
+          }
+        }
+      }
+    },
+    "%lld% · 越南 VAT": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · Vietnam VAT"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · 越南 VAT"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · VAT Việt Nam"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · VAT Vietnam"
+          }
+        }
+      }
+    },
+    "%lld% · 印尼 PPN": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · Indonesia PPN"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · 印尼 PPN"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · PPN Indonesia"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · PPN Indonesia"
+          }
+        }
+      }
+    },
+    "%lld% · 馬來 SST": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · Malaysia SST"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · 马来 SST"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · SST Malaysia"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · SST Malaysia"
+          }
+        }
+      }
+    },
+    "%lld% · 菲律賓 VAT": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · Philippines VAT"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · 菲律宾 VAT"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · VAT Philippines"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld% · VAT Filipina"
+          }
+        }
+      }
+    },
+    "%lld月": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Month %lld"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld月"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tháng %lld"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulan %lld"
+          }
+        }
+      }
+    },
+    "%lld 張施工": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld in progress"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 张施工"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld đang thi công"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld sedang dikerjakan"
+          }
+        }
+      }
+    },
+    "%lld 張報價單備份成 CSV": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld quotes backed up as CSV"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld 张报价单备份成 CSV"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã sao lưu %lld báo giá thành CSV"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld penawaran dicadangkan sebagai CSV"
+          }
+        }
+      }
+    },
+    "定位失敗：%@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location failed: %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "定位失败：%@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Định vị thất bại: %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gagal menentukan lokasi: %@"
           }
         }
       }
