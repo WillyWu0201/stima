@@ -75,7 +75,7 @@ struct NewQuoteReviewScreen: View {
             .foregroundStyle(Color.inkSoft)
 
             AppTextField(text: $settings.masterName,
-                         placeholder: "例：陳師傅 / 大發工程行")
+                         placeholder: "例：Stima")
         }
         .padding(Spacing.card)
         .frame(maxWidth: .infinity, alignment: .leading)

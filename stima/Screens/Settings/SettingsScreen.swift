@@ -194,7 +194,7 @@ struct SettingsScreen: View {
                     .foregroundStyle(Color.inkSoft)
 
                 AppTextField(text: nameBinding,
-                             placeholder: "例：陳師傅 / 大發工程行")
+                             placeholder: "例：Stima")
 
                 Text("出現在每張報價單的左上方")
                     .font(AppFont.sans(11))
