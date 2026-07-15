@@ -115,7 +115,7 @@ struct PDFTemplateScreen: View {
             VStack(alignment: .leading, spacing: 12) {
                 labeledField("公司／工作室名稱（抬頭）") {
                     AppTextField(text: $t.businessName,
-                                 placeholder: "例：大發工程行",
+                                 placeholder: "例：Stima",
                                  maxLength: 50)
                 }
                 labeledField("標語／slogan（可空白）") {

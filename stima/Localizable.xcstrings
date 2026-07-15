@@ -6597,6 +6597,22 @@
           }
         }
       }
+    },
+    "例：Stima": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ví dụ: Stima"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contoh: Stima"
+          }
+        }
+      }
     }
   },
   "version": "1.0"
