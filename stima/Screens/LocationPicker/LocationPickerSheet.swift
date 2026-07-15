@@ -108,12 +108,12 @@ struct LocationPickerSheet: View {
         }())
     }
 
-    private var currentLocationSubtitle: String {
+    private var currentLocationSubtitle: LocalizedStringKey {
         switch fetcher.state {
         case .idle:                                          "點下取得 GPS 位置"
         case .requesting:                                    "定位中…"
         case .denied:                                        "位置權限被拒"
-        case .success(_, let address) where !address.isEmpty: address
+        case .success(_, let address) where !address.isEmpty: "\(address)"
         case .success:                                       "已取得座標"
         case .failed(let msg):                               "定位失敗：\(msg)"
         }

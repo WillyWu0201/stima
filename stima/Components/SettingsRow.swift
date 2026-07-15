@@ -18,8 +18,8 @@ struct SettingsRow: View {
     let systemImage: String
     var iconColor: Color = .accent
     let label: String
-    var hint: String? = nil
-    var rightValue: String? = nil       // 右側顯示的數值（國際化 row）
+    var hint: LocalizedStringKey? = nil
+    var rightValue: LocalizedStringKey? = nil   // 右側顯示的數值（國際化 row）
     var proLabel: Bool = false           // 是否顯示 PRO badge
     var showChevron: Bool = true
 

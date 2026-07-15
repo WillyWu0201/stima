@@ -142,7 +142,7 @@ struct StatsScreen: View {
         }
     }
 
-    private func miniStat(label: String, value: Int, sub: String, color: Color) -> some View {
+    private func miniStat(label: String, value: Int, sub: LocalizedStringKey, color: Color) -> some View {
         AppCard {
             VStack(alignment: .leading, spacing: 6) {
                 Text(LocalizedStringKey(label))
@@ -247,7 +247,7 @@ struct StatsScreen: View {
         let pct = stats.maxMonthly > 0 ? Double(amt) / Double(stats.maxMonthly) : 0
         let isMax = amt == stats.maxMonthly && amt > 0
         return HStack(spacing: 8) {
-            Text(MonthLabel.zhHant[i])
+            Text("\(i + 1)月")
                 .font(AppFont.mono(11))
                 .foregroundStyle(Color.inkSoft)
                 .frame(width: 28, alignment: .leading)

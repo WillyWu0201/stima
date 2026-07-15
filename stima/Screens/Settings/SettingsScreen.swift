@@ -352,7 +352,8 @@ struct SettingsScreen: View {
                         systemImage: "globe",
                         iconColor: .cool,
                         label: "語言",
-                        rightValue: Self.languageLabel(settings.language)
+                        // 語言名稱以各自語言呈現（English 永遠是 English），不進翻譯表
+                        rightValue: LocalizedStringKey(Self.languageLabel(settings.language))
                     )
                 }
                 .buttonStyle(.plain)
@@ -373,7 +374,8 @@ struct SettingsScreen: View {
                     systemImage: "percent",
                     iconColor: .cool,
                     label: "稅制",
-                    rightValue: "\(Int(settings.taxRate))% · \(Self.taxRegion(settings.currency))",
+                    rightValue: Self.taxRightValue(rate: Int(settings.taxRate),
+                                                   currency: settings.currency),
                     showChevron: false
                 )
             }
@@ -402,14 +404,14 @@ struct SettingsScreen: View {
                     systemImage: "textformat.size",
                     iconColor: .cool,
                     label: "字體大小",
-                    rightValue: Self.fontScaleLabel(settings.fontScale)
+                    rightValue: LocalizedStringKey(Self.fontScaleLabel(settings.fontScale))
                 )
             }
             .buttonStyle(.plain)
             .confirmationDialog("字體大小", isPresented: $showingFontPicker,
                                 titleVisibility: .visible) {
                 ForEach(Self.fontScaleOptions, id: \.scale) { opt in
-                    Button(opt.label) { setFontScale(opt.scale) }
+                    Button(LocalizedStringKey(opt.label)) { setFontScale(opt.scale) }
                 }
                 Button("取消", role: .cancel) {}
             }
@@ -473,7 +475,7 @@ struct SettingsScreen: View {
             .padding(.leading, 48)      // 對齊 icon 後
     }
 
-    static func currencyLabel(_ code: String) -> String {
+    static func currencyLabel(_ code: String) -> LocalizedStringKey {
         switch code {
         case "TWD": "NT$ 新台幣"
         case "VND": "₫ 越南盾"
@@ -481,7 +483,7 @@ struct SettingsScreen: View {
         case "USD": "US$ 美元"
         case "MYR": "RM 馬幣"
         case "PHP": "₱ 菲律賓比索"
-        default:    code
+        default:    LocalizedStringKey(code)
         }
     }
 
@@ -503,14 +505,16 @@ struct SettingsScreen: View {
         fontScaleOptions.first { abs($0.scale - s) < 0.01 }?.label ?? "標準"
     }
 
-    static func taxRegion(_ currency: String) -> String {
+    /// 稅制列右側文字：稅率 + 地區稅名。地區稅名直接寫進格式鍵（而非用 %@ 串接），
+    /// 這樣整句才能隨 App 語言在地化；純用 %@ 串接時被插入的地區字串不會被翻譯。
+    static func taxRightValue(rate: Int, currency: String) -> LocalizedStringKey {
         switch currency {
-        case "TWD": "台灣營業稅"
-        case "VND": "越南 VAT"
-        case "IDR": "印尼 PPN"
-        case "MYR": "馬來 SST"
-        case "PHP": "菲律賓 VAT"
-        default:    "—"
+        case "TWD": "\(rate)% · 台灣營業稅"
+        case "VND": "\(rate)% · 越南 VAT"
+        case "IDR": "\(rate)% · 印尼 PPN"
+        case "MYR": "\(rate)% · 馬來 SST"
+        case "PHP": "\(rate)% · 菲律賓 VAT"
+        default:    "\(rate)% · —"
         }
     }
 }
