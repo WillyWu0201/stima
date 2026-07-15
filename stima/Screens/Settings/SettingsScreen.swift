@@ -416,7 +416,7 @@ struct SettingsScreen: View {
                         systemImage: "gearshape",
                         iconColor: .inkSoft,
                         label: "App 設定",
-                        hint: "通知、深色模式、字體大小"
+                        hint: "定位權限、語言等系統設定"
                     )
                 }
                 .buttonStyle(.plain)

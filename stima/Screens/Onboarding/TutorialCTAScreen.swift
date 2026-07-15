@@ -1,8 +1,8 @@
 import SwiftUI
 
 /// 畫面 03 · 教學 CTA
-/// 邀請使用者試做第一張報價單。完成或跳過後 onboarding 結束。
-/// TODO: 「來試一張看看」應該觸發 tutorial coaching mode；目前兩個按鈕行為一樣。
+/// 邀請使用者試做第一張報價單。「來試一張看看」→ 設 tutorial.requestQuoteTutorial
+/// （Home 會據此自動開新報價流程並帶 coach mark）；「先跳過」→ 直接結束 onboarding。
 struct TutorialCTAScreen: View {
     let onStart: () -> Void
     let onSkip: () -> Void
