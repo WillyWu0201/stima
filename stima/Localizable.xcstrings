@@ -4460,6 +4460,23 @@
         }
       }
     },
+    "標記完工": {
+      "extractionState": "stale",
+      "localizations": {
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tandai selesai"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đánh dấu hoàn công"
+          }
+        }
+      }
+    },
     "標記已收款": {
       "extractionState": "stale",
       "localizations": {
@@ -6549,18 +6566,34 @@
         }
       }
     },
-    "標記完工": {
+    "查看請款單": {
       "localizations": {
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Đánh dấu hoàn công"
+            "value": "Xem hóa đơn"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tandai selesai"
+            "value": "Lihat tagihan"
+          }
+        }
+      }
+    },
+    "%lld 張待收款": {
+      "localizations": {
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld đơn chờ thu tiền"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld tagihan menunggu pembayaran"
           }
         }
       }

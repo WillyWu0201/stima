@@ -56,6 +56,22 @@ struct YearStatsTests {
         #expect(s.ongoingTotal == 2100)
     }
 
+    @Test("請款中(billed) 併入待收款（doneCount / doneTotal）")
+    func billedCountsAsAwaitingPayment() {
+        let quotes = [
+            makeQuote(year: 2026, month: 5, status: .done),     // 1050
+            makeQuote(year: 2026, month: 5, status: .billed),   // 1050
+            makeQuote(year: 2026, month: 6, status: .billed),   // 1050
+            makeQuote(year: 2026, month: 7, status: .ongoing),
+            makeQuote(year: 2026, month: 8, status: .paid),
+        ]
+        let s = YearStatsCalculator.compute(quotes: quotes, year: 2026)
+        #expect(s.doneCount == 3)          // 1 已完工 + 2 請款中
+        #expect(s.doneTotal == 3150)       // 3 × 1050
+        #expect(s.ongoingCount == 1)
+        #expect(s.paidCount == 1)
+    }
+
     @Test("monthly array 只統計 paid，正確分到對應月份")
     func monthlyOnlyCountsPaid() {
         let quotes = [

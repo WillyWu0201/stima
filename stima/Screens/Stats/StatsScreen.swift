@@ -136,7 +136,7 @@ struct StatsScreen: View {
     private var miniStats: some View {
         HStack(spacing: 10) {
             miniStat(label: "待收款", value: stats.doneTotal,
-                     sub: "\(stats.doneCount) 張完工", color: .positive)
+                     sub: "\(stats.doneCount) 張待收款", color: .positive)
             miniStat(label: "進行中", value: stats.ongoingTotal,
                      sub: "\(stats.ongoingCount) 張施工", color: .accent)
         }

@@ -91,6 +91,7 @@ enum QuoteStatus: String, Codable, CaseIterable {
     case draft   = "draft"
     case ongoing = "ongoing"
     case done    = "done"
+    case billed  = "billed"
     case paid    = "paid"
 
     var label: String {
@@ -98,6 +99,7 @@ enum QuoteStatus: String, Codable, CaseIterable {
         case .draft:   "草稿"
         case .ongoing: "進行中"
         case .done:    "已完工"
+        case .billed:  "請款中"
         case .paid:    "已收款"
         }
     }
@@ -107,6 +109,7 @@ enum QuoteStatus: String, Codable, CaseIterable {
         case .draft:   .inkFaint
         case .ongoing: .accent
         case .done:    .positive
+        case .billed:  .warn
         case .paid:    .cool
         }
     }

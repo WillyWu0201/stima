@@ -248,11 +248,15 @@ struct DetailScreen: View {
                             markAsDone()
                         }
                         SecondaryButton("轉請款單", systemImage: "dollarsign.circle") {
-                            goingToInvoice = true
+                            billAndOpenInvoice()
                         }
                     }
                 } else if quote.quoteStatus == .done {
                     SecondaryButton("轉請款單", systemImage: "dollarsign.circle") {
+                        billAndOpenInvoice()
+                    }
+                } else if quote.quoteStatus == .billed {
+                    SecondaryButton("查看請款單", systemImage: "doc.text") {
                         goingToInvoice = true
                     }
                 }
@@ -263,6 +267,14 @@ struct DetailScreen: View {
     /// 進行中 → 已完工（工程做完、待收款）。狀態徽章會即時更新。
     private func markAsDone() {
         quote.status = QuoteStatus.done.rawValue
+    }
+
+    /// 轉請款單：先把單子設成「請款中」（持久狀態，之後就停在這裡直到標記已收款），再打開請款單。
+    private func billAndOpenInvoice() {
+        if quote.quoteStatus != .billed {
+            quote.status = QuoteStatus.billed.rawValue
+        }
+        goingToInvoice = true
     }
 
     // MARK: - Helpers

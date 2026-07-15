@@ -110,7 +110,7 @@ struct HomeScreen: View {
                         isActive: selectedTab == .all
                     ) { selectedTab = .all }
 
-                    ForEach([QuoteStatus.ongoing, .done, .paid], id: \.self) { status in
+                    ForEach([QuoteStatus.ongoing, .done, .billed, .paid], id: \.self) { status in
                         TabChip(
                             label: status.label,
                             count: countByStatus(status),

@@ -103,6 +103,28 @@ final class stimaScreenCoverageUITests: XCTestCase {
         XCTAssertTrue(prefilled.waitForExistence(timeout: 3), "編輯報價沒有預填既有客戶名")
     }
 
+    // MARK: - 轉請款單 → 狀態持久化為「請款中」
+
+    @MainActor
+    func testConvertToInvoiceSetsBilled() throws {
+        // 王先生（進行中）→ 詳情 → 轉請款單 → 請款中；返回後應停在請款中（詳情變「查看請款單」）
+        let quote = app.staticTexts["王先生"]
+        XCTAssertTrue(quote.waitForExistence(timeout: 8), "Home 沒看到王先生的報價單")
+        quote.tap()
+        let toInvoice = button(containing: "轉請款單")
+        XCTAssertTrue(toInvoice.waitForExistence(timeout: 5), "詳情沒有轉請款單")
+        toInvoice.tap()
+        XCTAssertTrue(app.staticTexts["請款中"].waitForExistence(timeout: 6), "請款單沒顯示請款中")
+        // 返回詳情（AppHeader 返回鈕；請款單頁在最上層，取可點的那顆）
+        let back = app.buttons.matching(NSPredicate(format: "label == %@", "返回"))
+            .allElementsBoundByIndex.first { $0.isHittable }
+        XCTAssertNotNil(back, "找不到可點的返回鈕")
+        back?.tap()
+        // 已持久化為請款中 → 詳情動作變「查看請款單」（不再是「轉請款單」）
+        XCTAssertTrue(button(containing: "查看請款單").waitForExistence(timeout: 6),
+                      "轉請款單後狀態未持久化為請款中")
+    }
+
     // MARK: - Settings → PDF 模板
 
     @MainActor

@@ -26,6 +26,7 @@ struct AppHeader<Trailing: View>: View {
                         .frame(width: 28, height: 28, alignment: .leading)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel("返回")
             }
 
             VStack(alignment: .leading, spacing: 4) {

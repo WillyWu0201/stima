@@ -53,7 +53,8 @@ enum YearStatsCalculator {
         let prevYearQuotes = quotes.filter { calendar.component(.year, from: $0.date) == year - 1 }
 
         let paid    = yearQuotes.filter { $0.quoteStatus == .paid }
-        let done    = yearQuotes.filter { $0.quoteStatus == .done }
+        // 「待收款」= 已完工 + 請款中（工程做完／已開請款單，但都還沒收到錢）
+        let done    = yearQuotes.filter { $0.quoteStatus == .done || $0.quoteStatus == .billed }
         let ongoing = yearQuotes.filter { $0.quoteStatus == .ongoing }
 
         // 月份 bar
