@@ -52,23 +52,10 @@ struct QuotePaper: View {
 
     // MARK: - Logo
 
-    @ViewBuilder
-    private var logoView: some View {
-        if let data = template?.logoData, let img = UIImage(data: data) {
-            Image(uiImage: img)
-                .resizable()
-                .scaledToFit()
-                .padding(2)
-        } else {
-            ZStack {
-                RoundedRectangle(cornerRadius: 6)
-                    .strokeBorder(Color(white: 0.7),
-                                  style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
-                Text("LOGO")
-                    .font(.system(size: 9, weight: .semibold))
-                    .foregroundStyle(Color(white: 0.55))
-            }
-        }
+    /// 只有真的上傳了 logo 才回傳圖；沒設就 nil → PDF 不畫 logo 區（不留虛線空框）。
+    private var logoImage: UIImage? {
+        guard let data = template?.logoData else { return nil }
+        return UIImage(data: data)
     }
 
     // MARK: - Letterhead
@@ -76,8 +63,13 @@ struct QuotePaper: View {
     private var letterhead: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .top, spacing: 12) {
-                logoView
-                    .frame(width: 56, height: 56)
+                if let logo = logoImage {
+                    Image(uiImage: logo)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 56, height: 56)
+                        .padding(2)
+                }
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(businessName)
