@@ -120,12 +120,16 @@ enum QuoteStatus: String, Codable, CaseIterable {
 enum AppFont {
     // 目前用系統字體：iOS 在中文環境下會自動採用 PingFang TC。
     // 若之後要換成 Noto Sans TC / IBM Plex Mono，把字體檔加進 Xcode 後再改回 .custom。
+    /// 使用者字級倍率（0.85–1.25），由 AppSettings.fontScale 驅動。
+    /// app 啟動與設定變更時同步；所有 sans/mono 字級都會乘上它。
+    static var scale: CGFloat = 1
+
     static func sans(_ size: CGFloat, weight: Font.Weight = .regular) -> Font {
-        .system(size: size, weight: weight)
+        .system(size: size * scale, weight: weight)
     }
 
     static func mono(_ size: CGFloat, weight: Font.Weight = .regular) -> Font {
-        .system(size: size, weight: weight, design: .monospaced)
+        .system(size: size * scale, weight: weight, design: .monospaced)
     }
 
     // Named scale steps

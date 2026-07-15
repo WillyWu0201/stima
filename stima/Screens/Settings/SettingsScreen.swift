@@ -12,6 +12,7 @@ struct SettingsScreen: View {
 
     @State private var showingCurrencyPicker = false
     @State private var showingLanguagePicker = false
+    @State private var showingFontPicker = false
 
     @State private var paywallOpen = false
     @State private var exportFile: ExportableFile? = nil
@@ -45,6 +46,9 @@ struct SettingsScreen: View {
 
                     SectionTitle("國際化")
                     internationalCard
+
+                    SectionTitle("顯示")
+                    displayCard
 
                     SectionTitle("其他")
                     miscCard
@@ -391,6 +395,32 @@ struct SettingsScreen: View {
 
     // MARK: - 其他
 
+    private var displayCard: some View {
+        AppCard(padded: false) {
+            Button { showingFontPicker = true } label: {
+                SettingsRow(
+                    systemImage: "textformat.size",
+                    iconColor: .cool,
+                    label: "字體大小",
+                    rightValue: Self.fontScaleLabel(settings.fontScale)
+                )
+            }
+            .buttonStyle(.plain)
+            .confirmationDialog("字體大小", isPresented: $showingFontPicker,
+                                titleVisibility: .visible) {
+                ForEach(Self.fontScaleOptions, id: \.scale) { opt in
+                    Button(opt.label) { setFontScale(opt.scale) }
+                }
+                Button("取消", role: .cancel) {}
+            }
+        }
+    }
+
+    private func setFontScale(_ s: Double) {
+        settings.fontScale = s
+        AppFont.scale = CGFloat(s)   // 立即套用；RootView 的 .id(fontScale) 會重建畫面讓所有分頁跟上
+    }
+
     private var miscCard: some View {
         AppCard(padded: false) {
             VStack(spacing: 0) {
@@ -464,6 +494,13 @@ struct SettingsScreen: View {
         case "id":      "Bahasa Indonesia"
         default:        code
         }
+    }
+
+    static let fontScaleOptions: [(label: String, scale: Double)] = [
+        ("小", 0.85), ("標準", 1.0), ("大", 1.15), ("特大", 1.25)
+    ]
+    static func fontScaleLabel(_ s: Double) -> String {
+        fontScaleOptions.first { abs($0.scale - s) < 0.01 }?.label ?? "標準"
     }
 
     static func taxRegion(_ currency: String) -> String {

@@ -57,7 +57,9 @@ struct stimaApp: App {
         if ProcessInfo.processInfo.arguments.contains("--uitest-pro") {
             UserDefaults.standard.set(true, forKey: "isPro")
         }
-        _settings = State(initialValue: AppSettings())
+        let initialSettings = AppSettings()
+        AppFont.scale = CGFloat(initialSettings.fontScale)   // 啟動即套用字級倍率
+        _settings = State(initialValue: initialSettings)
         PurchaseManager.shared.configure()
 
         if ProcessInfo.processInfo.arguments.contains("--uitest-seed") {
@@ -101,7 +103,8 @@ struct RootView: View {
     var body: some View {
         Group {
             if settings.hasSeenOnboarding {
-                ContentView()
+                // 綁 fontScale 到 id：字級變更時重建整棵樹，讓新字級即時套用到所有分頁。
+                ContentView().id(settings.fontScale)
             } else {
                 OnboardingFlow()
             }

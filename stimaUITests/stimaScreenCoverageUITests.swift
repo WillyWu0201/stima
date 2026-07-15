@@ -125,6 +125,21 @@ final class stimaScreenCoverageUITests: XCTestCase {
                       "轉請款單後狀態未持久化為請款中")
     }
 
+    // MARK: - 設定 → 字體大小
+
+    @MainActor
+    func testFontSizeSetting() throws {
+        openSettingsTab()
+        tapRow(containing: "字體大小")            // 開字級選單
+        let big = app.buttons["大"]               // 精確比對，避免撞到「特大」
+        XCTAssertTrue(big.waitForExistence(timeout: 3), "字體大小選單沒出現「大」")
+        big.tap()
+        // .id(fontScale) 會重建畫面 → 回預設分頁；重進設定確認已套用並持久化
+        openSettingsTab()
+        XCTAssertTrue(app.staticTexts["字體大小"].waitForExistence(timeout: 6), "沒回到設定")
+        XCTAssertTrue(app.staticTexts["大"].waitForExistence(timeout: 3), "字體大小未套用為「大」")
+    }
+
     // MARK: - Settings → PDF 模板
 
     @MainActor
